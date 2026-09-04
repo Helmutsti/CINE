@@ -1,0 +1,73 @@
+/* Granito — token estratti dalla board "Cineteca - Granito.dc.html".
+   Unica fonte di colore, tipografia, spaziatura e raggi: nessun valore
+   letterale nei componenti. */
+
+:root {
+  /* — Pietra: le superfici si distinguono per un gradino di luminosità,
+       mai per un'ombra o un gradiente — */
+  --bg: #0f1012;          /* fondo schermata */
+  --bg-player: #0c0c0d;   /* fondo player, un gradino più profondo */
+  --surface: #17181b;     /* sidebar, badge */
+  --surface-raised: #1c1d21; /* bottoni secondari */
+  --surface-art: #212329; /* riquadri artwork vuoti */
+  --surface-active: #2b2e35; /* pillola voce attiva */
+  --on-light: #101114;    /* testo sopra la superficie chiara */
+
+  /* — Bordi — */
+  --line: #2c2e34;        /* divisori */
+  --line-strong: #3a3d45; /* contorni di controllo */
+
+  /* — Inchiostro — */
+  --text: #eceef2;
+  --text-2: #b9bbc2;
+  --text-3: #9a9ca4;
+  --text-4: #85878f;
+
+  /* — L'unico colore: selezione e avanzamento, niente altro — */
+  --accent: #4d97ff;
+  --accent-deep: #0a4f97;
+
+  /* — Tipografia: una sola famiglia, pesi normali, corpi grandi — */
+  --font: "Instrument Sans", system-ui, -apple-system, sans-serif;
+
+  /* — Scala tipografica (px di progetto ÷ 16) — */
+  --t-display: 6.5rem;    /* 104px — titolo scheda */
+  --t-hero: 4.25rem;      /* 68px  — titolo in evidenza */
+  --t-h2: 2rem;           /* 32px */
+  --t-h3: 1.625rem;       /* 26px  — titolo di riga */
+  --t-lead: 1.5rem;       /* 24px  — sinossi */
+  --t-lg: 1.375rem;       /* 22px  — bottoni, meta scheda */
+  --t-md: 1.3125rem;      /* 21px  — titolo card */
+  --t-base: 1.0625rem;    /* 17px  — corpo, meta card */
+  --t-sm: 1.125rem;       /* 18px */
+  --t-xs: 0.875rem;       /* 14px */
+
+  /* — Spaziatura — */
+  --gutter: 6rem;         /* 96px — margine orizzontale di schermata */
+  --rail-gap: 1.5rem;     /* 24px — distanza fra card */
+  --sidebar-w: 6.5rem;    /* 104px */
+  --icon-slot: 3.75rem;   /* 60px */
+
+  /* — Raggi: raccordi morbidi, pillole per i controlli — */
+  --r-pill: 999px;
+  --r-card: 0.75rem;      /* 12px */
+  --r-badge: 0.625rem;    /* 10px */
+  --r-panel: 0.875rem;    /* 14px */
+
+  /* — Focus: una cornice, non un ingrandimento.
+       Solo box-shadow, che non innesca layout. — */
+  --focus-ring: 0 0 0 0.1875rem var(--text);
+  --focus-ring-accent: 0 0 0 0.1875rem var(--accent);
+}
+
+/* Scala l'intera interfaccia sul viewport: progettata a 1920×1080, resta
+   proporzionata su qualsiasi schermo. È il comportamento di una app da TV. */
+html {
+  font-size: clamp(7px, min(100vw / 120, 100vh / 67.5), 22px);
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: clamp(11px, 100vw / 24.375, 19px);
+  }
+}

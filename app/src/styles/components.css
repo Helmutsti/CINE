@@ -1,0 +1,956 @@
+/* Componenti Granito. Ogni valore viene dai token: nessun colore, corpo o
+   spaziatura letterale qui dentro. */
+
+/* ── Impianto di schermata ───────────────────────────────────────────── */
+
+.app {
+  display: flex;
+  height: 100%;
+  background: var(--bg);
+}
+
+.screen {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.screen__scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scroll-padding-block: 8rem;
+}
+
+.screen__head {
+  padding: 3.5rem var(--gutter) 0;
+}
+
+.screen__kicker {
+  font-size: var(--t-base);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.screen__title {
+  font-size: 4rem;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-top: 0.75rem;
+}
+
+/* ── Sidebar: colonna di sole icone, si apre a nomi estesi ───────────── */
+
+.sidebar {
+  width: var(--sidebar-w);
+  flex: none;
+  background: var(--surface);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.125rem 0;
+  gap: 0.75rem;
+  transition: width 180ms ease;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.sidebar--aperta {
+  width: 20rem;
+  align-items: stretch;
+  padding-inline: 1.375rem;
+}
+
+.sidebar__brand {
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.875rem;
+  color: var(--text);
+  flex: none;
+  padding-inline: 0.75rem;
+}
+
+.sidebar__item {
+  height: var(--icon-slot);
+  min-height: var(--icon-slot);
+  border-radius: var(--r-pill);
+  display: flex;
+  align-items: center;
+  gap: 1.125rem;
+  color: var(--text-3);
+  flex: none;
+  width: var(--icon-slot);
+  justify-content: center;
+  padding: 0;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+.sidebar--aperta .sidebar__item {
+  width: auto;
+  justify-content: flex-start;
+  padding: 0 1.375rem;
+}
+
+.sidebar__item--attivo {
+  background: var(--surface-active);
+  color: var(--text);
+}
+
+.sidebar__item--fuoco {
+  color: var(--text);
+  box-shadow: var(--focus-ring);
+}
+
+.sidebar__etichetta {
+  font-size: var(--t-md);
+  white-space: nowrap;
+}
+
+/* Da chiusa resta una colonna di sole icone: il nome non deve occupare
+   spazio, altrimenti spinge l'icona fuori asse e viene tagliato. */
+.sidebar:not(.sidebar--aperta) .sidebar__etichetta {
+  display: none;
+}
+
+.sidebar__icona {
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+
+.sidebar__spazio {
+  margin-top: auto;
+}
+
+/* ── Riga di card ────────────────────────────────────────────────────── */
+
+.rail {
+  margin-bottom: 0.5rem;
+}
+
+.rail__titolo {
+  font-size: var(--t-h3);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  padding: 0 var(--gutter);
+  margin: 0.75rem 0 0.875rem;
+}
+
+.rail__pista {
+  display: flex;
+  gap: var(--rail-gap);
+  padding: 0.375rem var(--gutter) 1.25rem;
+  overflow-x: auto;
+  scroll-padding-inline: var(--gutter);
+}
+
+/* ── Card ────────────────────────────────────────────────────────────── */
+
+.card {
+  flex: 0 0 16.75rem;
+  width: 16.75rem;
+  text-align: left;
+  display: block;
+}
+
+.card__arte {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--r-card);
+  position: relative;
+  transition: box-shadow 120ms ease;
+}
+
+.card--fuoco .card__arte {
+  box-shadow: var(--focus-ring);
+}
+
+.card--poster {
+  flex-basis: 12.5rem;
+  width: 12.5rem;
+}
+
+.card--poster .card__arte {
+  aspect-ratio: 2 / 3;
+}
+
+.card__titolo {
+  font-size: var(--t-md);
+  margin-top: 0.75rem;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card__meta {
+  font-size: var(--t-base);
+  color: var(--text-3);
+  margin-top: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Avanzamento: l'unico punto, con la selezione, in cui compare il colore. */
+.avanzamento {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  height: 0.25rem;
+  border-radius: var(--r-pill);
+  background: rgba(236, 238, 242, 0.28);
+  overflow: hidden;
+}
+
+.avanzamento__riempimento {
+  height: 100%;
+  background: var(--accent);
+  border-radius: var(--r-pill);
+}
+
+/* ── Bottoni ─────────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--t-lg);
+  padding: 1.0625rem 1.875rem;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line-strong);
+  background: var(--surface-raised);
+  color: var(--text);
+  transition: box-shadow 120ms ease;
+  white-space: nowrap;
+}
+
+.btn--primario {
+  background: var(--text);
+  color: var(--on-light);
+  border-color: transparent;
+  padding-inline: 2rem;
+}
+
+.btn--fuoco {
+  box-shadow: var(--focus-ring);
+}
+
+.btn--primario.btn--fuoco {
+  box-shadow: var(--focus-ring-accent);
+}
+
+.btn--compatto {
+  font-size: var(--t-base);
+  padding: 0.625rem 1.125rem;
+}
+
+/* ── Badge tecnici ───────────────────────────────────────────────────── */
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-top: 1.25rem;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5625rem;
+  padding: 0.5625rem 0.9375rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-badge);
+  background: var(--surface);
+  font-size: var(--t-base);
+  color: var(--text-2);
+}
+
+/* ── Scheda titolo ───────────────────────────────────────────────────── */
+
+.scheda {
+  position: relative;
+  min-height: 100%;
+}
+
+.scheda__sfondo {
+  position: absolute;
+  inset: 0;
+}
+
+.scheda__velo {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    var(--bg) 0%,
+    var(--bg) 42%,
+    rgba(15, 16, 18, 0.8) 56%,
+    rgba(15, 16, 18, 0) 78%
+  );
+}
+
+.scheda__corpo {
+  position: relative;
+  width: 63rem;
+  max-width: 100%;
+  padding: 4rem var(--gutter) 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.scheda__ritorno {
+  font-size: var(--t-h3);
+  color: var(--text-3);
+}
+
+.scheda__titolo {
+  font-size: var(--t-display);
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  margin: 1.25rem 0 1.125rem;
+}
+
+.scheda__meta {
+  font-size: var(--t-lg);
+  color: var(--text-3);
+}
+
+.scheda__sinossi {
+  font-size: var(--t-lead);
+  line-height: 1.55;
+  color: var(--text-2);
+  margin-top: 1.5rem;
+  max-width: 43.75rem;
+}
+
+.scheda__azioni {
+  display: flex;
+  gap: 0.875rem;
+  margin-top: 2.125rem;
+  flex-wrap: wrap;
+}
+
+.scheda__crediti {
+  display: flex;
+  gap: 3.75rem;
+  margin-top: 2.25rem;
+  font-size: var(--t-h3);
+  color: var(--text-2);
+  flex-wrap: wrap;
+}
+
+.scheda__credito-et {
+  color: var(--text-3);
+  margin-bottom: 0.375rem;
+  font-size: var(--t-md);
+}
+
+/* ── Evidenza in home ────────────────────────────────────────────────── */
+
+.evidenza {
+  height: 29.375rem;
+  flex: none;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.evidenza__velo {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(15, 16, 18, 0) 40%, rgba(15, 16, 18, 0.86) 100%);
+}
+
+.evidenza__piede {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 var(--gutter) 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2.125rem;
+}
+
+.evidenza__play {
+  width: 5.25rem;
+  height: 5.25rem;
+  flex: none;
+  border-radius: var(--r-pill);
+  background: var(--text);
+  color: var(--on-light);
+  display: grid;
+  place-items: center;
+  transition: box-shadow 120ms ease;
+}
+
+.evidenza__play.btn--fuoco {
+  box-shadow: var(--focus-ring-accent);
+}
+
+.evidenza__titolo {
+  font-size: var(--t-hero);
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.evidenza__punti {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.evidenza__punto {
+  width: 1.375rem;
+  height: 0.25rem;
+  border-radius: var(--r-pill);
+  background: rgba(236, 238, 242, 0.35);
+}
+
+.evidenza__punto--attivo {
+  width: 2.875rem;
+  background: var(--text);
+}
+
+/* ── Griglia catalogo ────────────────────────────────────────────────── */
+
+.griglia {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+  gap: 2rem var(--rail-gap);
+  padding: 1.5rem var(--gutter) 4rem;
+}
+
+/* ── Ricerca ─────────────────────────────────────────────────────────── */
+
+.ricerca {
+  display: flex;
+  gap: 3.5rem;
+  padding: 3rem var(--gutter) 2rem;
+}
+
+.ricerca__campo {
+  flex: none;
+  width: 34rem;
+}
+
+.ricerca__valore {
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+  border-bottom: 2px solid var(--line-strong);
+  padding-bottom: 1rem;
+  min-height: 4.5rem;
+  color: var(--text);
+}
+
+.ricerca__cursore {
+  display: inline-block;
+  width: 2px;
+  height: 2.25rem;
+  background: var(--accent);
+  vertical-align: -0.25rem;
+  animation: lampeggia 1s steps(2) infinite;
+}
+
+@keyframes lampeggia {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Sei colonne: 26 lettere + 10 cifre riempiono esattamente sei righe, e i
+   tre tasti larghi ne occupano una settima intera. Nessun tasto orfano. */
+.tastiera {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.625rem;
+  margin-top: 1.75rem;
+}
+
+.tasto {
+  aspect-ratio: 1;
+  border-radius: var(--r-badge);
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: var(--t-md);
+  display: grid;
+  place-items: center;
+  transition: box-shadow 120ms ease;
+}
+
+.tasto--largo {
+  grid-column: span 2;
+  aspect-ratio: auto;
+  padding-block: 1.125rem;
+  font-size: var(--t-base);
+}
+
+.tasto--fuoco {
+  box-shadow: var(--focus-ring);
+}
+
+.generi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* ── Episodi ─────────────────────────────────────────────────────────── */
+
+.stagioni {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0 var(--gutter);
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.episodio {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1rem;
+  border-radius: var(--r-panel);
+  text-align: left;
+  width: 100%;
+  transition: box-shadow 120ms ease;
+  border: 1px solid transparent;
+}
+
+.episodio--fuoco {
+  box-shadow: var(--focus-ring);
+  background: var(--surface);
+}
+
+.episodio__arte {
+  width: 14rem;
+  flex: none;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--r-badge);
+  position: relative;
+}
+
+.episodio__n {
+  font-size: var(--t-base);
+  color: var(--text-3);
+}
+
+.episodio__titolo {
+  font-size: var(--t-md);
+  margin-top: 0.25rem;
+}
+
+.episodio__sinossi {
+  font-size: var(--t-base);
+  color: var(--text-3);
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.elenco-episodi {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 calc(var(--gutter) - 1rem) 4rem;
+}
+
+/* ── Player ──────────────────────────────────────────────────────────── */
+
+.player {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-player);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.player__scena {
+  position: absolute;
+  inset: 0;
+  background: var(--surface-art);
+}
+
+.player__velo {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(12, 12, 13, 0.72) 0%,
+    rgba(12, 12, 13, 0) 28%,
+    rgba(12, 12, 13, 0) 55%,
+    rgba(12, 12, 13, 0.88) 100%
+  );
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.player__velo--visibile {
+  opacity: 1;
+}
+
+.player__hud {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3.5rem var(--gutter);
+  opacity: 0;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+}
+
+.player__hud--visibile {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.player__testata {
+  color: var(--text);
+}
+
+.player__sopratitolo {
+  font-size: var(--t-h3);
+  color: var(--text-3);
+}
+
+.player__titolo {
+  font-size: 3.5rem;
+  letter-spacing: -0.03em;
+  margin-top: 0.5rem;
+}
+
+.player__barra {
+  height: 0.375rem;
+  border-radius: var(--r-pill);
+  background: rgba(236, 238, 242, 0.24);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.player__tempi {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--t-md);
+  color: var(--text-2);
+  margin-bottom: 1.75rem;
+}
+
+.player__controlli {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.player__controlli--destra {
+  margin-left: auto;
+}
+
+.tondo {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: var(--r-pill);
+  display: grid;
+  place-items: center;
+  background: var(--surface-raised);
+  border: 1px solid var(--line-strong);
+  color: var(--text);
+  transition: box-shadow 120ms ease;
+}
+
+.tondo--principale {
+  width: 5.25rem;
+  height: 5.25rem;
+  background: var(--text);
+  color: var(--on-light);
+  border-color: transparent;
+}
+
+/* ── Pannello del player (audio, sottotitoli, capitoli) ──────────────── */
+
+.pannello {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 16rem;
+  width: 28rem;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-panel);
+  padding: 1.5rem;
+  z-index: 2;
+}
+
+.pannello__titolo {
+  font-size: var(--t-md);
+  color: var(--text-3);
+  margin-bottom: 1rem;
+}
+
+.opzione {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border-radius: var(--r-badge);
+  font-size: var(--t-md);
+  color: var(--text);
+  text-align: left;
+  transition: box-shadow 120ms ease;
+}
+
+.opzione--fuoco {
+  box-shadow: var(--focus-ring);
+}
+
+.opzione__segno {
+  color: var(--accent);
+}
+
+/* ── Dialogo ─────────────────────────────────────────────────────────── */
+
+.velo-dialogo {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 12, 13, 0.72);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+}
+
+.dialogo {
+  width: 40rem;
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-panel);
+  padding: 2.5rem;
+}
+
+.dialogo__titolo {
+  font-size: var(--t-h2);
+  letter-spacing: -0.02em;
+}
+
+.dialogo__testo {
+  font-size: var(--t-h3);
+  color: var(--text-2);
+  margin-top: 0.875rem;
+  line-height: 1.5;
+}
+
+.dialogo__azioni {
+  display: flex;
+  gap: 0.875rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ── Stati vuoti ─────────────────────────────────────────────────────── */
+
+.vuoto {
+  padding: 6rem var(--gutter);
+  max-width: 50rem;
+}
+
+.vuoto__titolo {
+  font-size: var(--t-h2);
+  letter-spacing: -0.02em;
+}
+
+.vuoto__testo {
+  font-size: var(--t-h3);
+  color: var(--text-3);
+  margin-top: 0.875rem;
+  line-height: 1.5;
+}
+
+/* ── Impostazioni ────────────────────────────────────────────────────── */
+
+.impostazioni {
+  padding: 1.5rem var(--gutter) 4rem;
+  max-width: 60rem;
+}
+
+.riga-impostazione {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.riga-impostazione__et {
+  font-size: var(--t-h3);
+}
+
+.riga-impostazione__desc {
+  font-size: var(--t-base);
+  color: var(--text-3);
+  margin-top: 0.25rem;
+  line-height: 1.5;
+}
+
+/* ── Suggerimento comandi ────────────────────────────────────────────── */
+
+.aiuto {
+  position: fixed;
+  right: 1.5rem;
+  top: 1.5rem;
+  font-size: var(--t-xs);
+  color: var(--text-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  padding: 0.5rem 1rem;
+  z-index: 30;
+  pointer-events: none;
+}
+
+/* ── Adattamento mobile ──────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  :root {
+    --gutter: 1.25rem;
+    --sidebar-w: 100%;
+  }
+
+  .app {
+    flex-direction: column-reverse;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    border-right: 0;
+    border-top: 1px solid var(--line);
+    gap: 0;
+  }
+
+  .sidebar--aperta {
+    width: 100%;
+    padding-inline: 0.75rem;
+  }
+
+  .sidebar__brand,
+  .sidebar__etichetta {
+    display: none;
+  }
+
+  .sidebar--aperta .sidebar__item {
+    width: var(--icon-slot);
+    justify-content: center;
+    padding: 0;
+  }
+
+  .sidebar__spazio {
+    margin-top: 0;
+  }
+
+  .evidenza {
+    height: 16rem;
+  }
+
+  .evidenza__play {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .evidenza__titolo {
+    font-size: 2rem;
+  }
+
+  /* Non c'è larghezza per i punti: verrebbero tagliati dal bordo. */
+  .evidenza__punti {
+    display: none;
+  }
+
+  .card {
+    flex-basis: 11rem;
+    width: 11rem;
+  }
+
+  .card--poster {
+    flex-basis: 8rem;
+    width: 8rem;
+  }
+
+  .scheda__corpo {
+    width: 100%;
+    padding-top: 2rem;
+    justify-content: flex-start;
+  }
+
+  .scheda__velo {
+    background: linear-gradient(rgba(15, 16, 18, 0.35) 0%, var(--bg) 45%);
+  }
+
+  .scheda__titolo {
+    font-size: 2.75rem;
+  }
+
+  .scheda__crediti {
+    gap: 1.5rem;
+  }
+
+  .ricerca {
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+
+  .ricerca__campo {
+    width: 100%;
+  }
+
+  .tastiera {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .episodio__arte {
+    width: 8rem;
+  }
+
+  .player__hud {
+    padding: 2rem 1.25rem;
+  }
+
+  .player__titolo {
+    font-size: 1.75rem;
+  }
+
+  .pannello {
+    right: 1.25rem;
+    left: 1.25rem;
+    width: auto;
+    bottom: 11rem;
+  }
+
+  .dialogo {
+    width: calc(100% - 2.5rem);
+  }
+
+  .griglia {
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  }
+
+  .aiuto {
+    display: none;
+  }
+}

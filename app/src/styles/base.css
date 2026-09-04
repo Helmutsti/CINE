@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap");
+@import "./tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--t-base);
+  font-weight: 400;
+  line-height: 1.5;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  font-weight: 400;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Il focus è gestito dal sistema di navigazione spaziale: l'anello nativo
+   del browser non deve mai comparire. */
+:focus {
+  outline: none;
+}
+
+::selection {
+  background: var(--accent-deep);
+}
+
+/* Le barre di scorrimento non esistono su una TV. */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+/* Riquadro artwork vuoto: nel progetto grafico le locandine sono
+   volutamente vuote, sono i punti in cui entrano gli artwork reali. */
+.art {
+  background: var(--surface-art);
+  position: relative;
+  overflow: hidden;
+}
+
+.art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(236, 238, 242, 0.05),
+    rgba(236, 238, 242, 0) 60%
+  );
+}
