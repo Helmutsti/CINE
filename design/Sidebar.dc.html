@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics></helmet>
+<div style="width: 104px; height: 1080px; flex: none; background: #17181b; border-right: 1px solid #2c2e34; display: flex; flex-direction: column; align-items: center; padding: 34px 0; gap: 12px; font-family: 'Instrument Sans', system-ui, sans-serif">
+  <div style="font-size: 16px; letter-spacing: 0.12em; margin-bottom: 30px; color: #eceef2">CT</div>
+  <div style="width: 60px; height: 60px; border-radius: 999px; display: grid; place-items: center; background: {{ home.bg }}; box-shadow: {{ home.shadow }}"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="{{ home.stroke }}" stroke-width="1.6" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5V20H3z"></path></svg></div>
+  <div style="width: 60px; height: 60px; border-radius: 999px; display: grid; place-items: center; background: {{ cerca.bg }}; box-shadow: {{ cerca.shadow }}"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="{{ cerca.stroke }}" stroke-width="1.6"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></div>
+  <div style="width: 60px; height: 60px; border-radius: 999px; display: grid; place-items: center; background: {{ film.bg }}; box-shadow: {{ film.shadow }}"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="{{ film.stroke }}" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 4v16M17 4v16"></path></svg></div>
+  <div style="width: 60px; height: 60px; border-radius: 999px; display: grid; place-items: center; background: {{ serie.bg }}; box-shadow: {{ serie.shadow }}"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="{{ serie.stroke }}" stroke-width="1.6"><rect x="2" y="5" width="20" height="13" rx="2"></rect><path d="M8 21h8"></path></svg></div>
+  <div style="width: 60px; height: 60px; border-radius: 999px; display: grid; place-items: center; background: {{ preferiti.bg }}; box-shadow: {{ preferiti.shadow }}"><svg width="26" height="26" viewBox="0 0 24 24" fill="{{ preferiti.fill }}" stroke="{{ preferiti.stroke }}" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.6 12 20 12 20z"></path></svg></div>
+  <div style="width: 60px; height: 60px; border-radius: 999px; display: grid; place-items: center; margin-top: auto; background: {{ impostazioni.bg }}; box-shadow: {{ impostazioni.shadow }}"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="{{ impostazioni.stroke }}" stroke-width="1.6"><circle cx="12" cy="12" r="3"></circle><path d="M19.2 14.4a1.6 1.6 0 0 0 .32 1.76l.06.06a1.9 1.9 0 1 1-2.7 2.7l-.05-.06a1.6 1.6 0 0 0-1.77-.32 1.6 1.6 0 0 0-.97 1.47v.17a1.9 1.9 0 1 1-3.8 0v-.09a1.6 1.6 0 0 0-1.05-1.46 1.6 1.6 0 0 0-1.76.32l-.06.06a1.9 1.9 0 1 1-2.7-2.7l.06-.06a1.6 1.6 0 0 0 .32-1.76 1.6 1.6 0 0 0-1.47-.97H3.4a1.9 1.9 0 1 1 0-3.8h.09A1.6 1.6 0 0 0 4.95 8.8a1.6 1.6 0 0 0-.32-1.76l-.06-.06a1.9 1.9 0 1 1 2.7-2.7l.06.06a1.6 1.6 0 0 0 1.76.32h.08A1.6 1.6 0 0 0 10.1 3.2V3.4a1.9 1.9 0 1 1 3.8 0v.09a1.6 1.6 0 0 0 .97 1.46 1.6 1.6 0 0 0 1.77-.32l.05-.06a1.9 1.9 0 1 1 2.7 2.7l-.06.06a1.6 1.6 0 0 0-.32 1.76v.08a1.6 1.6 0 0 0 1.47.97h.17a1.9 1.9 0 1 1 0 3.8h-.09a1.6 1.6 0 0 0-1.46.97z"></path></svg></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{
+  "$preview": { "width": 104, "height": 1080 },
+  "active": { "editor": "enum", "default": "home", "options": ["home", "cerca", "film", "serie", "preferiti", "impostazioni"] }
+}'>
+class Component extends DCLogic {
+  renderVals() {
+    const active = this.props.active || "home";
+    const st = (key, isHeart) => {
+      const on = key === active;
+      return {
+        bg: on ? "#2b2e35" : "transparent",
+        shadow: on ? "0 1px 3px rgba(0,0,0,0.5)" : "none",
+        stroke: on ? "#eceef2" : "#9a9ca4",
+        fill: isHeart ? (on ? "#eceef2" : "none") : "none"
+      };
+    };
+    return {
+      home: st("home"),
+      cerca: st("cerca"),
+      film: st("film"),
+      serie: st("serie"),
+      preferiti: st("preferiti", true),
+      impostazioni: st("impostazioni")
+    };
+  }
+}
+</script>
+</body>
+</html>

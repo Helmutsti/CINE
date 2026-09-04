@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap">
+<script src="./image-slot.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { background: #141517; }
+  body { margin: 0; font-family: "Instrument Sans", system-ui, sans-serif; }
+  a { color: #4d97ff; }
+  a:hover { color: #0a4f97; }
+</style>
+</helmet>
+
+
+<section style="padding: 64px; display: flex; flex-direction: column; gap: 44px; font-family: 'Instrument Sans', system-ui, sans-serif; color: #eceef2">
+
+  <header style="display: flex; align-items: flex-end; gap: 32px; max-width: 1200px">
+    <div style="flex: 1">
+      <div style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #9a9ca4">Turno 4 · linguaggio proprio · TV 1920 + mobile 390</div>
+      <h1 style="font-size: 64px; font-weight: 400; letter-spacing: -0.04em; margin: 12px 0 14px">Cineteca</h1>
+      <p style="max-width: 760px; font-size: 16px; line-height: 1.65; margin: 0; color: #b9bbc2">Fondo di granito scuro, un'unica famiglia tipografica di peso normale a corpi grandi, raccordi morbidi, superfici che si distinguono per un gradino di luminosità e non per un’ombra. Il colore lo mettono i fotogrammi: l'interfaccia resta pietra scura e il blu compare solo su selezione e avanzamento. La navigazione vive in un menu laterale a scomparsa: di norma resta una colonna di sole icone, e si apre a nomi estesi solo quando la richiami.</p>
+    </div>
+    <div style="border: 1px solid #3a3d45; border-radius: 999px; padding: 8px 18px; font-size: 13px; letter-spacing: 0.1em; color: #9a9ca4">4a</div>
+  </header>
+
+  <div style="display: flex; gap: 36px; max-width: 1200px; padding: 24px 0; border-top: 1px solid #3a3d45; border-bottom: 1px solid #3a3d45">
+    <div style="flex: 1"><div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9a9ca4; margin-bottom: 8px">Pietra</div><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #b9bbc2">Fondo #0f1012, pannelli #17181b, superfici #1c1d21, filetti #2c2e34. Tema unico, scuro: nessuna variante chiara.</p></div>
+    <div style="flex: 1"><div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9a9ca4; margin-bottom: 8px">Tipografia</div><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #b9bbc2">Instrument Sans, pesi 400–600. Titoli 78–86px con crenatura −0.04em, mai maiuscoletto sui titoli d'opera.</p></div>
+    <div style="flex: 1"><div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9a9ca4; margin-bottom: 8px">Menu</div><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #b9bbc2">Colonna di 104px con sole icone; alla pressione di ◀ si apre un pannello di 420px sopra il contenuto, che resta visibile e velato.</p></div>
+  </div>
+
+  <div id="4a" style="display: grid; grid-template-columns: repeat(2, 1920px); gap: 64px">
+
+    <!-- ══ 01 HOME ══ -->
+    <figure style="display: flex; flex-direction: column; gap: 14px">
+      <figcaption style="font-size: 18px; display: flex; gap: 12px; align-items: baseline; color: #b9bbc2"><span style="color: #4d97ff">01</span> Home — menu chiuso</figcaption>
+      <div data-screen-label="01 Home" style="width: 1920px; height: 1080px; overflow: hidden; background: #0f1012; display: flex; color: #eceef2">
+
+        <div style="width: 104px; flex: none; background: #17181b; border-right: 1px solid #2c2e34; display: flex; flex-direction: column; align-items: center; padding: 34px 0; gap: 12px">
+          <div style="font-size: 16px; letter-spacing: 0.12em; margin-bottom: 30px">CT</div>
+          <div style="width: 60px; height: 60px; border-radius: 999px; display: grid; place-items: center; background: #2b2e35; box-shadow: 0 1px 3px rgba(0,0,0,0.5)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#eceef2" stroke-width="1.6" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5V20H3z"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 4v16M17 4v16"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><rect x="2" y="5" width="20" height="13" rx="2"></rect><path d="M8 21h8"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.6 12 20 12 20z"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center; margin-top: auto"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><circle cx="12" cy="12" r="3"></circle><path d="M19.2 14.4a1.6 1.6 0 0 0 .32 1.76l.06.06a1.9 1.9 0 1 1-2.7 2.7l-.05-.06a1.6 1.6 0 0 0-1.77-.32 1.6 1.6 0 0 0-.97 1.47v.17a1.9 1.9 0 1 1-3.8 0v-.09a1.6 1.6 0 0 0-1.05-1.46 1.6 1.6 0 0 0-1.76.32l-.06.06a1.9 1.9 0 1 1-2.7-2.7l.06-.06a1.6 1.6 0 0 0 .32-1.76 1.6 1.6 0 0 0-1.47-.97H3.4a1.9 1.9 0 1 1 0-3.8h.09A1.6 1.6 0 0 0 4.95 8.8a1.6 1.6 0 0 0-.32-1.76l-.06-.06a1.9 1.9 0 1 1 2.7-2.7l.06.06a1.6 1.6 0 0 0 1.76.32h.08A1.6 1.6 0 0 0 10.1 3.2V3.4a1.9 1.9 0 1 1 3.8 0v.09a1.6 1.6 0 0 0 .97 1.46 1.6 1.6 0 0 0 1.77-.32l.05-.06a1.9 1.9 0 1 1 2.7 2.7l-.06.06a1.6 1.6 0 0 0-.32 1.76v.08a1.6 1.6 0 0 0 1.47.97h.17a1.9 1.9 0 1 1 0 3.8h-.09a1.6 1.6 0 0 0-1.46.97z"></path></svg></div>
+        </div>
+
+        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+          <div style="height: 470px; flex: none; position: relative; overflow: hidden; border-bottom: 1px solid #2c2e34">
+            <div style="position: absolute; inset: 0; overflow: hidden">
+              <image-slot id="gr-home-hero" shape="rect" src="photos/hero-01.png" placeholder="Fotogramma in evidenza"></image-slot>
+            </div>
+            <div style="position: absolute; inset: 0; background: linear-gradient(rgba(15,16,18,0) 40%, rgba(15,16,18,0.86) 100%)"></div>
+            <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 0 96px 40px; display: flex; align-items: center; gap: 34px">
+              <button style="font-family: inherit; cursor: pointer; width: 84px; height: 84px; flex: none; border-radius: 999px; border: 0; background: #eceef2; color: #101114; display: grid; place-items: center"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"></path></svg></button>
+              <div style="font-size: 68px; font-weight: 400; letter-spacing: -0.045em; line-height: 1">Fuoco incrociato</div>
+              <div style="margin-left: auto; display: flex; align-items: center; gap: 10px">
+                <span style="width: 46px; height: 4px; border-radius: 999px; background: #eceef2"></span>
+                <span style="width: 22px; height: 4px; border-radius: 999px; background: rgba(236,238,242,0.35)"></span>
+                <span style="width: 22px; height: 4px; border-radius: 999px; background: rgba(236,238,242,0.35)"></span>
+                <span style="width: 22px; height: 4px; border-radius: 999px; background: rgba(236,238,242,0.35)"></span>
+                <span style="width: 22px; height: 4px; border-radius: 999px; background: rgba(236,238,242,0.35)"></span>
+              </div>
+            </div>
+          </div>
+
+          <div style="flex: 1; min-height: 0; overflow: hidden; padding: 30px 0 0">
+            <div style="display: flex; align-items: baseline; gap: 18px; padding: 0 96px; margin-bottom: 14px">
+              <h3 style="font-size: 26px; font-weight: 500; letter-spacing: -0.02em; margin: 0">Riprendi da dove eri</h3>
+              <span style="font-size: 18px; color: #9a9ca4">Mostra tutto ›</span>
+            </div>
+            <div style="display: flex; gap: 24px; padding-left: 96px; overflow: hidden">
+              <sc-for list="{{ railA }}" as="f" hint-placeholder-count="7">
+                <div style="flex: 0 0 268px">
+                  <div style="aspect-ratio: 16/9; background: #212329; border-radius: 12px; position: relative; overflow: hidden"><span style="position: absolute; left: 0; bottom: 0; height: 4px; background: #4d97ff; width: 42%"></span></div>
+                  <div style="font-size: 21px; letter-spacing: -0.015em; margin-top: 12px">{{ f.titolo }}</div>
+                  <div style="font-size: 17px; color: #9a9ca4; margin-top: 4px">{{ f.meta }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display: flex; align-items: baseline; gap: 18px; padding: 0 96px; margin: 24px 0 14px">
+              <h3 style="font-size: 26px; font-weight: 500; letter-spacing: -0.02em; margin: 0">Aggiunti di recente</h3>
+              <span style="font-size: 18px; color: #9a9ca4">Mostra tutto ›</span>
+            </div>
+            <div style="display: flex; gap: 24px; padding-left: 96px; overflow: hidden">
+              <sc-for list="{{ railB }}" as="f" hint-placeholder-count="7">
+                <div style="flex: 0 0 268px">
+                  <div style="aspect-ratio: 16/9; background: #212329; border-radius: 12px"></div>
+                  <div style="font-size: 21px; letter-spacing: -0.015em; margin-top: 12px">{{ f.titolo }}</div>
+                  <div style="font-size: 17px; color: #9a9ca4; margin-top: 4px">{{ f.meta }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </figure>
+
+    <!-- ══ 02 MENU APERTO ══ -->
+    <figure style="display: flex; flex-direction: column; gap: 14px">
+      <figcaption style="font-size: 18px; display: flex; gap: 12px; align-items: baseline; color: #b9bbc2"><span style="color: #4d97ff">02</span> Menu laterale aperto</figcaption>
+      <div data-screen-label="02 Menu aperto" style="width: 1920px; height: 1080px; overflow: hidden; background: #0f1012; display: flex; color: #eceef2; position: relative">
+
+        <div style="width: 104px; flex: none; background: #17181b; border-right: 1px solid #2c2e34"></div>
+
+        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; opacity: 0.32">
+          <div style="height: 470px; flex: none; position: relative; overflow: hidden; border-bottom: 1px solid #2c2e34">
+            <div style="position: absolute; inset: 0; overflow: hidden">
+              <image-slot id="gr-menu-hero" shape="rect" src="photos/hero-01.png" placeholder="Fotogramma in evidenza"></image-slot>
+            </div>
+            <div style="position: absolute; inset: 0; background: linear-gradient(rgba(15,16,18,0) 40%, rgba(15,16,18,0.86) 100%)"></div>
+            <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 0 96px 40px; display: flex; align-items: center; gap: 34px">
+              <div style="width: 84px; height: 84px; flex: none; border-radius: 999px; background: #eceef2; color: #101114; display: grid; place-items: center"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"></path></svg></div>
+              <div style="font-size: 68px; font-weight: 400; letter-spacing: -0.045em; line-height: 1">Fuoco incrociato</div>
+              <div style="margin-left: auto; display: flex; align-items: center; gap: 10px">
+                <span style="width: 46px; height: 4px; border-radius: 999px; background: #eceef2"></span>
+                <span style="width: 22px; height: 4px; border-radius: 999px; background: rgba(236,238,242,0.35)"></span>
+                <span style="width: 22px; height: 4px; border-radius: 999px; background: rgba(236,238,242,0.35)"></span>
+                <span style="width: 22px; height: 4px; border-radius: 999px; background: rgba(236,238,242,0.35)"></span>
+                <span style="width: 22px; height: 4px; border-radius: 999px; background: rgba(236,238,242,0.35)"></span>
+              </div>
+            </div>
+          </div>
+          <div style="flex: 1; min-height: 0; overflow: hidden; padding: 16px 0 0">
+            <h3 style="font-size: 26px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 14px; padding: 0 96px">Riprendi da dove eri</h3>
+            <div style="display: flex; gap: 24px; padding-left: 96px; overflow: hidden">
+              <sc-for list="{{ railA }}" as="f" hint-placeholder-count="7">
+                <div style="flex: 0 0 268px">
+                  <div style="aspect-ratio: 16/9; background: #212329; border-radius: 12px"></div>
+                  <div style="font-size: 21px; margin-top: 12px">{{ f.titolo }}</div>
+                  <div style="font-size: 17px; color: #9a9ca4; margin-top: 4px">{{ f.meta }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <h3 style="font-size: 26px; font-weight: 500; letter-spacing: -0.02em; margin: 12px 0 14px; padding: 0 96px">Aggiunti di recente</h3>
+            <div style="display: flex; gap: 24px; padding-left: 96px; overflow: hidden">
+              <sc-for list="{{ railB }}" as="f" hint-placeholder-count="7">
+                <div style="flex: 0 0 268px">
+                  <div style="aspect-ratio: 16/9; background: #212329; border-radius: 12px"></div>
+                  <div style="font-size: 21px; margin-top: 12px">{{ f.titolo }}</div>
+                  <div style="font-size: 17px; color: #9a9ca4; margin-top: 4px">{{ f.meta }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 420px; background: #17181b; border-right: 1px solid #2c2e34; box-shadow: 24px 0 60px rgba(0,0,0,0.16); padding: 40px 32px; display: flex; flex-direction: column; gap: 8px">
+          <div style="font-size: 19px; letter-spacing: 0.28em; text-transform: uppercase; padding: 0 22px; margin-bottom: 34px">Cineteca</div>
+          <div style="display: flex; align-items: center; gap: 22px; padding: 18px 22px; border-radius: 999px; background: #2b2e35; box-shadow: 0 1px 3px rgba(0,0,0,0.5); font-size: 25px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#eceef2" stroke-width="1.6" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5V20H3z"></path></svg> Home</div>
+          <div style="display: flex; align-items: center; gap: 22px; padding: 18px 22px; font-size: 25px; color: #b9bbc2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg> Cerca</div>
+          <div style="display: flex; align-items: center; gap: 22px; padding: 18px 22px; font-size: 25px; color: #b9bbc2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 4v16M17 4v16"></path></svg> Film</div>
+          <div style="display: flex; align-items: center; gap: 22px; padding: 18px 22px; font-size: 25px; color: #b9bbc2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><rect x="2" y="5" width="20" height="13" rx="2"></rect><path d="M8 21h8"></path></svg> Serie</div>
+          <div style="display: flex; align-items: center; gap: 22px; padding: 18px 22px; font-size: 25px; color: #b9bbc2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.6 12 20 12 20z"></path></svg> Preferiti</div>
+          <div style="display: flex; align-items: center; gap: 22px; padding: 18px 22px; font-size: 25px; color: #b9bbc2; margin-top: auto"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><circle cx="12" cy="12" r="3"></circle><path d="M19.2 14.4a1.6 1.6 0 0 0 .32 1.76l.06.06a1.9 1.9 0 1 1-2.7 2.7l-.05-.06a1.6 1.6 0 0 0-1.77-.32 1.6 1.6 0 0 0-.97 1.47v.17a1.9 1.9 0 1 1-3.8 0v-.09a1.6 1.6 0 0 0-1.05-1.46 1.6 1.6 0 0 0-1.76.32l-.06.06a1.9 1.9 0 1 1-2.7-2.7l.06-.06a1.6 1.6 0 0 0 .32-1.76 1.6 1.6 0 0 0-1.47-.97H3.4a1.9 1.9 0 1 1 0-3.8h.09A1.6 1.6 0 0 0 4.95 8.8a1.6 1.6 0 0 0-.32-1.76l-.06-.06a1.9 1.9 0 1 1 2.7-2.7l.06.06a1.6 1.6 0 0 0 1.76.32h.08A1.6 1.6 0 0 0 10.1 3.2V3.4a1.9 1.9 0 1 1 3.8 0v.09a1.6 1.6 0 0 0 .97 1.46 1.6 1.6 0 0 0 1.77-.32l.05-.06a1.9 1.9 0 1 1 2.7 2.7l-.06.06a1.6 1.6 0 0 0-.32 1.76v.08a1.6 1.6 0 0 0 1.47.97h.17a1.9 1.9 0 1 1 0 3.8h-.09a1.6 1.6 0 0 0-1.46.97z"></path></svg> Impostazioni</div>
+          <div style="font-size: 18px; color: #9a9ca4; padding: 22px 22px 0; border-top: 1px solid #2c2e34; margin-top: 18px">▶ per aprire · ◀ per chiudere</div>
+        </div>
+      </div>
+    </figure>
+
+    <!-- ══ 03 RICERCA ══ -->
+    <figure style="display: flex; flex-direction: column; gap: 14px">
+      <figcaption style="font-size: 18px; display: flex; gap: 12px; align-items: baseline; color: #b9bbc2"><span style="color: #4d97ff">03</span> Ricerca e generi</figcaption>
+      <div data-screen-label="03 Ricerca" style="width: 1920px; height: 1080px; overflow: hidden; background: #0f1012; display: flex; color: #eceef2">
+
+        <div style="width: 104px; flex: none; background: #17181b; border-right: 1px solid #2c2e34; display: flex; flex-direction: column; align-items: center; padding: 34px 0; gap: 12px">
+          <div style="font-size: 16px; letter-spacing: 0.12em; margin-bottom: 30px">CT</div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5V20H3z"></path></svg></div>
+          <div style="width: 60px; height: 60px; border-radius: 999px; display: grid; place-items: center; background: #2b2e35; box-shadow: 0 1px 3px rgba(0,0,0,0.5)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#eceef2" stroke-width="1.6"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 4v16M17 4v16"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><rect x="2" y="5" width="20" height="13" rx="2"></rect><path d="M8 21h8"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.6 12 20 12 20z"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center; margin-top: auto"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><circle cx="12" cy="12" r="3"></circle><path d="M19.2 14.4a1.6 1.6 0 0 0 .32 1.76l.06.06a1.9 1.9 0 1 1-2.7 2.7l-.05-.06a1.6 1.6 0 0 0-1.77-.32 1.6 1.6 0 0 0-.97 1.47v.17a1.9 1.9 0 1 1-3.8 0v-.09a1.6 1.6 0 0 0-1.05-1.46 1.6 1.6 0 0 0-1.76.32l-.06.06a1.9 1.9 0 1 1-2.7-2.7l.06-.06a1.6 1.6 0 0 0 .32-1.76 1.6 1.6 0 0 0-1.47-.97H3.4a1.9 1.9 0 1 1 0-3.8h.09A1.6 1.6 0 0 0 4.95 8.8a1.6 1.6 0 0 0-.32-1.76l-.06-.06a1.9 1.9 0 1 1 2.7-2.7l.06.06a1.6 1.6 0 0 0 1.76.32h.08A1.6 1.6 0 0 0 10.1 3.2V3.4a1.9 1.9 0 1 1 3.8 0v.09a1.6 1.6 0 0 0 .97 1.46 1.6 1.6 0 0 0 1.77-.32l.05-.06a1.9 1.9 0 1 1 2.7 2.7l-.06.06a1.6 1.6 0 0 0-.32 1.76v.08a1.6 1.6 0 0 0 1.47.97h.17a1.9 1.9 0 1 1 0 3.8h-.09a1.6 1.6 0 0 0-1.46.97z"></path></svg></div>
+        </div>
+
+        <div style="width: 600px; flex: none; border-right: 1px solid #2c2e34; padding: 56px 44px; display: flex; flex-direction: column; background: #17181b">
+          <div style="font-size: 19px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a9ca4; margin-bottom: 18px">Cerca</div>
+          <div style="background: #1c1d21; border-radius: 16px; border: 1px solid #3a3d45; padding: 18px 24px; font-size: 32px; letter-spacing: -0.02em; display: flex; align-items: center; gap: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06)">Delit<span style="width: 2px; height: 32px; background: #4d97ff"></span></div>
+          <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; margin-top: 30px">
+            <sc-for list="{{ tasti }}" as="k" hint-placeholder-count="30">
+              <div style="aspect-ratio: 1; background: #1c1d21; border-radius: 12px; display: grid; place-items: center; font-size: 26px; color: #b9bbc2; box-shadow: 0 1px 2px rgba(0,0,0,0.06)">{{ k }}</div>
+            </sc-for>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px">
+            <div style="height: 70px; background: #1c1d21; border-radius: 12px; display: grid; place-items: center; font-size: 20px; color: #b9bbc2; box-shadow: 0 1px 2px rgba(0,0,0,0.06)">Spazio</div>
+            <div style="height: 70px; background: #1c1d21; border-radius: 12px; display: grid; place-items: center; font-size: 20px; color: #b9bbc2; box-shadow: 0 1px 2px rgba(0,0,0,0.06)">Cancella</div>
+          </div>
+          <div style="margin-top: auto; padding-top: 30px; border-top: 1px solid #2c2e34; font-size: 19px; color: #9a9ca4; line-height: 1.7">Tieni premuto ▶ per dettare</div>
+        </div>
+
+        <div style="flex: 1; min-width: 0; padding: 56px 96px 0; overflow: hidden">
+          <div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 24px">
+            <h3 style="font-size: 32px; font-weight: 500; letter-spacing: -0.025em; margin: 0">Risultati</h3>
+            <span style="font-size: 21px; color: #9a9ca4">38 titoli per «delit»</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; margin-bottom: 26px">
+            <sc-for list="{{ risultati }}" as="f" hint-placeholder-count="10">
+              <div>
+                <div style="aspect-ratio: 2/3; background: #212329; border-radius: 14px"></div>
+                <div style="font-size: 21px; letter-spacing: -0.015em; margin-top: 12px">{{ f.titolo }}</div>
+                <div style="font-size: 18px; color: #9a9ca4; margin-top: 4px">{{ f.meta }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <h3 style="font-size: 26px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 14px">Sfoglia per genere</h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 14px">
+            <sc-for list="{{ generi }}" as="g" hint-placeholder-count="10">
+              <div style="padding: 15px 28px; border-radius: 999px; background: #1c1d21; border: 1px solid #2c2e34; font-size: 21px; color: #b9bbc2">{{ g }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </figure>
+
+    <!-- ══ 04 SCHEDA FILM ══ -->
+    <figure style="display: flex; flex-direction: column; gap: 14px">
+      <figcaption style="font-size: 18px; display: flex; gap: 12px; align-items: baseline; color: #b9bbc2"><span style="color: #4d97ff">04</span> Scheda film</figcaption>
+      <div data-screen-label="04 Scheda film" style="width: 1920px; height: 1080px; overflow: hidden; background: #0f1012; position: relative; color: #eceef2">
+
+        <div style="position: absolute; inset: 0; overflow: hidden">
+          <image-slot id="gr-film-still" shape="rect" src="photos/still-04.png" placeholder="Fotogramma del film"></image-slot>
+        </div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(100deg, #0f1012 0%, #0f1012 42%, rgba(15,16,18,0.8) 56%, rgba(15,16,18,0) 78%)"></div>
+
+        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 104px; background: rgba(23,24,27,0.72); border-right: 1px solid rgba(236,238,242,0.12); display: flex; flex-direction: column; align-items: center; padding: 34px 0; gap: 12px">
+          <div style="font-size: 16px; letter-spacing: 0.12em; margin-bottom: 30px">CT</div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5V20H3z"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></div>
+          <div style="width: 60px; height: 60px; border-radius: 999px; display: grid; place-items: center; background: rgba(236,238,242,0.16)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#eceef2" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 4v16M17 4v16"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><rect x="2" y="5" width="20" height="13" rx="2"></rect><path d="M8 21h8"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.6 12 20 12 20z"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center; margin-top: auto"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><circle cx="12" cy="12" r="3"></circle><path d="M19.2 14.4a1.6 1.6 0 0 0 .32 1.76l.06.06a1.9 1.9 0 1 1-2.7 2.7l-.05-.06a1.6 1.6 0 0 0-1.77-.32 1.6 1.6 0 0 0-.97 1.47v.17a1.9 1.9 0 1 1-3.8 0v-.09a1.6 1.6 0 0 0-1.05-1.46 1.6 1.6 0 0 0-1.76.32l-.06.06a1.9 1.9 0 1 1-2.7-2.7l.06-.06a1.6 1.6 0 0 0 .32-1.76 1.6 1.6 0 0 0-1.47-.97H3.4a1.9 1.9 0 1 1 0-3.8h.09A1.6 1.6 0 0 0 4.95 8.8a1.6 1.6 0 0 0-.32-1.76l-.06-.06a1.9 1.9 0 1 1 2.7-2.7l.06.06a1.6 1.6 0 0 0 1.76.32h.08A1.6 1.6 0 0 0 10.1 3.2V3.4a1.9 1.9 0 1 1 3.8 0v.09a1.6 1.6 0 0 0 .97 1.46 1.6 1.6 0 0 0 1.77-.32l.05-.06a1.9 1.9 0 1 1 2.7 2.7l-.06.06a1.6 1.6 0 0 0-.32 1.76v.08a1.6 1.6 0 0 0 1.47.97h.17a1.9 1.9 0 1 1 0 3.8h-.09a1.6 1.6 0 0 0-1.46.97z"></path></svg></div>
+        </div>
+
+        <div style="position: absolute; left: 104px; top: 0; bottom: 0; width: 1010px; padding: 0 60px 0 96px; display: flex; flex-direction: column; justify-content: center">
+              <div style="font-size: 20px; color: #9a9ca4">← Film</div>
+              <h2 style="font-size: 104px; font-weight: 400; letter-spacing: -0.05em; line-height: 0.95; margin: 20px 0 18px">Delitto a Nord</h2>
+              <div style="font-size: 22px; color: #9a9ca4">2023 · Poliziesco · 134 minuti · VM14</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px">
+                <div style="display: flex; align-items: center; gap: 9px; padding: 9px 15px; border: 1px solid #3a3d45; border-radius: 10px; background: #17181b; font-size: 17px; color: #b9bbc2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="14" rx="2"></rect><path d="M8 21h8"></path></svg> 4K UHD</div>
+                <div style="display: flex; align-items: center; gap: 9px; padding: 9px 15px; border: 1px solid #3a3d45; border-radius: 10px; background: #17181b; font-size: 17px; color: #b9bbc2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"></path></svg> HDR</div>
+                <div style="display: flex; align-items: center; gap: 9px; padding: 9px 15px; border: 1px solid #3a3d45; border-radius: 10px; background: #17181b; font-size: 17px; color: #b9bbc2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 9.5h3.5L12 6v12L7.5 14.5H4z"></path><path d="M16 9.5a4 4 0 0 1 0 5"></path><path d="M18.6 7a7.5 7.5 0 0 1 0 10"></path></svg> 5.1 surround</div>
+                <div style="display: flex; align-items: center; gap: 9px; padding: 9px 15px; border: 1px solid #3a3d45; border-radius: 10px; background: #17181b; font-size: 17px; color: #b9bbc2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2.5" y="5" width="19" height="14" rx="2"></rect><path d="M6.5 14.5h5M14 14.5h3.5"></path></svg> Sottotitoli ITA · ENG · ES</div>
+                <div style="display: flex; align-items: center; gap: 9px; padding: 9px 15px; border: 1px solid #3a3d45; border-radius: 10px; background: #17181b; font-size: 17px; color: #b9bbc2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 20v-5a4.5 4.5 0 1 1 9 0c0 2-1.6 2.6-2.6 3.4-.7.6-.9 1.1-.9 1.9"></path><path d="M4.6 6.2a9 9 0 0 1 3-2.1M4 10.2a5.4 5.4 0 0 1 1.3-2.7"></path></svg> Audiodescrizione</div>
+              </div>
+              <p style="font-size: 24px; line-height: 1.55; color: #b9bbc2; margin: 24px 0 0; max-width: 700px">Un ispettore prossimo alla pensione riapre un fascicolo che tutti in questura preferirebbero lasciare chiuso.</p>
+              <div style="display: flex; gap: 14px; margin-top: 34px">
+                <button style="font-family: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 12px; font-size: 22px; padding: 17px 32px; border-radius: 999px; border: 0; background: #eceef2; color: #101114; box-shadow: 0 6px 18px rgba(0,0,0,0.18)"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"></path></svg> Riprendi · 41:12</button>
+                <button style="font-family: inherit; cursor: pointer; font-size: 22px; padding: 17px 30px; border-radius: 999px; border: 1px solid #3a3d45; background: #1c1d21; color: #eceef2">Dall'inizio</button>
+                <button style="font-family: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-size: 22px; padding: 17px 30px; border-radius: 999px; border: 1px solid #3a3d45; background: #1c1d21; color: #eceef2"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.6 12 20 12 20z"></path></svg> Preferiti</button>
+              </div>
+              <div style="display: flex; gap: 60px; margin-top: 36px; font-size: 20px; color: #b9bbc2">
+                <div><div style="color: #9a9ca4; margin-bottom: 6px">Regia</div>Chiara Ravelli</div>
+                <div><div style="color: #9a9ca4; margin-bottom: 6px">Con</div>Fabio Manetti, Nadia Coen</div>
+                <div><div style="color: #9a9ca4; margin-bottom: 6px">Audio</div>Italiano, Inglese</div>
+              </div>
+        </div>
+
+        <div style="position: absolute; left: 1114px; right: 0; bottom: 0; padding: 0 60px 56px; background: linear-gradient(rgba(15,16,18,0), rgba(15,16,18,0.78) 46%)">
+          <div style="font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 18px">Da vedere dopo</div>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+            <sc-for list="{{ simili3 }}" as="f" hint-placeholder-count="3">
+              <div>
+                <div style="aspect-ratio: 16/9; background: rgba(236,238,242,0.14); border-radius: 12px"></div>
+                <div style="font-size: 19px; letter-spacing: -0.015em; margin-top: 10px">{{ f.titolo }}</div>
+                <div style="font-size: 16px; color: #9a9ca4; margin-top: 3px">{{ f.meta }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </figure>
+
+    <!-- ══ 05 SERIE ══ -->
+    <figure style="display: flex; flex-direction: column; gap: 14px">
+      <figcaption style="font-size: 18px; display: flex; gap: 12px; align-items: baseline; color: #b9bbc2"><span style="color: #4d97ff">05</span> Scheda serie</figcaption>
+      <div data-screen-label="05 Scheda serie" style="width: 1920px; height: 1080px; overflow: hidden; background: #0f1012; position: relative; color: #eceef2">
+        <div style="position: absolute; inset: 0; overflow: hidden">
+          <image-slot id="gr-serie-still" shape="rect" src="photos/serie-still.png" placeholder="Fotogramma della serie"></image-slot>
+        </div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(100deg, #0f1012 0%, #0f1012 34%, rgba(15,16,18,0.78) 52%, rgba(15,16,18,0) 82%)"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(rgba(15,16,18,0) 52%, rgba(15,16,18,0.92) 78%)"></div>
+
+        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 104px; background: rgba(23,24,27,0.72); border-right: 1px solid rgba(236,238,242,0.12); display: flex; flex-direction: column; align-items: center; padding: 34px 0; gap: 12px">
+          <div style="font-size: 16px; letter-spacing: 0.12em; margin-bottom: 30px">CT</div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(236,238,242,0.72)" stroke-width="1.6" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5V20H3z"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(236,238,242,0.72)" stroke-width="1.6"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(236,238,242,0.72)" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 4v16M17 4v16"></path></svg></div>
+          <div style="width: 60px; height: 60px; border-radius: 999px; display: grid; place-items: center; background: rgba(236,238,242,0.16)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#eceef2" stroke-width="1.6"><rect x="2" y="5" width="20" height="13" rx="2"></rect><path d="M8 21h8"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(236,238,242,0.72)" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.6 12 20 12 20z"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center; margin-top: auto"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(236,238,242,0.72)" stroke-width="1.6"><circle cx="12" cy="12" r="3"></circle><path d="M19.2 14.4a1.6 1.6 0 0 0 .32 1.76l.06.06a1.9 1.9 0 1 1-2.7 2.7l-.05-.06a1.6 1.6 0 0 0-1.77-.32 1.6 1.6 0 0 0-.97 1.47v.17a1.9 1.9 0 1 1-3.8 0v-.09a1.6 1.6 0 0 0-1.05-1.46 1.6 1.6 0 0 0-1.76.32l-.06.06a1.9 1.9 0 1 1-2.7-2.7l.06-.06a1.6 1.6 0 0 0 .32-1.76 1.6 1.6 0 0 0-1.47-.97H3.4a1.9 1.9 0 1 1 0-3.8h.09A1.6 1.6 0 0 0 4.95 8.8a1.6 1.6 0 0 0-.32-1.76l-.06-.06a1.9 1.9 0 1 1 2.7-2.7l.06.06a1.6 1.6 0 0 0 1.76.32h.08A1.6 1.6 0 0 0 10.1 3.2V3.4a1.9 1.9 0 1 1 3.8 0v.09a1.6 1.6 0 0 0 .97 1.46 1.6 1.6 0 0 0 1.77-.32l.05-.06a1.9 1.9 0 1 1 2.7 2.7l-.06.06a1.6 1.6 0 0 0-.32 1.76v.08a1.6 1.6 0 0 0 1.47.97h.17a1.9 1.9 0 1 1 0 3.8h-.09a1.6 1.6 0 0 0-1.46.97z"></path></svg></div>
+        </div>
+
+        <div style="position: absolute; left: 200px; top: 116px; width: 880px">
+          <div style="font-size: 20px; color: #9a9ca4">← Serie</div>
+          <h2 style="font-size: 96px; font-weight: 400; letter-spacing: -0.05em; line-height: 0.95; margin: 20px 0 18px">Linea di costa</h2>
+          <div style="font-size: 22px; color: #9a9ca4">3 stagioni · 24 episodi · Drammatico · VM14</div>
+          <p style="font-size: 25px; line-height: 1.5; color: #b9bbc2; margin: 26px 0 0">Una famiglia di armatori, un porto in liquidazione e un cadavere che riemerge dopo trent'anni.</p>
+          <div style="display: flex; gap: 14px; margin-top: 36px">
+            <button style="font-family: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 12px; font-size: 22px; padding: 17px 32px; border-radius: 999px; border: 0; background: #eceef2; color: #101114"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"></path></svg> Riprendi S2 E4</button>
+            <button style="font-family: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-size: 22px; padding: 17px 30px; border-radius: 999px; border: 1px solid #3a3d45; background: rgba(28,29,33,0.8); color: #eceef2"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.6 12 20 12 20z"></path></svg> Preferiti</button>
+          </div>
+        </div>
+
+        <div style="position: absolute; left: 104px; right: 0; bottom: 0; padding: 0 0 52px 96px">
+          <div style="display: flex; align-items: baseline; gap: 20px; padding-right: 96px; margin-bottom: 18px">
+            <div style="font-size: 24px">Stagione 2</div>
+            <span style="font-size: 21px; color: #9a9ca4">Stagione 1</span>
+            <span style="font-size: 21px; color: #9a9ca4">Stagione 3</span>
+            <span style="font-size: 21px; color: #9a9ca4">Extra</span>
+            <span style="margin-left: auto; font-size: 18px; color: #9a9ca4">Scorri ▸</span>
+          </div>
+          <div style="display: flex; gap: 24px; overflow: hidden">
+            <sc-for list="{{ episodi }}" as="e" hint-placeholder-count="5">
+              <div style="flex: 0 0 336px">
+                <div style="aspect-ratio: 16/9; background: rgba(236,238,242,0.13); border-radius: 12px"></div>
+                <div style="display: flex; gap: 12px; align-items: baseline; margin-top: 12px">
+                  <span style="font-size: 20px; color: #85878f">{{ e.n }}</span>
+                  <span style="font-size: 23px; letter-spacing: -0.015em">{{ e.titolo }}</span>
+                </div>
+                <div style="font-size: 17px; color: #9a9ca4; margin-top: 4px">{{ e.durata }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </figure>
+
+    <!-- ══ 06 PLAYER ══ -->
+    <figure style="display: flex; flex-direction: column; gap: 14px">
+      <figcaption style="font-size: 18px; display: flex; gap: 12px; align-items: baseline; color: #b9bbc2"><span style="color: #4d97ff">06</span> Player</figcaption>
+      <div data-screen-label="06 Player" style="width: 1920px; height: 1080px; overflow: hidden; background: #0c0c0d; position: relative">
+        <div style="position: absolute; inset: 0; overflow: hidden">
+          <image-slot id="gr-player-frame" shape="rect" placeholder="Fotogramma a pieno schermo"></image-slot>
+        </div>
+
+        <button aria-label="Indietro" style="position: absolute; left: 64px; top: 56px; font-family: inherit; cursor: pointer; width: 64px; height: 64px; border-radius: 999px; border: 1px solid rgba(236,238,242,0.28); background: rgba(12,12,13,0.55); color: #eceef2; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></button>
+
+        <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 0 96px 64px; display: flex; flex-direction: column; gap: 34px">
+          <div>
+            <div style="height: 6px; background: rgba(236,238,242,0.24); border-radius: 999px; position: relative">
+              <span style="position: absolute; left: 0; top: 0; bottom: 0; width: 40%; background: #4d97ff; border-radius: 999px"></span>
+              <span style="position: absolute; left: 40%; top: -7px; width: 20px; height: 20px; border-radius: 50%; background: #f5f6f8; transform: translateX(-10px)"></span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 22px; color: rgba(236,238,242,0.78)">23:08<span>−34:33</span><span style="color: rgba(236,238,242,0.5)">57:41</span></div>
+          </div>
+          <div style="display: flex; align-items: flex-end; gap: 40px">
+            <button style="font-family: inherit; cursor: pointer; width: 96px; height: 96px; flex: none; border-radius: 999px; border: 0; background: #eceef2; color: #101114; display: grid; place-items: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4.5" width="4.5" height="15"></rect><rect x="14" y="4.5" width="4.5" height="15"></rect></svg></button>
+            <div style="padding-bottom: 6px">
+              <div style="font-size: 20px; letter-spacing: 0.05em; color: rgba(236,238,242,0.72)">Linea di costa · Stagione 2, episodio 4</div>
+              <div style="font-size: 46px; letter-spacing: -0.035em; color: #eceef2; margin-top: 8px">La chiatta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </figure>
+
+    <!-- ══ 07 PREFERITI ══ -->
+    <figure style="display: flex; flex-direction: column; gap: 14px">
+      <figcaption style="font-size: 18px; display: flex; gap: 12px; align-items: baseline; color: #b9bbc2"><span style="color: #4d97ff">07</span> Preferiti</figcaption>
+      <div data-screen-label="07 Preferiti" style="width: 1920px; height: 1080px; overflow: hidden; background: #0f1012; display: flex; color: #eceef2">
+
+        <div style="width: 104px; flex: none; background: #17181b; border-right: 1px solid #2c2e34; display: flex; flex-direction: column; align-items: center; padding: 34px 0; gap: 12px">
+          <div style="font-size: 16px; letter-spacing: 0.12em; margin-bottom: 30px">CT</div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5V20H3z"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 4v16M17 4v16"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><rect x="2" y="5" width="20" height="13" rx="2"></rect><path d="M8 21h8"></path></svg></div>
+          <div style="width: 60px; height: 60px; border-radius: 999px; display: grid; place-items: center; background: #2b2e35; box-shadow: 0 1px 3px rgba(0,0,0,0.5)"><svg width="26" height="26" viewBox="0 0 24 24" fill="#eceef2" stroke="#eceef2" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.6 12 20 12 20z"></path></svg></div>
+          <div style="width: 60px; height: 60px; display: grid; place-items: center; margin-top: auto"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.6"><circle cx="12" cy="12" r="3"></circle><path d="M19.2 14.4a1.6 1.6 0 0 0 .32 1.76l.06.06a1.9 1.9 0 1 1-2.7 2.7l-.05-.06a1.6 1.6 0 0 0-1.77-.32 1.6 1.6 0 0 0-.97 1.47v.17a1.9 1.9 0 1 1-3.8 0v-.09a1.6 1.6 0 0 0-1.05-1.46 1.6 1.6 0 0 0-1.76.32l-.06.06a1.9 1.9 0 1 1-2.7-2.7l.06-.06a1.6 1.6 0 0 0 .32-1.76 1.6 1.6 0 0 0-1.47-.97H3.4a1.9 1.9 0 1 1 0-3.8h.09A1.6 1.6 0 0 0 4.95 8.8a1.6 1.6 0 0 0-.32-1.76l-.06-.06a1.9 1.9 0 1 1 2.7-2.7l.06.06a1.6 1.6 0 0 0 1.76.32h.08A1.6 1.6 0 0 0 10.1 3.2V3.4a1.9 1.9 0 1 1 3.8 0v.09a1.6 1.6 0 0 0 .97 1.46 1.6 1.6 0 0 0 1.77-.32l.05-.06a1.9 1.9 0 1 1 2.7 2.7l-.06.06a1.6 1.6 0 0 0-.32 1.76v.08a1.6 1.6 0 0 0 1.47.97h.17a1.9 1.9 0 1 1 0 3.8h-.09a1.6 1.6 0 0 0-1.46.97z"></path></svg></div>
+        </div>
+
+        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+          <div style="height: 176px; flex: none; padding: 0 96px; display: flex; align-items: center; gap: 28px; border-bottom: 1px solid #2c2e34">
+            <div>
+              <div style="font-size: 19px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a9ca4">Il tuo account</div>
+              <h2 style="font-size: 56px; font-weight: 400; letter-spacing: -0.04em; margin: 12px 0 0">Preferiti</h2>
+            </div>
+            <div style="margin-left: auto; display: flex; gap: 10px">
+              <span style="font-size: 21px; padding: 12px 26px; border-radius: 999px; background: #eceef2; color: #101114">Tutto</span>
+              <span style="font-size: 21px; padding: 12px 26px; border-radius: 999px; background: #1c1d21; border: 1px solid #2c2e34; color: #b9bbc2">Film</span>
+              <span style="font-size: 21px; padding: 12px 26px; border-radius: 999px; background: #1c1d21; border: 1px solid #2c2e34; color: #b9bbc2">Serie</span>
+            </div>
+          </div>
+
+          <div style="flex: 1; min-height: 0; overflow: hidden; padding: 44px 96px 0">
+            <h3 style="font-size: 28px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 20px">Salvati · 26 titoli</h3>
+            <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 24px">
+              <sc-for list="{{ salvati }}" as="f" hint-placeholder-count="7">
+                <div>
+                  <div style="aspect-ratio: 2/3; background: #212329; border-radius: 14px"></div>
+                  <div style="font-size: 20px; letter-spacing: -0.015em; margin-top: 12px">{{ f.titolo }}</div>
+                  <div style="font-size: 17px; color: #9a9ca4; margin-top: 4px">{{ f.meta }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </figure>
+
+    <!-- ══ 08 RIPRENDI O RICOMINCIA ══ -->
+    <figure style="display: flex; flex-direction: column; gap: 14px">
+      <figcaption style="font-size: 18px; display: flex; gap: 12px; align-items: baseline; color: #b9bbc2"><span style="color: #4d97ff">08</span> Riprendi o ricomincia — popup, si apre dove serve</figcaption>
+      <div data-screen-label="08 Riprendi o ricomincia" style="width: 640px; padding: 40px; background: #0f1012; display: grid; place-items: center; color: #eceef2">
+
+        <div style="width: 560px; background: #17181b; border: 1px solid #2c2e34; border-radius: 14px; padding: 18px 22px; display: flex; align-items: center; gap: 18px">
+          <div style="min-width: 0">
+            <div style="font-size: 16px; color: #b9bbc2; white-space: nowrap">Ripresa da <span style="color: #eceef2">41:12</span> · restano 93 min</div>
+            <div style="height: 3px; background: #2c2e34; border-radius: 999px; position: relative; margin-top: 12px; width: 240px">
+              <span style="position: absolute; left: 0; top: 0; bottom: 0; width: 31%; background: #4d97ff; border-radius: 999px"></span>
+            </div>
+          </div>
+          <div style="margin-left: auto; display: flex; align-items: center; gap: 8px">
+            <button aria-label="Chiudi" style="font-family: inherit; cursor: pointer; width: 34px; height: 34px; border-radius: 999px; border: 0; background: transparent; color: #9a9ca4; display: grid; place-items: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+            <button aria-label="Da capo" style="font-family: inherit; cursor: pointer; width: 40px; height: 40px; border-radius: 999px; border: 1px solid #3a3d45; background: transparent; color: #eceef2; display: grid; place-items: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 1 3 6.7"></path><path d="M3 7v5h5"></path></svg></button>
+            <button style="font-family: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-size: 16px; padding: 10px 18px; border-radius: 999px; border: 0; background: #eceef2; color: #101114"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"></path></svg> Riprendi</button>
+          </div>
+        </div>
+      </div>
+    </figure>
+
+  </div>
+
+  <div style="border-top: 1px solid #3a3d45; padding-top: 34px; display: flex; flex-wrap: wrap; gap: 44px; align-items: flex-start">
+    <div style="flex: 0 0 520px">
+      <h2 style="font-size: 32px; font-weight: 400; letter-spacing: -0.03em; margin: 0 0 14px">Scheda tecnica e marchi</h2>
+      <p style="font-size: 15px; line-height: 1.7; color: #b9bbc2; margin: 0 0 16px">Ogni film e ogni serie dichiara video e audio disponibili nella stessa posizione: subito sotto la riga di metadati sulla scheda, in coda alla durata nella lista episodi, accanto al titolo nel player. Il riquadro è sempre lo stesso — filetto 1px, raggio 10px, testo 17–18px — con un pittogramma nostro dove aiuta a riconoscerlo al volo.</p>
+      <p style="font-size: 15px; line-height: 1.7; color: #9a9ca4; margin: 0">Nessun logo di licenziatari: i marchi restano denominativi, in testo non alterato. Se un domani arrivano i file ufficiali, sostituiscono il riquadro corrispondente mantenendone l'ingombro.</p>
+    </div>
+    <div style="flex: 1 1 620px">
+      <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9a9ca4; margin-bottom: 14px">Insieme dei riquadri</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px">
+        <sc-for list="{{ tecTutte }}" as="t" hint-placeholder-count="9">
+          <div style="padding: 9px 16px; border: 1px solid #3a3d45; border-radius: 10px; background: #17181b; font-size: 15px; letter-spacing: 0.05em; color: #b9bbc2">{{ t }}</div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top: 1px solid #3a3d45; padding-top: 34px; display: flex; flex-direction: column; gap: 22px">
+    <h2 style="font-size: 32px; font-weight: 400; letter-spacing: -0.03em; margin: 0">Su mobile</h2>
+    <div style="display: flex; gap: 44px; align-items: flex-start">
+
+      <figure style="display: flex; flex-direction: column; gap: 12px">
+        <figcaption style="font-size: 14px; color: #9a9ca4">Mobile · Home</figcaption>
+        <div data-screen-label="Mobile Home" style="width: 390px; height: 844px; overflow: hidden; background: #0f1012; border-radius: 34px; border: 1px solid #3a3d45; display: flex; flex-direction: column; color: #eceef2">
+          <div style="display: flex; justify-content: space-between; padding: 16px 26px 8px; font-size: 12px; font-weight: 500">9:41<span>▮▮▮ ⌁</span></div>
+          <div style="display: flex; align-items: center; gap: 14px; padding: 8px 22px 14px">
+            <span style="color: #eceef2"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"></path></svg></span>
+            <span style="font-size: 16px; letter-spacing: 0.26em; text-transform: uppercase">Cineteca</span>
+            <span style="margin-left: auto; color: #9a9ca4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+          </div>
+          <div style="padding: 0 18px 10px; flex: 1; min-height: 0; overflow: hidden">
+            <div style="background: #1c1d21; border-radius: 20px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08)">
+              <div style="height: 190px; overflow: hidden; position: relative">
+                <image-slot id="gr-mob-hero" shape="rect" placeholder="Fotogramma"></image-slot>
+              </div>
+              <div style="padding: 16px 18px 18px">
+                <div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #9a9ca4">In evidenza</div>
+                <div style="font-size: 27px; letter-spacing: -0.03em; margin: 8px 0 4px">Fuoco incrociato</div>
+                <div style="font-size: 13px; color: #9a9ca4">2024 · Thriller · 118 minuti</div>
+                <div style="display: flex; gap: 10px; margin-top: 14px">
+                  <button style="font-family: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-size: 15px; padding: 12px 20px; border-radius: 999px; border: 0; background: #eceef2; color: #101114"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"></path></svg> Riproduci</button>
+                  <button style="font-family: inherit; cursor: pointer; font-size: 15px; padding: 12px 20px; border-radius: 999px; border: 1px solid #3a3d45; background: #1c1d21; color: #eceef2">Preferiti</button>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px; margin-top: 16px">
+                  <span style="width: 24px; height: 3px; border-radius: 999px; background: #4d97ff"></span>
+                  <span style="width: 12px; height: 3px; border-radius: 999px; background: #3a3d45"></span>
+                  <span style="width: 12px; height: 3px; border-radius: 999px; background: #3a3d45"></span>
+                  <span style="width: 12px; height: 3px; border-radius: 999px; background: #3a3d45"></span>
+                  <span style="width: 12px; height: 3px; border-radius: 999px; background: #3a3d45"></span>
+                </div>
+              </div>
+            </div>
+            <div style="font-size: 17px; letter-spacing: -0.02em; margin: 20px 4px 12px">Riprendi</div>
+            <div style="display: flex; gap: 12px; margin: 0 -18px 0 0; padding-left: 4px; overflow: hidden">
+              <sc-for list="{{ railMobA }}" as="f" hint-placeholder-count="4">
+                <div style="flex: 0 0 154px">
+                  <div style="aspect-ratio: 16/9; background: #212329; border-radius: 10px; position: relative; overflow: hidden"><span style="position: absolute; left: 0; bottom: 0; height: 3px; width: 62%; background: #4d97ff"></span></div>
+                  <div style="font-size: 14px; margin: 9px 2px 0">{{ f.titolo }}</div>
+                  <div style="font-size: 12px; color: #9a9ca4; margin: 3px 2px 0">{{ f.meta }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="font-size: 17px; letter-spacing: -0.02em; margin: 18px 4px 12px">Aggiunti di recente</div>
+            <div style="display: flex; gap: 12px; margin: 0 -18px 0 0; padding-left: 4px; overflow: hidden">
+              <sc-for list="{{ railMobB }}" as="f" hint-placeholder-count="4">
+                <div style="flex: 0 0 154px">
+                  <div style="aspect-ratio: 16/9; background: #212329; border-radius: 10px"></div>
+                  <div style="font-size: 14px; margin: 9px 2px 0">{{ f.titolo }}</div>
+                  <div style="font-size: 12px; color: #9a9ca4; margin: 3px 2px 0">{{ f.meta }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </figure>
+
+      <figure style="display: flex; flex-direction: column; gap: 12px">
+        <figcaption style="font-size: 14px; color: #9a9ca4">Mobile · Menu aperto</figcaption>
+        <div data-screen-label="Mobile Menu" style="width: 390px; height: 844px; overflow: hidden; background: #0f1012; border-radius: 34px; border: 1px solid #3a3d45; position: relative; color: #eceef2">
+          <div style="position: absolute; inset: 0; background: #0f1012; opacity: 0.34; padding: 60px 18px">
+            <div style="background: #1c1d21; border-radius: 20px; height: 300px"></div>
+            <div style="background: #1c1d21; border-radius: 14px; height: 150px; margin-top: 24px"></div>
+          </div>
+          <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.55)"></div>
+          <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 292px; background: #17181b; box-shadow: 18px 0 44px rgba(0,0,0,0.55); padding: 30px 20px; display: flex; flex-direction: column; gap: 4px">
+            <div style="font-size: 14px; letter-spacing: 0.26em; text-transform: uppercase; padding: 0 16px; margin-bottom: 26px">Cineteca</div>
+            <div style="display: flex; align-items: center; gap: 16px; padding: 14px 16px; border-radius: 999px; background: #2b2e35; box-shadow: 0 1px 3px rgba(0,0,0,0.5); font-size: 17px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#eceef2" stroke-width="1.7" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5V20H3z"></path></svg> Home</div>
+            <div style="display: flex; align-items: center; gap: 16px; padding: 14px 16px; font-size: 17px; color: #b9bbc2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.7"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg> Cerca</div>
+            <div style="display: flex; align-items: center; gap: 16px; padding: 14px 16px; font-size: 17px; color: #b9bbc2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 4v16M17 4v16"></path></svg> Film</div>
+            <div style="display: flex; align-items: center; gap: 16px; padding: 14px 16px; font-size: 17px; color: #b9bbc2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.7"><rect x="2" y="5" width="20" height="13" rx="2"></rect><path d="M8 21h8"></path></svg> Serie</div>
+            <div style="display: flex; align-items: center; gap: 16px; padding: 14px 16px; font-size: 17px; color: #b9bbc2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.7" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.6 12 20 12 20z"></path></svg> Preferiti</div>
+            <div style="display: flex; align-items: center; gap: 16px; padding: 14px 16px; font-size: 17px; color: #b9bbc2; margin-top: auto"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9a9ca4" stroke-width="1.7"><circle cx="12" cy="12" r="3"></circle><path d="M19.2 14.4a1.6 1.6 0 0 0 .32 1.76l.06.06a1.9 1.9 0 1 1-2.7 2.7l-.05-.06a1.6 1.6 0 0 0-1.77-.32 1.6 1.6 0 0 0-.97 1.47v.17a1.9 1.9 0 1 1-3.8 0v-.09a1.6 1.6 0 0 0-1.05-1.46 1.6 1.6 0 0 0-1.76.32l-.06.06a1.9 1.9 0 1 1-2.7-2.7l.06-.06a1.6 1.6 0 0 0 .32-1.76 1.6 1.6 0 0 0-1.47-.97H3.4a1.9 1.9 0 1 1 0-3.8h.09A1.6 1.6 0 0 0 4.95 8.8a1.6 1.6 0 0 0-.32-1.76l-.06-.06a1.9 1.9 0 1 1 2.7-2.7l.06.06a1.6 1.6 0 0 0 1.76.32h.08A1.6 1.6 0 0 0 10.1 3.2V3.4a1.9 1.9 0 1 1 3.8 0v.09a1.6 1.6 0 0 0 .97 1.46 1.6 1.6 0 0 0 1.77-.32l.05-.06a1.9 1.9 0 1 1 2.7 2.7l-.06.06a1.6 1.6 0 0 0-.32 1.76v.08a1.6 1.6 0 0 0 1.47.97h.17a1.9 1.9 0 1 1 0 3.8h-.09a1.6 1.6 0 0 0-1.46.97z"></path></svg> Impostazioni</div>
+          </div>
+        </div>
+      </figure>
+
+      <figure style="display: flex; flex-direction: column; gap: 12px">
+        <figcaption style="font-size: 14px; color: #9a9ca4">Mobile · Player</figcaption>
+        <div data-screen-label="Mobile Player" style="width: 390px; height: 844px; overflow: hidden; background: #0c0c0d; border-radius: 34px; border: 1px solid #3a3d45; display: flex; flex-direction: column; color: #eceef2">
+          <div style="display: flex; justify-content: space-between; padding: 16px 26px 8px; font-size: 12px; font-weight: 500; color: #9a9ca4">9:41<span>▮▮▮ ⌁</span></div>
+          <div style="height: 216px; overflow: hidden; position: relative; margin-top: 8px">
+            <image-slot id="gr-mob-player" shape="rect" placeholder="Fotogramma"></image-slot>
+          </div>
+          <div style="padding: 18px; flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: flex-end">
+            <div style="background: #17181b; border-radius: 22px; padding: 20px; color: #eceef2; box-shadow: 0 12px 34px rgba(0,0,0,0.4)">
+              <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #9a9ca4">Stagione 2 · episodio 4</div>
+              <div style="font-size: 24px; letter-spacing: -0.03em; margin-top: 7px">La chiatta</div>
+              <div style="height: 5px; background: #2c2e34; border-radius: 999px; position: relative; margin: 18px 0 9px">
+                <span style="position: absolute; left: 0; top: 0; bottom: 0; width: 40%; background: #4d97ff; border-radius: 999px"></span>
+                <span style="position: absolute; left: 40%; top: -5px; width: 15px; height: 15px; border-radius: 50%; background: #f5f6f8; box-shadow: 0 1px 4px rgba(0,0,0,0.35); transform: translateX(-7px)"></span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 12px; color: #9a9ca4">23:08<span>−34:33</span></div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 22px">
+                <button style="font-family: inherit; cursor: pointer; width: 48px; height: 48px; border-radius: 999px; border: 1px solid #3a3d45; background: #1c1d21; color: #eceef2; display: grid; place-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 1 3 6.7"></path><path d="M3 7v5h5"></path></svg></button>
+                <button style="font-family: inherit; cursor: pointer; width: 66px; height: 66px; border-radius: 999px; border: 0; background: #eceef2; color: #101114; display: grid; place-items: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4.5" width="4.5" height="15"></rect><rect x="14" y="4.5" width="4.5" height="15"></rect></svg></button>
+                <button style="font-family: inherit; cursor: pointer; width: 48px; height: 48px; border-radius: 999px; border: 1px solid #3a3d45; background: #1c1d21; color: #eceef2; display: grid; place-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 0-3 6.7"></path><path d="M21 7v5h-5"></path></svg></button>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 22px">
+                <button style="font-family: inherit; cursor: pointer; font-size: 14px; padding: 12px; border-radius: 999px; border: 1px solid #3a3d45; background: #1c1d21; color: #eceef2">Sottotitoli</button>
+                <button style="font-family: inherit; cursor: pointer; font-size: 14px; padding: 12px; border-radius: 999px; border: 1px solid #3a3d45; background: #1c1d21; color: #eceef2">Audio</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </figure>
+
+      <div style="flex: 0 0 380px; padding-top: 30px; font-size: 14px; line-height: 1.7; color: #b9bbc2">
+        <div style="font-size: 17px; color: #eceef2; margin-bottom: 10px">Note</div>
+        Su TV la navigazione è una colonna di sole icone larga 104px; il pannello esteso da 420px si apre sopra il contenuto, che resta visibile e velato. Su mobile la stessa gerarchia sta dietro l'icona in alto a sinistra, senza barra fissa in basso. Le board precedenti restano nei file <a href="Cineteca - TV e mobile.dc.html">TV e mobile</a> e <a href="Cineteca - Mockup.dc.html">Mockup</a>.
+      </div>
+    </div>
+  </div>
+
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    const f = (titolo, meta) => ({ titolo, meta });
+    return {
+      continua: [
+        { titolo: "Linea di costa", resta: "S2 E4 · restano 34′" },
+        { titolo: "Delitto a Nord", resta: "restano 93′" },
+        { titolo: "Vento contrario", resta: "restano 12′" },
+        { titolo: "Il turno di notte", resta: "S1 E7 · restano 21′" },
+        { titolo: "Sette giorni a Trieste", resta: "restano 58′" }
+      ],
+      continua4: [
+        { titolo: "Linea di costa", resta: "S2 E4 · restano 34′" },
+        { titolo: "Delitto a Nord", resta: "restano 93′" },
+        { titolo: "Il turno di notte", resta: "S1 E7 · restano 21′" },
+        { titolo: "Acqua alta", resta: "restano 46′" }
+      ],
+      risultati: [
+        f("Delitto a Nord", "2023 · 134′"),
+        f("Delitti minori", "2019 · 97′"),
+        f("Il delitto Vanoni", "Serie · 1 stagione"),
+        f("Delitto in provincia", "2016 · 105′"),
+        f("Sette delitti", "2011 · 122′"),
+        f("Delitto di stagione", "2018 · 91′"),
+        f("Nessun delitto", "2024 · 112′"),
+        f("Il delitto perfetto", "1998 · 107′"),
+        f("Delitto a Porta Nuova", "Serie · 2 stagioni"),
+        f("Doppio delitto", "2015 · 99′")
+      ],
+      simili: [
+        f("Acqua alta", "2022"),
+        f("Codice rosso", "2021"),
+        f("Il turno di notte", "Serie"),
+        f("Doppio delitto", "2015"),
+        f("Vento contrario", "2020"),
+        f("Nessun delitto", "2024")
+      ],
+      salvati: [
+        f("Fuoco incrociato", "2024"), f("Acqua alta", "2022"), f("Codice rosso", "2021"),
+        f("Sette giorni a Trieste", "2023"), f("Il delitto Vanoni", "Serie"),
+        f("Marea nera", "2019"), f("Ultimo treno", "2018")
+      ],
+      simili3: [
+        f("Acqua alta", "2022 · 104′"),
+        f("Codice rosso", "2021 · 96′"),
+        f("Il turno di notte", "Serie · 2 stagioni")
+      ],
+      railA: [
+        { titolo: "Linea di costa", meta: "S2 E4 · restano 34′" },
+        { titolo: "Delitto a Nord", meta: "restano 93′" },
+        { titolo: "Vento contrario", meta: "restano 12′" },
+        { titolo: "Il turno di notte", meta: "S1 E7 · restano 21′" },
+        { titolo: "Sette giorni a Trieste", meta: "restano 58′" },
+        { titolo: "Acqua alta", meta: "restano 46′" },
+        { titolo: "Codice rosso", meta: "restano 27′" }
+      ],
+      railB: [
+        f("Marea nera", "2019 · 4K · Atmos"),
+        f("Ultimo treno", "2018 · 4K"),
+        f("Il delitto Vanoni", "Serie · 4K · Atmos"),
+        f("Nessun delitto", "2024 · 4K HDR"),
+        f("Terra ferma", "2013 · HD"),
+        f("Ore contate", "2022 · 4K · Atmos"),
+        f("La casa sul molo", "2017 · HD · 5.1")
+      ],
+      railMobA: [
+        { titolo: "Linea di costa", meta: "S2 E4 · 34′" },
+        { titolo: "Delitto a Nord", meta: "restano 93′" },
+        { titolo: "Vento contrario", meta: "restano 12′" },
+        { titolo: "Acqua alta", meta: "restano 46′" }
+      ],
+      railMobB: [
+        f("Marea nera", "2019 · 4K"),
+        f("Ultimo treno", "2018 · 4K"),
+        f("Ore contate", "2022 · Atmos"),
+        f("Terra ferma", "2013 · HD")
+      ],
+      tecFilm: ["4K UHD", "Dolby Vision", "HDR10+", "Dolby Atmos", "DTS-HD MA 5.1", "Audio ITA · ENG", "Sottotitoli ITA · ENG · ES"],
+      tecSerie: ["4K UHD", "HDR10", "Dolby Atmos", "Stereo 2.0", "Audio ITA", "Sottotitoli ITA · ENG"],
+      tecPlayer: ["Dolby Vision", "Dolby Atmos", "ITA 5.1"],
+      tecTutte: ["4K UHD", "HD 1080p", "Dolby Vision", "HDR10", "HDR10+", "Dolby Atmos", "DTS-HD MA 5.1", "Stereo 2.0", "Audiodescrizione", "Sottotitoli per non udenti"],
+      generi: ["Azione", "Commedia", "Drammatico", "Poliziesco", "Documentari", "Fantascienza", "Horror", "Per famiglie", "Italiani", "Serie TV"],
+      tasti: ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3"],
+      episodi: [
+        { n: "01", titolo: "Bassa marea", durata: "52′", tec: "4K · Atmos", sinossi: "Il porto riapre dopo l'inchiesta e la famiglia scopre di non essere più sola nella gara d'appalto." },
+        { n: "02", titolo: "Il registro", durata: "48′", tec: "4K · Atmos", sinossi: "Un libro contabile del 1994 arriva in questura senza mittente." },
+        { n: "03", titolo: "Cantiere due", durata: "55′", tec: "4K · 5.1", sinossi: "Uno sciopero blocca la banchina proprio la notte del trasbordo." },
+        { n: "04", titolo: "La chiatta", durata: "57′", tec: "4K · Atmos", sinossi: "Quello che riemerge dal fondale cambia la versione di tutti e tre i fratelli." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
