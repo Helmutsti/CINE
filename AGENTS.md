@@ -47,4 +47,7 @@ Comando: `/verifica-design` (`.claude/commands/verifica-design.md`). Da lanciare
 - **Recupero con ridisegno completo.** Il recupero (guida §10) qui non conserva l'aspetto approvato: UX e UI si rivedono da capo. Del lavoro precedente si recuperano solo i token, come base per R3. Decisione del 2026-10-08 in `registro.md`.
 
 ## Codice
-Prototipo React con dati finti in `app/` (Vite 8, React 19, TypeScript). Avvio: `cd app && npm install && npm run dev`. Lint: `npm run lint` (oxlint). Token CSS in `app/src/styles/tokens.css`, unica fonte dello stile nel codice. Navigazione a D-pad in `app/src/focus/Focus.tsx`.
+- **`client/`** — il client web per Jellyfin (Vite, React, TypeScript, `@jellyfin/sdk`, `hls.js`). Niente login: il contenitore Docker (nginx) fa da ponte su `/jf/` verso `JELLYFIN_URL` e aggiunge la chiave `JELLYFIN_API_KEY`. In sviluppo: `client/.env.local` con le stesse due variabili, poi `npm run dev`. Avvio e pubblicazione nel `README.md` della radice; l'immagine si pubblica con un tag `vX.Y.Z` (workflow `.github/workflows/immagine-docker.yml`).
+- **`prototipo-tv/`** — il prototipo con dati finti, fedele alla libreria Figma, per provare il design (`prototipo-tv/README.md`).
+- `app/` — il primo prototipo (vecchio design Granito), solo come riferimento.
+- Token CSS in `src/stili/token.css` di ciascun progetto, unica fonte dello stile nel codice; navigazione da telecomando in `src/fuoco.ts`.

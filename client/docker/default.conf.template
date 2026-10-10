@@ -1,0 +1,43 @@
+# Cineteca: sito statico + ponte verso il server Jellyfin.
+# JELLYFIN_URL e JELLYFIN_API_KEY arrivano dalle variabili d'ambiente del contenitore
+# (l'immagine ufficiale di nginx le sostituisce all'avvio). La chiave non arriva mai al browser.
+
+# ogni browser ha il suo DeviceId (lo manda il client), così le riproduzioni non si pestano i piedi
+map $http_x_cineteca_device $cineteca_device {
+    ""      "cineteca-web";
+    default $http_x_cineteca_device;
+}
+
+server {
+    listen 80;
+    server_name _;
+    root /usr/share/nginx/html;
+
+    location /jf/ {
+        proxy_pass ${JELLYFIN_URL}/;
+        proxy_http_version 1.1;
+        proxy_ssl_server_name on;
+        proxy_set_header Host $proxy_host;
+        proxy_set_header Authorization 'MediaBrowser Client="Cineteca", Device="Cineteca web", DeviceId="$cineteca_device", Version="${CINETECA_VERSIONE}", Token="${JELLYFIN_API_KEY}"';
+        proxy_set_header Range $http_range;
+        proxy_set_header If-Range $http_if_range;
+        # video: niente buffer, tempi lunghi
+        proxy_buffering off;
+        proxy_request_buffering off;
+        proxy_read_timeout 3600s;
+        proxy_send_timeout 3600s;
+        client_max_body_size 50m;
+    }
+
+    location = /index.html {
+        add_header Cache-Control "no-cache";
+    }
+
+    location /assets/ {
+        add_header Cache-Control "public, max-age=31536000, immutable";
+    }
+
+    location / {
+        try_files $uri /index.html;
+    }
+}

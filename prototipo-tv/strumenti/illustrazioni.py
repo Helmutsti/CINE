@@ -164,12 +164,43 @@ def avventura(c):  # bussola sulle montagne
 <g transform="translate(1180 360)"><circle r="190" fill="{c['chiaro']}"/><circle r="150" fill="none" stroke="{c['medio']}" stroke-width="12"/>
 <polygon points="0,-140 34,0 0,140 -34,0" fill="{c['f2']}"/><polygon points="0,-140 34,0 -34,0" fill="{c['medio']}"/></g>'''
 
+
+def western(c):  # sole, cactus e colline
+    return f'''<circle cx="1260" cy="330" r="170" fill="{c['chiaro']}"/>
+<polygon points="700,900 900,640 1100,760 1300,600 1600,780 1600,900" fill="{c['scuro']}"/>
+<g fill="{c['f2']}"><rect x="1050" y="380" width="70" height="420" rx="35"/><path d="M1050 600 h-70 a35 35 0 0 1 -35 -35 v-90 a35 35 0 0 1 70 0 v55 h35z"/><path d="M1120 540 h70 v-120 a35 35 0 0 1 70 0 v155 a35 35 0 0 1 -35 35 h-105z"/></g>'''
+
+def documentario(c):  # cinepresa
+    return f'''<g transform="translate(1130 470)">
+  <circle cx="-120" cy="-190" r="90" fill="{c['chiaro']}"/><circle cx="90" cy="-190" r="90" fill="{c['chiaro']}"/>
+  <circle cx="-120" cy="-190" r="30" fill="{c['f2']}"/><circle cx="90" cy="-190" r="30" fill="{c['f2']}"/>
+  <rect x="-240" y="-90" width="400" height="230" rx="24" fill="{c['chiaro']}"/>
+  <polygon points="160,-40 320,-110 320,190 160,120" fill="{c['medio']}"/>
+  <circle cx="-150" cy="-20" r="16" fill="{c['scuro']}"/>
+</g>'''
+
+def musica(c):  # due note
+    return f'''<g fill="{c['chiaro']}">
+  <ellipse cx="1000" cy="640" rx="90" ry="66" transform="rotate(-20 1000 640)"/><ellipse cx="1300" cy="580" rx="90" ry="66" transform="rotate(-20 1300 580)"/>
+  <rect x="1068" y="230" width="30" height="410"/><rect x="1368" y="170" width="30" height="410"/>
+  <polygon points="1068,230 1398,170 1398,260 1068,320"/>
+</g>'''
+
+def altro(c):  # ciak
+    return f'''<g transform="translate(1130 470) rotate(-6)">
+  <rect x="-260" y="-110" width="520" height="330" rx="20" fill="{c['chiaro']}"/>
+  <g transform="rotate(-14 -260 -110)"><rect x="-260" y="-200" width="520" height="90" rx="14" fill="{c['medio']}"/>
+  {''.join(f'<polygon points="{-220 + i * 110},-200 {-160 + i * 110},-200 {-210 + i * 110},-110 {-270 + i * 110},-110" fill="{c["f2"]}"/>' for i in range(5))}</g>
+  <rect x="-200" y="0" width="300" height="24" rx="12" fill="{c['scuro']}"/><rect x="-200" y="70" width="200" height="24" rx="12" fill="{c['scuro']}"/>
+</g>'''
+
 GENERI = {
     'Drammatico': (215, drammatico), 'Commedia': (45, commedia), 'Fantascienza': (190, fantascienza),
     'Giallo': (50, giallo), 'Horror': (0, horror), 'Noir': (230, noir), 'Poliziesco': (210, poliziesco),
     'Azione': (18, azione), 'Fantasy': (275, fantasy), 'Animazione': (150, animazione), 'Muto': (30, muto),
     'Thriller': (330, thriller), 'Famiglia': (95, famiglia), 'Storico': (35, storico),
     'Sentimentale': (345, sentimentale), 'Avventura': (125, avventura),
+    'Western': (28, western), 'Documentario': (180, documentario), 'Musica': (300, musica), 'Altro': (220, altro),
 }
 
 # ---------------- MOOD ----------------

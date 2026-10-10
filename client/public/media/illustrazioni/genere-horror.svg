@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(0 38% 16%)"/><stop offset="1" stop-color="hsl(0 45% 8%)"/></linearGradient>
+  <radialGradient id="alone" cx="0.72" cy="0.42" r="0.55"><stop offset="0" stop-color="hsl(0 48% 42%)" stop-opacity="0.45"/><stop offset="1" stop-color="hsl(0 48% 42%)" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#g)"/>
+<rect width="1600" height="900" fill="url(#alone)"/>
+<circle cx="1180" cy="330" r="220" fill="hsl(0 60% 66%)"/>
+<circle cx="1260" cy="290" r="200" fill="hsl(0 38% 16%)" opacity=".0"/>
+<circle cx="1120" cy="280" r="34" fill="hsl(0 48% 42%)" opacity=".6"/><circle cx="1240" cy="420" r="22" fill="hsl(0 48% 42%)" opacity=".6"/>
+<path d="M1010 230 l40 -30 l40 30 l40 -30 l40 30" stroke="hsl(0 45% 8%)" stroke-width="18" fill="none" stroke-linejoin="round"/>
+<path d="M760 900 L820 600 L700 470 M820 600 L900 420 L860 300 M900 420 L1010 360" stroke="hsl(0 45% 8%)" stroke-width="34" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1600 900 L1520 640 L1600 520 M1520 640 L1400 560 L1350 440" stroke="hsl(0 45% 8%)" stroke-width="34" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

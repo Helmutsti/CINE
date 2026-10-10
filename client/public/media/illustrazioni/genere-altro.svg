@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(220 38% 16%)"/><stop offset="1" stop-color="hsl(220 45% 8%)"/></linearGradient>
+  <radialGradient id="alone" cx="0.72" cy="0.42" r="0.55"><stop offset="0" stop-color="hsl(220 48% 42%)" stop-opacity="0.45"/><stop offset="1" stop-color="hsl(220 48% 42%)" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#g)"/>
+<rect width="1600" height="900" fill="url(#alone)"/>
+<g transform="translate(1130 470) rotate(-6)">
+  <rect x="-260" y="-110" width="520" height="330" rx="20" fill="hsl(220 60% 66%)"/>
+  <g transform="rotate(-14 -260 -110)"><rect x="-260" y="-200" width="520" height="90" rx="14" fill="hsl(220 48% 42%)"/>
+  <polygon points="-220,-200 -160,-200 -210,-110 -270,-110" fill="hsl(220 45% 8%)"/><polygon points="-110,-200 -50,-200 -100,-110 -160,-110" fill="hsl(220 45% 8%)"/><polygon points="0,-200 60,-200 10,-110 -50,-110" fill="hsl(220 45% 8%)"/><polygon points="110,-200 170,-200 120,-110 60,-110" fill="hsl(220 45% 8%)"/><polygon points="220,-200 280,-200 230,-110 170,-110" fill="hsl(220 45% 8%)"/></g>
+  <rect x="-200" y="0" width="300" height="24" rx="12" fill="hsl(220 40% 26%)"/><rect x="-200" y="70" width="200" height="24" rx="12" fill="hsl(220 40% 26%)"/>
+</g>
+</svg>

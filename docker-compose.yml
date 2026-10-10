@@ -1,0 +1,16 @@
+# Cineteca · esempio di avvio con Docker Compose.
+# 1. Metti l'indirizzo del tuo server Jellyfin e la chiave API (vedi README).
+# 2. docker compose up -d
+# 3. Apri http://localhost:8080
+services:
+  cineteca:
+    image: ghcr.io/helmutsti/cineteca:1.0.0
+    container_name: cineteca
+    ports:
+      - "8080:80"
+    environment:
+      # indirizzo del server Jellyfin, senza "/" in fondo
+      JELLYFIN_URL: "http://192.168.1.10:8096"
+      # chiave API creata in Jellyfin: Pannello di controllo → Chiavi API → +
+      JELLYFIN_API_KEY: "incolla-qui-la-chiave"
+    restart: unless-stopped
