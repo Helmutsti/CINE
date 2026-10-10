@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(35 38% 16%)"/><stop offset="1" stop-color="hsl(35 45% 8%)"/></linearGradient>
+  <radialGradient id="alone" cx="0.72" cy="0.42" r="0.55"><stop offset="0" stop-color="hsl(35 48% 42%)" stop-opacity="0.45"/><stop offset="1" stop-color="hsl(35 48% 42%)" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#g)"/>
+<rect width="1600" height="900" fill="url(#alone)"/>
+<rect x="960" y="190" width="360" height="60" fill="hsl(35 60% 66%)"/><rect x="990" y="150" width="300" height="40" fill="hsl(35 60% 66%)"/>
+<rect x="1010" y="250" width="260" height="430" fill="hsl(35 60% 66%)"/><rect x="1040" y="250" width="16" height="430" fill="hsl(35 48% 42%)"/><rect x="1080" y="250" width="16" height="430" fill="hsl(35 48% 42%)"/><rect x="1120" y="250" width="16" height="430" fill="hsl(35 48% 42%)"/><rect x="1160" y="250" width="16" height="430" fill="hsl(35 48% 42%)"/><rect x="1200" y="250" width="16" height="430" fill="hsl(35 48% 42%)"/>
+<rect x="960" y="680" width="360" height="60" fill="hsl(35 60% 66%)"/><rect x="920" y="740" width="440" height="50" fill="hsl(35 48% 42%)"/>
+</svg>

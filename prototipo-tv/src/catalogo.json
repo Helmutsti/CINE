@@ -1,0 +1,8110 @@
+{
+ "film": [
+  {
+   "id": "f-metropolis",
+   "tipo": "film",
+   "titolo": "Metropolis",
+   "anno": 1927,
+   "minuti": 153,
+   "generi": [
+    "Muto",
+    "Drammatico",
+    "Fantascienza"
+   ],
+   "regia": [
+    "Fritz Lang"
+   ],
+   "trama": "2026, futuro lontano. Un gruppo di ricchi industriali governa la città di Metropolis dai propri grattacieli e costringe al continuo lavoro la classe proletaria relegata nel sottosuolo cittadino.",
+   "poster": "media/f-metropolis-poster.jpg",
+   "sfondo": "media/f-metropolis-sfondo.jpg",
+   "cast": [
+    "a-Q63781",
+    "a-Q65154",
+    "a-Q65496",
+    "a-Q76813",
+    "a-Q91058",
+    "a-Q96469",
+    "a-Q63816",
+    "a-Q1758155"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-come-vinsi-la-guerra",
+   "tipo": "film",
+   "titolo": "Come vinsi la guerra",
+   "anno": 1926,
+   "minuti": 75,
+   "generi": [
+    "Romantic comedy film",
+    "Guerra",
+    "Muto"
+   ],
+   "regia": [
+    "Buster Keaton"
+   ],
+   "trama": "Come vinsi la guerra è un film muto del 1926 di Buster Keaton, co-diretto con Clyde Bruckman. È la storia di un ragazzo che, per salvare la propria ragazza durante la guerra di secessione americana, nonostante non sia nemmeno arruolato, riesce a respingere da solo un intero esercito nemico.",
+   "poster": "media/f-come-vinsi-la-guerra-poster.jpg",
+   "sfondo": "media/f-come-vinsi-la-guerra-sfondo.jpg",
+   "cast": [
+    "a-Q103949",
+    "a-Q531591",
+    "a-Q1064818",
+    "a-Q1557810",
+    "a-Q3108668",
+    "a-Q5498931",
+    "a-Q5487056",
+    "a-Q5343388"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-detour-deviazione-per-l-inferno",
+   "tipo": "film",
+   "titolo": "Detour - Deviazione per l'inferno",
+   "anno": 1945,
+   "minuti": 67,
+   "generi": [
+    "Giallo",
+    "Drammatico",
+    "Noir"
+   ],
+   "regia": [
+    "Edgar G. Ulmer"
+   ],
+   "trama": "Al Roberts, un pianista squattrinato di New York, suona in uno modesto locale, dove si esibisce come cantante la sua ragazza Sue Harvey. I due sono insoddisfatti della loro vita e, pur avendo intenzione di sposarsi, non hanno prospettive future.",
+   "poster": "media/f-detour-deviazione-per-l-inferno-poster.jpg",
+   "sfondo": "media/f-detour-deviazione-per-l-inferno-sfondo.jpg",
+   "cast": [
+    "a-Q3530819",
+    "a-Q291825",
+    "a-Q5401196",
+    "a-Q3035739",
+    "a-Q19864996",
+    "a-Q7804213"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-la-signora-del-venerdi",
+   "tipo": "film",
+   "titolo": "La signora del venerdì",
+   "anno": 1940,
+   "minuti": 90,
+   "generi": [
+    "Comedy of remarriage",
+    "Commedia drammatica",
+    "Drammatico"
+   ],
+   "regia": [
+    "Howard Hawks"
+   ],
+   "trama": "Hildy Johnson è una giornalista di successo, divorziata da Walter Burns, editore del giornale dove lavora.",
+   "poster": "media/f-la-signora-del-venerdi-poster.jpg",
+   "sfondo": "media/f-la-signora-del-venerdi-sfondo.jpg",
+   "cast": [
+    "a-Q83410",
+    "a-Q233854",
+    "a-Q364135",
+    "a-Q1370701",
+    "a-Q3399241",
+    "a-Q776601",
+    "a-Q950376",
+    "a-Q1364339"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-preferisco-l-ascensore",
+   "tipo": "film",
+   "titolo": "Preferisco l'ascensore!",
+   "anno": 1923,
+   "minuti": 73,
+   "generi": [
+    "Romantic comedy film",
+    "Muto"
+   ],
+   "regia": [
+    "Fred C. Newmeyer"
+   ],
+   "trama": "Harold trova un impiego in un negozio di vestiti ma fa credere alla sua ragazza di esserne il direttore. Un suo amico, in fuga da un poliziotto, si arrampica su un grattacielo e Harold è impressionato dalle sue capacità acrobatiche.",
+   "poster": "media/f-preferisco-l-ascensore-poster.jpg",
+   "sfondo": null,
+   "cast": [
+    "a-Q104340",
+    "a-Q452630",
+    "a-Q3342510",
+    "a-Q7987306",
+    "a-Q3046394",
+    "a-Q1773099",
+    "a-Q1452243",
+    "a-Q1973922"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-la-palla-n-13",
+   "tipo": "film",
+   "titolo": "La palla nº 13",
+   "anno": 1924,
+   "minuti": 44,
+   "generi": [
+    "Commedia",
+    "Azione",
+    "Sentimentale"
+   ],
+   "regia": [
+    "Buster Keaton"
+   ],
+   "trama": "Il proiezionista di un cinema sogna di diventare un detective. L'occasione di mettere in pratica le sue qualità si presenta quando un suo rivale in amore lo fa accusare di avere rubato l'orologio del padre della donna contesa.",
+   "poster": "media/f-la-palla-n-13-poster.jpg",
+   "sfondo": null,
+   "cast": [
+    "a-Q103949",
+    "a-Q450065",
+    "a-Q1557810",
+    "a-Q7968994",
+    "a-Q3195849"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-nosferatu-il-vampiro",
+   "tipo": "film",
+   "titolo": "Nosferatu il vampiro",
+   "anno": 1922,
+   "minuti": 94,
+   "generi": [
+    "Muto",
+    "L'orrore",
+    "Drammatico"
+   ],
+   "regia": [
+    "Friedrich Wilhelm Murnau"
+   ],
+   "trama": "Wisborg, Germania, 1838. Il giovane Hutter lavora presso un'agenzia immobiliare. Una mattina il suo principale, Knock, riceve una richiesta dalla Transilvania da parte del Conte Orlok, desideroso di prendere casa in paese.",
+   "poster": "media/f-nosferatu-il-vampiro-poster.jpg",
+   "sfondo": "media/f-nosferatu-il-vampiro-sfondo.jpg",
+   "cast": [
+    "a-Q58822",
+    "a-Q89376",
+    "a-Q66097",
+    "a-Q76656",
+    "a-Q78817",
+    "a-Q95681",
+    "a-Q87468",
+    "a-Q114696"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-il-gabinetto-del-dottor-caligari",
+   "tipo": "film",
+   "titolo": "Il gabinetto del dottor Caligari",
+   "anno": 1920,
+   "minuti": 77,
+   "generi": [
+    "Muto",
+    "L'orrore",
+    "Giallo"
+   ],
+   "regia": [
+    "Robert Wiene"
+   ],
+   "trama": "Il gabinetto del dottor Caligari è un film muto del 1920 diretto da Robert Wiene.",
+   "poster": "media/f-il-gabinetto-del-dottor-caligari-poster.jpg",
+   "sfondo": "media/f-il-gabinetto-del-dottor-caligari-sfondo.jpg",
+   "cast": [
+    "a-Q63051",
+    "a-Q58801",
+    "a-Q66115",
+    "a-Q88143",
+    "a-Q87651",
+    "a-Q100338",
+    "a-Q110721",
+    "a-Q65154"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-la-piccola-bottega-degli-orrori",
+   "tipo": "film",
+   "titolo": "La piccola bottega degli orrori",
+   "anno": 1960,
+   "minuti": 70,
+   "generi": [
+    "Comedy horror film",
+    "Fantascienza",
+    "Commedia"
+   ],
+   "regia": [
+    "Roger Corman"
+   ],
+   "trama": "Seymour, imbranato commesso nel negozio di Gravis Mushinik, sviluppa una pianta assetata di sangue e in grado di parlare, e la battezza Audrey Junior, come l'assistente nel negozio di cui si è innamorato.",
+   "poster": "media/f-la-piccola-bottega-degli-orrori-poster.jpg",
+   "sfondo": "media/f-la-piccola-bottega-degli-orrori-sfondo.jpg",
+   "cast": [
+    "a-Q472842",
+    "a-Q526365",
+    "a-Q6810902",
+    "a-Q1209753",
+    "a-Q39792",
+    "a-Q2958461",
+    "a-Q5488455",
+    "a-Q2343863"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-viaggio-nella-luna",
+   "tipo": "film",
+   "titolo": "Viaggio nella Luna",
+   "anno": 1902,
+   "minuti": 16,
+   "generi": [
+    "Muto",
+    "Fantascienza",
+    "Fantasy"
+   ],
+   "regia": [
+    "Georges Méliès"
+   ],
+   "trama": "Il film, diviso complessivamente in 17 scene racconta di un immaginario viaggio nella Luna effettuato a bordo di una navicella a forma di proiettile lanciata da un gigantesco cannone; saranno gli astronomi stessi a intraprendere il viaggio.",
+   "poster": "media/f-viaggio-nella-luna-poster.jpg",
+   "sfondo": "media/f-viaggio-nella-luna-sfondo.jpg",
+   "cast": [
+    "a-Q152272",
+    "a-Q2059665",
+    "a-Q151126"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-sciarada",
+   "tipo": "film",
+   "titolo": "Sciarada",
+   "anno": 1963,
+   "minuti": 113,
+   "generi": [
+    "Commedia",
+    "Thriller poliziesco",
+    "Mistero"
+   ],
+   "regia": [
+    "Stanley Donen"
+   ],
+   "trama": "In vacanza sulle Alpi, l'americana Regina \"Reggie\" Lampert confida all'amica Sylvie di aver intenzione di divorziare dal proprio marito Charles, uno svizzero dal passato oscuro e dal presente alquanto misterioso.",
+   "poster": "media/f-sciarada-poster.jpg",
+   "sfondo": "media/f-sciarada-sfondo.jpg",
+   "cast": [
+    "a-Q83410",
+    "a-Q42786",
+    "a-Q202172",
+    "a-Q4227",
+    "a-Q298818",
+    "a-Q453549",
+    "a-Q1663127",
+    "a-Q1984434"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-il-monello",
+   "tipo": "film",
+   "titolo": "Il monello",
+   "anno": 1921,
+   "minuti": 68,
+   "generi": [
+    "Commedia drammatica",
+    "Drammatico",
+    "Muto"
+   ],
+   "regia": [
+    "Charlie Chaplin"
+   ],
+   "trama": "Una donna sedotta e abbandonata viene dimessa dall'istituto di carità in cui ha dato alla luce suo figlio.",
+   "poster": "media/f-il-monello-poster.jpg",
+   "sfondo": "media/f-il-monello-sfondo.jpg",
+   "cast": [
+    "a-Q313279",
+    "a-Q882",
+    "a-Q718451",
+    "a-Q32337",
+    "a-Q1137229",
+    "a-Q2960106",
+    "a-Q195022"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-elephants-dream",
+   "tipo": "film",
+   "titolo": "Elephants Dream",
+   "anno": 2006,
+   "minuti": 11,
+   "generi": [],
+   "regia": [
+    "Bassam Kurdali"
+   ],
+   "trama": "Emo e Proog, tra strani effetti sonori e scenografie molto particolari, conducono lo spettatore all'interno di un mondo bizzarro fatto di ingranaggi e grovigli di cavi, abitato da singolari personaggi, come una macchina per scrivere vivente, una enorme colonna con all'interno un ascensore ma soprattutto una grande quantità di uccelli davvero insoliti.",
+   "poster": "media/f-elephants-dream-poster.jpg",
+   "sfondo": null,
+   "cast": [],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-big-buck-bunny",
+   "tipo": "film",
+   "titolo": "Big Buck Bunny",
+   "anno": 2008,
+   "minuti": 11,
+   "generi": [
+    "Muto",
+    "Animazione"
+   ],
+   "regia": [
+    "Sacha Goedegebure"
+   ],
+   "trama": "Questo film rappresenta la storia di un coniglio, che si gode la sua pace, ma tre pestiferi animaletti faranno di tutto per riuscire a infastidirlo e farlo innervosire.",
+   "poster": "media/f-big-buck-bunny-poster.jpg",
+   "sfondo": null,
+   "cast": [],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-plan-9-from-outer-space",
+   "tipo": "film",
+   "titolo": "Plan 9 from Outer Space",
+   "anno": 1957,
+   "minuti": 79,
+   "generi": [
+    "Azione",
+    "Fantascienza",
+    "L'orrore"
+   ],
+   "regia": [
+    "Ed Wood"
+   ],
+   "trama": "San Fernando, California. Due becchini stanno sotterrando la moglie di un uomo anziano quando, ad un certo punto sentono un rumore strano. Decidono così di lasciare il cimitero, ma vengono uccisi dalla donna defunta che stavano sotterrando, ora risorta.",
+   "poster": "media/f-plan-9-from-outer-space-poster.jpg",
+   "sfondo": "media/f-plan-9-from-outer-space-sfondo.jpg",
+   "cast": [
+    "a-Q3530760",
+    "a-Q1351410",
+    "a-Q1402270",
+    "a-Q237813",
+    "a-Q34529",
+    "a-Q2779102",
+    "a-Q221843",
+    "a-Q3116392"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-sintel",
+   "tipo": "film",
+   "titolo": "Sintel",
+   "anno": 2010,
+   "minuti": 15,
+   "generi": [
+    "Fantasy eroico"
+   ],
+   "regia": [
+    "Colin Levy"
+   ],
+   "trama": "La storia è meno leggera rispetto a quella del precedente cortometraggio, Big Buck Bunny; il film narra la storia di Sintel, una ragazza che sta cercando un cucciolo di Drago che ha chiamato Scales.",
+   "poster": "media/f-sintel-poster.jpg",
+   "sfondo": null,
+   "cast": [],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-tears-of-steel",
+   "tipo": "film",
+   "titolo": "Tears of Steel",
+   "anno": 2012,
+   "minuti": 12,
+   "generi": [
+    "Fantascienza",
+    "Stopico",
+    "A tecnica mista"
+   ],
+   "regia": [
+    "Ian Hubert"
+   ],
+   "trama": "Il cortometraggio, ambientato nel futuro, racconta la disperata vicenda di un gruppo di soldati e scienziati che, nascosti nella Oude Kerk, ad Amsterdam, cercano di riprodurre un evento cruciale del passato per fermare un attacco di robot.",
+   "poster": "media/f-tears-of-steel-poster.jpg",
+   "sfondo": null,
+   "cast": [
+    "a-Q1200141"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-cosmos-laundromat",
+   "tipo": "film",
+   "titolo": "Cosmos Laundromat",
+   "anno": 2015,
+   "minuti": 12,
+   "generi": [
+    "Fantastico"
+   ],
+   "regia": [
+    "Mathieu Auvray"
+   ],
+   "trama": null,
+   "poster": "media/f-cosmos-laundromat-poster.jpg",
+   "sfondo": "media/f-cosmos-laundromat-sfondo.jpg",
+   "cast": [],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-spring",
+   "tipo": "film",
+   "titolo": "Spring",
+   "anno": 2019,
+   "minuti": 8,
+   "generi": [
+    "Fantasy"
+   ],
+   "regia": [
+    "Andy Goralczyk"
+   ],
+   "trama": null,
+   "poster": "media/f-spring-poster.jpg",
+   "sfondo": null,
+   "cast": [],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-la-notte-dei-morti-viventi",
+   "tipo": "film",
+   "titolo": "La notte dei morti viventi",
+   "anno": 1968,
+   "minuti": 96,
+   "generi": [
+    "L'orrore",
+    "Science fiction horror film",
+    "Zombie"
+   ],
+   "regia": [
+    "George A. Romero"
+   ],
+   "trama": "In una località rurale della Pennsylvania, Barbara e suo fratello Johnny sono in visita alla tomba del non troppo amato padre quando improvvisamente vengono assaliti da uno strano uomo che, nonostante i movimenti lenti e impacciati, riesce a uccidere Johnny.",
+   "poster": "media/f-night-of-the-living-dead-jf-poster.jpg",
+   "sfondo": "media/f-night-of-the-living-dead-jf-sfondo.jpg",
+   "cast": [
+    "a-Q941415",
+    "a-Q271297",
+    "a-Q1372866",
+    "a-Q463814",
+    "a-Q2344447",
+    "a-Q2568814",
+    "a-Q463610",
+    "a-Q3666370"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-la-vita-e-meravigliosa",
+   "tipo": "film",
+   "titolo": "La vita è meravigliosa",
+   "anno": 1946,
+   "minuti": 125,
+   "generi": [
+    "Romantic comedy film",
+    "Fantasy",
+    "Drammatico"
+   ],
+   "regia": [
+    "Frank Capra"
+   ],
+   "trama": "Alla vigilia di Natale del 1945, George Bailey si trova a un bivio della propria esistenza: la sua piccola società è sull'orlo del fallimento, e intravede come unica soluzione il suicidio. Mentre medita di compiere il tragico gesto, un gran numero di voci invocano Dio di aiutarlo.",
+   "poster": "media/f-la-vita-e-meravigliosa-poster.jpg",
+   "sfondo": "media/f-la-vita-e-meravigliosa-sfondo.jpg",
+   "cast": [
+    "a-Q102462",
+    "a-Q224021",
+    "a-Q295593",
+    "a-Q960050",
+    "a-Q317026",
+    "a-Q2750248",
+    "a-Q466440",
+    "a-Q1562547"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-la-febbre-dell-oro",
+   "tipo": "film",
+   "titolo": "La febbre dell'oro",
+   "anno": 1925,
+   "minuti": 96,
+   "generi": [
+    "Muto",
+    "Commedia",
+    "Social comedy film"
+   ],
+   "regia": [
+    "Charlie Chaplin"
+   ],
+   "trama": "Il vagabondo, ingenuo e tenero cercatore solitario, sfida le avversità del rigido freddo del nord e incontra il rude mondo dei cercatori d'oro, animato dalla febbre di rivalsa che lo accomuna nell'impresa agli avventurieri, ai derelitti, ai fuggiaschi, alle donne che popolano questo universo selvaggio.",
+   "poster": "media/f-la-febbre-dell-oro-poster.jpg",
+   "sfondo": "media/f-la-febbre-dell-oro-sfondo.jpg",
+   "cast": [
+    "a-Q1536200",
+    "a-Q3992509",
+    "a-Q882",
+    "a-Q273402",
+    "a-Q718451",
+    "a-Q1137229",
+    "a-Q1342905",
+    "a-Q381638"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-assalto-al-treno",
+   "tipo": "film",
+   "titolo": "Assalto al treno",
+   "anno": 1903,
+   "minuti": 12,
+   "generi": [
+    "Caper movie",
+    "Western",
+    "Azione"
+   ],
+   "regia": [
+    "Edwin Stanton Porter"
+   ],
+   "trama": "Due banditi armati irrompono nell'ufficio telegrafico di una stazione ferroviaria, obbligando l'operatore a fermare un treno e ad ordinare al capotreno di rifornire il tender della locomotiva al serbatoio d'acqua della stazione.",
+   "poster": "media/f-assalto-al-treno-poster.jpg",
+   "sfondo": "media/f-the-great-train-robbery-jf-sfondo.jpg",
+   "cast": [
+    "a-Q4722398",
+    "a-Q946745",
+    "a-Q2155514",
+    "a-Q4310133",
+    "a-Q778816",
+    "a-Q17597049"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-la-belva-dell-autostrada",
+   "tipo": "film",
+   "titolo": "La belva dell'autostrada",
+   "anno": 1953,
+   "minuti": 71,
+   "generi": [
+    "Drammatico",
+    "Giallo",
+    "Noir"
+   ],
+   "regia": [
+    "Ida Lupino"
+   ],
+   "trama": "Il film viene introdotto da una didascalia: «Questa è la storia vera di un uomo, una pistola e una macchina. La pistola apparteneva all'uomo, la macchina invece avrebbe potuto essere la vostra».",
+   "poster": "media/f-la-belva-dell-autostrada-poster.jpg",
+   "sfondo": null,
+   "cast": [
+    "a-Q119935",
+    "a-Q2557512",
+    "a-Q3568989",
+    "a-Q15512268",
+    "a-Q3186574",
+    "a-Q15441006",
+    "a-Q44485984",
+    "a-Q22959191"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-l-impareggiabile-godfrey",
+   "tipo": "film",
+   "titolo": "L'impareggiabile Godfrey",
+   "anno": 1936,
+   "minuti": 94,
+   "generi": [
+    "Commedia"
+   ],
+   "regia": [
+    "Gregory La Cava"
+   ],
+   "trama": "Durante una caccia al tesoro, un gruppo di ricchi fannulloni capita in un accampamento di barboni: la giovane e sconsiderata Irene Bullock riesce a portare via con sé Godfrey, uno dei clochard, pensando di servirsene per poter vincere la gara.",
+   "poster": "media/f-l-impareggiabile-godfrey-poster.jpg",
+   "sfondo": null,
+   "cast": [
+    "a-Q105960",
+    "a-Q207739",
+    "a-Q233856",
+    "a-Q289991",
+    "a-Q911472",
+    "a-Q1375447",
+    "a-Q1995535",
+    "a-Q1308174"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-ho-sognato-un-angelo",
+   "tipo": "film",
+   "titolo": "Ho sognato un angelo",
+   "anno": 1941,
+   "minuti": 119,
+   "generi": [
+    "Drammatico sentimentale"
+   ],
+   "regia": [
+    "George Stevens"
+   ],
+   "trama": "L'improvvisa morte per malattia di Trina, la figlioletta di sei anni, ha creato un incolmabile solco di silenzio e incomunicabilità tra Julie e Roger.",
+   "poster": null,
+   "sfondo": "media/f-ho-sognato-un-angelo-sfondo.jpg",
+   "cast": [
+    "a-Q230099",
+    "a-Q83410",
+    "a-Q466440",
+    "a-Q950397",
+    "a-Q450047",
+    "a-Q513849",
+    "a-Q3037157",
+    "a-Q1381379"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-la-strada-scarlatta",
+   "tipo": "film",
+   "titolo": "La strada scarlatta",
+   "anno": 1945,
+   "minuti": 103,
+   "generi": [
+    "Giallo",
+    "Drammatico",
+    "Noir"
+   ],
+   "regia": [
+    "Fritz Lang"
+   ],
+   "trama": "Cristopher Cross è un cassiere di mezza età, apprezzato dal suo principale e stimato dai colleghi, la cui vita è però amareggiata da un matrimonio infelice.",
+   "poster": "media/f-la-strada-scarlatta-poster.jpg",
+   "sfondo": "media/f-la-strada-scarlatta-sfondo.jpg",
+   "cast": [
+    "a-Q83812",
+    "a-Q128944",
+    "a-Q1159055",
+    "a-Q272061",
+    "a-Q1855635",
+    "a-Q962037",
+    "a-Q2750248",
+    "a-Q1395893"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-l-uomo-dal-braccio-d-oro",
+   "tipo": "film",
+   "titolo": "L'uomo dal braccio d'oro",
+   "anno": 1955,
+   "minuti": 119,
+   "generi": [
+    "Drammatico",
+    "Noir"
+   ],
+   "regia": [
+    "Otto Preminger"
+   ],
+   "trama": "Frankie Machine, professionista del poker, torna a Chicago dopo un periodo di detenzione.",
+   "poster": "media/f-l-uomo-dal-braccio-d-oro-poster.jpg",
+   "sfondo": null,
+   "cast": [
+    "a-Q40912",
+    "a-Q237399",
+    "a-Q212879",
+    "a-Q355932",
+    "a-Q1150547",
+    "a-Q1345163",
+    "a-Q554443",
+    "a-Q1819392"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-due-ore-ancora",
+   "tipo": "film",
+   "titolo": "Due ore ancora",
+   "anno": 1950,
+   "minuti": 83,
+   "generi": [
+    "Noir",
+    "Thriller poliziesco",
+    "Drammatico"
+   ],
+   "regia": [
+    "Rudolph Maté"
+   ],
+   "trama": "San Francisco. In una stazione di polizia si presenta un uomo. È venuto a denunciare un omicidio. Il proprio omicidio...",
+   "poster": "media/f-due-ore-ancora-poster.jpg",
+   "sfondo": null,
+   "cast": [
+    "a-Q119935",
+    "a-Q3361772",
+    "a-Q1425739",
+    "a-Q1982288",
+    "a-Q508986",
+    "a-Q5044383",
+    "a-Q516630",
+    "a-Q7175406"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-il-fantasma-dell-opera",
+   "tipo": "film",
+   "titolo": "Il fantasma dell'Opera",
+   "anno": 1925,
+   "minuti": 106,
+   "generi": [
+    "L'orrore",
+    "Mostri",
+    "Drammatico"
+   ],
+   "regia": [
+    "Rupert Julian"
+   ],
+   "trama": "Durante il debutto della stagione operistica all'Opéra di Parigi, è in programma il Faust di Charles Gounod. Il Conte Philippe de Chagny e suo fratello, il Visconte Raoul de Chagny sono tra gli spettatori della prima.",
+   "poster": "media/f-il-fantasma-dell-opera-poster.jpg",
+   "sfondo": "media/f-il-fantasma-dell-opera-sfondo.jpg",
+   "cast": [
+    "a-Q312656",
+    "a-Q265819",
+    "a-Q1748282",
+    "a-Q4798566",
+    "a-Q731233",
+    "a-Q327140",
+    "a-Q3560682",
+    "a-Q1070698"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-la-casa-dei-fantasmi",
+   "tipo": "film",
+   "titolo": "La casa dei fantasmi",
+   "anno": 1958,
+   "minuti": 75,
+   "generi": [
+    "L'orrore",
+    "Drammatico",
+    "Mistero"
+   ],
+   "regia": [
+    "William Castle"
+   ],
+   "trama": "Convinto dalla moglie Annabelle, l'eccentrico milionario Frederick Loren offre 10 000 dollari a chi accetta di passare un'intera notte in una casa infestata dai fantasmi.",
+   "poster": "media/f-la-casa-dei-fantasmi-poster.jpg",
+   "sfondo": null,
+   "cast": [
+    "a-Q219640",
+    "a-Q2830551",
+    "a-Q1330714",
+    "a-Q4251151",
+    "a-Q5044492",
+    "a-Q3189245",
+    "a-Q339593",
+    "a-Q19559954"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-dracula",
+   "tipo": "film",
+   "titolo": "Dracula",
+   "anno": 1931,
+   "minuti": 75,
+   "generi": [
+    "L'orrore",
+    "Vampiri",
+    "Drammatico"
+   ],
+   "regia": [
+    "Tod Browning"
+   ],
+   "trama": "Il notaio Renfield si reca al castello del conte Dracula in Transilvania per affari. La superstiziosa gente del villaggio teme i vampiri che ritengono abitino nel castello e avvertono Renfield di non andarci.",
+   "poster": "media/f-dracula-poster.jpg",
+   "sfondo": "media/f-dracula-jf-sfondo.jpg",
+   "cast": [
+    "a-Q34529",
+    "a-Q273104",
+    "a-Q359463",
+    "a-Q940662",
+    "a-Q1293958",
+    "a-Q260337",
+    "a-Q3570220",
+    "a-Q3037190"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-carnival-of-souls",
+   "tipo": "film",
+   "titolo": "Carnival of Souls",
+   "anno": 1962,
+   "minuti": 84,
+   "generi": [
+    "L'orrore",
+    "Horror psicologico",
+    "Sui fantasmi"
+   ],
+   "regia": [
+    "Herk Harvey"
+   ],
+   "trama": "Mary Henry è una giovane e talentuosa organista che si trova in macchina con un paio di amiche quando alcuni ragazzi le sfidano ad una corsa. Ad un certo punto le ragazze, perso il controllo dell'auto, da un ponte finiscono nel fiume sottostante.",
+   "poster": "media/f-carnival-of-souls-poster.jpg",
+   "sfondo": "media/f-carnival-of-souls-sfondo.jpg",
+   "cast": [
+    "a-Q2328155",
+    "a-Q4796806",
+    "a-Q3134025"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-lo-straniero",
+   "tipo": "film",
+   "titolo": "Lo straniero",
+   "anno": 1946,
+   "minuti": 91,
+   "generi": [
+    "Giallo",
+    "Noir"
+   ],
+   "regia": [
+    "Orson Welles"
+   ],
+   "trama": "Nell'immediato secondo dopoguerra, la Commissione delle Nazioni Unite contro i Crimini di guerra cerca di rintracciare uno dei più efferati capi dei campi di sterminio nazisti, Franz Kindler, che è scomparso senza lasciare tracce. Mr.",
+   "poster": "media/f-lo-straniero-poster.jpg",
+   "sfondo": "media/f-lo-straniero-sfondo.jpg",
+   "cast": [
+    "a-Q253384",
+    "a-Q83812",
+    "a-Q24829",
+    "a-Q339593",
+    "a-Q3198775",
+    "a-Q15443211",
+    "a-Q2929184",
+    "a-Q2069183"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-il-quarto-uomo",
+   "tipo": "film",
+   "titolo": "Il quarto uomo",
+   "anno": 1952,
+   "minuti": 99,
+   "generi": [
+    "Drammatico",
+    "Giallo",
+    "Noir"
+   ],
+   "regia": [
+    "Phil Karlson"
+   ],
+   "trama": "Tim Foster, capitano della polizia in pensione, ha in progetto di rapinare una banca. Per più di una settimana mette sotto osservazione la Southwest Bank e il negozio di fiori lì vicino, cronometrando i tempi del furgoni addetti alle consegne.",
+   "poster": null,
+   "sfondo": null,
+   "cast": [
+    "a-Q723415",
+    "a-Q1112554",
+    "a-Q981418",
+    "a-Q1982288",
+    "a-Q193278",
+    "a-Q500155",
+    "a-Q3035962",
+    "a-Q118184"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-il-libro-della-giungla",
+   "tipo": "film",
+   "titolo": "Il libro della giungla",
+   "anno": 1942,
+   "minuti": 108,
+   "generi": [
+    "Fantasy",
+    "Azione"
+   ],
+   "regia": [
+    "Zoltán Korda"
+   ],
+   "trama": "Durante un viaggio in India, una turista incontra un anziano indù che in cambio di un'elemosina le racconta una storia. L'uomo si chiama Buldeo ed era un cacciatore.",
+   "poster": "media/f-il-libro-della-giungla-poster.jpg",
+   "sfondo": "media/f-jungle-book-jf-sfondo.jpg",
+   "cast": [
+    "a-Q921798",
+    "a-Q1604757",
+    "a-Q1364339",
+    "a-Q283123",
+    "a-Q2448035",
+    "a-Q1606820",
+    "a-Q1308273",
+    "a-Q439962"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-l-ultimo-uomo-della-terra",
+   "tipo": "film",
+   "titolo": "L'ultimo uomo della Terra",
+   "anno": 1964,
+   "minuti": 86,
+   "generi": [
+    "Post apocalittico",
+    "Vampire film in Italy",
+    "Zombie"
+   ],
+   "regia": [
+    "Ubaldo Ragona"
+   ],
+   "trama": "Il dottor Robert Morgan è l'ultimo essere umano sopravvissuto ad una tremenda epidemia che ha trasformato gli altri uomini in vampiri.",
+   "poster": null,
+   "sfondo": null,
+   "cast": [
+    "a-Q219640",
+    "a-Q516106",
+    "a-Q3724636",
+    "a-Q180010",
+    "a-Q2832333",
+    "a-Q1394131",
+    "a-Q1117124",
+    "a-Q5045344"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-gulliver-s-travels",
+   "tipo": "film",
+   "titolo": "Gulliver's Travels",
+   "anno": 1939,
+   "minuti": 74,
+   "generi": [
+    "Musicale",
+    "Fantascienza",
+    "Fantasy"
+   ],
+   "regia": [
+    "Dave Fleischer"
+   ],
+   "trama": "Il film inizia con l'inquadratura di una lettera scritta da Gulliver, che descrive in forma di diario la scena successiva: si vede Gulliver lottare nel mare in burrasca e naufragare nell'isola di Lilliput.",
+   "poster": "media/f-gulliver-s-travels-poster.jpg",
+   "sfondo": "media/f-gulliver-s-travels-sfondo.jpg",
+   "cast": [],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-la-corazzata-pot-mkin",
+   "tipo": "film",
+   "titolo": "La corazzata Potëmkin",
+   "anno": 1925,
+   "minuti": 74,
+   "generi": [
+    "Muto",
+    "Dramma storico",
+    "Drammatico"
+   ],
+   "regia": [
+    "Sergej Michajlovič Ėjzenštejn"
+   ],
+   "trama": "Il film, ambientato a giugno del 1905, ha come protagonisti i membri dell'equipaggio della corazzata russa che dà titolo all'opera.",
+   "poster": "media/f-la-corazzata-pot-mkin-poster.jpg",
+   "sfondo": "media/f-la-corazzata-pot-mkin-sfondo.jpg",
+   "cast": [
+    "a-Q203639",
+    "a-Q561459",
+    "a-Q1343261",
+    "a-Q8003",
+    "a-Q2382918",
+    "a-Q4877204",
+    "a-Q8803797",
+    "a-Q2832615"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-la-vita-futura",
+   "tipo": "film",
+   "titolo": "La vita futura",
+   "anno": 1936,
+   "minuti": 110,
+   "generi": [
+    "Fantascienza",
+    "Post apocalittico",
+    "Drammatico"
+   ],
+   "regia": [
+    "William Cameron Menzies"
+   ],
+   "trama": "Nell'immaginaria città anglosassone di Everytown, nel 1940, si assiste allo scoppiare di una seconda guerra mondiale. Il conflitto dura decenni, tanto a lungo che i sopravvissuti non sono più in grado di ricordare i motivi per i quali era iniziato.",
+   "poster": null,
+   "sfondo": null,
+   "cast": [
+    "a-Q531461",
+    "a-Q381285",
+    "a-Q527735",
+    "a-Q1281472",
+    "a-Q540466",
+    "a-Q434324",
+    "a-Q542428",
+    "a-Q256785"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-il-pensionante",
+   "tipo": "film",
+   "titolo": "Il pensionante",
+   "anno": 1927,
+   "minuti": 70,
+   "generi": [
+    "Muto",
+    "Detective film",
+    "Giallo"
+   ],
+   "regia": [
+    "Alfred Hitchcock"
+   ],
+   "trama": "Tardo pomeriggio d'inverno a Londra. Fa già buio. La prima inquadratura è il volto di una ragazza bionda che urla. Uno stacco e si passa a un'insegna pubblicitaria che reclamizza uno spettacolo dal titolo \"Riccioli d'oro\". L'insegna si riflette nell'acqua.",
+   "poster": "media/f-il-pensionante-poster.jpg",
+   "sfondo": null,
+   "cast": [
+    "a-Q3847861",
+    "a-Q3811251",
+    "a-Q629955",
+    "a-Q436693",
+    "a-Q2448340",
+    "a-Q7374",
+    "a-Q203165",
+    "a-Q5416167"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-io-e-il-ciclone",
+   "tipo": "film",
+   "titolo": "Io... e il ciclone",
+   "anno": 1928,
+   "minuti": 71,
+   "generi": [
+    "Commedia d'azione",
+    "Muto",
+    "Drammatico"
+   ],
+   "regia": [
+    "Charles Reisner"
+   ],
+   "trama": "Due battelli fluviali si fanno da tempo una feroce concorrenza: lo Stonewall Jackson di Steamboat Bill, imbarcazione vecchia e scassata e la barca moderna e accessoriata di John King.",
+   "poster": "media/f-io-e-il-ciclone-poster.jpg",
+   "sfondo": "media/f-io-e-il-ciclone-sfondo.jpg",
+   "cast": [
+    "a-Q103949",
+    "a-Q281962",
+    "a-Q1557810",
+    "a-Q7816817",
+    "a-Q6765113"
+   ],
+   "fonte": "wikipedia"
+  },
+  {
+   "id": "f-the-boy-in-the-plastic-bubble",
+   "tipo": "film",
+   "titolo": "The Boy in the Plastic Bubble",
+   "anno": 1976,
+   "minuti": 93,
+   "generi": [
+    "TV Movie",
+    "Drammatico"
+   ],
+   "regia": [
+    "Randal Kleiser"
+   ],
+   "trama": "Tod Lubitch is born with a deficient immune system. As such, he must spend the rest of his life in a completely sterile environment. His room is completely hermetically sealed against bacteria and virus, his food is specially prepared, and his only human contact comes in the form of gloved hands. The movie follows his life into a teenager.",
+   "poster": "media/f-the-boy-in-the-plastic-bubble-jf-poster.jpg",
+   "sfondo": "media/f-the-boy-in-the-plastic-bubble-jf-sfondo.jpg",
+   "cast": [
+    "j-8f2ff3eded0cd52c5e19db509182fc64",
+    "j-e23c037a22e094eacb8f9fc018ec8fec",
+    "j-94fd0401890e5beb461a1cc71ea1b97e",
+    "j-76fd40cd14c517fef4eb627de554f36e",
+    "j-3cb15b6c05b9c793a40410709d1d7ed4",
+    "j-ac0b40686fdeaf49b7e79bbeb131dc5e",
+    "j-8afa928ebf393ebd9ea6021661863e9e",
+    "j-a3470fe4874aaf20cd86c2f7256a2e51"
+   ],
+   "fonte": "jellyfin"
+  },
+  {
+   "id": "f-caminandes-gran-dillama",
+   "tipo": "film",
+   "titolo": "Caminandes: Gran Dillama",
+   "anno": 2013,
+   "minuti": 2,
+   "generi": [
+    "Animazione",
+    "Commedia",
+    "Famiglia"
+   ],
+   "regia": [
+    "Pablo Vazquez"
+   ],
+   "trama": "A young llama named Koro discovers that the grass is always greener on the other side (of the fence).",
+   "poster": "media/f-caminandes-gran-dillama-jf-poster.jpg",
+   "sfondo": "media/f-caminandes-gran-dillama-jf-sfondo.jpg",
+   "cast": [
+    "j-fe794e7cc97036ef19cfcfef8887f7ae",
+    "j-d3c4ba8412e63f36adf1a1aa0ceb4781",
+    "j-07f3ca2b62c4a853e449e15f033ea957"
+   ],
+   "fonte": "jellyfin"
+  },
+  {
+   "id": "f-caminandes-llama-drama",
+   "tipo": "film",
+   "titolo": "Caminandes: Llama Drama",
+   "anno": 2013,
+   "minuti": 2,
+   "generi": [
+    "Animazione",
+    "Famiglia",
+    "Commedia"
+   ],
+   "regia": [
+    "Pablo Vazquez"
+   ],
+   "trama": "Koro wants to get to the other side of the road.",
+   "poster": "media/f-caminandes-llama-drama-jf-poster.jpg",
+   "sfondo": "media/f-caminandes-llama-drama-jf-sfondo.jpg",
+   "cast": [
+    "j-fe794e7cc97036ef19cfcfef8887f7ae",
+    "j-07f3ca2b62c4a853e449e15f033ea957"
+   ],
+   "fonte": "jellyfin"
+  },
+  {
+   "id": "f-caminandes-llamigos",
+   "tipo": "film",
+   "titolo": "Caminandes: Llamigos",
+   "anno": 2016,
+   "minuti": 3,
+   "generi": [
+    "Animazione",
+    "Commedia",
+    "Famiglia"
+   ],
+   "regia": [
+    "Sergey Sharybin"
+   ],
+   "trama": "In this episode of the Caminandes cartoon series we learn to know our hero Koro even better! It's winter in Patagonia, food is getting scarce. Koro the Llama engages with Oti the pesky penguin in an epic fight over that last tasty berry.  This short animation film was made with Blender and funded by the subscribers of the Blender Cloud platform. Already since 2007, Blender Institute successfully combines film and media production with improving a free and open source 3D creation pipeline.",
+   "poster": "media/f-caminandes-llamigos-jf-poster.jpg",
+   "sfondo": "media/f-caminandes-llamigos-jf-sfondo.jpg",
+   "cast": [
+    "j-b62265a59a922aa29364383c6bc96c23",
+    "j-fe794e7cc97036ef19cfcfef8887f7ae",
+    "j-2d9599fd2ac1ecf362ed9022abc53a01"
+   ],
+   "fonte": "jellyfin"
+  },
+  {
+   "id": "f-the-great-st-louis-bank-robbery",
+   "tipo": "film",
+   "titolo": "The Great St. Louis Bank Robbery",
+   "anno": 1959,
+   "minuti": 89,
+   "generi": [
+    "Poliziesco",
+    "Thriller"
+   ],
+   "regia": [
+    "John Stix"
+   ],
+   "trama": "Career criminals and a local youth carefully plan and rehearse the robbery of a Missouri bank.",
+   "poster": "media/f-the-great-st-louis-bank-robbery-jf-poster.jpg",
+   "sfondo": "media/f-the-great-st-louis-bank-robbery-jf-sfondo.jpg",
+   "cast": [
+    "j-af17b3c81f0b6de4fcfc95ad57c573f0",
+    "j-c8f68ea5b4f20dea01937d120ce3cbd6",
+    "j-3e808b22698cfa5c42e8be6f011f8b78",
+    "j-c5d87ff8c3effcdfd472649dcc0a7696",
+    "j-609ab5610e19930b8c6014e1fda4fe9a",
+    "j-dda5e4af74b97259ecb90aa1ca23230e",
+    "j-560308818544deb5402d659d94c3e58d",
+    "j-9cb0f418a7f280358bfbee617f49b591"
+   ],
+   "fonte": "jellyfin"
+  },
+  {
+   "id": "f-king-lear",
+   "tipo": "film",
+   "titolo": "King Lear",
+   "anno": 1953,
+   "minuti": 82,
+   "generi": [
+    "TV Movie",
+    "Storico",
+    "Drammatico"
+   ],
+   "regia": [
+    "Andrew McCullough"
+   ],
+   "trama": "In this abridged television production, Lear vows revenge against his conniving daughters after they try to take swift control of his power.",
+   "poster": "media/f-king-lear-jf-poster.jpg",
+   "sfondo": null,
+   "cast": [
+    "j-2a2ca4c753bbd2da13cd3634b3892b3b",
+    "j-b40027089eb1d741d4aac48fc966a225",
+    "j-3b5e1f698bc294948cbe27fa0c780463",
+    "j-aa8ed492d06a5a78183a626cdc2cf2fc",
+    "j-e3018acc89133c7a98f0015fd6b1a1a0",
+    "j-a967bbdc7492d70df64ef367fc408029",
+    "j-0fd2ecb24a178fe51bac322a420534fb",
+    "j-b97332a0a3beaa744a5564246e404f98"
+   ],
+   "fonte": "jellyfin"
+  },
+  {
+   "id": "f-sahara",
+   "tipo": "film",
+   "titolo": "Sahara",
+   "anno": 1943,
+   "minuti": 98,
+   "generi": [
+    "Avventura",
+    "Guerra"
+   ],
+   "regia": [
+    "Zoltan Korda"
+   ],
+   "trama": "In Libya, an American tank commander, along with a handful of Allied soldiers, tries to defend an isolated well with a limited supply of water from a German Afrika Korps battalion during the Western Desert Campaign of World War II.",
+   "poster": "media/f-sahara-jf-poster.jpg",
+   "sfondo": "media/f-sahara-jf-sfondo.jpg",
+   "cast": [
+    "j-def59844cf037ad67b9e69007481fb5f",
+    "j-b46bf83ad4c40fbc753212eaefd8a99c",
+    "j-d806d2247956f1ff6a04d971b733d8a9",
+    "j-7c6c500a54c5d5f80d6a207d93a37649",
+    "j-2a42f307b69011df3e22dd3f066a72ac",
+    "j-d9d0e3958b4075a3a0e9424fc86b1387",
+    "j-da894ec8ae63992da119f3346d025707",
+    "j-24bdd7eae500c53c8166a05e96b32065"
+   ],
+   "fonte": "jellyfin"
+  }
+ ],
+ "serie": [
+  {
+   "id": "s-dark",
+   "tipo": "serie",
+   "titolo": "Dark",
+   "anno": 2017,
+   "generi": [
+    "Drammatico",
+    "Fantascienza",
+    "Soprannaturale"
+   ],
+   "trama": "Winden, 2019.",
+   "poster": "media/s-dark-poster.jpg",
+   "sfondo": "media/s-dark-sfondo.jpg",
+   "cast": [
+    "t-166466",
+    "t-99978",
+    "t-112226",
+    "t-166474",
+    "t-194867",
+    "t-99061",
+    "t-111266",
+    "t-194869"
+   ],
+   "stagioni": [
+    {
+     "numero": 1,
+     "episodi": [
+      {
+       "id": "s-dark-s1e1",
+       "numero": 1,
+       "titolo": "Geheimnisse",
+       "minuti": 52,
+       "img": "media/s-dark-s1e1.jpg"
+      },
+      {
+       "id": "s-dark-s1e2",
+       "numero": 2,
+       "titolo": "Lügen",
+       "minuti": 45,
+       "img": "media/s-dark-s1e2.jpg"
+      },
+      {
+       "id": "s-dark-s1e3",
+       "numero": 3,
+       "titolo": "Gestern und Heute",
+       "minuti": 46,
+       "img": "media/s-dark-s1e3.jpg"
+      },
+      {
+       "id": "s-dark-s1e4",
+       "numero": 4,
+       "titolo": "Doppelleben",
+       "minuti": 48,
+       "img": "media/s-dark-s1e4.jpg"
+      },
+      {
+       "id": "s-dark-s1e5",
+       "numero": 5,
+       "titolo": "Wahrheiten",
+       "minuti": 46,
+       "img": "media/s-dark-s1e5.jpg"
+      },
+      {
+       "id": "s-dark-s1e6",
+       "numero": 6,
+       "titolo": "Sic Mundus Creatus Est",
+       "minuti": 51,
+       "img": "media/s-dark-s1e6.jpg"
+      },
+      {
+       "id": "s-dark-s1e7",
+       "numero": 7,
+       "titolo": "Kreuzwege",
+       "minuti": 52,
+       "img": "media/s-dark-s1e7.jpg"
+      },
+      {
+       "id": "s-dark-s1e8",
+       "numero": 8,
+       "titolo": "Was man sät, das wird man ernten",
+       "minuti": 50,
+       "img": "media/s-dark-s1e8.jpg"
+      },
+      {
+       "id": "s-dark-s1e9",
+       "numero": 9,
+       "titolo": "Alles ist jetzt",
+       "minuti": 55,
+       "img": "media/s-dark-s1e9.jpg"
+      },
+      {
+       "id": "s-dark-s1e10",
+       "numero": 10,
+       "titolo": "Alpha und Omega",
+       "minuti": 57,
+       "img": "media/s-dark-s1e10.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 2,
+     "episodi": [
+      {
+       "id": "s-dark-s2e1",
+       "numero": 1,
+       "titolo": "Anfänge und Enden",
+       "minuti": 54,
+       "img": "media/s-dark-s2e1.jpg"
+      },
+      {
+       "id": "s-dark-s2e2",
+       "numero": 2,
+       "titolo": "Dunkle Materie",
+       "minuti": 55,
+       "img": "media/s-dark-s2e2.jpg"
+      },
+      {
+       "id": "s-dark-s2e3",
+       "numero": 3,
+       "titolo": "Gespenster",
+       "minuti": 56,
+       "img": "media/s-dark-s2e3.jpg"
+      },
+      {
+       "id": "s-dark-s2e4",
+       "numero": 4,
+       "titolo": "Die Reisenden",
+       "minuti": 61,
+       "img": "media/s-dark-s2e4.jpg"
+      },
+      {
+       "id": "s-dark-s2e5",
+       "numero": 5,
+       "titolo": "Vom Suchen und Finden",
+       "minuti": 56,
+       "img": "media/s-dark-s2e5.jpg"
+      },
+      {
+       "id": "s-dark-s2e6",
+       "numero": 6,
+       "titolo": "Ein unendlicher Kreis",
+       "minuti": 55,
+       "img": "media/s-dark-s2e6.jpg"
+      },
+      {
+       "id": "s-dark-s2e7",
+       "numero": 7,
+       "titolo": "Der weiße Teufel",
+       "minuti": 58,
+       "img": "media/s-dark-s2e7.jpg"
+      },
+      {
+       "id": "s-dark-s2e8",
+       "numero": 8,
+       "titolo": "Enden und Anfänge",
+       "minuti": 58,
+       "img": "media/s-dark-s2e8.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 3,
+     "episodi": [
+      {
+       "id": "s-dark-s3e1",
+       "numero": 1,
+       "titolo": "Déjà-vu",
+       "minuti": 62,
+       "img": "media/s-dark-s3e1.jpg"
+      },
+      {
+       "id": "s-dark-s3e2",
+       "numero": 2,
+       "titolo": "Die Überlebende",
+       "minuti": 60,
+       "img": "media/s-dark-s3e2.jpg"
+      },
+      {
+       "id": "s-dark-s3e3",
+       "numero": 3,
+       "titolo": "Adam und Eva",
+       "minuti": 57,
+       "img": "media/s-dark-s3e3.jpg"
+      },
+      {
+       "id": "s-dark-s3e4",
+       "numero": 4,
+       "titolo": "Der Ursprung",
+       "minuti": 64,
+       "img": "media/s-dark-s3e4.jpg"
+      },
+      {
+       "id": "s-dark-s3e5",
+       "numero": 5,
+       "titolo": "Leben und Tod",
+       "minuti": 64,
+       "img": "media/s-dark-s3e5.jpg"
+      },
+      {
+       "id": "s-dark-s3e6",
+       "numero": 6,
+       "titolo": "Licht und Schatten",
+       "minuti": 59,
+       "img": "media/s-dark-s3e6.jpg"
+      },
+      {
+       "id": "s-dark-s3e7",
+       "numero": 7,
+       "titolo": "Zwischen der Zeit",
+       "minuti": 69,
+       "img": "media/s-dark-s3e7.jpg"
+      },
+      {
+       "id": "s-dark-s3e8",
+       "numero": 8,
+       "titolo": "Das Paradies",
+       "minuti": 73,
+       "img": "media/s-dark-s3e8.jpg"
+      }
+     ]
+    }
+   ],
+   "stagioniTotali": 3
+  },
+  {
+   "id": "s-chernobyl",
+   "tipo": "serie",
+   "titolo": "Chernobyl",
+   "anno": 2019,
+   "generi": [
+    "Drammatico",
+    "Storico"
+   ],
+   "trama": "La miniserie si concentra sulla portata devastante dell'incidente nucleare di Černobyl' che si verificò nell'Ucraina sovietica il 26 aprile 1986, rivelando come e perché è accaduto, raccontando anche le vicende degli eroi che hanno dato il loro contributo per mitigare i danni dell'esplosione a costo della loro vita.",
+   "poster": "media/s-chernobyl-poster.jpg",
+   "sfondo": "media/s-chernobyl-sfondo.jpg",
+   "cast": [
+    "t-23455",
+    "t-56370",
+    "t-68900",
+    "t-72338",
+    "t-55608",
+    "t-52240",
+    "t-59917",
+    "t-40850"
+   ],
+   "stagioni": [
+    {
+     "numero": 1,
+     "episodi": [
+      {
+       "id": "s-chernobyl-s1e1",
+       "numero": 1,
+       "titolo": "1:23:45",
+       "minuti": 65,
+       "img": "media/s-chernobyl-s1e1.jpg"
+      },
+      {
+       "id": "s-chernobyl-s1e2",
+       "numero": 2,
+       "titolo": "Please Remain Calm",
+       "minuti": 70,
+       "img": "media/s-chernobyl-s1e2.jpg"
+      },
+      {
+       "id": "s-chernobyl-s1e3",
+       "numero": 3,
+       "titolo": "Open Wide, O Earth",
+       "minuti": 66,
+       "img": "media/s-chernobyl-s1e3.jpg"
+      },
+      {
+       "id": "s-chernobyl-s1e4",
+       "numero": 4,
+       "titolo": "The Happiness of All Mankind",
+       "minuti": 71,
+       "img": "media/s-chernobyl-s1e4.jpg"
+      },
+      {
+       "id": "s-chernobyl-s1e5",
+       "numero": 5,
+       "titolo": "Vichnaya Pamyat",
+       "minuti": 78,
+       "img": "media/s-chernobyl-s1e5.jpg"
+      }
+     ]
+    }
+   ],
+   "stagioniTotali": 1
+  },
+  {
+   "id": "s-true-detective",
+   "tipo": "serie",
+   "titolo": "True Detective",
+   "anno": 2014,
+   "generi": [
+    "Drammatico",
+    "Poliziesco",
+    "Thriller"
+   ],
+   "trama": "True Detective è una serie televisiva statunitense creata e interamente scritta da Nic Pizzolatto, che ha debuttato il 12 gennaio 2014 sul canale via cavo HBO diventando in breve tempo una delle serie televisive di maggior successo del nuovo millennio, conquistando i favori sia di critica sia di pubblico, ricevendo numerosi riconoscimenti di settore.",
+   "poster": "media/s-true-detective-poster.jpg",
+   "sfondo": "media/s-true-detective-sfondo.jpg",
+   "cast": [
+    "t-664",
+    "t-665",
+    "t-666",
+    "t-667",
+    "t-668",
+    "t-672",
+    "t-673",
+    "t-50491"
+   ],
+   "stagioni": [
+    {
+     "numero": 1,
+     "episodi": [
+      {
+       "id": "s-true-detective-s1e1",
+       "numero": 1,
+       "titolo": "The Long Bright Dark",
+       "minuti": 60,
+       "img": "media/s-true-detective-s1e1.jpg"
+      },
+      {
+       "id": "s-true-detective-s1e2",
+       "numero": 2,
+       "titolo": "Seeing Things",
+       "minuti": 60,
+       "img": "media/s-true-detective-s1e2.jpg"
+      },
+      {
+       "id": "s-true-detective-s1e3",
+       "numero": 3,
+       "titolo": "The Locked Room",
+       "minuti": 60,
+       "img": "media/s-true-detective-s1e3.jpg"
+      },
+      {
+       "id": "s-true-detective-s1e4",
+       "numero": 4,
+       "titolo": "Who Goes There",
+       "minuti": 60,
+       "img": "media/s-true-detective-s1e4.jpg"
+      },
+      {
+       "id": "s-true-detective-s1e5",
+       "numero": 5,
+       "titolo": "The Secret Fate of All Life",
+       "minuti": 60,
+       "img": "media/s-true-detective-s1e5.jpg"
+      },
+      {
+       "id": "s-true-detective-s1e6",
+       "numero": 6,
+       "titolo": "Haunted Houses",
+       "minuti": 60,
+       "img": "media/s-true-detective-s1e6.jpg"
+      },
+      {
+       "id": "s-true-detective-s1e7",
+       "numero": 7,
+       "titolo": "After You've Gone",
+       "minuti": 60,
+       "img": "media/s-true-detective-s1e7.jpg"
+      },
+      {
+       "id": "s-true-detective-s1e8",
+       "numero": 8,
+       "titolo": "Form and Void",
+       "minuti": 60,
+       "img": "media/s-true-detective-s1e8.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 2,
+     "episodi": [
+      {
+       "id": "s-true-detective-s2e1",
+       "numero": 1,
+       "titolo": "The Western Book of the Dead",
+       "minuti": 60,
+       "img": "media/s-true-detective-s2e1.jpg"
+      },
+      {
+       "id": "s-true-detective-s2e2",
+       "numero": 2,
+       "titolo": "Night Finds You",
+       "minuti": 60,
+       "img": "media/s-true-detective-s2e2.jpg"
+      },
+      {
+       "id": "s-true-detective-s2e3",
+       "numero": 3,
+       "titolo": "Maybe Tomorrow",
+       "minuti": 60,
+       "img": "media/s-true-detective-s2e3.jpg"
+      },
+      {
+       "id": "s-true-detective-s2e4",
+       "numero": 4,
+       "titolo": "Down Will Come",
+       "minuti": 60,
+       "img": "media/s-true-detective-s2e4.jpg"
+      },
+      {
+       "id": "s-true-detective-s2e5",
+       "numero": 5,
+       "titolo": "Other Lives",
+       "minuti": 60,
+       "img": "media/s-true-detective-s2e5.jpg"
+      },
+      {
+       "id": "s-true-detective-s2e6",
+       "numero": 6,
+       "titolo": "Church in Ruins",
+       "minuti": 60,
+       "img": "media/s-true-detective-s2e6.jpg"
+      },
+      {
+       "id": "s-true-detective-s2e7",
+       "numero": 7,
+       "titolo": "Black Maps and Motel Rooms",
+       "minuti": 60,
+       "img": "media/s-true-detective-s2e7.jpg"
+      },
+      {
+       "id": "s-true-detective-s2e8",
+       "numero": 8,
+       "titolo": "Omega Station",
+       "minuti": 90,
+       "img": "media/s-true-detective-s2e8.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 3,
+     "episodi": [
+      {
+       "id": "s-true-detective-s3e1",
+       "numero": 1,
+       "titolo": "The Great War and Modern Memory",
+       "minuti": 60,
+       "img": "media/s-true-detective-s3e1.jpg"
+      },
+      {
+       "id": "s-true-detective-s3e2",
+       "numero": 2,
+       "titolo": "Kiss Tomorrow Goodbye",
+       "minuti": 60,
+       "img": "media/s-true-detective-s3e2.jpg"
+      },
+      {
+       "id": "s-true-detective-s3e3",
+       "numero": 3,
+       "titolo": "The Big Never",
+       "minuti": 60,
+       "img": "media/s-true-detective-s3e3.jpg"
+      },
+      {
+       "id": "s-true-detective-s3e4",
+       "numero": 4,
+       "titolo": "The Hour and the Day",
+       "minuti": 67,
+       "img": "media/s-true-detective-s3e4.jpg"
+      },
+      {
+       "id": "s-true-detective-s3e5",
+       "numero": 5,
+       "titolo": "If You Have Ghosts",
+       "minuti": 60,
+       "img": "media/s-true-detective-s3e5.jpg"
+      },
+      {
+       "id": "s-true-detective-s3e6",
+       "numero": 6,
+       "titolo": "Hunters in the Dark",
+       "minuti": 60,
+       "img": "media/s-true-detective-s3e6.jpg"
+      },
+      {
+       "id": "s-true-detective-s3e7",
+       "numero": 7,
+       "titolo": "The Final Country",
+       "minuti": 60,
+       "img": "media/s-true-detective-s3e7.jpg"
+      },
+      {
+       "id": "s-true-detective-s3e8",
+       "numero": 8,
+       "titolo": "Now Am Found",
+       "minuti": 76,
+       "img": "media/s-true-detective-s3e8.jpg"
+      }
+     ]
+    }
+   ],
+   "stagioniTotali": 4
+  },
+  {
+   "id": "s-mindhunter",
+   "tipo": "serie",
+   "titolo": "Mindhunter",
+   "anno": 2017,
+   "generi": [
+    "Drammatico",
+    "Poliziesco",
+    "Thriller"
+   ],
+   "trama": "Mindhunter è una serie televisiva statunitense del 2017 creata da Joe Penhall, basata sul libro Mindhunter: La storia vera del primo cacciatore di serial killer americano, scritto da John E. Douglas e Mark Olshaker.",
+   "poster": "media/s-mindhunter-poster.jpg",
+   "sfondo": "media/s-mindhunter-sfondo.jpg",
+   "cast": [
+    "t-12578",
+    "t-20519",
+    "t-29335",
+    "t-108937",
+    "t-166488",
+    "t-190995",
+    "t-191011",
+    "t-8875"
+   ],
+   "stagioni": [
+    {
+     "numero": 1,
+     "episodi": [
+      {
+       "id": "s-mindhunter-s1e1",
+       "numero": 1,
+       "titolo": "Episode 1",
+       "minuti": 60,
+       "img": "media/s-mindhunter-s1e1.jpg"
+      },
+      {
+       "id": "s-mindhunter-s1e2",
+       "numero": 2,
+       "titolo": "Episode 2",
+       "minuti": 56,
+       "img": "media/s-mindhunter-s1e2.jpg"
+      },
+      {
+       "id": "s-mindhunter-s1e3",
+       "numero": 3,
+       "titolo": "Episode 3",
+       "minuti": 45,
+       "img": "media/s-mindhunter-s1e3.jpg"
+      },
+      {
+       "id": "s-mindhunter-s1e4",
+       "numero": 4,
+       "titolo": "Episode 4",
+       "minuti": 54,
+       "img": "media/s-mindhunter-s1e4.jpg"
+      },
+      {
+       "id": "s-mindhunter-s1e5",
+       "numero": 5,
+       "titolo": "Episode 5",
+       "minuti": 42,
+       "img": "media/s-mindhunter-s1e5.jpg"
+      },
+      {
+       "id": "s-mindhunter-s1e6",
+       "numero": 6,
+       "titolo": "Episode 6",
+       "minuti": 34,
+       "img": "media/s-mindhunter-s1e6.jpg"
+      },
+      {
+       "id": "s-mindhunter-s1e7",
+       "numero": 7,
+       "titolo": "Episode 7",
+       "minuti": 53,
+       "img": "media/s-mindhunter-s1e7.jpg"
+      },
+      {
+       "id": "s-mindhunter-s1e8",
+       "numero": 8,
+       "titolo": "Episode 8",
+       "minuti": 54,
+       "img": "media/s-mindhunter-s1e8.jpg"
+      },
+      {
+       "id": "s-mindhunter-s1e9",
+       "numero": 9,
+       "titolo": "Episode 9",
+       "minuti": 48,
+       "img": "media/s-mindhunter-s1e9.jpg"
+      },
+      {
+       "id": "s-mindhunter-s1e10",
+       "numero": 10,
+       "titolo": "Episode 10",
+       "minuti": 53,
+       "img": "media/s-mindhunter-s1e10.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 2,
+     "episodi": [
+      {
+       "id": "s-mindhunter-s2e1",
+       "numero": 1,
+       "titolo": "Episode 1",
+       "minuti": 48,
+       "img": "media/s-mindhunter-s2e1.jpg"
+      },
+      {
+       "id": "s-mindhunter-s2e2",
+       "numero": 2,
+       "titolo": "Episode 2",
+       "minuti": 47,
+       "img": "media/s-mindhunter-s2e2.jpg"
+      },
+      {
+       "id": "s-mindhunter-s2e3",
+       "numero": 3,
+       "titolo": "Episode 3",
+       "minuti": 61,
+       "img": "media/s-mindhunter-s2e3.jpg"
+      },
+      {
+       "id": "s-mindhunter-s2e4",
+       "numero": 4,
+       "titolo": "Episode 4",
+       "minuti": 51,
+       "img": "media/s-mindhunter-s2e4.jpg"
+      },
+      {
+       "id": "s-mindhunter-s2e5",
+       "numero": 5,
+       "titolo": "Episode 5",
+       "minuti": 72,
+       "img": "media/s-mindhunter-s2e5.jpg"
+      },
+      {
+       "id": "s-mindhunter-s2e6",
+       "numero": 6,
+       "titolo": "Episode 6",
+       "minuti": 59,
+       "img": "media/s-mindhunter-s2e6.jpg"
+      },
+      {
+       "id": "s-mindhunter-s2e7",
+       "numero": 7,
+       "titolo": "Episode 7",
+       "minuti": 58,
+       "img": "media/s-mindhunter-s2e7.jpg"
+      },
+      {
+       "id": "s-mindhunter-s2e8",
+       "numero": 8,
+       "titolo": "Episode 8",
+       "minuti": 53,
+       "img": "media/s-mindhunter-s2e8.jpg"
+      },
+      {
+       "id": "s-mindhunter-s2e9",
+       "numero": 9,
+       "titolo": "Episode 9",
+       "minuti": 74,
+       "img": "media/s-mindhunter-s2e9.jpg"
+      }
+     ]
+    }
+   ],
+   "stagioniTotali": 2
+  },
+  {
+   "id": "s-severance",
+   "tipo": "serie",
+   "titolo": "Scissione",
+   "anno": 2022,
+   "generi": [
+    "Drammatico",
+    "Fantascienza",
+    "Giallo"
+   ],
+   "trama": "La Lumon Industries è un'azienda che utilizza una procedura medica di \"scissione\" per separare i ricordi della vita personale di alcuni dei suoi dipendenti dai loro ricordi lavorativi; in questo modo, il cosiddetto interno non sa nulla del cosiddetto esterno e viceversa al varcare della soglia aziendale.",
+   "poster": "media/s-severance-poster.jpg",
+   "sfondo": "media/s-severance-sfondo.jpg",
+   "cast": [
+    "t-31964",
+    "t-139402",
+    "t-15588",
+    "t-154360",
+    "t-142645",
+    "t-54931",
+    "t-19696",
+    "t-64367"
+   ],
+   "stagioni": [
+    {
+     "numero": 1,
+     "episodi": [
+      {
+       "id": "s-severance-s1e1",
+       "numero": 1,
+       "titolo": "Good News About Hell",
+       "minuti": 57,
+       "img": "media/s-severance-s1e1.jpg"
+      },
+      {
+       "id": "s-severance-s1e2",
+       "numero": 2,
+       "titolo": "Half Loop",
+       "minuti": 53,
+       "img": "media/s-severance-s1e2.jpg"
+      },
+      {
+       "id": "s-severance-s1e3",
+       "numero": 3,
+       "titolo": "In Perpetuity",
+       "minuti": 56,
+       "img": "media/s-severance-s1e3.jpg"
+      },
+      {
+       "id": "s-severance-s1e4",
+       "numero": 4,
+       "titolo": "The You You Are",
+       "minuti": 46,
+       "img": "media/s-severance-s1e4.jpg"
+      },
+      {
+       "id": "s-severance-s1e5",
+       "numero": 5,
+       "titolo": "The Grim Barbarity of Optics and Design",
+       "minuti": 43,
+       "img": "media/s-severance-s1e5.jpg"
+      },
+      {
+       "id": "s-severance-s1e6",
+       "numero": 6,
+       "titolo": "Hide and Seek",
+       "minuti": 40,
+       "img": "media/s-severance-s1e6.jpg"
+      },
+      {
+       "id": "s-severance-s1e7",
+       "numero": 7,
+       "titolo": "Defiant Jazz",
+       "minuti": 49,
+       "img": "media/s-severance-s1e7.jpg"
+      },
+      {
+       "id": "s-severance-s1e8",
+       "numero": 8,
+       "titolo": "What's for Dinner?",
+       "minuti": 46,
+       "img": "media/s-severance-s1e8.jpg"
+      },
+      {
+       "id": "s-severance-s1e9",
+       "numero": 9,
+       "titolo": "The We We Are",
+       "minuti": 40,
+       "img": "media/s-severance-s1e9.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 2,
+     "episodi": [
+      {
+       "id": "s-severance-s2e1",
+       "numero": 1,
+       "titolo": "Hello, Ms. Cobel",
+       "minuti": 48,
+       "img": "media/s-severance-s2e1.jpg"
+      },
+      {
+       "id": "s-severance-s2e2",
+       "numero": 2,
+       "titolo": "Goodbye, Mrs. Selvig",
+       "minuti": 46,
+       "img": "media/s-severance-s2e2.jpg"
+      },
+      {
+       "id": "s-severance-s2e3",
+       "numero": 3,
+       "titolo": "Who Is Alive?",
+       "minuti": 53,
+       "img": "media/s-severance-s2e3.jpg"
+      },
+      {
+       "id": "s-severance-s2e4",
+       "numero": 4,
+       "titolo": "Woe's Hollow",
+       "minuti": 50,
+       "img": "media/s-severance-s2e4.jpg"
+      },
+      {
+       "id": "s-severance-s2e5",
+       "numero": 5,
+       "titolo": "Trojan's Horse",
+       "minuti": 46,
+       "img": "media/s-severance-s2e5.jpg"
+      },
+      {
+       "id": "s-severance-s2e6",
+       "numero": 6,
+       "titolo": "Attila",
+       "minuti": 48,
+       "img": "media/s-severance-s2e6.jpg"
+      },
+      {
+       "id": "s-severance-s2e7",
+       "numero": 7,
+       "titolo": "Chikhai Bardo",
+       "minuti": 50,
+       "img": "media/s-severance-s2e7.jpg"
+      },
+      {
+       "id": "s-severance-s2e8",
+       "numero": 8,
+       "titolo": "Sweet Vitriol",
+       "minuti": 37,
+       "img": "media/s-severance-s2e8.jpg"
+      },
+      {
+       "id": "s-severance-s2e9",
+       "numero": 9,
+       "titolo": "The After Hours",
+       "minuti": 44,
+       "img": "media/s-severance-s2e9.jpg"
+      },
+      {
+       "id": "s-severance-s2e10",
+       "numero": 10,
+       "titolo": "Cold Harbor",
+       "minuti": 75,
+       "img": "media/s-severance-s2e10.jpg"
+      }
+     ]
+    }
+   ],
+   "stagioniTotali": 2
+  },
+  {
+   "id": "s-the-crown",
+   "tipo": "serie",
+   "titolo": "The Crown",
+   "anno": 2016,
+   "generi": [
+    "Drammatico",
+    "Storico"
+   ],
+   "trama": "The Crown racconta la storia della regina Elisabetta II a partire dal 1947 fino al 2005.",
+   "poster": "media/s-the-crown-poster.jpg",
+   "sfondo": "media/s-the-crown-sfondo.jpg",
+   "cast": [
+    "t-49625",
+    "t-39042",
+    "t-52597",
+    "t-34550",
+    "t-6670",
+    "t-52759",
+    "t-40427",
+    "t-55168"
+   ],
+   "stagioni": [
+    {
+     "numero": 1,
+     "episodi": [
+      {
+       "id": "s-the-crown-s1e1",
+       "numero": 1,
+       "titolo": "Wolferton Splash",
+       "minuti": 57,
+       "img": "media/s-the-crown-s1e1.jpg"
+      },
+      {
+       "id": "s-the-crown-s1e2",
+       "numero": 2,
+       "titolo": "Hyde Park Corner",
+       "minuti": 61,
+       "img": "media/s-the-crown-s1e2.jpg"
+      },
+      {
+       "id": "s-the-crown-s1e3",
+       "numero": 3,
+       "titolo": "Windsor",
+       "minuti": 60,
+       "img": "media/s-the-crown-s1e3.jpg"
+      },
+      {
+       "id": "s-the-crown-s1e4",
+       "numero": 4,
+       "titolo": "Act of God",
+       "minuti": 58,
+       "img": "media/s-the-crown-s1e4.jpg"
+      },
+      {
+       "id": "s-the-crown-s1e5",
+       "numero": 5,
+       "titolo": "Smoke and Mirrors",
+       "minuti": 55,
+       "img": "media/s-the-crown-s1e5.jpg"
+      },
+      {
+       "id": "s-the-crown-s1e6",
+       "numero": 6,
+       "titolo": "Gelignite",
+       "minuti": 58,
+       "img": "media/s-the-crown-s1e6.jpg"
+      },
+      {
+       "id": "s-the-crown-s1e7",
+       "numero": 7,
+       "titolo": "Scientia Potentia Est",
+       "minuti": 59,
+       "img": "media/s-the-crown-s1e7.jpg"
+      },
+      {
+       "id": "s-the-crown-s1e8",
+       "numero": 8,
+       "titolo": "Pride and Joy",
+       "minuti": 59,
+       "img": "media/s-the-crown-s1e8.jpg"
+      },
+      {
+       "id": "s-the-crown-s1e9",
+       "numero": 9,
+       "titolo": "Assassins",
+       "minuti": 61,
+       "img": "media/s-the-crown-s1e9.jpg"
+      },
+      {
+       "id": "s-the-crown-s1e10",
+       "numero": 10,
+       "titolo": "Gloriana",
+       "minuti": 55,
+       "img": "media/s-the-crown-s1e10.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 2,
+     "episodi": [
+      {
+       "id": "s-the-crown-s2e1",
+       "numero": 1,
+       "titolo": "Misadventure",
+       "minuti": 57,
+       "img": "media/s-the-crown-s2e1.jpg"
+      },
+      {
+       "id": "s-the-crown-s2e2",
+       "numero": 2,
+       "titolo": "A Company of Men",
+       "minuti": 55,
+       "img": "media/s-the-crown-s2e2.jpg"
+      },
+      {
+       "id": "s-the-crown-s2e3",
+       "numero": 3,
+       "titolo": "Lisbon",
+       "minuti": 56,
+       "img": "media/s-the-crown-s2e3.jpg"
+      },
+      {
+       "id": "s-the-crown-s2e4",
+       "numero": 4,
+       "titolo": "Beryl",
+       "minuti": 61,
+       "img": "media/s-the-crown-s2e4.jpg"
+      },
+      {
+       "id": "s-the-crown-s2e5",
+       "numero": 5,
+       "titolo": "Marionettes",
+       "minuti": 61,
+       "img": "media/s-the-crown-s2e5.jpg"
+      },
+      {
+       "id": "s-the-crown-s2e6",
+       "numero": 6,
+       "titolo": "Vergangenheit",
+       "minuti": 62,
+       "img": "media/s-the-crown-s2e6.jpg"
+      },
+      {
+       "id": "s-the-crown-s2e7",
+       "numero": 7,
+       "titolo": "Matrimonium",
+       "minuti": 60,
+       "img": "media/s-the-crown-s2e7.jpg"
+      },
+      {
+       "id": "s-the-crown-s2e8",
+       "numero": 8,
+       "titolo": "Dear Mrs. Kennedy",
+       "minuti": 57,
+       "img": "media/s-the-crown-s2e8.jpg"
+      },
+      {
+       "id": "s-the-crown-s2e9",
+       "numero": 9,
+       "titolo": "Paterfamilias",
+       "minuti": 60,
+       "img": "media/s-the-crown-s2e9.jpg"
+      },
+      {
+       "id": "s-the-crown-s2e10",
+       "numero": 10,
+       "titolo": "Mystery Man",
+       "minuti": 59,
+       "img": "media/s-the-crown-s2e10.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 3,
+     "episodi": [
+      {
+       "id": "s-the-crown-s3e1",
+       "numero": 1,
+       "titolo": "Olding",
+       "minuti": 48,
+       "img": "media/s-the-crown-s3e1.jpg"
+      },
+      {
+       "id": "s-the-crown-s3e2",
+       "numero": 2,
+       "titolo": "Margaretology",
+       "minuti": 48,
+       "img": "media/s-the-crown-s3e2.jpg"
+      },
+      {
+       "id": "s-the-crown-s3e3",
+       "numero": 3,
+       "titolo": "Aberfan",
+       "minuti": 55,
+       "img": "media/s-the-crown-s3e3.jpg"
+      },
+      {
+       "id": "s-the-crown-s3e4",
+       "numero": 4,
+       "titolo": "Bubbikins",
+       "minuti": 60,
+       "img": "media/s-the-crown-s3e4.jpg"
+      },
+      {
+       "id": "s-the-crown-s3e5",
+       "numero": 5,
+       "titolo": "Coup",
+       "minuti": 57,
+       "img": "media/s-the-crown-s3e5.jpg"
+      },
+      {
+       "id": "s-the-crown-s3e6",
+       "numero": 6,
+       "titolo": "Tywysog Cymru",
+       "minuti": 56,
+       "img": "media/s-the-crown-s3e6.jpg"
+      },
+      {
+       "id": "s-the-crown-s3e7",
+       "numero": 7,
+       "titolo": "Moondust",
+       "minuti": 56,
+       "img": "media/s-the-crown-s3e7.jpg"
+      },
+      {
+       "id": "s-the-crown-s3e8",
+       "numero": 8,
+       "titolo": "Dangling Man",
+       "minuti": 47,
+       "img": "media/s-the-crown-s3e8.jpg"
+      },
+      {
+       "id": "s-the-crown-s3e9",
+       "numero": 9,
+       "titolo": "Imbroglio",
+       "minuti": 47,
+       "img": "media/s-the-crown-s3e9.jpg"
+      },
+      {
+       "id": "s-the-crown-s3e10",
+       "numero": 10,
+       "titolo": "Cri de Coeur",
+       "minuti": 59,
+       "img": "media/s-the-crown-s3e10.jpg"
+      }
+     ]
+    }
+   ],
+   "stagioniTotali": 6
+  },
+  {
+   "id": "s-gomorra-la-serie",
+   "tipo": "serie",
+   "titolo": "Gomorra",
+   "anno": 2014,
+   "generi": [
+    "Drammatico",
+    "Azione",
+    "Poliziesco"
+   ],
+   "trama": "Gomorra è una serie televisiva italiana, andata in onda in prima visione su Sky Atlantic dal 2014 al 2021. Liberamente ispirata all'omonimo romanzo di Roberto Saviano, rappresenta il secondo adattamento dopo il film del 2008 diretto da Matteo Garrone.",
+   "poster": "media/s-gomorra-la-serie-poster.jpg",
+   "sfondo": "media/s-gomorra-la-serie-sfondo.jpg",
+   "cast": [
+    "t-61900",
+    "t-71944",
+    "t-71945",
+    "t-257380",
+    "t-257249",
+    "t-407423",
+    "t-407425",
+    "t-407464"
+   ],
+   "stagioni": [
+    {
+     "numero": 1,
+     "episodi": [
+      {
+       "id": "s-gomorra-la-serie-s1e1",
+       "numero": 1,
+       "titolo": "Il clan dei Savastano",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s1e1.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s1e2",
+       "numero": 2,
+       "titolo": "Ti fidi di me?",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s1e2.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s1e3",
+       "numero": 3,
+       "titolo": "L'omm 'e casa",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s1e3.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s1e4",
+       "numero": 4,
+       "titolo": "Sangue africano",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s1e4.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s1e5",
+       "numero": 5,
+       "titolo": "Il ruggito della leonessa",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s1e5.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s1e6",
+       "numero": 6,
+       "titolo": "Roulette spagnola",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s1e6.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s1e7",
+       "numero": 7,
+       "titolo": "Imma contro tutti",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s1e7.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s1e8",
+       "numero": 8,
+       "titolo": "La scheda bianca",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s1e8.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s1e9",
+       "numero": 9,
+       "titolo": "Gelsomina Verde",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s1e9.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s1e10",
+       "numero": 10,
+       "titolo": "Ora facciamo i Conte",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s1e10.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 2,
+     "episodi": [
+      {
+       "id": "s-gomorra-la-serie-s2e1",
+       "numero": 1,
+       "titolo": "Vita mia",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s2e1.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s2e2",
+       "numero": 2,
+       "titolo": "Lacrime e sangue",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s2e2.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s2e3",
+       "numero": 3,
+       "titolo": "Mea culpa",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s2e3.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s2e4",
+       "numero": 4,
+       "titolo": "Profumo di iena",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s2e4.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s2e5",
+       "numero": 5,
+       "titolo": "Occhi negli occhi",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s2e5.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s2e6",
+       "numero": 6,
+       "titolo": "'O Track",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s2e6.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s2e7",
+       "numero": 7,
+       "titolo": "Il Principe e il Nano",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s2e7.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s2e8",
+       "numero": 8,
+       "titolo": "Divide et impera",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s2e8.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s2e9",
+       "numero": 9,
+       "titolo": "Sette anni",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s2e9.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s2e10",
+       "numero": 10,
+       "titolo": "Fantasmi",
+       "minuti": 55,
+       "img": "media/s-gomorra-la-serie-s2e10.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 3,
+     "episodi": [
+      {
+       "id": "s-gomorra-la-serie-s3e1",
+       "numero": 1,
+       "titolo": "Viva il Re!",
+       "minuti": 60,
+       "img": "media/s-gomorra-la-serie-s3e1.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s3e2",
+       "numero": 2,
+       "titolo": "Hasta la muerte",
+       "minuti": 60,
+       "img": "media/s-gomorra-la-serie-s3e2.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s3e3",
+       "numero": 3,
+       "titolo": "Inferno",
+       "minuti": 60,
+       "img": "media/s-gomorra-la-serie-s3e3.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s3e4",
+       "numero": 4,
+       "titolo": "Il filo e la Moira",
+       "minuti": 60,
+       "img": "media/s-gomorra-la-serie-s3e4.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s3e5",
+       "numero": 5,
+       "titolo": "Sangue Blu",
+       "minuti": 60,
+       "img": "media/s-gomorra-la-serie-s3e5.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s3e6",
+       "numero": 6,
+       "titolo": "Come nascere",
+       "minuti": 60,
+       "img": "media/s-gomorra-la-serie-s3e6.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s3e7",
+       "numero": 7,
+       "titolo": "Sangue del mio sangue",
+       "minuti": 60,
+       "img": "media/s-gomorra-la-serie-s3e7.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s3e8",
+       "numero": 8,
+       "titolo": "Guerra aperta",
+       "minuti": 60,
+       "img": "media/s-gomorra-la-serie-s3e8.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s3e9",
+       "numero": 9,
+       "titolo": "Giuda!",
+       "minuti": 60,
+       "img": "media/s-gomorra-la-serie-s3e9.jpg"
+      },
+      {
+       "id": "s-gomorra-la-serie-s3e10",
+       "numero": 10,
+       "titolo": "La creatura",
+       "minuti": 60,
+       "img": "media/s-gomorra-la-serie-s3e10.jpg"
+      }
+     ]
+    }
+   ],
+   "stagioniTotali": 5
+  },
+  {
+   "id": "s-babylon-berlin",
+   "tipo": "serie",
+   "titolo": "Babylon Berlin",
+   "anno": 2017,
+   "generi": [
+    "Drammatico",
+    "Poliziesco",
+    "Thriller"
+   ],
+   "trama": "La serie si svolge a Berlino dal 1929, nel periodo della Repubblica di Weimar. Il protagonista è il commissario Gereon Rath, che viene trasferito da Colonia a Berlino per indagare nel contesto di un caso di ricatto e inquadrato nella buoncostume.",
+   "poster": "media/s-babylon-berlin-poster.jpg",
+   "sfondo": "media/s-babylon-berlin-sfondo.jpg",
+   "cast": [
+    "t-72281",
+    "t-146783",
+    "t-106654",
+    "t-87895",
+    "t-231653",
+    "t-218556",
+    "t-93709",
+    "t-127881"
+   ],
+   "stagioni": [
+    {
+     "numero": 1,
+     "episodi": [
+      {
+       "id": "s-babylon-berlin-s1e1",
+       "numero": 1,
+       "titolo": "Episode 1",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s1e1.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s1e2",
+       "numero": 2,
+       "titolo": "Episode 2",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s1e2.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s1e3",
+       "numero": 3,
+       "titolo": "Episode 3",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s1e3.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s1e4",
+       "numero": 4,
+       "titolo": "Episode 4",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s1e4.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s1e5",
+       "numero": 5,
+       "titolo": "Episode 5",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s1e5.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s1e6",
+       "numero": 6,
+       "titolo": "Episode 6",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s1e6.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s1e7",
+       "numero": 7,
+       "titolo": "Episode 7",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s1e7.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s1e8",
+       "numero": 8,
+       "titolo": "Episode 8",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s1e8.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 2,
+     "episodi": [
+      {
+       "id": "s-babylon-berlin-s2e1",
+       "numero": 1,
+       "titolo": "Episode 1",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s2e1.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s2e2",
+       "numero": 2,
+       "titolo": "Episode 2",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s2e2.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s2e3",
+       "numero": 3,
+       "titolo": "Episode 3",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s2e3.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s2e4",
+       "numero": 4,
+       "titolo": "Episode 4",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s2e4.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s2e5",
+       "numero": 5,
+       "titolo": "Episode 5",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s2e5.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s2e6",
+       "numero": 6,
+       "titolo": "Episode 6",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s2e6.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s2e7",
+       "numero": 7,
+       "titolo": "Episode 7",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s2e7.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s2e8",
+       "numero": 8,
+       "titolo": "Episode 8",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s2e8.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 3,
+     "episodi": [
+      {
+       "id": "s-babylon-berlin-s3e1",
+       "numero": 1,
+       "titolo": "Episode 1",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s3e1.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s3e2",
+       "numero": 2,
+       "titolo": "Episode 2",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s3e2.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s3e3",
+       "numero": 3,
+       "titolo": "Episode 3",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s3e3.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s3e4",
+       "numero": 4,
+       "titolo": "Episode 4",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s3e4.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s3e5",
+       "numero": 5,
+       "titolo": "Episode 5",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s3e5.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s3e6",
+       "numero": 6,
+       "titolo": "Episode 6",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s3e6.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s3e7",
+       "numero": 7,
+       "titolo": "Episode 7",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s3e7.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s3e8",
+       "numero": 8,
+       "titolo": "Episode 8",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s3e8.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s3e9",
+       "numero": 9,
+       "titolo": "Episode 9",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s3e9.jpg"
+      },
+      {
+       "id": "s-babylon-berlin-s3e10",
+       "numero": 10,
+       "titolo": "Episode 10",
+       "minuti": 60,
+       "img": "media/s-babylon-berlin-s3e10.jpg"
+      }
+     ]
+    }
+   ],
+   "stagioniTotali": 5
+  },
+  {
+   "id": "s-stranger-things",
+   "tipo": "serie",
+   "titolo": "Stranger Things",
+   "anno": 2016,
+   "generi": [
+    "Drammatico",
+    "Horror",
+    "Fantascienza"
+   ],
+   "trama": "Ambientata tra il 1983 e il 1989 nella fittizia cittadina rurale di Hawkins, nell'Indiana, la serie ruota attorno agli eventi che seguono misteriosi esperimenti governativi che coinvolgono una bambina dai poteri soprannaturali chiamata Undici e un'oscura dimensione parallela chiamata Sottosopra, che finisce per coinvolgere diversi cittadini.",
+   "poster": "media/s-stranger-things-poster.jpg",
+   "sfondo": "media/s-stranger-things-sfondo.jpg",
+   "cast": [
+    "t-45771",
+    "t-15786",
+    "t-49095",
+    "t-83372",
+    "t-12740",
+    "t-19376",
+    "t-56357",
+    "t-63858"
+   ],
+   "stagioni": [
+    {
+     "numero": 1,
+     "episodi": [
+      {
+       "id": "s-stranger-things-s1e1",
+       "numero": 1,
+       "titolo": "Chapter One: The Vanishing of Will Byers",
+       "minuti": 49,
+       "img": "media/s-stranger-things-s1e1.jpg"
+      },
+      {
+       "id": "s-stranger-things-s1e2",
+       "numero": 2,
+       "titolo": "Chapter Two: The Weirdo on Maple Street",
+       "minuti": 56,
+       "img": "media/s-stranger-things-s1e2.jpg"
+      },
+      {
+       "id": "s-stranger-things-s1e3",
+       "numero": 3,
+       "titolo": "Chapter Three: Holly, Jolly",
+       "minuti": 52,
+       "img": "media/s-stranger-things-s1e3.jpg"
+      },
+      {
+       "id": "s-stranger-things-s1e4",
+       "numero": 4,
+       "titolo": "Chapter Four: The Body",
+       "minuti": 51,
+       "img": "media/s-stranger-things-s1e4.jpg"
+      },
+      {
+       "id": "s-stranger-things-s1e5",
+       "numero": 5,
+       "titolo": "Chapter Five: The Flea and the Acrobat",
+       "minuti": 53,
+       "img": "media/s-stranger-things-s1e5.jpg"
+      },
+      {
+       "id": "s-stranger-things-s1e6",
+       "numero": 6,
+       "titolo": "Chapter Six: The Monster",
+       "minuti": 47,
+       "img": "media/s-stranger-things-s1e6.jpg"
+      },
+      {
+       "id": "s-stranger-things-s1e7",
+       "numero": 7,
+       "titolo": "Chapter Seven: The Bathtub",
+       "minuti": 42,
+       "img": "media/s-stranger-things-s1e7.jpg"
+      },
+      {
+       "id": "s-stranger-things-s1e8",
+       "numero": 8,
+       "titolo": "Chapter Eight: The Upside Down",
+       "minuti": 55,
+       "img": "media/s-stranger-things-s1e8.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 2,
+     "episodi": [
+      {
+       "id": "s-stranger-things-s2e1",
+       "numero": 1,
+       "titolo": "Chapter One: MADMAX",
+       "minuti": 48,
+       "img": "media/s-stranger-things-s2e1.jpg"
+      },
+      {
+       "id": "s-stranger-things-s2e2",
+       "numero": 2,
+       "titolo": "Chapter Two: Trick or Treat, Freak",
+       "minuti": 56,
+       "img": "media/s-stranger-things-s2e2.jpg"
+      },
+      {
+       "id": "s-stranger-things-s2e3",
+       "numero": 3,
+       "titolo": "Chapter Three: The Pollywog",
+       "minuti": 51,
+       "img": "media/s-stranger-things-s2e3.jpg"
+      },
+      {
+       "id": "s-stranger-things-s2e4",
+       "numero": 4,
+       "titolo": "Chapter Four: Will the Wise",
+       "minuti": 46,
+       "img": "media/s-stranger-things-s2e4.jpg"
+      },
+      {
+       "id": "s-stranger-things-s2e5",
+       "numero": 5,
+       "titolo": "Chapter Five: Dig Dug",
+       "minuti": 58,
+       "img": "media/s-stranger-things-s2e5.jpg"
+      },
+      {
+       "id": "s-stranger-things-s2e6",
+       "numero": 6,
+       "titolo": "Chapter Six: The Spy",
+       "minuti": 52,
+       "img": "media/s-stranger-things-s2e6.jpg"
+      },
+      {
+       "id": "s-stranger-things-s2e7",
+       "numero": 7,
+       "titolo": "Chapter Seven: The Lost Sister",
+       "minuti": 46,
+       "img": "media/s-stranger-things-s2e7.jpg"
+      },
+      {
+       "id": "s-stranger-things-s2e8",
+       "numero": 8,
+       "titolo": "Chapter Eight: The Mind Flayer",
+       "minuti": 48,
+       "img": "media/s-stranger-things-s2e8.jpg"
+      },
+      {
+       "id": "s-stranger-things-s2e9",
+       "numero": 9,
+       "titolo": "Chapter Nine: The Gate",
+       "minuti": 62,
+       "img": "media/s-stranger-things-s2e9.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 3,
+     "episodi": [
+      {
+       "id": "s-stranger-things-s3e1",
+       "numero": 1,
+       "titolo": "Chapter One: Suzie, Do You Copy?",
+       "minuti": 51,
+       "img": "media/s-stranger-things-s3e1.jpg"
+      },
+      {
+       "id": "s-stranger-things-s3e2",
+       "numero": 2,
+       "titolo": "Chapter Two: The Mall Rats",
+       "minuti": 50,
+       "img": "media/s-stranger-things-s3e2.jpg"
+      },
+      {
+       "id": "s-stranger-things-s3e3",
+       "numero": 3,
+       "titolo": "Chapter Three: The Case of the Missing Lifeguard",
+       "minuti": 50,
+       "img": "media/s-stranger-things-s3e3.jpg"
+      },
+      {
+       "id": "s-stranger-things-s3e4",
+       "numero": 4,
+       "titolo": "Chapter Four: The Sauna Test",
+       "minuti": 53,
+       "img": "media/s-stranger-things-s3e4.jpg"
+      },
+      {
+       "id": "s-stranger-things-s3e5",
+       "numero": 5,
+       "titolo": "Chapter Five: The Flayed",
+       "minuti": 52,
+       "img": "media/s-stranger-things-s3e5.jpg"
+      },
+      {
+       "id": "s-stranger-things-s3e6",
+       "numero": 6,
+       "titolo": "Chapter Six: E Pluribus Unum",
+       "minuti": 60,
+       "img": "media/s-stranger-things-s3e6.jpg"
+      },
+      {
+       "id": "s-stranger-things-s3e7",
+       "numero": 7,
+       "titolo": "Chapter Seven: The Bite",
+       "minuti": 55,
+       "img": "media/s-stranger-things-s3e7.jpg"
+      },
+      {
+       "id": "s-stranger-things-s3e8",
+       "numero": 8,
+       "titolo": "Chapter Eight: The Battle of Starcourt",
+       "minuti": 78,
+       "img": "media/s-stranger-things-s3e8.jpg"
+      }
+     ]
+    }
+   ],
+   "stagioniTotali": 5
+  },
+  {
+   "id": "s-the-bear",
+   "tipo": "serie",
+   "titolo": "The Bear",
+   "anno": 2022,
+   "generi": [
+    "Drammatico",
+    "Commedia",
+    "Cucina"
+   ],
+   "trama": "Carmy Berzatto, un giovane chef del mondo dell'alta cucina, lotta per trasformare sia sé stesso che The Original Beef of Chicagoland, la paninoteca italiana di famiglia.",
+   "poster": "media/s-the-bear-poster.jpg",
+   "sfondo": "media/s-the-bear-sfondo.jpg",
+   "cast": [
+    "t-4896",
+    "t-24393",
+    "t-26846",
+    "t-20251",
+    "t-137730",
+    "t-251724",
+    "t-203539",
+    "t-25186"
+   ],
+   "stagioni": [
+    {
+     "numero": 1,
+     "episodi": [
+      {
+       "id": "s-the-bear-s1e1",
+       "numero": 1,
+       "titolo": "System",
+       "minuti": 28,
+       "img": "media/s-the-bear-s1e1.jpg"
+      },
+      {
+       "id": "s-the-bear-s1e2",
+       "numero": 2,
+       "titolo": "Hands",
+       "minuti": 31,
+       "img": "media/s-the-bear-s1e2.jpg"
+      },
+      {
+       "id": "s-the-bear-s1e3",
+       "numero": 3,
+       "titolo": "Brigade",
+       "minuti": 29,
+       "img": "media/s-the-bear-s1e3.jpg"
+      },
+      {
+       "id": "s-the-bear-s1e4",
+       "numero": 4,
+       "titolo": "Dogs",
+       "minuti": 30,
+       "img": "media/s-the-bear-s1e4.jpg"
+      },
+      {
+       "id": "s-the-bear-s1e5",
+       "numero": 5,
+       "titolo": "Sheridan",
+       "minuti": 25,
+       "img": "media/s-the-bear-s1e5.jpg"
+      },
+      {
+       "id": "s-the-bear-s1e6",
+       "numero": 6,
+       "titolo": "Ceres",
+       "minuti": 31,
+       "img": "media/s-the-bear-s1e6.jpg"
+      },
+      {
+       "id": "s-the-bear-s1e7",
+       "numero": 7,
+       "titolo": "Review",
+       "minuti": 20,
+       "img": "media/s-the-bear-s1e7.jpg"
+      },
+      {
+       "id": "s-the-bear-s1e8",
+       "numero": 8,
+       "titolo": "Braciole",
+       "minuti": 48,
+       "img": "media/s-the-bear-s1e8.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 2,
+     "episodi": [
+      {
+       "id": "s-the-bear-s2e1",
+       "numero": 1,
+       "titolo": "Beef",
+       "minuti": 29,
+       "img": "media/s-the-bear-s2e1.jpg"
+      },
+      {
+       "id": "s-the-bear-s2e2",
+       "numero": 2,
+       "titolo": "Pasta",
+       "minuti": 30,
+       "img": "media/s-the-bear-s2e2.jpg"
+      },
+      {
+       "id": "s-the-bear-s2e3",
+       "numero": 3,
+       "titolo": "Sundae",
+       "minuti": 26,
+       "img": "media/s-the-bear-s2e3.jpg"
+      },
+      {
+       "id": "s-the-bear-s2e4",
+       "numero": 4,
+       "titolo": "Honeydew",
+       "minuti": 30,
+       "img": "media/s-the-bear-s2e4.jpg"
+      },
+      {
+       "id": "s-the-bear-s2e5",
+       "numero": 5,
+       "titolo": "Pop",
+       "minuti": 33,
+       "img": "media/s-the-bear-s2e5.jpg"
+      },
+      {
+       "id": "s-the-bear-s2e6",
+       "numero": 6,
+       "titolo": "Fishes",
+       "minuti": 66,
+       "img": "media/s-the-bear-s2e6.jpg"
+      },
+      {
+       "id": "s-the-bear-s2e7",
+       "numero": 7,
+       "titolo": "Forks",
+       "minuti": 35,
+       "img": "media/s-the-bear-s2e7.jpg"
+      },
+      {
+       "id": "s-the-bear-s2e8",
+       "numero": 8,
+       "titolo": "Bolognese",
+       "minuti": 32,
+       "img": "media/s-the-bear-s2e8.jpg"
+      },
+      {
+       "id": "s-the-bear-s2e9",
+       "numero": 9,
+       "titolo": "Omelette",
+       "minuti": 39,
+       "img": "media/s-the-bear-s2e9.jpg"
+      },
+      {
+       "id": "s-the-bear-s2e10",
+       "numero": 10,
+       "titolo": "The Bear",
+       "minuti": 41,
+       "img": "media/s-the-bear-s2e10.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 3,
+     "episodi": [
+      {
+       "id": "s-the-bear-s3e1",
+       "numero": 1,
+       "titolo": "Tomorrow",
+       "minuti": 37,
+       "img": "media/s-the-bear-s3e1.jpg"
+      },
+      {
+       "id": "s-the-bear-s3e2",
+       "numero": 2,
+       "titolo": "Next",
+       "minuti": 27,
+       "img": "media/s-the-bear-s3e2.jpg"
+      },
+      {
+       "id": "s-the-bear-s3e3",
+       "numero": 3,
+       "titolo": "Doors",
+       "minuti": 30,
+       "img": "media/s-the-bear-s3e3.jpg"
+      },
+      {
+       "id": "s-the-bear-s3e4",
+       "numero": 4,
+       "titolo": "Violet",
+       "minuti": 33,
+       "img": "media/s-the-bear-s3e4.jpg"
+      },
+      {
+       "id": "s-the-bear-s3e5",
+       "numero": 5,
+       "titolo": "Children",
+       "minuti": 34,
+       "img": "media/s-the-bear-s3e5.jpg"
+      },
+      {
+       "id": "s-the-bear-s3e6",
+       "numero": 6,
+       "titolo": "Napkins",
+       "minuti": 33,
+       "img": "media/s-the-bear-s3e6.jpg"
+      },
+      {
+       "id": "s-the-bear-s3e7",
+       "numero": 7,
+       "titolo": "Legacy",
+       "minuti": 29,
+       "img": "media/s-the-bear-s3e7.jpg"
+      },
+      {
+       "id": "s-the-bear-s3e8",
+       "numero": 8,
+       "titolo": "Ice Chips",
+       "minuti": 40,
+       "img": "media/s-the-bear-s3e8.jpg"
+      },
+      {
+       "id": "s-the-bear-s3e9",
+       "numero": 9,
+       "titolo": "Apologies",
+       "minuti": 43,
+       "img": "media/s-the-bear-s3e9.jpg"
+      },
+      {
+       "id": "s-the-bear-s3e10",
+       "numero": 10,
+       "titolo": "Forever",
+       "minuti": 43,
+       "img": "media/s-the-bear-s3e10.jpg"
+      }
+     ]
+    }
+   ],
+   "stagioniTotali": 5
+  },
+  {
+   "id": "s-fargo",
+   "tipo": "serie",
+   "titolo": "Fargo",
+   "anno": 2014,
+   "generi": [
+    "Drammatico",
+    "Commedia",
+    "Poliziesco"
+   ],
+   "trama": "Fargo è una serie televisiva statunitense creata da Noah Hawley. La serie, antologica, è pensata per narrare una storia diversa in ogni stagione e trae ispirazione dall'omonimo film dei fratelli Coen, i quali figurano tra i produttori esecutivi della serie stessa. È trasmessa a partire dal 15 aprile 2014 dall'emittente FX.",
+   "poster": "media/s-fargo-poster.jpg",
+   "sfondo": "media/s-fargo-sfondo.jpg",
+   "cast": [
+    "t-6039",
+    "t-6040",
+    "t-6038",
+    "t-6041",
+    "t-8813",
+    "t-21355",
+    "t-27460",
+    "t-25072"
+   ],
+   "stagioni": [
+    {
+     "numero": 1,
+     "episodi": [
+      {
+       "id": "s-fargo-s1e1",
+       "numero": 1,
+       "titolo": "The Crocodile's Dilemma",
+       "minuti": 60,
+       "img": "media/s-fargo-s1e1.jpg"
+      },
+      {
+       "id": "s-fargo-s1e2",
+       "numero": 2,
+       "titolo": "The Rooster Prince",
+       "minuti": 60,
+       "img": "media/s-fargo-s1e2.jpg"
+      },
+      {
+       "id": "s-fargo-s1e3",
+       "numero": 3,
+       "titolo": "A Muddy Road",
+       "minuti": 60,
+       "img": "media/s-fargo-s1e3.jpg"
+      },
+      {
+       "id": "s-fargo-s1e4",
+       "numero": 4,
+       "titolo": "Eating the Blame",
+       "minuti": 60,
+       "img": "media/s-fargo-s1e4.jpg"
+      },
+      {
+       "id": "s-fargo-s1e5",
+       "numero": 5,
+       "titolo": "The Six Ungraspables",
+       "minuti": 60,
+       "img": "media/s-fargo-s1e5.jpg"
+      },
+      {
+       "id": "s-fargo-s1e6",
+       "numero": 6,
+       "titolo": "Buridan's Ass",
+       "minuti": 60,
+       "img": "media/s-fargo-s1e6.jpg"
+      },
+      {
+       "id": "s-fargo-s1e7",
+       "numero": 7,
+       "titolo": "Who Shaves the Barber?",
+       "minuti": 60,
+       "img": "media/s-fargo-s1e7.jpg"
+      },
+      {
+       "id": "s-fargo-s1e8",
+       "numero": 8,
+       "titolo": "The Heap",
+       "minuti": 60,
+       "img": "media/s-fargo-s1e8.jpg"
+      },
+      {
+       "id": "s-fargo-s1e9",
+       "numero": 9,
+       "titolo": "A Fox, a Rabbit, and a Cabbage",
+       "minuti": 60,
+       "img": "media/s-fargo-s1e9.jpg"
+      },
+      {
+       "id": "s-fargo-s1e10",
+       "numero": 10,
+       "titolo": "Morton's Fork",
+       "minuti": 60,
+       "img": "media/s-fargo-s1e10.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 2,
+     "episodi": [
+      {
+       "id": "s-fargo-s2e1",
+       "numero": 1,
+       "titolo": "Waiting for Dutch",
+       "minuti": 69,
+       "img": "media/s-fargo-s2e1.jpg"
+      },
+      {
+       "id": "s-fargo-s2e2",
+       "numero": 2,
+       "titolo": "Before the Law",
+       "minuti": 90,
+       "img": "media/s-fargo-s2e2.jpg"
+      },
+      {
+       "id": "s-fargo-s2e3",
+       "numero": 3,
+       "titolo": "The Myth of Sisyphus",
+       "minuti": 60,
+       "img": "media/s-fargo-s2e3.jpg"
+      },
+      {
+       "id": "s-fargo-s2e4",
+       "numero": 4,
+       "titolo": "Fear and Trembling",
+       "minuti": 60,
+       "img": "media/s-fargo-s2e4.jpg"
+      },
+      {
+       "id": "s-fargo-s2e5",
+       "numero": 5,
+       "titolo": "The Gift of the Magi",
+       "minuti": 60,
+       "img": "media/s-fargo-s2e5.jpg"
+      },
+      {
+       "id": "s-fargo-s2e6",
+       "numero": 6,
+       "titolo": "Rhinoceros",
+       "minuti": 60,
+       "img": "media/s-fargo-s2e6.jpg"
+      },
+      {
+       "id": "s-fargo-s2e7",
+       "numero": 7,
+       "titolo": "Did You Do This? No, You Did It!",
+       "minuti": 60,
+       "img": "media/s-fargo-s2e7.jpg"
+      },
+      {
+       "id": "s-fargo-s2e8",
+       "numero": 8,
+       "titolo": "Loplop",
+       "minuti": 90,
+       "img": "media/s-fargo-s2e8.jpg"
+      },
+      {
+       "id": "s-fargo-s2e9",
+       "numero": 9,
+       "titolo": "The Castle",
+       "minuti": 60,
+       "img": "media/s-fargo-s2e9.jpg"
+      },
+      {
+       "id": "s-fargo-s2e10",
+       "numero": 10,
+       "titolo": "Palindrome",
+       "minuti": 60,
+       "img": "media/s-fargo-s2e10.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 3,
+     "episodi": [
+      {
+       "id": "s-fargo-s3e1",
+       "numero": 1,
+       "titolo": "The Law of Vacant Places",
+       "minuti": 90,
+       "img": "media/s-fargo-s3e1.jpg"
+      },
+      {
+       "id": "s-fargo-s3e2",
+       "numero": 2,
+       "titolo": "The Principle of Restricted Choice",
+       "minuti": 74,
+       "img": "media/s-fargo-s3e2.jpg"
+      },
+      {
+       "id": "s-fargo-s3e3",
+       "numero": 3,
+       "titolo": "The Law of Non-Contradiction",
+       "minuti": 70,
+       "img": "media/s-fargo-s3e3.jpg"
+      },
+      {
+       "id": "s-fargo-s3e4",
+       "numero": 4,
+       "titolo": "The Narrow Escape Problem",
+       "minuti": 72,
+       "img": "media/s-fargo-s3e4.jpg"
+      },
+      {
+       "id": "s-fargo-s3e5",
+       "numero": 5,
+       "titolo": "The House of Special Purpose",
+       "minuti": 84,
+       "img": "media/s-fargo-s3e5.jpg"
+      },
+      {
+       "id": "s-fargo-s3e6",
+       "numero": 6,
+       "titolo": "The Lord of No Mercy",
+       "minuti": 60,
+       "img": "media/s-fargo-s3e6.jpg"
+      },
+      {
+       "id": "s-fargo-s3e7",
+       "numero": 7,
+       "titolo": "The Law of Inevitability",
+       "minuti": 60,
+       "img": "media/s-fargo-s3e7.jpg"
+      },
+      {
+       "id": "s-fargo-s3e8",
+       "numero": 8,
+       "titolo": "Who Rules the Land of Denial?",
+       "minuti": 70,
+       "img": "media/s-fargo-s3e8.jpg"
+      },
+      {
+       "id": "s-fargo-s3e9",
+       "numero": 9,
+       "titolo": "Aporia",
+       "minuti": 73,
+       "img": "media/s-fargo-s3e9.jpg"
+      },
+      {
+       "id": "s-fargo-s3e10",
+       "numero": 10,
+       "titolo": "Somebody to Love",
+       "minuti": 60,
+       "img": "media/s-fargo-s3e10.jpg"
+      }
+     ]
+    }
+   ],
+   "stagioniTotali": 5
+  },
+  {
+   "id": "s-sherlock",
+   "tipo": "serie",
+   "titolo": "Sherlock",
+   "anno": 2010,
+   "generi": [
+    "Drammatico",
+    "Poliziesco",
+    "Giallo"
+   ],
+   "trama": "La serie è un libero adattamento dei romanzi e dei racconti di Sir Arthur Conan Doyle e vede come protagonista il detective Sherlock Holmes, affiancato dal suo futuro assistente, il dottor John Watson.",
+   "poster": "media/s-sherlock-poster.jpg",
+   "sfondo": "media/s-sherlock-sfondo.jpg",
+   "cast": [
+    "t-40682",
+    "t-6041"
+   ],
+   "stagioni": [
+    {
+     "numero": 1,
+     "episodi": [
+      {
+       "id": "s-sherlock-s1e1",
+       "numero": 1,
+       "titolo": "A Study in Pink",
+       "minuti": 90,
+       "img": "media/s-sherlock-s1e1.jpg"
+      },
+      {
+       "id": "s-sherlock-s1e2",
+       "numero": 2,
+       "titolo": "The Blind Banker",
+       "minuti": 90,
+       "img": "media/s-sherlock-s1e2.jpg"
+      },
+      {
+       "id": "s-sherlock-s1e3",
+       "numero": 3,
+       "titolo": "The Great Game",
+       "minuti": 90,
+       "img": "media/s-sherlock-s1e3.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 2,
+     "episodi": [
+      {
+       "id": "s-sherlock-s2e1",
+       "numero": 1,
+       "titolo": "A Scandal in Belgravia",
+       "minuti": 90,
+       "img": "media/s-sherlock-s2e1.jpg"
+      },
+      {
+       "id": "s-sherlock-s2e2",
+       "numero": 2,
+       "titolo": "The Hounds of Baskerville",
+       "minuti": 90,
+       "img": "media/s-sherlock-s2e2.jpg"
+      },
+      {
+       "id": "s-sherlock-s2e3",
+       "numero": 3,
+       "titolo": "The Reichenbach Fall",
+       "minuti": 90,
+       "img": "media/s-sherlock-s2e3.jpg"
+      }
+     ]
+    },
+    {
+     "numero": 3,
+     "episodi": [
+      {
+       "id": "s-sherlock-s3e1",
+       "numero": 1,
+       "titolo": "The Empty Hearse",
+       "minuti": 90,
+       "img": "media/s-sherlock-s3e1.jpg"
+      },
+      {
+       "id": "s-sherlock-s3e2",
+       "numero": 2,
+       "titolo": "The Sign of Three",
+       "minuti": 90,
+       "img": "media/s-sherlock-s3e2.jpg"
+      },
+      {
+       "id": "s-sherlock-s3e3",
+       "numero": 3,
+       "titolo": "His Last Vow",
+       "minuti": 90,
+       "img": "media/s-sherlock-s3e3.jpg"
+      }
+     ]
+    }
+   ],
+   "stagioniTotali": 4
+  }
+ ],
+ "persone": [
+  {
+   "id": "a-Q63781",
+   "nome": "Alfred Abel",
+   "foto": "media/p-alfred-abel.jpg",
+   "bio": "Alfred Abel è stato un attore e regista tedesco che, nella sua carriera, iniziata nei primi anni dieci, interpretò oltre centotrenta film.",
+   "nascita": "1879",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-metropolis"
+   ]
+  },
+  {
+   "id": "a-Q65154",
+   "nome": "Rudolf Klein-Rogge",
+   "foto": "media/p-rudolf-klein-rogge.jpg",
+   "bio": "Rudolf Klein-Rogge, nome completo Friedrich Rudolf Klein-Rogge, è stato un attore tedesco.",
+   "nascita": "1885",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-metropolis",
+    "f-il-gabinetto-del-dottor-caligari"
+   ]
+  },
+  {
+   "id": "a-Q65496",
+   "nome": "Gustav Fröhlich",
+   "foto": "media/p-gustav-frohlich.jpg",
+   "bio": "Gustav Friedrich Fröhlich è stato un attore tedesco.",
+   "nascita": "1902",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-metropolis"
+   ]
+  },
+  {
+   "id": "a-Q76813",
+   "nome": "Brigitte Helm",
+   "foto": "media/p-brigitte-helm.jpg",
+   "bio": "Brigitte Helm, pseudonimo di Brigitte Eva Gisela Schittenhelm, è stata un'attrice tedesca.",
+   "nascita": "1906",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-metropolis"
+   ]
+  },
+  {
+   "id": "a-Q91058",
+   "nome": "Fritz Rasp",
+   "foto": null,
+   "bio": "Fritz Rasp, nato Fritz Heinrich Rasp, è stato un attore tedesco che iniziò la sua carriera cinematografica ai tempi del muto con Ernst Lubitsch.",
+   "nascita": "1891",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-metropolis"
+   ]
+  },
+  {
+   "id": "a-Q96469",
+   "nome": "Theodor Loos",
+   "foto": "media/p-theodor-loos.jpg",
+   "bio": "Theodor Loos, nato August Konrad Loos, è stato un attore tedesco.",
+   "nascita": "1883",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-metropolis"
+   ]
+  },
+  {
+   "id": "a-Q63816",
+   "nome": "Heinrich George",
+   "foto": "media/p-heinrich-george.jpg",
+   "bio": "Heinrich George, nato Georg August Friedrich Hermann Schulz, è stato un attore tedesco.",
+   "nascita": "1893",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-metropolis"
+   ]
+  },
+  {
+   "id": "a-Q1758155",
+   "nome": "Heinrich Gotho",
+   "foto": null,
+   "bio": null,
+   "nascita": "1872",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-metropolis"
+   ]
+  },
+  {
+   "id": "a-Q103949",
+   "nome": "Buster Keaton",
+   "foto": "media/p-buster-keaton.jpg",
+   "bio": "Joseph Frank Keaton, detto Buster, è stato un attore, comico, regista e sceneggiatore statunitense, tra i maestri del periodo del cinema muto classico.",
+   "nascita": "1895",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-come-vinsi-la-guerra",
+    "f-la-palla-n-13",
+    "f-io-e-il-ciclone"
+   ]
+  },
+  {
+   "id": "a-Q531591",
+   "nome": "Marion Mack",
+   "foto": "media/p-marion-mack.jpg",
+   "bio": "Marion Mack, pseudonimo di Joey Marion McCreery Lewyn, è stata un'attrice e sceneggiatrice statunitense. Ha usato anche il nome di Elinor Lynn in alcuni cortometraggi.",
+   "nascita": "1902",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-come-vinsi-la-guerra"
+   ]
+  },
+  {
+   "id": "a-Q1064818",
+   "nome": "Charles Henry Smith",
+   "foto": null,
+   "bio": null,
+   "nascita": "1865",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-come-vinsi-la-guerra"
+   ]
+  },
+  {
+   "id": "a-Q1557810",
+   "nome": "Joe Keaton",
+   "foto": "media/p-joe-keaton.jpg",
+   "bio": null,
+   "nascita": "1867",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-come-vinsi-la-guerra",
+    "f-la-palla-n-13",
+    "f-io-e-il-ciclone"
+   ]
+  },
+  {
+   "id": "a-Q3108668",
+   "nome": "Glen Cavender",
+   "foto": "media/p-glen-cavender.jpg",
+   "bio": "Glen Cavender è stato un attore statunitense.",
+   "nascita": "1883",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-come-vinsi-la-guerra"
+   ]
+  },
+  {
+   "id": "a-Q5498931",
+   "nome": "Frederick Vroom",
+   "foto": "media/p-frederick-vroom.jpg",
+   "bio": null,
+   "nascita": "1857",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-come-vinsi-la-guerra"
+   ]
+  },
+  {
+   "id": "a-Q5487056",
+   "nome": "Frank Hagney",
+   "foto": "media/p-frank-hagney.jpg",
+   "bio": null,
+   "nascita": "1884",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-come-vinsi-la-guerra"
+   ]
+  },
+  {
+   "id": "a-Q5343388",
+   "nome": "Guy Edward Hearn",
+   "foto": "media/p-guy-edward-hearn.jpg",
+   "bio": "Guy Edward Hearn è stato un attore statunitense.",
+   "nascita": "1888",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-come-vinsi-la-guerra"
+   ]
+  },
+  {
+   "id": "a-Q3530819",
+   "nome": "Tom Neal",
+   "foto": "media/p-tom-neal.jpg",
+   "bio": "Tom Neal, nato Thomas Neal, è stato un attore statunitense.",
+   "nascita": "1914",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-detour-deviazione-per-l-inferno"
+   ]
+  },
+  {
+   "id": "a-Q291825",
+   "nome": "Ann Savage",
+   "foto": "media/p-ann-savage.jpg",
+   "bio": "Ann Savage, pseudonimo di Bernice Maxine Lyon, è stata un'attrice statunitense.",
+   "nascita": "1921",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-detour-deviazione-per-l-inferno"
+   ]
+  },
+  {
+   "id": "a-Q5401196",
+   "nome": "Esther Howard",
+   "foto": "media/p-esther-howard.jpg",
+   "bio": "Esther Howard è stata un'attrice statunitense.",
+   "nascita": "1892",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-detour-deviazione-per-l-inferno"
+   ]
+  },
+  {
+   "id": "a-Q3035739",
+   "nome": "Don Brodie",
+   "foto": "media/p-don-brodie.jpg",
+   "bio": "Don Brodie è stato un attore e doppiatore statunitense.",
+   "nascita": "1904",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-detour-deviazione-per-l-inferno"
+   ]
+  },
+  {
+   "id": "a-Q19864996",
+   "nome": "Claudia Drake",
+   "foto": "media/p-claudia-drake.jpg",
+   "bio": "Claudia Drake, nata Olga Gloria Fishbine, è stata un'attrice statunitense.",
+   "nascita": "1918",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-detour-deviazione-per-l-inferno"
+   ]
+  },
+  {
+   "id": "a-Q7804213",
+   "nome": "Tim Ryan",
+   "foto": null,
+   "bio": null,
+   "nascita": "1899",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-detour-deviazione-per-l-inferno"
+   ]
+  },
+  {
+   "id": "a-Q83410",
+   "nome": "Cary Grant",
+   "foto": "media/p-cary-grant.jpg",
+   "bio": "Cary Grant, nome d'arte di Archibald Alexander Leach, è stato un attore britannico naturalizzato statunitense.",
+   "nascita": "1904",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-signora-del-venerdi",
+    "f-sciarada",
+    "f-ho-sognato-un-angelo"
+   ]
+  },
+  {
+   "id": "a-Q233854",
+   "nome": "Rosalind Russell",
+   "foto": "media/p-rosalind-russell.jpg",
+   "bio": "Catherine Rosalind Russell è stata un'attrice statunitense.",
+   "nascita": "1907",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-signora-del-venerdi"
+   ]
+  },
+  {
+   "id": "a-Q364135",
+   "nome": "Ralph Bellamy",
+   "foto": "media/p-ralph-bellamy.jpg",
+   "bio": "Ralph Rexford Bellamy è stato un attore statunitense.",
+   "nascita": "1904",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-signora-del-venerdi"
+   ]
+  },
+  {
+   "id": "a-Q1370701",
+   "nome": "Gene Lockhart",
+   "foto": "media/p-gene-lockhart.jpg",
+   "bio": "Gene Lockhart, pseudonimo di Eugene Lockhart, è stato un attore, cantante e compositore canadese naturalizzato statunitense.",
+   "nascita": "1891",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-signora-del-venerdi"
+   ]
+  },
+  {
+   "id": "a-Q3399241",
+   "nome": "Porter Hall",
+   "foto": "media/p-porter-hall.jpg",
+   "bio": "Porter Hall, nato Clifford Porter Hall, è stato un attore statunitense.",
+   "nascita": "1888",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-signora-del-venerdi"
+   ]
+  },
+  {
+   "id": "a-Q776601",
+   "nome": "Ernest Truex",
+   "foto": "media/p-ernest-truex.jpg",
+   "bio": "Ernest Truex è stato un attore statunitense.",
+   "nascita": "1889",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-signora-del-venerdi"
+   ]
+  },
+  {
+   "id": "a-Q950376",
+   "nome": "Cliff Edwards",
+   "foto": "media/p-cliff-edwards.jpg",
+   "bio": "Clifton Avon Edwards, noto anche con il soprannome Ukulele Ike, detto Cliff, è stato un attore, cantante e doppiatore statunitense.",
+   "nascita": "1895",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-signora-del-venerdi"
+   ]
+  },
+  {
+   "id": "a-Q1364339",
+   "nome": "John Qualen",
+   "foto": "media/p-john-qualen.jpg",
+   "bio": "John Qualen è stato un attore canadese.",
+   "nascita": "1899",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-signora-del-venerdi",
+    "f-il-libro-della-giungla"
+   ]
+  },
+  {
+   "id": "a-Q104340",
+   "nome": "Harold Lloyd",
+   "foto": "media/p-harold-lloyd.jpg",
+   "bio": "Harold Clayton Lloyd è stato un attore, regista e produttore cinematografico statunitense, è considerato tra i massimi interpreti all’epoca del cinema muto insieme a Charlie Chaplin e Buster Keaton.",
+   "nascita": "1893",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-preferisco-l-ascensore"
+   ]
+  },
+  {
+   "id": "a-Q452630",
+   "nome": "Mildred Davis",
+   "foto": "media/p-mildred-davis.jpg",
+   "bio": "Mildred Davis, nome completo  Mildred Hillary Davis, è stata un'attrice statunitense.",
+   "nascita": "1901",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-preferisco-l-ascensore"
+   ]
+  },
+  {
+   "id": "a-Q3342510",
+   "nome": "Noah Young",
+   "foto": "media/p-noah-young.jpg",
+   "bio": null,
+   "nascita": "1887",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-preferisco-l-ascensore"
+   ]
+  },
+  {
+   "id": "a-Q7987306",
+   "nome": "Westcott Clarke",
+   "foto": "media/p-westcott-clarke.jpg",
+   "bio": null,
+   "nascita": "1886",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-preferisco-l-ascensore"
+   ]
+  },
+  {
+   "id": "a-Q3046394",
+   "nome": "Earl Mohan",
+   "foto": "media/p-earl-mohan.jpg",
+   "bio": null,
+   "nascita": "1889",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-preferisco-l-ascensore"
+   ]
+  },
+  {
+   "id": "a-Q1773099",
+   "nome": "Sam Lufkin",
+   "foto": "media/p-sam-lufkin.jpg",
+   "bio": "Sam Lufkin è stato un attore statunitense.",
+   "nascita": "1891",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-preferisco-l-ascensore"
+   ]
+  },
+  {
+   "id": "a-Q1452243",
+   "nome": "Fred C. Newmeyer",
+   "foto": "media/p-fred-c-newmeyer.jpg",
+   "bio": "Fred C. Newmeyer è stato un attore e regista statunitense, conosciuto soprattutto per Preferisco l'ascensore!",
+   "nascita": "1888",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-preferisco-l-ascensore"
+   ]
+  },
+  {
+   "id": "a-Q1973922",
+   "nome": "Mickey Daniels",
+   "foto": "media/p-mickey-daniels.jpg",
+   "bio": "Richard \"Mickey\" Daniels , Jr. è stato un attore statunitense, noto come attore bambino nel cast originario delle Simpatiche canaglie.",
+   "nascita": "1914",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-preferisco-l-ascensore"
+   ]
+  },
+  {
+   "id": "a-Q450065",
+   "nome": "Kathryn McGuire",
+   "foto": "media/p-kathryn-mcguire.jpg",
+   "bio": "Kathryn McGuire è stata una ballerina e attrice statunitense dell'epoca del muto.",
+   "nascita": "1903",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-palla-n-13"
+   ]
+  },
+  {
+   "id": "a-Q7968994",
+   "nome": "Ward Crane",
+   "foto": "media/p-ward-crane.jpg",
+   "bio": "Ward Crane è stato un attore statunitense che lavorò nel cinema esclusivamente all'epoca del muto.",
+   "nascita": "1890",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-palla-n-13"
+   ]
+  },
+  {
+   "id": "a-Q3195849",
+   "nome": "Kewpie Morgan",
+   "foto": "media/p-kewpie-morgan.jpg",
+   "bio": null,
+   "nascita": "1892",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-palla-n-13"
+   ]
+  },
+  {
+   "id": "a-Q58822",
+   "nome": "Max Schreck",
+   "foto": "media/p-max-schreck.jpg",
+   "bio": "Friedrich Gustav Max Schreck è stato un attore tedesco, divenuto celebre quando Friedrich Wilhelm Murnau lo scelse per interpretare il ruolo del Conte Orlok nel suo capolavoro Nosferatu il vampiro.",
+   "nascita": "1879",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-nosferatu-il-vampiro"
+   ]
+  },
+  {
+   "id": "a-Q89376",
+   "nome": "Wolfgang Heinz",
+   "foto": "media/p-wolfgang-heinz.jpg",
+   "bio": null,
+   "nascita": "1900",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-nosferatu-il-vampiro"
+   ]
+  },
+  {
+   "id": "a-Q66097",
+   "nome": "Gustav von Wangenheim",
+   "foto": "media/p-gustav-von-wangenheim.jpg",
+   "bio": "Gustav von Wangenheim, pseudonimo di Ingo Clemens Gustav Adolf Freiherr von Wangenheim, è stato un attore e regista tedesco.",
+   "nascita": "1895",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-nosferatu-il-vampiro"
+   ]
+  },
+  {
+   "id": "a-Q76656",
+   "nome": "Greta Schröder",
+   "foto": "media/p-greta-schroder.jpg",
+   "bio": "Greta Schröder, pseudonimo di Margarethe Schröder, è stata un'attrice tedesca.",
+   "nascita": "1891",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-nosferatu-il-vampiro"
+   ]
+  },
+  {
+   "id": "a-Q78817",
+   "nome": "Alexander Granach",
+   "foto": "media/p-alexander-granach.jpg",
+   "bio": "Alexander Granach, pseudonimo di Jessaja Gronach, è stato un attore tedesco.",
+   "nascita": "1890",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-nosferatu-il-vampiro"
+   ]
+  },
+  {
+   "id": "a-Q95681",
+   "nome": "Georg H. Schnell",
+   "foto": "media/p-georg-h-schnell.jpg",
+   "bio": null,
+   "nascita": "1878",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-nosferatu-il-vampiro"
+   ]
+  },
+  {
+   "id": "a-Q87468",
+   "nome": "John Gottowt",
+   "foto": "media/p-john-gottowt.jpg",
+   "bio": "John Gottowt, nato Isidor Gesang, è stato un attore, regista e sceneggiatore austriaco.",
+   "nascita": "1881",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-nosferatu-il-vampiro"
+   ]
+  },
+  {
+   "id": "a-Q114696",
+   "nome": "Gustav Botz",
+   "foto": null,
+   "bio": null,
+   "nascita": "1857",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-nosferatu-il-vampiro"
+   ]
+  },
+  {
+   "id": "a-Q63051",
+   "nome": "Werner Krauss",
+   "foto": "media/p-werner-krauss.jpg",
+   "bio": "Werner Krauss, nome completo Werner Johannes Krauss, è stato un attore tedesco.",
+   "nascita": "1884",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-gabinetto-del-dottor-caligari"
+   ]
+  },
+  {
+   "id": "a-Q58801",
+   "nome": "Conrad Veidt",
+   "foto": "media/p-conrad-veidt.jpg",
+   "bio": "Conrad Veidt, pseudonimo di Hans Walter Konrad Veidt, è stato un attore tedesco naturalizzato britannico nel 1933, poi divenuto statunitense nel 1941.",
+   "nascita": "1893",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-gabinetto-del-dottor-caligari"
+   ]
+  },
+  {
+   "id": "a-Q66115",
+   "nome": "Lil Dagover",
+   "foto": "media/p-lil-dagover.jpg",
+   "bio": "Lil Dagover, nome d'arte di Marie Antonia Siegelinde Martha Seubert, è stata un'attrice tedesca, attiva in teatro, nel cinema e in televisione per oltre sei decenni.",
+   "nascita": "1887",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-il-gabinetto-del-dottor-caligari"
+   ]
+  },
+  {
+   "id": "a-Q88143",
+   "nome": "Hans Heinrich von Twardowski",
+   "foto": null,
+   "bio": "Hans Heinrich von Twardowski è stato un attore tedesco.",
+   "nascita": "1898",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-gabinetto-del-dottor-caligari"
+   ]
+  },
+  {
+   "id": "a-Q87651",
+   "nome": "Friedrich Fehér",
+   "foto": "media/p-friedrich-feher.jpg",
+   "bio": "Friedrich Fehér, nato Friedrich Weiss, è stato un attore, regista e sceneggiatore austriaco del cinema muto.",
+   "nascita": "1889",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-gabinetto-del-dottor-caligari"
+   ]
+  },
+  {
+   "id": "a-Q100338",
+   "nome": "Rudolf Lettinger",
+   "foto": "media/p-rudolf-lettinger.jpg",
+   "bio": null,
+   "nascita": "1865",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-gabinetto-del-dottor-caligari"
+   ]
+  },
+  {
+   "id": "a-Q110721",
+   "nome": "Elsa Wagner",
+   "foto": "media/p-elsa-wagner.jpg",
+   "bio": "Elsa Wagner, nata Elisabeth Karoline Auguste Wagner, è stata un'attrice tedesca.",
+   "nascita": "1881",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-il-gabinetto-del-dottor-caligari"
+   ]
+  },
+  {
+   "id": "a-Q472842",
+   "nome": "Jonathan Haze",
+   "foto": "media/p-jonathan-haze.jpg",
+   "bio": null,
+   "nascita": "1929",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-piccola-bottega-degli-orrori"
+   ]
+  },
+  {
+   "id": "a-Q526365",
+   "nome": "Jackie Joseph",
+   "foto": "media/p-jackie-joseph.jpg",
+   "bio": "Jackie Joseph è un'attrice statunitense.",
+   "nascita": "1934",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-piccola-bottega-degli-orrori"
+   ]
+  },
+  {
+   "id": "a-Q6810902",
+   "nome": "Mel Welles",
+   "foto": "media/p-mel-welles.jpg",
+   "bio": "Mel Welles è stato un regista, sceneggiatore e attore statunitense.",
+   "nascita": "1924",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-piccola-bottega-degli-orrori"
+   ]
+  },
+  {
+   "id": "a-Q1209753",
+   "nome": "Dick Miller",
+   "foto": "media/p-dick-miller.jpg",
+   "bio": "Richard Miller, detto Dick, è stato un attore statunitense.",
+   "nascita": "1928",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-piccola-bottega-degli-orrori"
+   ]
+  },
+  {
+   "id": "a-Q39792",
+   "nome": "Jack Nicholson",
+   "foto": "media/p-jack-nicholson.jpg",
+   "bio": "John Joseph Nicholson, detto Jack, è un attore, sceneggiatore e produttore cinematografico statunitense.",
+   "nascita": "1937",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-piccola-bottega-degli-orrori"
+   ]
+  },
+  {
+   "id": "a-Q2958461",
+   "nome": "Charles B. Griffith",
+   "foto": "media/p-charles-b-griffith.jpg",
+   "bio": "Charles Byron Griffith è stato uno sceneggiatore, attore, regista e produttore cinematografico statunitense.",
+   "nascita": "1930",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-piccola-bottega-degli-orrori"
+   ]
+  },
+  {
+   "id": "a-Q5488455",
+   "nome": "Frank Mills",
+   "foto": "media/p-frank-mills.jpg",
+   "bio": null,
+   "nascita": "1891",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-piccola-bottega-degli-orrori"
+   ]
+  },
+  {
+   "id": "a-Q2343863",
+   "nome": "Karyn Kupcinet",
+   "foto": "media/p-karyn-kupcinet.jpg",
+   "bio": "Karyn Kupcinet, nata Roberta Lynn Kupcinet, è stata un'attrice statunitense.",
+   "nascita": "1941",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-piccola-bottega-degli-orrori"
+   ]
+  },
+  {
+   "id": "a-Q152272",
+   "nome": "Georges Méliès",
+   "foto": "media/p-georges-melies.jpg",
+   "bio": "Marie-Georges-Jean Méliès, conosciuto come Georges Méliès (AFI: [ʒɔʁʒ meljɛs]), è stato un regista cinematografico, attore e illusionista francese.",
+   "nascita": "1861",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-viaggio-nella-luna"
+   ]
+  },
+  {
+   "id": "a-Q2059665",
+   "nome": "Bleuette Bernon",
+   "foto": null,
+   "bio": null,
+   "nascita": "1878",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-viaggio-nella-luna"
+   ]
+  },
+  {
+   "id": "a-Q151126",
+   "nome": "Jeanne d'Alcy",
+   "foto": "media/p-jeanne-d-alcy.jpg",
+   "bio": "Jeanne d'Alcy, nome d'arte di Charlotte Lucie Marie Adèle Stephanie Adrienne Faës, è stata un'attrice francese, nota per essere stata in assoluto la prima attrice cinematografica del paese, partecipando a numerosi film di Georges Méliès.",
+   "nascita": "1865",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-viaggio-nella-luna"
+   ]
+  },
+  {
+   "id": "a-Q42786",
+   "nome": "Audrey Hepburn",
+   "foto": "media/p-audrey-hepburn.jpg",
+   "bio": "Audrey Hepburn, pseudonimo di  Audrey Kathleen Ruston, è stata un'attrice e filantropa britannica.",
+   "nascita": "1929",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-sciarada"
+   ]
+  },
+  {
+   "id": "a-Q202172",
+   "nome": "Walter Matthau",
+   "foto": "media/p-walter-matthau.jpg",
+   "bio": "Walter Matthau, nome d'arte di Walter John Matthow, è stato un attore statunitense.",
+   "nascita": "1920",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-sciarada"
+   ]
+  },
+  {
+   "id": "a-Q4227",
+   "nome": "James Coburn",
+   "foto": "media/p-james-coburn.jpg",
+   "bio": "James Harrison Coburn III è stato un attore statunitense.",
+   "nascita": "1928",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-sciarada"
+   ]
+  },
+  {
+   "id": "a-Q298818",
+   "nome": "George Kennedy",
+   "foto": "media/p-george-kennedy.jpg",
+   "bio": "George Harris Kennedy Jr. è stato un attore statunitense, vincitore di un Oscar al miglior attore non protagonista per Nick mano fredda.",
+   "nascita": "1925",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-sciarada"
+   ]
+  },
+  {
+   "id": "a-Q453549",
+   "nome": "Ned Glass",
+   "foto": "media/p-ned-glass.jpg",
+   "bio": "Ned Glass, all'anagrafe Nusyn Glass, è stato un attore statunitense.",
+   "nascita": "1906",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-sciarada"
+   ]
+  },
+  {
+   "id": "a-Q1663127",
+   "nome": "Jacques Marin",
+   "foto": "media/p-jacques-marin.jpg",
+   "bio": "Jacques Marin è stato un attore francese.",
+   "nascita": "1919",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-sciarada"
+   ]
+  },
+  {
+   "id": "a-Q1984434",
+   "nome": "Bernard Musson",
+   "foto": null,
+   "bio": "Bernard Musson è stato un attore francese.",
+   "nascita": "1925",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-sciarada"
+   ]
+  },
+  {
+   "id": "a-Q313279",
+   "nome": "Jackie Coogan",
+   "foto": "media/p-jackie-coogan.jpg",
+   "bio": "Jackie Coogan, pseudonimo di John Leslie Coogan, è stato un attore statunitense.",
+   "nascita": "1914",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-monello"
+   ]
+  },
+  {
+   "id": "a-Q882",
+   "nome": "Charlie Chaplin",
+   "foto": "media/p-charlie-chaplin.jpg",
+   "bio": "Sir Charles Spencer Chaplin Jr., detto Charlie, è stato un attore, comico, regista, sceneggiatore, compositore e produttore cinematografico britannico, autore di oltre novanta film e tra i più importanti e influenti cineasti del XX secolo.",
+   "nascita": "1889",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-monello",
+    "f-la-febbre-dell-oro"
+   ]
+  },
+  {
+   "id": "a-Q718451",
+   "nome": "Henry Bergman",
+   "foto": "media/p-henry-bergman.jpg",
+   "bio": "Henry Bergman è stato un attore statunitense, collaboratore fidato di Charlie Chaplin.",
+   "nascita": "1868",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-monello",
+    "f-la-febbre-dell-oro"
+   ]
+  },
+  {
+   "id": "a-Q32337",
+   "nome": "Lita Grey",
+   "foto": "media/p-lita-grey.jpg",
+   "bio": "Lita Grey, pseudonimo di Lillita Louise MacMurray, è stata un'attrice statunitense nell'epoca del film muto. Il suo nome è rimasto nella storia della cinematografia, più che per il suo talento artistico, per essere stata la seconda moglie di Charlie Chaplin e la madre di due dei suoi figli: Charles Jr.",
+   "nascita": "1908",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-il-monello"
+   ]
+  },
+  {
+   "id": "a-Q1137229",
+   "nome": "Albert Austin",
+   "foto": "media/p-albert-austin.jpg",
+   "bio": "Albert Austin è stato un attore, sceneggiatore e regista britannico nell'epoca del film muto, collaboratore fidato di Charlie Chaplin.",
+   "nascita": "1881",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-monello",
+    "f-la-febbre-dell-oro"
+   ]
+  },
+  {
+   "id": "a-Q2960106",
+   "nome": "Charles Reisner",
+   "foto": "media/p-charles-reisner.jpg",
+   "bio": "Charles Reisner, o Charles \"Chuck Reisner\", è stato un regista e attore statunitense.",
+   "nascita": "1887",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-monello"
+   ]
+  },
+  {
+   "id": "a-Q195022",
+   "nome": "Frank Campeau",
+   "foto": "media/p-frank-campeau.jpg",
+   "bio": "Frank Campeau è stato un attore statunitense che iniziò la sua carriera a teatro. Girò il suo primo film nel 1911.",
+   "nascita": "1864",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-monello"
+   ]
+  },
+  {
+   "id": "a-Q3530760",
+   "nome": "Tom Keene",
+   "foto": "media/p-tom-keene.jpg",
+   "bio": "Tom Keene nome d'arte di George Duryea è stato un attore statunitense, noto soprattutto per i numerosi b-movie di genere western.",
+   "nascita": "1896",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-plan-9-from-outer-space"
+   ]
+  },
+  {
+   "id": "a-Q1351410",
+   "nome": "Tor Johnson",
+   "foto": "media/p-tor-johnson.jpg",
+   "bio": "Tor Johnson è stato un attore e wrestler svedese.",
+   "nascita": "1903",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-plan-9-from-outer-space"
+   ]
+  },
+  {
+   "id": "a-Q1402270",
+   "nome": "Bunny Breckinridge",
+   "foto": "media/p-bunny-breckinridge.jpg",
+   "bio": "Bunny Breckinridge, pseudonimo di John Cabell Breckinridge, è stato un attore statunitense, noto soprattutto per la sua amicizia e collaborazione con il regista di b-movies Edward D. Wood Jr.",
+   "nascita": "1903",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-plan-9-from-outer-space"
+   ]
+  },
+  {
+   "id": "a-Q237813",
+   "nome": "Maila Nurmi",
+   "foto": "media/p-maila-nurmi.jpg",
+   "bio": "Maila Nurmi o Vampira, pseudonimo di Maila Elizabeth Syrjaniemi, è stata una modella, attrice e personaggio televisivo finlandese naturalizzata statunitense.",
+   "nascita": "1922",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-plan-9-from-outer-space"
+   ]
+  },
+  {
+   "id": "a-Q34529",
+   "nome": "Bela Lugosi",
+   "foto": "media/p-bela-lugosi.jpg",
+   "bio": "Bela Lugosi, pseudonimo di Béla Ferenc Dezső Blaskó, è stato un attore ungherese naturalizzato statunitense.",
+   "nascita": "1882",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-plan-9-from-outer-space",
+    "f-dracula"
+   ]
+  },
+  {
+   "id": "a-Q2779102",
+   "nome": "Tom Mason",
+   "foto": "media/p-tom-mason.jpg",
+   "bio": "Thomas Robert Mason, detto Tom, è stato un attore, produttore cinematografico e medico chiropratico statunitense.",
+   "nascita": "1920",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-plan-9-from-outer-space"
+   ]
+  },
+  {
+   "id": "a-Q221843",
+   "nome": "Ed Wood",
+   "foto": "media/p-ed-wood.jpg",
+   "bio": "Ed Wood, all'anagrafe Edward Davis Wood Jr., è stato un regista, sceneggiatore e produttore cinematografico statunitense, definito da diversi critici come \"il peggior regista di tutti i tempi\".",
+   "nascita": "1924",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-plan-9-from-outer-space"
+   ]
+  },
+  {
+   "id": "a-Q3116392",
+   "nome": "Gregory Walcott",
+   "foto": "media/p-gregory-walcott.jpg",
+   "bio": "Gregory Walcott, nato Bernard Mattox, è stato un attore statunitense.",
+   "nascita": "1928",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-plan-9-from-outer-space"
+   ]
+  },
+  {
+   "id": "a-Q1200141",
+   "nome": "Derek de Lint",
+   "foto": "media/p-derek-de-lint.jpg",
+   "bio": "Derek de Lint, all'anagrafe Dick Hein de Lint è un attore olandese.",
+   "nascita": "1950",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-tears-of-steel"
+   ]
+  },
+  {
+   "id": "a-Q941415",
+   "nome": "Duane Jones",
+   "foto": "media/p-duane-jones.jpg",
+   "bio": "Duane L. Jones è stato un attore statunitense.",
+   "nascita": "1937",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-notte-dei-morti-viventi"
+   ]
+  },
+  {
+   "id": "a-Q271297",
+   "nome": "Judith O'Dea",
+   "foto": "media/p-judith-o-dea.jpg",
+   "bio": "Judith O'Dea è un'attrice statunitense.",
+   "nascita": "1945",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-notte-dei-morti-viventi"
+   ]
+  },
+  {
+   "id": "a-Q1372866",
+   "nome": "Karl Hardman",
+   "foto": "media/p-karl-hardman.jpg",
+   "bio": null,
+   "nascita": "1927",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-notte-dei-morti-viventi"
+   ]
+  },
+  {
+   "id": "a-Q463814",
+   "nome": "Marilyn Eastman",
+   "foto": "media/p-marilyn-eastman.jpg",
+   "bio": "Marilyn Eastman è stata un'attrice statunitense.",
+   "nascita": "1933",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-notte-dei-morti-viventi"
+   ]
+  },
+  {
+   "id": "a-Q2344447",
+   "nome": "Keith Wayne",
+   "foto": "media/p-keith-wayne.jpg",
+   "bio": null,
+   "nascita": "1945",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-notte-dei-morti-viventi"
+   ]
+  },
+  {
+   "id": "a-Q2568814",
+   "nome": "Judith Ridley",
+   "foto": "media/p-judith-ridley.jpg",
+   "bio": "Judith Ridley è un'attrice statunitense.",
+   "nascita": "1946",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-notte-dei-morti-viventi"
+   ]
+  },
+  {
+   "id": "a-Q463610",
+   "nome": "Kyra Schon",
+   "foto": "media/p-kyra-schon.jpg",
+   "bio": null,
+   "nascita": "1957",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-notte-dei-morti-viventi"
+   ]
+  },
+  {
+   "id": "a-Q3666370",
+   "nome": "Charles Craig",
+   "foto": "media/p-charles-craig.jpg",
+   "bio": "Charles Craig è stato un attore statunitense del cinema muto che lavorò a lungo con D.W. Griffith.",
+   "nascita": "1877",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-notte-dei-morti-viventi"
+   ]
+  },
+  {
+   "id": "a-Q102462",
+   "nome": "James Stewart",
+   "foto": "media/p-james-stewart.jpg",
+   "bio": "James Maitland Stewart è stato un attore statunitense.",
+   "nascita": "1908",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-vita-e-meravigliosa"
+   ]
+  },
+  {
+   "id": "a-Q224021",
+   "nome": "Donna Reed",
+   "foto": "media/p-donna-reed.jpg",
+   "bio": "Donna Reed, pseudonimo di Donnabelle Mullenger, è stata un'attrice statunitense.",
+   "nascita": "1921",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-vita-e-meravigliosa"
+   ]
+  },
+  {
+   "id": "a-Q295593",
+   "nome": "Lionel Barrymore",
+   "foto": "media/p-lionel-barrymore.jpg",
+   "bio": "Lionel Barrymore, pseudonimo di Lionel Herbert Blythe, è stato un attore e regista statunitense celebre sullo schermo e sui palcoscenici teatrali.",
+   "nascita": "1878",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-vita-e-meravigliosa"
+   ]
+  },
+  {
+   "id": "a-Q960050",
+   "nome": "Henry Travers",
+   "foto": "media/p-henry-travers.jpg",
+   "bio": "Henry Travers, pseudonimo di Travers John Heagerty, è stato un attore britannico.",
+   "nascita": "1874",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-vita-e-meravigliosa"
+   ]
+  },
+  {
+   "id": "a-Q317026",
+   "nome": "Thomas Mitchell",
+   "foto": "media/p-thomas-mitchell.jpg",
+   "bio": "Thomas John Mitchell è stato un attore statunitense.",
+   "nascita": "1892",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-vita-e-meravigliosa"
+   ]
+  },
+  {
+   "id": "a-Q2750248",
+   "nome": "Samuel S. Hinds",
+   "foto": "media/p-samuel-s-hinds.jpg",
+   "bio": "Samuel Southey Hinds, accreditato come Samuel S. Hinds, è stato un attore statunitense.",
+   "nascita": "1875",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-vita-e-meravigliosa",
+    "f-la-strada-scarlatta"
+   ]
+  },
+  {
+   "id": "a-Q466440",
+   "nome": "Beulah Bondi",
+   "foto": "media/p-beulah-bondi.jpg",
+   "bio": "Beulah Bondi, nata Beulah Bondy, è stata un'attrice statunitense.",
+   "nascita": "1888",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-vita-e-meravigliosa",
+    "f-ho-sognato-un-angelo"
+   ]
+  },
+  {
+   "id": "a-Q1562547",
+   "nome": "H.B. Warner",
+   "foto": "media/p-h-b-warner.jpg",
+   "bio": "H.B. Warner, pseudonimo di Henry Byron Lickfold, è stato un attore britannico.",
+   "nascita": "1875",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-vita-e-meravigliosa"
+   ]
+  },
+  {
+   "id": "a-Q1536200",
+   "nome": "Mack Swain",
+   "foto": "media/p-mack-swain.jpg",
+   "bio": "Moroni Swain, detto Mack, è stato un attore e regista statunitense.",
+   "nascita": "1876",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-febbre-dell-oro"
+   ]
+  },
+  {
+   "id": "a-Q3992509",
+   "nome": "Tom Murray",
+   "foto": "media/p-tom-murray.jpg",
+   "bio": "Thomas Murray, meglio conosciuto come Tom, è stato un attore statunitense conosciuto principalmente per il ruolo del malvagio Black Larson, in La febbre dell'oro di Charlie Chaplin.",
+   "nascita": "1874",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-febbre-dell-oro"
+   ]
+  },
+  {
+   "id": "a-Q273402",
+   "nome": "Georgia Hale",
+   "foto": "media/p-georgia-hale.jpg",
+   "bio": "Georgia Hale è stata un'attrice del cinema muto statunitense.",
+   "nascita": "1905",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-febbre-dell-oro"
+   ]
+  },
+  {
+   "id": "a-Q1342905",
+   "nome": "Tiny Sandford",
+   "foto": "media/p-tiny-sandford.jpg",
+   "bio": "Stanley J. Sandford, detto Tiny, è stato un attore statunitense.",
+   "nascita": "1894",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-febbre-dell-oro"
+   ]
+  },
+  {
+   "id": "a-Q381638",
+   "nome": "Chrispin Martin",
+   "foto": "media/p-chrispin-martin.jpg",
+   "bio": "Ysabel Ponciana Chrispin Martin Paiz è stato un attore statunitense di origini messicane.",
+   "nascita": "1893",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-febbre-dell-oro"
+   ]
+  },
+  {
+   "id": "a-Q4722398",
+   "nome": "Alfred Abadie",
+   "foto": null,
+   "bio": "Alfred Camille Abadie è stato un attore, sceneggiatore e produttore cinematografico statunitense.",
+   "nascita": "1878",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-assalto-al-treno"
+   ]
+  },
+  {
+   "id": "a-Q946745",
+   "nome": "Gilbert M. Anderson",
+   "foto": "media/p-gilbert-m-anderson.jpg",
+   "bio": "Gilbert M. Anderson, nato Max Aaronson, noto anche con lo pseudonimo di Broncho Billy, è stato un attore, sceneggiatore, regista e produttore cinematografico statunitense, celebre come la prima star del genere western.",
+   "nascita": "1880",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-assalto-al-treno"
+   ]
+  },
+  {
+   "id": "a-Q2155514",
+   "nome": "Justus D. Barnes",
+   "foto": "media/p-justus-d-barnes.jpg",
+   "bio": "Justus D. Barnes è stato un attore statunitense teatrale e cinematografico.",
+   "nascita": "1862",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-assalto-al-treno"
+   ]
+  },
+  {
+   "id": "a-Q4310133",
+   "nome": "Marie Murray",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-assalto-al-treno"
+   ]
+  },
+  {
+   "id": "a-Q778816",
+   "nome": "J. Barney Sherry",
+   "foto": "media/p-j-barney-sherry.jpg",
+   "bio": "J. Barney Sherry, nato James Barney Sherry, è stato un attore statunitense del cinema muto.",
+   "nascita": "1874",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-assalto-al-treno"
+   ]
+  },
+  {
+   "id": "a-Q17597049",
+   "nome": "Morgan Jones",
+   "foto": "media/p-morgan-jones.jpg",
+   "bio": "Morgan Jones,, è stato un attore statunitense del cinema muto.",
+   "nascita": "1879",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-assalto-al-treno"
+   ]
+  },
+  {
+   "id": "a-Q119935",
+   "nome": "Edmond O'Brien",
+   "foto": "media/p-edmond-o-brien.jpg",
+   "bio": "Edmond O'Brien, all'anagrafe Eamon Joseph O'Brien, è stato un attore statunitense.",
+   "nascita": "1915",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-belva-dell-autostrada",
+    "f-due-ore-ancora"
+   ]
+  },
+  {
+   "id": "a-Q2557512",
+   "nome": "Frank Lovejoy",
+   "foto": "media/p-frank-lovejoy.jpg",
+   "bio": "Frank Lovejoy, all'anagrafe Frank Andrew Lovejoy Jr., è stato un attore statunitense.",
+   "nascita": "1914",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-belva-dell-autostrada"
+   ]
+  },
+  {
+   "id": "a-Q3568989",
+   "nome": "William Talman",
+   "foto": "media/p-william-talman.jpg",
+   "bio": "William Talman, all'anagrafe William Whitney Talman Jr., è stato un attore statunitense.",
+   "nascita": "1915",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-belva-dell-autostrada"
+   ]
+  },
+  {
+   "id": "a-Q15512268",
+   "nome": "Jean Del Val",
+   "foto": "media/p-jean-del-val.jpg",
+   "bio": "Jean Del Val, pseudonimo di Jean Jacques Gautier, è stato un attore francese di origini inglesi, talvolta anche accreditato come Jean Gauthier o Jean Gautier.",
+   "nascita": "1891",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-belva-dell-autostrada"
+   ]
+  },
+  {
+   "id": "a-Q3186574",
+   "nome": "José Torvay",
+   "foto": "media/p-jose-torvay.jpg",
+   "bio": null,
+   "nascita": "1909",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-belva-dell-autostrada"
+   ]
+  },
+  {
+   "id": "a-Q15441006",
+   "nome": "Natividad Vacío",
+   "foto": "media/p-natividad-vacio.jpg",
+   "bio": null,
+   "nascita": "1912",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-belva-dell-autostrada"
+   ]
+  },
+  {
+   "id": "a-Q44485984",
+   "nome": "Wade Crosby",
+   "foto": "media/p-wade-crosby.jpg",
+   "bio": null,
+   "nascita": "1905",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-belva-dell-autostrada"
+   ]
+  },
+  {
+   "id": "a-Q22959191",
+   "nome": "Nacho Galindo",
+   "foto": "media/p-nacho-galindo.jpg",
+   "bio": null,
+   "nascita": "1908",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-belva-dell-autostrada"
+   ]
+  },
+  {
+   "id": "a-Q105960",
+   "nome": "William Powell",
+   "foto": "media/p-william-powell.jpg",
+   "bio": "William Horatio Powell è stato un attore statunitense.",
+   "nascita": "1892",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-l-impareggiabile-godfrey"
+   ]
+  },
+  {
+   "id": "a-Q207739",
+   "nome": "Carole Lombard",
+   "foto": "media/p-carole-lombard.jpg",
+   "bio": "Carole Lombard, pseudonimo di Alice Jane Peters, è stata un'attrice statunitense.",
+   "nascita": "1908",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-l-impareggiabile-godfrey"
+   ]
+  },
+  {
+   "id": "a-Q233856",
+   "nome": "Alice Brady",
+   "foto": "media/p-alice-brady.jpg",
+   "bio": "Alice Brady è stata un'attrice statunitense.",
+   "nascita": "1892",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-l-impareggiabile-godfrey"
+   ]
+  },
+  {
+   "id": "a-Q289991",
+   "nome": "Gail Patrick",
+   "foto": "media/p-gail-patrick.jpg",
+   "bio": "Gail Patrick, nata Margaret LaVelle Fitzpatrick, è stata un'attrice cinematografica e produttrice televisiva statunitense.",
+   "nascita": "1911",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-l-impareggiabile-godfrey"
+   ]
+  },
+  {
+   "id": "a-Q911472",
+   "nome": "Eugene Pallette",
+   "foto": "media/p-eugene-pallette.jpg",
+   "bio": "Eugene William Pallette è stato un attore statunitense.",
+   "nascita": "1889",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-l-impareggiabile-godfrey"
+   ]
+  },
+  {
+   "id": "a-Q1375447",
+   "nome": "Misha Auer",
+   "foto": "media/p-misha-auer.jpg",
+   "bio": "Misha Auer, nato Michail Semënovič Unkovskij, è stato un attore russo naturalizzato statunitense.",
+   "nascita": "1905",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-l-impareggiabile-godfrey"
+   ]
+  },
+  {
+   "id": "a-Q1995535",
+   "nome": "Jean Dixon",
+   "foto": "media/p-jean-dixon.jpg",
+   "bio": "Jean Dixon, all'anagrafe Jean Jacques, è stata un'attrice statunitense.",
+   "nascita": "1896",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-l-impareggiabile-godfrey"
+   ]
+  },
+  {
+   "id": "a-Q1308174",
+   "nome": "James Flavin",
+   "foto": "media/p-james-flavin.jpg",
+   "bio": "James Flavin è stato un attore statunitense, la cui carriera durò quasi mezzo secolo.",
+   "nascita": "1906",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-l-impareggiabile-godfrey"
+   ]
+  },
+  {
+   "id": "a-Q230099",
+   "nome": "Irene Dunne",
+   "foto": "media/p-irene-dunne.jpg",
+   "bio": "Irene Dunne, pseudonimo di Irene Marie Dunn, è stata un'attrice e cantante statunitense.",
+   "nascita": "1898",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-ho-sognato-un-angelo"
+   ]
+  },
+  {
+   "id": "a-Q950397",
+   "nome": "Edgar Buchanan",
+   "foto": "media/p-edgar-buchanan.jpg",
+   "bio": "Edgar Buchanan è stato un attore statunitense.",
+   "nascita": "1903",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-ho-sognato-un-angelo"
+   ]
+  },
+  {
+   "id": "a-Q450047",
+   "nome": "Ann Doran",
+   "foto": "media/p-ann-doran.jpg",
+   "bio": "Ann Doran è stata un'attrice statunitense.",
+   "nascita": "1911",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-ho-sognato-un-angelo"
+   ]
+  },
+  {
+   "id": "a-Q513849",
+   "nome": "Bess Flowers",
+   "foto": "media/p-bess-flowers.jpg",
+   "bio": "Bess Flowers è stata un'attrice statunitense.",
+   "nascita": "1898",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-ho-sognato-un-angelo"
+   ]
+  },
+  {
+   "id": "a-Q3037157",
+   "nome": "Dorothy Adams",
+   "foto": "media/p-dorothy-adams.jpg",
+   "bio": "Dorothy Adams è stata un'attrice statunitense.",
+   "nascita": "1900",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-ho-sognato-un-angelo"
+   ]
+  },
+  {
+   "id": "a-Q1381379",
+   "nome": "Frank Mills",
+   "foto": null,
+   "bio": "Frank Mills è un pianista canadese che registra anche album, meglio conosciuto per il suo singolo strumentale di successo \"Music Box Dancer\".",
+   "nascita": "1942",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-ho-sognato-un-angelo"
+   ]
+  },
+  {
+   "id": "a-Q83812",
+   "nome": "Edward G. Robinson",
+   "foto": "media/p-edward-g-robinson.jpg",
+   "bio": "Edward G. Robinson, pseudonimo di Emanuel Goldenberg, è stato un attore rumeno naturalizzato statunitense.",
+   "nascita": "1893",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-strada-scarlatta",
+    "f-lo-straniero"
+   ]
+  },
+  {
+   "id": "a-Q128944",
+   "nome": "Joan Bennett",
+   "foto": "media/p-joan-bennett.jpg",
+   "bio": "Joan Geraldine Bennett è stata un'attrice statunitense.",
+   "nascita": "1910",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-strada-scarlatta"
+   ]
+  },
+  {
+   "id": "a-Q1159055",
+   "nome": "Dan Duryea",
+   "foto": "media/p-dan-duryea.jpg",
+   "bio": "Dan Duryea è stato un attore statunitense.",
+   "nascita": "1907",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-strada-scarlatta"
+   ]
+  },
+  {
+   "id": "a-Q272061",
+   "nome": "Margaret Lindsay",
+   "foto": "media/p-margaret-lindsay.jpg",
+   "bio": "Margaret Lindsay, nata Margaret Kies, è stata un'attrice statunitense.",
+   "nascita": "1910",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-strada-scarlatta"
+   ]
+  },
+  {
+   "id": "a-Q1855635",
+   "nome": "Vladimir Sokoloff",
+   "foto": "media/p-vladimir-sokoloff.jpg",
+   "bio": "Vladimir Sokoloff è stato un attore russo naturalizzato statunitense.",
+   "nascita": "1889",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-strada-scarlatta"
+   ]
+  },
+  {
+   "id": "a-Q962037",
+   "nome": "Fritz Reuter Leiber Sr.",
+   "foto": "media/p-fritz-reuter-leiber-sr.jpg",
+   "bio": "Fritz Reuter Leiber, o Fritz Reuter Leiber Sr., fu un attore del teatro shakespeariano e del cinema.",
+   "nascita": "1882",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-strada-scarlatta"
+   ]
+  },
+  {
+   "id": "a-Q1395893",
+   "nome": "Rosalind Ivan",
+   "foto": "media/p-rosalind-ivan.jpg",
+   "bio": "Rosalind Ivan, pseudonimo di Rosalind Muriel Pringle, è stata un'attrice e sceneggiatrice inglese apparsa in 14 pellicole statunitensi tra il 1944 ed il 1954.",
+   "nascita": "1880",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-strada-scarlatta"
+   ]
+  },
+  {
+   "id": "a-Q40912",
+   "nome": "Frank Sinatra",
+   "foto": "media/p-frank-sinatra.jpg",
+   "bio": "Francis Albert Sinatra, detto Frank, è stato un cantante e attore statunitense.",
+   "nascita": "1915",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-l-uomo-dal-braccio-d-oro"
+   ]
+  },
+  {
+   "id": "a-Q237399",
+   "nome": "Eleanor Parker",
+   "foto": "media/p-eleanor-parker.jpg",
+   "bio": "Eleanor Jean Parker è stata un'attrice statunitense.",
+   "nascita": "1922",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-l-uomo-dal-braccio-d-oro"
+   ]
+  },
+  {
+   "id": "a-Q212879",
+   "nome": "Kim Novak",
+   "foto": "media/p-kim-novak.jpg",
+   "bio": "Kim Novak, all'anagrafe Marilyn Pauline Novak, è un'attrice statunitense.",
+   "nascita": "1933",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-l-uomo-dal-braccio-d-oro"
+   ]
+  },
+  {
+   "id": "a-Q355932",
+   "nome": "Robert Strauss",
+   "foto": "media/p-robert-strauss.jpg",
+   "bio": "Robert Strauss è stato un attore statunitense.",
+   "nascita": "1913",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-l-uomo-dal-braccio-d-oro"
+   ]
+  },
+  {
+   "id": "a-Q1150547",
+   "nome": "Darren McGavin",
+   "foto": "media/p-darren-mcgavin.jpg",
+   "bio": "Darren McGavin è stato un attore statunitense.",
+   "nascita": "1922",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-l-uomo-dal-braccio-d-oro"
+   ]
+  },
+  {
+   "id": "a-Q1345163",
+   "nome": "John Conte",
+   "foto": "media/p-john-conte.jpg",
+   "bio": "John Conte è stato un attore statunitense.",
+   "nascita": "1915",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-l-uomo-dal-braccio-d-oro"
+   ]
+  },
+  {
+   "id": "a-Q554443",
+   "nome": "George E. Stone",
+   "foto": "media/p-george-e-stone.jpg",
+   "bio": "George E. Stone, pseudonimo di Gerschon Lichtenstein, è stato un attore polacco naturalizzato statunitense.",
+   "nascita": "1903",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-l-uomo-dal-braccio-d-oro"
+   ]
+  },
+  {
+   "id": "a-Q1819392",
+   "nome": "Leonid Kinskey",
+   "foto": "media/p-leonid-kinskey.jpg",
+   "bio": "Leonid Kinskey è stato un attore russo naturalizzato statunitense.",
+   "nascita": "1903",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-l-uomo-dal-braccio-d-oro"
+   ]
+  },
+  {
+   "id": "a-Q3361772",
+   "nome": "Pamela Britton",
+   "foto": "media/p-pamela-britton.jpg",
+   "bio": "Pamela Britton, nata Armilda Jane Owen, è stata un'attrice statunitense.",
+   "nascita": "1923",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-due-ore-ancora"
+   ]
+  },
+  {
+   "id": "a-Q1425739",
+   "nome": "Luther Adler",
+   "foto": "media/p-luther-adler.jpg",
+   "bio": "Luther Adler, nato Lutha Adler, è stato un attore e regista statunitense.",
+   "nascita": "1903",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-due-ore-ancora"
+   ]
+  },
+  {
+   "id": "a-Q1982288",
+   "nome": "Neville Brand",
+   "foto": "media/p-neville-brand.jpg",
+   "bio": "Neville Brand è stato un attore statunitense.",
+   "nascita": "1920",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-due-ore-ancora",
+    "f-il-quarto-uomo"
+   ]
+  },
+  {
+   "id": "a-Q508986",
+   "nome": "Beverly Garland",
+   "foto": "media/p-beverly-garland.jpg",
+   "bio": "Beverly Garland, nata Beverly Lucy Fessenden, è stata un'attrice statunitense.",
+   "nascita": "1926",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-due-ore-ancora"
+   ]
+  },
+  {
+   "id": "a-Q5044383",
+   "nome": "Carol Hughes",
+   "foto": "media/p-carol-hughes.jpg",
+   "bio": "Carol Hughes, pseudonimo di Catherine Hukill, è stata un'attrice statunitense.",
+   "nascita": "1910",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-due-ore-ancora"
+   ]
+  },
+  {
+   "id": "a-Q516630",
+   "nome": "Lawrence Dobkin",
+   "foto": "media/p-lawrence-dobkin.jpg",
+   "bio": "Lawrence Dobkin è stato un attore e regista statunitense.",
+   "nascita": "1919",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-due-ore-ancora"
+   ]
+  },
+  {
+   "id": "a-Q7175406",
+   "nome": "Peter Leeds",
+   "foto": "media/p-peter-leeds.jpg",
+   "bio": "Peter Leeds è stato un attore statunitense.",
+   "nascita": "1917",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-due-ore-ancora"
+   ]
+  },
+  {
+   "id": "a-Q312656",
+   "nome": "Lon Chaney",
+   "foto": "media/p-lon-chaney.jpg",
+   "bio": "Lon Chaney, pseudonimo di Leonidas Frank Chaney, è stato un attore, regista, sceneggiatore e truccatore statunitense.",
+   "nascita": "1883",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-fantasma-dell-opera"
+   ]
+  },
+  {
+   "id": "a-Q265819",
+   "nome": "Mary Philbin",
+   "foto": "media/p-mary-philbin.jpg",
+   "bio": "Mary Philbin è stata un'attrice statunitense che fu per breve tempo una stella all'epoca del cinema muto.",
+   "nascita": "1903",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-il-fantasma-dell-opera"
+   ]
+  },
+  {
+   "id": "a-Q1748282",
+   "nome": "Norman Kerry",
+   "foto": "media/p-norman-kerry.jpg",
+   "bio": "Norman Kerry, nato Arnold Kaiser, è stato un attore statunitense, divo del cinema muto.",
+   "nascita": "1894",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-fantasma-dell-opera"
+   ]
+  },
+  {
+   "id": "a-Q4798566",
+   "nome": "Arthur Edmund Carewe",
+   "foto": "media/p-arthur-edmund-carewe.jpg",
+   "bio": "Arthur Edmund Carewe, nato Hovsep Hovsepian, è stato un attore statunitense di origine armena, attivo soprattutto nell'epoca del muto.",
+   "nascita": "1884",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-fantasma-dell-opera"
+   ]
+  },
+  {
+   "id": "a-Q731233",
+   "nome": "Gibson Gowland",
+   "foto": "media/p-gibson-gowland.jpg",
+   "bio": "Gibson Gowland è stato un attore britannico.",
+   "nascita": "1877",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-fantasma-dell-opera"
+   ]
+  },
+  {
+   "id": "a-Q327140",
+   "nome": "Snitz Edwards",
+   "foto": "media/p-snitz-edwards.jpg",
+   "bio": "Snitz Edwards, nato Edward Neumann, è stato un attore ungherese naturalizzato statunitense.",
+   "nascita": "1868",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-fantasma-dell-opera"
+   ]
+  },
+  {
+   "id": "a-Q3560682",
+   "nome": "Virginia Pearson",
+   "foto": "media/p-virginia-pearson.jpg",
+   "bio": "Virginia Pearson è stata un'attrice statunitense del cinema muto.",
+   "nascita": "1886",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-il-fantasma-dell-opera"
+   ]
+  },
+  {
+   "id": "a-Q1070698",
+   "nome": "Chester Conklin",
+   "foto": "media/p-chester-conklin.jpg",
+   "bio": "Chester Cooper Conklin è stato un attore statunitense.",
+   "nascita": "1886",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-fantasma-dell-opera"
+   ]
+  },
+  {
+   "id": "a-Q219640",
+   "nome": "Vincent Price",
+   "foto": "media/p-vincent-price.jpg",
+   "bio": "Vincent Leonard Price Jr. è stato un attore statunitense.",
+   "nascita": "1911",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-casa-dei-fantasmi",
+    "f-l-ultimo-uomo-della-terra"
+   ]
+  },
+  {
+   "id": "a-Q2830551",
+   "nome": "Alan Marshal",
+   "foto": "media/p-alan-marshal.jpg",
+   "bio": "Alan Marshal, pseudonimo di Alan Willey, è stato un attore australiano.",
+   "nascita": "1909",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-casa-dei-fantasmi"
+   ]
+  },
+  {
+   "id": "a-Q1330714",
+   "nome": "Elisha Cook Jr.",
+   "foto": "media/p-elisha-cook-jr.jpg",
+   "bio": "Elisha Vanslyck Cook Jr. è stato un attore statunitense.",
+   "nascita": "1903",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-casa-dei-fantasmi"
+   ]
+  },
+  {
+   "id": "a-Q4251151",
+   "nome": "Carolyn Craig",
+   "foto": null,
+   "bio": "Carolyn Craig, nata Adele Ruth Crago, è stata un'attrice statunitense.",
+   "nascita": "1934",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-casa-dei-fantasmi"
+   ]
+  },
+  {
+   "id": "a-Q5044492",
+   "nome": "Carol Ohmart",
+   "foto": "media/p-carol-ohmart.jpg",
+   "bio": "Carol Ohmart, nome d'arte di Armelia Carol Ohmart, è stata un'attrice e modella statunitense.",
+   "nascita": "1927",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-casa-dei-fantasmi"
+   ]
+  },
+  {
+   "id": "a-Q3189245",
+   "nome": "Julie Mitchum",
+   "foto": null,
+   "bio": null,
+   "nascita": "1914",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-casa-dei-fantasmi"
+   ]
+  },
+  {
+   "id": "a-Q339593",
+   "nome": "Richard Long",
+   "foto": "media/p-richard-long.jpg",
+   "bio": "Richard Long è stato un attore statunitense.",
+   "nascita": "1927",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-casa-dei-fantasmi",
+    "f-lo-straniero"
+   ]
+  },
+  {
+   "id": "a-Q19559954",
+   "nome": "Leona Anderson",
+   "foto": "media/p-leona-anderson.jpg",
+   "bio": "Leona Anderson, nata Leona Aronson, è stata un'attrice statunitense.",
+   "nascita": "1885",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-casa-dei-fantasmi"
+   ]
+  },
+  {
+   "id": "a-Q273104",
+   "nome": "Helen Chandler",
+   "foto": "media/p-helen-chandler.jpg",
+   "bio": "Helen Chandler è stata un'attrice statunitense.",
+   "nascita": "1906",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-dracula"
+   ]
+  },
+  {
+   "id": "a-Q359463",
+   "nome": "David Manners",
+   "foto": "media/p-david-manners.jpg",
+   "bio": "David Manners, all'anagrafe Rauff de Ryther Daun Acklom, è stato un attore e scrittore canadese naturalizzato statunitense.",
+   "nascita": "1900",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-dracula"
+   ]
+  },
+  {
+   "id": "a-Q940662",
+   "nome": "Dwight Frye",
+   "foto": "media/p-dwight-frye.jpg",
+   "bio": "Dwight Iliff Fry, poi noto con la grafia modificata Frye, è stato un attore e pianista statunitense.",
+   "nascita": "1899",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-dracula"
+   ]
+  },
+  {
+   "id": "a-Q1293958",
+   "nome": "Edward Van Sloan",
+   "foto": "media/p-edward-van-sloan.jpg",
+   "bio": "Edward Van Sloan è stato un attore statunitense.",
+   "nascita": "1882",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-dracula"
+   ]
+  },
+  {
+   "id": "a-Q260337",
+   "nome": "Carla Laemmle",
+   "foto": "media/p-carla-laemmle.jpg",
+   "bio": "Carla Laemmle, pseudonimo di Rebekah Isabelle Laemmle, è stata un'attrice statunitense, ricordata soprattutto per il suo ruolo nel film Il fantasma dell'opera del 1925.",
+   "nascita": "1909",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-dracula"
+   ]
+  },
+  {
+   "id": "a-Q3570220",
+   "nome": "Wyndham Standing",
+   "foto": "media/p-wyndham-standing.jpg",
+   "bio": "Wyndham Standing, nato Charles Wyndham Standing,, è stato un attore inglese che lavorò a lungo a Hollywood.",
+   "nascita": "1880",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-dracula"
+   ]
+  },
+  {
+   "id": "a-Q3037190",
+   "nome": "Dorothy Tree",
+   "foto": "media/p-dorothy-tree.jpg",
+   "bio": "Dorothy Tree, pseudonimo di Dorothy Estelle Triebitz, è stata un'attrice e insegnante statunitense.",
+   "nascita": "1906",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-dracula"
+   ]
+  },
+  {
+   "id": "a-Q2328155",
+   "nome": "Candace Hilligoss",
+   "foto": "media/p-candace-hilligoss.jpg",
+   "bio": "Candace Hilligoss è un'attrice statunitense.",
+   "nascita": "1935",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-carnival-of-souls"
+   ]
+  },
+  {
+   "id": "a-Q4796806",
+   "nome": "Art Ellison",
+   "foto": null,
+   "bio": null,
+   "nascita": "1899",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-carnival-of-souls"
+   ]
+  },
+  {
+   "id": "a-Q3134025",
+   "nome": "Herk Harvey",
+   "foto": "media/p-herk-harvey.jpg",
+   "bio": "Harold Arnold Harvey, detto Herk, è stato un attore, regista e sceneggiatore statunitense.",
+   "nascita": "1924",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-carnival-of-souls"
+   ]
+  },
+  {
+   "id": "a-Q253384",
+   "nome": "Loretta Young",
+   "foto": "media/p-loretta-young.jpg",
+   "bio": "Loretta Young, pseudonimo di Gretchen Young, è stata un'attrice statunitense.",
+   "nascita": "1913",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-lo-straniero"
+   ]
+  },
+  {
+   "id": "a-Q24829",
+   "nome": "Orson Welles",
+   "foto": "media/p-orson-welles.jpg",
+   "bio": "George Orson Welles è stato un attore, regista, sceneggiatore, drammaturgo e produttore cinematografico statunitense.",
+   "nascita": "1915",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-lo-straniero"
+   ]
+  },
+  {
+   "id": "a-Q3198775",
+   "nome": "Konstantin Shayne",
+   "foto": "media/p-konstantin-shayne.jpg",
+   "bio": "Konstantin Shayne, nato in russo Константин Вениаминович Олькеницкий?, Konstantin Veniaminovič Ol'kenickij, è stato un attore russo naturalizzato statunitense.",
+   "nascita": "1888",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-lo-straniero"
+   ]
+  },
+  {
+   "id": "a-Q15443211",
+   "nome": "Billy House",
+   "foto": "media/p-billy-house.jpg",
+   "bio": null,
+   "nascita": "1889",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-lo-straniero"
+   ]
+  },
+  {
+   "id": "a-Q2929184",
+   "nome": "Byron Keith",
+   "foto": "media/p-byron-keith.jpg",
+   "bio": null,
+   "nascita": "1917",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-lo-straniero"
+   ]
+  },
+  {
+   "id": "a-Q2069183",
+   "nome": "Martha Wentworth",
+   "foto": "media/p-martha-wentworth.jpg",
+   "bio": "Verna Martha Wentworth è stata un'attrice e doppiatrice statunitense.",
+   "nascita": "1889",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-lo-straniero"
+   ]
+  },
+  {
+   "id": "a-Q723415",
+   "nome": "John Payne",
+   "foto": "media/p-john-payne.jpg",
+   "bio": "John Howard Payne è stato un attore statunitense.",
+   "nascita": "1912",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-quarto-uomo"
+   ]
+  },
+  {
+   "id": "a-Q1112554",
+   "nome": "Coleen Gray",
+   "foto": "media/p-coleen-gray.jpg",
+   "bio": "Coleen Gray, pseudonimo di Doris Jensen, è stata un'attrice statunitense.",
+   "nascita": "1922",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-il-quarto-uomo"
+   ]
+  },
+  {
+   "id": "a-Q981418",
+   "nome": "Preston Foster",
+   "foto": "media/p-preston-foster.jpg",
+   "bio": "Preston Stratton Foster è stato un attore e cantante statunitense.",
+   "nascita": "1900",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-quarto-uomo"
+   ]
+  },
+  {
+   "id": "a-Q193278",
+   "nome": "Lee Van Cleef",
+   "foto": "media/p-lee-van-cleef.jpg",
+   "bio": "Lee Van Cleef, pseudonimo di Clarence LeRoy Van Cleef Jr., è stato un attore statunitense noto e apprezzato per i suoi ruoli in film western, soprattutto Per qualche dollaro in più e Il buono, il brutto, il cattivo di Sergio Leone.",
+   "nascita": "1925",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-quarto-uomo"
+   ]
+  },
+  {
+   "id": "a-Q500155",
+   "nome": "Jack Elam",
+   "foto": "media/p-jack-elam.jpg",
+   "bio": "William Scott Elam, detto Jack, è stato un attore statunitense.",
+   "nascita": "1920",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-quarto-uomo"
+   ]
+  },
+  {
+   "id": "a-Q3035962",
+   "nome": "Dona Drake",
+   "foto": "media/p-dona-drake.jpg",
+   "bio": "Dona Drake, nata Eunice Westmoreland, è stata una cantante, ballerina e attrice statunitense.",
+   "nascita": "1914",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-il-quarto-uomo"
+   ]
+  },
+  {
+   "id": "a-Q118184",
+   "nome": "Mario Siletti",
+   "foto": "media/p-mario-siletti.jpg",
+   "bio": "Mario Giovanni Siletti è stato un attore italiano naturalizzato statunitense.",
+   "nascita": "1903",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-quarto-uomo"
+   ]
+  },
+  {
+   "id": "a-Q921798",
+   "nome": "Sabu",
+   "foto": "media/p-sabu.jpg",
+   "bio": "Sabu Dastagir è stato un attore indiano naturalizzato statunitense.",
+   "nascita": "1924",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-libro-della-giungla"
+   ]
+  },
+  {
+   "id": "a-Q1604757",
+   "nome": "Joseph Calleia",
+   "foto": "media/p-joseph-calleia.jpg",
+   "bio": "Joseph Alexander Caesar Herstall Vincent Calleia è stato un attore statunitense di origine maltese.",
+   "nascita": "1897",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-libro-della-giungla"
+   ]
+  },
+  {
+   "id": "a-Q283123",
+   "nome": "Frank Puglia",
+   "foto": "media/p-frank-puglia.jpg",
+   "bio": "Frank Puglia, nato Francesco Giuseppe Puglia, è stato un attore italiano naturalizzato statunitense.",
+   "nascita": "1892",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-libro-della-giungla"
+   ]
+  },
+  {
+   "id": "a-Q2448035",
+   "nome": "Rosemary DeCamp",
+   "foto": "media/p-rosemary-decamp.jpg",
+   "bio": "Rosemary DeCamp è stata un'attrice statunitense.",
+   "nascita": "1910",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-il-libro-della-giungla"
+   ]
+  },
+  {
+   "id": "a-Q1606820",
+   "nome": "Ralph Byrd",
+   "foto": "media/p-ralph-byrd.jpg",
+   "bio": "Ralph Byrd è stato un attore statunitense.",
+   "nascita": "1909",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-libro-della-giungla"
+   ]
+  },
+  {
+   "id": "a-Q1308273",
+   "nome": "Noble Johnson",
+   "foto": "media/p-noble-johnson.jpg",
+   "bio": "Noble Johnson è stato un attore statunitense, conosciuto anche con i nomi di Noble M. Johnson o Mark Noble.",
+   "nascita": "1881",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-libro-della-giungla"
+   ]
+  },
+  {
+   "id": "a-Q439962",
+   "nome": "Faith Brook",
+   "foto": "media/p-faith-brook.jpg",
+   "bio": null,
+   "nascita": "1922",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-il-libro-della-giungla"
+   ]
+  },
+  {
+   "id": "a-Q516106",
+   "nome": "Franca Bettoja",
+   "foto": "media/p-franca-bettoja.jpg",
+   "bio": "Franca Bettoja o Bettoia è stata un'attrice italiana.",
+   "nascita": "1936",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-l-ultimo-uomo-della-terra"
+   ]
+  },
+  {
+   "id": "a-Q3724636",
+   "nome": "Emma Danieli",
+   "foto": "media/p-emma-danieli.jpg",
+   "bio": "Emma Danieli, nome d'arte di Emma Fretta, è stata un'attrice e annunciatrice televisiva italiana, attiva in cinema e televisione soprattutto fra gli anni 1950 e gli anni 1960.",
+   "nascita": "1936",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-l-ultimo-uomo-della-terra"
+   ]
+  },
+  {
+   "id": "a-Q180010",
+   "nome": "Giacomo Rossi Stuart",
+   "foto": "media/p-giacomo-rossi-stuart.jpg",
+   "bio": "Giacomo Rossi Stuart è stato un attore italiano.",
+   "nascita": "1925",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-l-ultimo-uomo-della-terra"
+   ]
+  },
+  {
+   "id": "a-Q2832333",
+   "nome": "Aldo Silvani",
+   "foto": "media/p-aldo-silvani.jpg",
+   "bio": "Aldo Silvani è stato un attore, regista e doppiatore italiano.",
+   "nascita": "1891",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-l-ultimo-uomo-della-terra"
+   ]
+  },
+  {
+   "id": "a-Q1394131",
+   "nome": "Umberto Raho",
+   "foto": "media/p-umberto-raho.jpg",
+   "bio": "Umberto Raho è stato un attore italiano.",
+   "nascita": "1922",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-l-ultimo-uomo-della-terra"
+   ]
+  },
+  {
+   "id": "a-Q1117124",
+   "nome": "Franco Gasparri",
+   "foto": "media/p-franco-gasparri.jpg",
+   "bio": "Gianfranco Gasparri, noto come Franco, è stato un attore italiano.",
+   "nascita": "1948",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-l-ultimo-uomo-della-terra"
+   ]
+  },
+  {
+   "id": "a-Q5045344",
+   "nome": "Carolyn De Fonseca",
+   "foto": null,
+   "bio": null,
+   "nascita": "1929",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-l-ultimo-uomo-della-terra"
+   ]
+  },
+  {
+   "id": "a-Q203639",
+   "nome": "Aleksandr Antonov",
+   "foto": "media/p-aleksandr-antonov.jpg",
+   "bio": "Aleksandr Pavlovič Antonov è stato un attore sovietico.",
+   "nascita": "1898",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-corazzata-pot-mkin"
+   ]
+  },
+  {
+   "id": "a-Q561459",
+   "nome": "Grigorij Vasil'evič Aleksandrov",
+   "foto": "media/p-grigorij-vasil-evi-aleksandrov.jpg",
+   "bio": "Grigorij Vasil'evič Aleksandrov è stato un regista e sceneggiatore sovietico.",
+   "nascita": "1903",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-corazzata-pot-mkin"
+   ]
+  },
+  {
+   "id": "a-Q1343261",
+   "nome": "Aleksandr Stepanovich Antonov",
+   "foto": "media/p-aleksandr-stepanovich-antonov.jpg",
+   "bio": "Aleksandr Stepanovič Antonov è stato un politico e rivoluzionario russo, membro del Partito Socialista Rivoluzionario e poi uno dei leader della ribellione di Tambov contro il regime sovietico durante la guerra civile russa.",
+   "nascita": "1889",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-corazzata-pot-mkin"
+   ]
+  },
+  {
+   "id": "a-Q8003",
+   "nome": "Sergej Michajlovič Ėjzenštejn",
+   "foto": "media/p-sergej-michajlovi-jzen-tejn.jpg",
+   "bio": "Sergej Michajlovič Ėjzenštejn è stato un regista, sceneggiatore, montatore, scrittore, produttore cinematografico e scenografo sovietico, ritenuto una delle personalità più influenti della storia del cinema la cui opera, per l'uso innovativo del montaggio e della composizione formale dell'immagine, ha segnato indelebilmente la settima arte. Tra i suoi film, si annoverano capolavori come: La corazzata Potëmkin, Ottobre e Aleksandr Nevskij.",
+   "nascita": "1898",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-corazzata-pot-mkin"
+   ]
+  },
+  {
+   "id": "a-Q2382918",
+   "nome": "Andrej Fajt",
+   "foto": "media/p-andrej-fajt.jpg",
+   "bio": "Andrej Fajt è stato un attore sovietico.",
+   "nascita": "1903",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-corazzata-pot-mkin"
+   ]
+  },
+  {
+   "id": "a-Q4877204",
+   "nome": "Beatrice Vitoldi",
+   "foto": "media/p-beatrice-vitoldi.jpg",
+   "bio": "Beatrice Vitoldi è stata un'attrice e diplomatica italiana naturalizzata sovietica.",
+   "nascita": "1895",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-corazzata-pot-mkin"
+   ]
+  },
+  {
+   "id": "a-Q8803797",
+   "nome": "Vladimir Barskij",
+   "foto": "media/p-vladimir-barskij.jpg",
+   "bio": "Vladimir Grigor'evič Barskij è stato un attore e regista sovietico.",
+   "nascita": "1866",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-corazzata-pot-mkin"
+   ]
+  },
+  {
+   "id": "a-Q2832615",
+   "nome": "Aleksanteri Ahola-Valo",
+   "foto": "media/p-aleksanteri-ahola-valo.jpg",
+   "bio": null,
+   "nascita": "1900",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-corazzata-pot-mkin"
+   ]
+  },
+  {
+   "id": "a-Q531461",
+   "nome": "Raymond Massey",
+   "foto": "media/p-raymond-massey.jpg",
+   "bio": "Raymond Massey è stato un attore canadese.",
+   "nascita": "1896",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-vita-futura"
+   ]
+  },
+  {
+   "id": "a-Q381285",
+   "nome": "Ralph Richardson",
+   "foto": "media/p-ralph-richardson.jpg",
+   "bio": "Sir Ralph David Richardson è stato un attore britannico.",
+   "nascita": "1902",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-vita-futura"
+   ]
+  },
+  {
+   "id": "a-Q527735",
+   "nome": "Cedric Hardwicke",
+   "foto": "media/p-cedric-hardwicke.jpg",
+   "bio": "Sir Cedric Hardwicke è stato un attore britannico.",
+   "nascita": "1893",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-vita-futura"
+   ]
+  },
+  {
+   "id": "a-Q1281472",
+   "nome": "Margaretta Scott",
+   "foto": "media/p-margaretta-scott.jpg",
+   "bio": null,
+   "nascita": "1912",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-vita-futura"
+   ]
+  },
+  {
+   "id": "a-Q540466",
+   "nome": "Derrick De Marney",
+   "foto": null,
+   "bio": "Derrick De Marney, nome completo Derrick Raoul Edouard Alfred De Marney, è stato un attore britannico.",
+   "nascita": "1906",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-vita-futura"
+   ]
+  },
+  {
+   "id": "a-Q434324",
+   "nome": "Ann Todd",
+   "foto": "media/p-ann-todd.jpg",
+   "bio": "Ann Todd, nata Dorothy Anne Todd, è stata un'attrice inglese.",
+   "nascita": "1909",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-vita-futura"
+   ]
+  },
+  {
+   "id": "a-Q542428",
+   "nome": "Anne McLaren",
+   "foto": null,
+   "bio": "Dama Anne Laura Dorinthea McLaren è stata una genetista inglese, figura di rilievo nella biologia dello sviluppo.",
+   "nascita": "1927",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-la-vita-futura"
+   ]
+  },
+  {
+   "id": "a-Q256785",
+   "nome": "Kim Peacock",
+   "foto": null,
+   "bio": "Kim Peacock è stato un attore britannico.",
+   "nascita": "1901",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-la-vita-futura"
+   ]
+  },
+  {
+   "id": "a-Q3847861",
+   "nome": "Marie Ault",
+   "foto": "media/p-marie-ault.jpg",
+   "bio": "Marie Ault è stata un'attrice britannica di cinema e di teatro.",
+   "nascita": "1870",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-il-pensionante"
+   ]
+  },
+  {
+   "id": "a-Q3811251",
+   "nome": "June Howard Tripp",
+   "foto": "media/p-june-howard-tripp.jpg",
+   "bio": "June Howard Tripp, conosciuta col solo nome di battesimo di June, è stata un'attrice britannica naturalizzata statunitense.",
+   "nascita": "1901",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-il-pensionante"
+   ]
+  },
+  {
+   "id": "a-Q629955",
+   "nome": "Malcolm Keen",
+   "foto": "media/p-malcolm-keen.jpg",
+   "bio": "Malcolm Keen è stato un attore inglese.",
+   "nascita": "1887",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-pensionante"
+   ]
+  },
+  {
+   "id": "a-Q436693",
+   "nome": "Ivor Novello",
+   "foto": "media/p-ivor-novello.jpg",
+   "bio": "Ivor Novello, al secolo David Ivor Davies, è stato un attore, compositore e sceneggiatore gallese, molto conosciuto nel periodo del muto.",
+   "nascita": "1893",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-pensionante"
+   ]
+  },
+  {
+   "id": "a-Q2448340",
+   "nome": "Reginald Gardiner",
+   "foto": "media/p-reginald-gardiner.jpg",
+   "bio": "William Reginald Gardiner è stato un attore inglese.",
+   "nascita": "1903",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-pensionante"
+   ]
+  },
+  {
+   "id": "a-Q7374",
+   "nome": "Alfred Hitchcock",
+   "foto": "media/p-alfred-hitchcock.jpg",
+   "bio": "Sir Alfred Joseph Hitchcock è stato un regista e produttore cinematografico britannico naturalizzato statunitense.",
+   "nascita": "1899",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-il-pensionante"
+   ]
+  },
+  {
+   "id": "a-Q203165",
+   "nome": "Alma Reville",
+   "foto": "media/p-alma-reville.jpg",
+   "bio": "Alma Lucy Reville è stata una sceneggiatrice inglese conosciuta soprattutto per essere stata la moglie di Alfred Hitchcock che conobbe mentre era assistente regista in uno dei suoi primi film.",
+   "nascita": "1899",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-il-pensionante"
+   ]
+  },
+  {
+   "id": "a-Q5416167",
+   "nome": "Eve Gray",
+   "foto": "media/p-eve-gray.jpg",
+   "bio": null,
+   "nascita": "1900",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-il-pensionante"
+   ]
+  },
+  {
+   "id": "a-Q281962",
+   "nome": "Ernest Torrence",
+   "foto": "media/p-ernest-torrence.jpg",
+   "bio": "Ernest Torrence, all'anagrafe Ernest Thayson Torrence-Thomson, è stato un attore scozzese, molto attivo durante il periodo del cinema muto a Hollywood come caratterista.",
+   "nascita": "1878",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-io-e-il-ciclone"
+   ]
+  },
+  {
+   "id": "a-Q7816817",
+   "nome": "Tom McGuire",
+   "foto": null,
+   "bio": null,
+   "nascita": "1873",
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "f-io-e-il-ciclone"
+   ]
+  },
+  {
+   "id": "a-Q6765113",
+   "nome": "Marion Byron",
+   "foto": "media/p-marion-byron.jpg",
+   "bio": "Marion Byron, pseudonimo di Miriam Bilenkin, è stata un'attrice statunitense.",
+   "nascita": "1911",
+   "luogo": null,
+   "sesso": "F",
+   "titoli": [
+    "f-io-e-il-ciclone"
+   ]
+  },
+  {
+   "id": "j-8f2ff3eded0cd52c5e19db509182fc64",
+   "nome": "John Travolta",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-boy-in-the-plastic-bubble"
+   ]
+  },
+  {
+   "id": "j-e23c037a22e094eacb8f9fc018ec8fec",
+   "nome": "Glynnis O'Connor",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-boy-in-the-plastic-bubble"
+   ]
+  },
+  {
+   "id": "j-94fd0401890e5beb461a1cc71ea1b97e",
+   "nome": "Robert Reed",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-boy-in-the-plastic-bubble"
+   ]
+  },
+  {
+   "id": "j-76fd40cd14c517fef4eb627de554f36e",
+   "nome": "Diana Hyland",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-boy-in-the-plastic-bubble"
+   ]
+  },
+  {
+   "id": "j-3cb15b6c05b9c793a40410709d1d7ed4",
+   "nome": "Karen Morrow",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-boy-in-the-plastic-bubble"
+   ]
+  },
+  {
+   "id": "j-ac0b40686fdeaf49b7e79bbeb131dc5e",
+   "nome": "Howard Platt",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-boy-in-the-plastic-bubble"
+   ]
+  },
+  {
+   "id": "j-8afa928ebf393ebd9ea6021661863e9e",
+   "nome": "Buzz Aldrin",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-boy-in-the-plastic-bubble"
+   ]
+  },
+  {
+   "id": "j-a3470fe4874aaf20cd86c2f7256a2e51",
+   "nome": "Ralph Bellamy",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-boy-in-the-plastic-bubble"
+   ]
+  },
+  {
+   "id": "j-fe794e7cc97036ef19cfcfef8887f7ae",
+   "nome": "Pablo Vazquez",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-caminandes-gran-dillama",
+    "f-caminandes-llama-drama",
+    "f-caminandes-llamigos"
+   ]
+  },
+  {
+   "id": "j-d3c4ba8412e63f36adf1a1aa0ceb4781",
+   "nome": "Beorn Leonard",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-caminandes-gran-dillama"
+   ]
+  },
+  {
+   "id": "j-07f3ca2b62c4a853e449e15f033ea957",
+   "nome": "Francesco Siddi",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-caminandes-gran-dillama",
+    "f-caminandes-llama-drama"
+   ]
+  },
+  {
+   "id": "j-b62265a59a922aa29364383c6bc96c23",
+   "nome": "Sergey Sharybin",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-caminandes-llamigos"
+   ]
+  },
+  {
+   "id": "j-2d9599fd2ac1ecf362ed9022abc53a01",
+   "nome": "Matias Mendiola",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-caminandes-llamigos"
+   ]
+  },
+  {
+   "id": "j-af17b3c81f0b6de4fcfc95ad57c573f0",
+   "nome": "Steve McQueen",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-great-st-louis-bank-robbery"
+   ]
+  },
+  {
+   "id": "j-c8f68ea5b4f20dea01937d120ce3cbd6",
+   "nome": "Crahan Denton",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-great-st-louis-bank-robbery"
+   ]
+  },
+  {
+   "id": "j-3e808b22698cfa5c42e8be6f011f8b78",
+   "nome": "David Clarke",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-great-st-louis-bank-robbery"
+   ]
+  },
+  {
+   "id": "j-c5d87ff8c3effcdfd472649dcc0a7696",
+   "nome": "James Dukas",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-great-st-louis-bank-robbery"
+   ]
+  },
+  {
+   "id": "j-609ab5610e19930b8c6014e1fda4fe9a",
+   "nome": "Molly McCarthy",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-great-st-louis-bank-robbery"
+   ]
+  },
+  {
+   "id": "j-dda5e4af74b97259ecb90aa1ca23230e",
+   "nome": "Martha Gable",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-great-st-louis-bank-robbery"
+   ]
+  },
+  {
+   "id": "j-560308818544deb5402d659d94c3e58d",
+   "nome": "Larry Gerst",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-great-st-louis-bank-robbery"
+   ]
+  },
+  {
+   "id": "j-9cb0f418a7f280358bfbee617f49b591",
+   "nome": "Boyd Williams",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-the-great-st-louis-bank-robbery"
+   ]
+  },
+  {
+   "id": "j-2a2ca4c753bbd2da13cd3634b3892b3b",
+   "nome": "Orson Welles",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-king-lear"
+   ]
+  },
+  {
+   "id": "j-b40027089eb1d741d4aac48fc966a225",
+   "nome": "Natasha Parry",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-king-lear"
+   ]
+  },
+  {
+   "id": "j-3b5e1f698bc294948cbe27fa0c780463",
+   "nome": "Arnold Moss",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-king-lear"
+   ]
+  },
+  {
+   "id": "j-aa8ed492d06a5a78183a626cdc2cf2fc",
+   "nome": "Bramwell Fletcher",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-king-lear"
+   ]
+  },
+  {
+   "id": "j-e3018acc89133c7a98f0015fd6b1a1a0",
+   "nome": "David J. Stewart",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-king-lear"
+   ]
+  },
+  {
+   "id": "j-a967bbdc7492d70df64ef367fc408029",
+   "nome": "Margaret Phillips",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-king-lear"
+   ]
+  },
+  {
+   "id": "j-0fd2ecb24a178fe51bac322a420534fb",
+   "nome": "Beatrice Straight",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-king-lear"
+   ]
+  },
+  {
+   "id": "j-b97332a0a3beaa744a5564246e404f98",
+   "nome": "Alan Badel",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-king-lear"
+   ]
+  },
+  {
+   "id": "j-def59844cf037ad67b9e69007481fb5f",
+   "nome": "Humphrey Bogart",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-sahara"
+   ]
+  },
+  {
+   "id": "j-b46bf83ad4c40fbc753212eaefd8a99c",
+   "nome": "Bruce Bennett",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-sahara"
+   ]
+  },
+  {
+   "id": "j-d806d2247956f1ff6a04d971b733d8a9",
+   "nome": "J. Carrol Naish",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-sahara"
+   ]
+  },
+  {
+   "id": "j-7c6c500a54c5d5f80d6a207d93a37649",
+   "nome": "Lloyd Bridges",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-sahara"
+   ]
+  },
+  {
+   "id": "j-2a42f307b69011df3e22dd3f066a72ac",
+   "nome": "Rex Ingram",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-sahara"
+   ]
+  },
+  {
+   "id": "j-d9d0e3958b4075a3a0e9424fc86b1387",
+   "nome": "Richard Aherne",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-sahara"
+   ]
+  },
+  {
+   "id": "j-da894ec8ae63992da119f3346d025707",
+   "nome": "Dan Duryea",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-sahara"
+   ]
+  },
+  {
+   "id": "j-24bdd7eae500c53c8166a05e96b32065",
+   "nome": "Carl Harbord",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": null,
+   "titoli": [
+    "f-sahara"
+   ]
+  },
+  {
+   "id": "t-166466",
+   "nome": "Louis Hofmann",
+   "foto": "media/p-louis-hofmann.jpg",
+   "bio": null,
+   "nascita": "1997",
+   "luogo": "Germany",
+   "sesso": "M",
+   "titoli": [
+    "s-dark"
+   ]
+  },
+  {
+   "id": "t-99978",
+   "nome": "Karoline Eichhorn",
+   "foto": "media/p-karoline-eichhorn.jpg",
+   "bio": null,
+   "nascita": "1965",
+   "luogo": "Germany",
+   "sesso": "F",
+   "titoli": [
+    "s-dark"
+   ]
+  },
+  {
+   "id": "t-112226",
+   "nome": "Stephan Kampwirth",
+   "foto": "media/p-stephan-kampwirth.jpg",
+   "bio": null,
+   "nascita": "1967",
+   "luogo": "Germany",
+   "sesso": "M",
+   "titoli": [
+    "s-dark"
+   ]
+  },
+  {
+   "id": "t-166474",
+   "nome": "Maja Schöne",
+   "foto": "media/p-maja-schone.jpg",
+   "bio": null,
+   "nascita": "1976",
+   "luogo": "Germany",
+   "sesso": "F",
+   "titoli": [
+    "s-dark"
+   ]
+  },
+  {
+   "id": "t-194867",
+   "nome": "Lisa Vicari",
+   "foto": "media/p-lisa-vicari.jpg",
+   "bio": null,
+   "nascita": "1997",
+   "luogo": "Germany",
+   "sesso": "F",
+   "titoli": [
+    "s-dark"
+   ]
+  },
+  {
+   "id": "t-99061",
+   "nome": "Jördis Triebel",
+   "foto": "media/p-jordis-triebel.jpg",
+   "bio": null,
+   "nascita": "1977",
+   "luogo": "Germany",
+   "sesso": "F",
+   "titoli": [
+    "s-dark"
+   ]
+  },
+  {
+   "id": "t-111266",
+   "nome": "Andreas Pietschmann",
+   "foto": "media/p-andreas-pietschmann.jpg",
+   "bio": null,
+   "nascita": "1969",
+   "luogo": "Germany",
+   "sesso": "M",
+   "titoli": [
+    "s-dark"
+   ]
+  },
+  {
+   "id": "t-194869",
+   "nome": "Paul Lux",
+   "foto": "media/p-paul-lux.jpg",
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "s-dark"
+   ]
+  },
+  {
+   "id": "t-23455",
+   "nome": "Jared Harris",
+   "foto": "media/p-jared-harris.jpg",
+   "bio": null,
+   "nascita": "1961",
+   "luogo": "United Kingdom",
+   "sesso": "M",
+   "titoli": [
+    "s-chernobyl"
+   ]
+  },
+  {
+   "id": "t-56370",
+   "nome": "Stellan Skarsgård",
+   "foto": "media/p-stellan-skarsg-rd.jpg",
+   "bio": null,
+   "nascita": "1951",
+   "luogo": "Sweden",
+   "sesso": "M",
+   "titoli": [
+    "s-chernobyl"
+   ]
+  },
+  {
+   "id": "t-68900",
+   "nome": "Jessie Buckley",
+   "foto": "media/p-jessie-buckley.jpg",
+   "bio": null,
+   "nascita": "1988",
+   "luogo": "Ireland",
+   "sesso": "F",
+   "titoli": [
+    "s-chernobyl"
+   ]
+  },
+  {
+   "id": "t-72338",
+   "nome": "Emily Watson",
+   "foto": "media/p-emily-watson.jpg",
+   "bio": null,
+   "nascita": "1967",
+   "luogo": "United Kingdom",
+   "sesso": "F",
+   "titoli": [
+    "s-chernobyl"
+   ]
+  },
+  {
+   "id": "t-55608",
+   "nome": "Paul Ritter",
+   "foto": "media/p-paul-ritter.jpg",
+   "bio": null,
+   "nascita": "1966",
+   "luogo": "United Kingdom",
+   "sesso": "M",
+   "titoli": [
+    "s-chernobyl"
+   ]
+  },
+  {
+   "id": "t-52240",
+   "nome": "Sam Troughton",
+   "foto": "media/p-sam-troughton.jpg",
+   "bio": null,
+   "nascita": "1977",
+   "luogo": "United Kingdom",
+   "sesso": "M",
+   "titoli": [
+    "s-chernobyl"
+   ]
+  },
+  {
+   "id": "t-59917",
+   "nome": "Adam Nagaitis",
+   "foto": "media/p-adam-nagaitis.jpg",
+   "bio": null,
+   "nascita": null,
+   "luogo": "United Kingdom",
+   "sesso": "M",
+   "titoli": [
+    "s-chernobyl"
+   ]
+  },
+  {
+   "id": "t-40850",
+   "nome": "Robert Emms",
+   "foto": "media/p-robert-emms.jpg",
+   "bio": null,
+   "nascita": "1986",
+   "luogo": "United Kingdom",
+   "sesso": "M",
+   "titoli": [
+    "s-chernobyl"
+   ]
+  },
+  {
+   "id": "t-664",
+   "nome": "Michelle Monaghan",
+   "foto": "media/p-michelle-monaghan.jpg",
+   "bio": null,
+   "nascita": "1976",
+   "luogo": "United States",
+   "sesso": "F",
+   "titoli": [
+    "s-true-detective"
+   ]
+  },
+  {
+   "id": "t-665",
+   "nome": "Michael Potts",
+   "foto": "media/p-michael-potts.jpg",
+   "bio": null,
+   "nascita": null,
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-true-detective"
+   ]
+  },
+  {
+   "id": "t-666",
+   "nome": "Tory Kittles",
+   "foto": "media/p-tory-kittles.jpg",
+   "bio": null,
+   "nascita": "1975",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-true-detective"
+   ]
+  },
+  {
+   "id": "t-667",
+   "nome": "Colin Farrell",
+   "foto": "media/p-colin-farrell.jpg",
+   "bio": null,
+   "nascita": "1976",
+   "luogo": "Ireland",
+   "sesso": "M",
+   "titoli": [
+    "s-true-detective"
+   ]
+  },
+  {
+   "id": "t-668",
+   "nome": "Vince Vaughn",
+   "foto": "media/p-vince-vaughn.jpg",
+   "bio": null,
+   "nascita": "1970",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-true-detective"
+   ]
+  },
+  {
+   "id": "t-672",
+   "nome": "Matthew McConaughey",
+   "foto": "media/p-matthew-mcconaughey.jpg",
+   "bio": null,
+   "nascita": "1969",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-true-detective"
+   ]
+  },
+  {
+   "id": "t-673",
+   "nome": "Woody Harrelson",
+   "foto": "media/p-woody-harrelson.jpg",
+   "bio": null,
+   "nascita": "1961",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-true-detective"
+   ]
+  },
+  {
+   "id": "t-50491",
+   "nome": "Taylor Kitsch",
+   "foto": "media/p-taylor-kitsch.jpg",
+   "bio": null,
+   "nascita": "1981",
+   "luogo": "Canada",
+   "sesso": "M",
+   "titoli": [
+    "s-true-detective"
+   ]
+  },
+  {
+   "id": "t-12578",
+   "nome": "Holt McCallany",
+   "foto": "media/p-holt-mccallany.jpg",
+   "bio": null,
+   "nascita": "1963",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-mindhunter"
+   ]
+  },
+  {
+   "id": "t-20519",
+   "nome": "Jonathan Groff",
+   "foto": "media/p-jonathan-groff.jpg",
+   "bio": null,
+   "nascita": "1985",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-mindhunter"
+   ]
+  },
+  {
+   "id": "t-29335",
+   "nome": "Anna Torv",
+   "foto": "media/p-anna-torv.jpg",
+   "bio": null,
+   "nascita": "1979",
+   "luogo": "Australia",
+   "sesso": "F",
+   "titoli": [
+    "s-mindhunter"
+   ]
+  },
+  {
+   "id": "t-108937",
+   "nome": "Stacey Roca",
+   "foto": "media/p-stacey-roca.jpg",
+   "bio": null,
+   "nascita": "1978",
+   "luogo": "United Kingdom",
+   "sesso": "F",
+   "titoli": [
+    "s-mindhunter"
+   ]
+  },
+  {
+   "id": "t-166488",
+   "nome": "Hannah Gross",
+   "foto": "media/p-hannah-gross.jpg",
+   "bio": null,
+   "nascita": "1992",
+   "luogo": "United States",
+   "sesso": "F",
+   "titoli": [
+    "s-mindhunter"
+   ]
+  },
+  {
+   "id": "t-190995",
+   "nome": "Zachary Scott Ross",
+   "foto": "media/p-zachary-scott-ross.jpg",
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "s-mindhunter"
+   ]
+  },
+  {
+   "id": "t-191011",
+   "nome": "Joe Tuttle",
+   "foto": "media/p-joe-tuttle.jpg",
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "s-mindhunter"
+   ]
+  },
+  {
+   "id": "t-8875",
+   "nome": "Cotter Smith",
+   "foto": "media/p-cotter-smith.jpg",
+   "bio": null,
+   "nascita": "1949",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-mindhunter"
+   ]
+  },
+  {
+   "id": "t-31964",
+   "nome": "Adam Scott",
+   "foto": "media/p-adam-scott.jpg",
+   "bio": null,
+   "nascita": "1973",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-severance"
+   ]
+  },
+  {
+   "id": "t-139402",
+   "nome": "Tramell Tillman",
+   "foto": "media/p-tramell-tillman.jpg",
+   "bio": null,
+   "nascita": "1985",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-severance"
+   ]
+  },
+  {
+   "id": "t-15588",
+   "nome": "Britt Lower",
+   "foto": "media/p-britt-lower.jpg",
+   "bio": null,
+   "nascita": "1985",
+   "luogo": "United States",
+   "sesso": "F",
+   "titoli": [
+    "s-severance"
+   ]
+  },
+  {
+   "id": "t-154360",
+   "nome": "Zach Cherry",
+   "foto": "media/p-zach-cherry.jpg",
+   "bio": null,
+   "nascita": null,
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-severance"
+   ]
+  },
+  {
+   "id": "t-142645",
+   "nome": "Jen Tullock",
+   "foto": "media/p-jen-tullock.jpg",
+   "bio": null,
+   "nascita": "1983",
+   "luogo": "United States",
+   "sesso": "F",
+   "titoli": [
+    "s-severance"
+   ]
+  },
+  {
+   "id": "t-54931",
+   "nome": "John Turturro",
+   "foto": "media/p-john-turturro.jpg",
+   "bio": null,
+   "nascita": "1957",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-severance"
+   ]
+  },
+  {
+   "id": "t-19696",
+   "nome": "Patricia Arquette",
+   "foto": "media/p-patricia-arquette.jpg",
+   "bio": null,
+   "nascita": "1968",
+   "luogo": "United States",
+   "sesso": "F",
+   "titoli": [
+    "s-severance"
+   ]
+  },
+  {
+   "id": "t-64367",
+   "nome": "Christopher Walken",
+   "foto": "media/p-christopher-walken.jpg",
+   "bio": null,
+   "nascita": "1943",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-severance"
+   ]
+  },
+  {
+   "id": "t-49625",
+   "nome": "Claire Foy",
+   "foto": "media/p-claire-foy.jpg",
+   "bio": null,
+   "nascita": "1984",
+   "luogo": "United Kingdom",
+   "sesso": "F",
+   "titoli": [
+    "s-the-crown"
+   ]
+  },
+  {
+   "id": "t-39042",
+   "nome": "Olivia Colman",
+   "foto": "media/p-olivia-colman.jpg",
+   "bio": null,
+   "nascita": "1974",
+   "luogo": "United Kingdom",
+   "sesso": "F",
+   "titoli": [
+    "s-the-crown"
+   ]
+  },
+  {
+   "id": "t-52597",
+   "nome": "Imelda Staunton",
+   "foto": "media/p-imelda-staunton.jpg",
+   "bio": null,
+   "nascita": "1956",
+   "luogo": "United Kingdom",
+   "sesso": "F",
+   "titoli": [
+    "s-the-crown"
+   ]
+  },
+  {
+   "id": "t-34550",
+   "nome": "Matt Smith",
+   "foto": "media/p-matt-smith.jpg",
+   "bio": null,
+   "nascita": "1982",
+   "luogo": "United Kingdom",
+   "sesso": "M",
+   "titoli": [
+    "s-the-crown"
+   ]
+  },
+  {
+   "id": "t-6670",
+   "nome": "Tobias Menzies",
+   "foto": "media/p-tobias-menzies.jpg",
+   "bio": null,
+   "nascita": "1974",
+   "luogo": "United Kingdom",
+   "sesso": "M",
+   "titoli": [
+    "s-the-crown"
+   ]
+  },
+  {
+   "id": "t-52759",
+   "nome": "Jonathan Pryce",
+   "foto": "media/p-jonathan-pryce.jpg",
+   "bio": null,
+   "nascita": "1947",
+   "luogo": "United Kingdom",
+   "sesso": "M",
+   "titoli": [
+    "s-the-crown"
+   ]
+  },
+  {
+   "id": "t-40427",
+   "nome": "Lesley Manville",
+   "foto": "media/p-lesley-manville.jpg",
+   "bio": null,
+   "nascita": "1956",
+   "luogo": "United Kingdom",
+   "sesso": "F",
+   "titoli": [
+    "s-the-crown"
+   ]
+  },
+  {
+   "id": "t-55168",
+   "nome": "Helena Bonham Carter",
+   "foto": "media/p-helena-bonham-carter.jpg",
+   "bio": null,
+   "nascita": "1966",
+   "luogo": "United Kingdom",
+   "sesso": "F",
+   "titoli": [
+    "s-the-crown"
+   ]
+  },
+  {
+   "id": "t-61900",
+   "nome": "Fortunato Cerlino",
+   "foto": "media/p-fortunato-cerlino.jpg",
+   "bio": null,
+   "nascita": "1971",
+   "luogo": "Italy",
+   "sesso": "M",
+   "titoli": [
+    "s-gomorra-la-serie"
+   ]
+  },
+  {
+   "id": "t-71944",
+   "nome": "Salvatore Esposito",
+   "foto": "media/p-salvatore-esposito.jpg",
+   "bio": null,
+   "nascita": "1986",
+   "luogo": "Italy",
+   "sesso": "M",
+   "titoli": [
+    "s-gomorra-la-serie"
+   ]
+  },
+  {
+   "id": "t-71945",
+   "nome": "Marco D'Amore",
+   "foto": "media/p-marco-d-amore.jpg",
+   "bio": null,
+   "nascita": "1981",
+   "luogo": "Italy",
+   "sesso": "M",
+   "titoli": [
+    "s-gomorra-la-serie"
+   ]
+  },
+  {
+   "id": "t-257380",
+   "nome": "Christian Giroso",
+   "foto": "media/p-christian-giroso.jpg",
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "s-gomorra-la-serie"
+   ]
+  },
+  {
+   "id": "t-257249",
+   "nome": "Giovanni Buselli",
+   "foto": "media/p-giovanni-buselli.jpg",
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "s-gomorra-la-serie"
+   ]
+  },
+  {
+   "id": "t-407423",
+   "nome": "Carmine Monaco",
+   "foto": null,
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "s-gomorra-la-serie"
+   ]
+  },
+  {
+   "id": "t-407425",
+   "nome": "Fabio De Caro",
+   "foto": "media/p-fabio-de-caro.jpg",
+   "bio": null,
+   "nascita": null,
+   "luogo": "Italy",
+   "sesso": "M",
+   "titoli": [
+    "s-gomorra-la-serie"
+   ]
+  },
+  {
+   "id": "t-407464",
+   "nome": "Lino Musella",
+   "foto": "media/p-lino-musella.jpg",
+   "bio": null,
+   "nascita": "1980",
+   "luogo": "Italy",
+   "sesso": "M",
+   "titoli": [
+    "s-gomorra-la-serie"
+   ]
+  },
+  {
+   "id": "t-72281",
+   "nome": "Volker Bruch",
+   "foto": "media/p-volker-bruch.jpg",
+   "bio": null,
+   "nascita": "1980",
+   "luogo": "Germany",
+   "sesso": "M",
+   "titoli": [
+    "s-babylon-berlin"
+   ]
+  },
+  {
+   "id": "t-146783",
+   "nome": "Liv Lisa Fries",
+   "foto": "media/p-liv-lisa-fries.jpg",
+   "bio": null,
+   "nascita": "1990",
+   "luogo": "Germany",
+   "sesso": "F",
+   "titoli": [
+    "s-babylon-berlin"
+   ]
+  },
+  {
+   "id": "t-106654",
+   "nome": "Lars Eidinger",
+   "foto": "media/p-lars-eidinger.jpg",
+   "bio": null,
+   "nascita": "1976",
+   "luogo": "Germany",
+   "sesso": "M",
+   "titoli": [
+    "s-babylon-berlin"
+   ]
+  },
+  {
+   "id": "t-87895",
+   "nome": "Hannah Herzsprung",
+   "foto": "media/p-hannah-herzsprung.jpg",
+   "bio": null,
+   "nascita": "1981",
+   "luogo": "Germany",
+   "sesso": "F",
+   "titoli": [
+    "s-babylon-berlin"
+   ]
+  },
+  {
+   "id": "t-231653",
+   "nome": "Benno Fürmann",
+   "foto": "media/p-benno-f-rmann.jpg",
+   "bio": null,
+   "nascita": "1972",
+   "luogo": "Germany",
+   "sesso": "M",
+   "titoli": [
+    "s-babylon-berlin"
+   ]
+  },
+  {
+   "id": "t-218556",
+   "nome": "Fritzi Haberlandt",
+   "foto": "media/p-fritzi-haberlandt.jpg",
+   "bio": null,
+   "nascita": "1975",
+   "luogo": "Germany",
+   "sesso": "F",
+   "titoli": [
+    "s-babylon-berlin"
+   ]
+  },
+  {
+   "id": "t-93709",
+   "nome": "Karl Markovics",
+   "foto": "media/p-karl-markovics.jpg",
+   "bio": null,
+   "nascita": "1963",
+   "luogo": "Austria",
+   "sesso": "M",
+   "titoli": [
+    "s-babylon-berlin"
+   ]
+  },
+  {
+   "id": "t-127881",
+   "nome": "Mišel Maticevic",
+   "foto": "media/p-mi-el-maticevic.jpg",
+   "bio": null,
+   "nascita": "1970",
+   "luogo": "Germany",
+   "sesso": "M",
+   "titoli": [
+    "s-babylon-berlin"
+   ]
+  },
+  {
+   "id": "t-45771",
+   "nome": "Winona Ryder",
+   "foto": "media/p-winona-ryder.jpg",
+   "bio": null,
+   "nascita": "1971",
+   "luogo": "United States",
+   "sesso": "F",
+   "titoli": [
+    "s-stranger-things"
+   ]
+  },
+  {
+   "id": "t-15786",
+   "nome": "Caleb McLaughlin",
+   "foto": "media/p-caleb-mclaughlin.jpg",
+   "bio": null,
+   "nascita": "2001",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-stranger-things"
+   ]
+  },
+  {
+   "id": "t-49095",
+   "nome": "Finn Wolfhard",
+   "foto": "media/p-finn-wolfhard.jpg",
+   "bio": null,
+   "nascita": "2002",
+   "luogo": "Canada",
+   "sesso": "M",
+   "titoli": [
+    "s-stranger-things"
+   ]
+  },
+  {
+   "id": "t-83372",
+   "nome": "Gaten Matarazzo",
+   "foto": "media/p-gaten-matarazzo.jpg",
+   "bio": null,
+   "nascita": "2002",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-stranger-things"
+   ]
+  },
+  {
+   "id": "t-12740",
+   "nome": "Natalia Dyer",
+   "foto": "media/p-natalia-dyer.jpg",
+   "bio": null,
+   "nascita": "1995",
+   "luogo": "United States",
+   "sesso": "F",
+   "titoli": [
+    "s-stranger-things"
+   ]
+  },
+  {
+   "id": "t-19376",
+   "nome": "David Harbour",
+   "foto": "media/p-david-harbour.jpg",
+   "bio": null,
+   "nascita": "1975",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-stranger-things"
+   ]
+  },
+  {
+   "id": "t-56357",
+   "nome": "Joe Keery",
+   "foto": "media/p-joe-keery.jpg",
+   "bio": null,
+   "nascita": "1992",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-stranger-things"
+   ]
+  },
+  {
+   "id": "t-63858",
+   "nome": "Charlie Heaton",
+   "foto": "media/p-charlie-heaton.jpg",
+   "bio": null,
+   "nascita": "1994",
+   "luogo": "United Kingdom",
+   "sesso": "M",
+   "titoli": [
+    "s-stranger-things"
+   ]
+  },
+  {
+   "id": "t-4896",
+   "nome": "Ebon Moss-Bachrach",
+   "foto": "media/p-ebon-moss-bachrach.jpg",
+   "bio": null,
+   "nascita": "1977",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-the-bear"
+   ]
+  },
+  {
+   "id": "t-24393",
+   "nome": "Jeremy Allen White",
+   "foto": "media/p-jeremy-allen-white.jpg",
+   "bio": null,
+   "nascita": "1991",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-the-bear"
+   ]
+  },
+  {
+   "id": "t-26846",
+   "nome": "Abby Elliott",
+   "foto": "media/p-abby-elliott.jpg",
+   "bio": null,
+   "nascita": "1987",
+   "luogo": "United States",
+   "sesso": "F",
+   "titoli": [
+    "s-the-bear"
+   ]
+  },
+  {
+   "id": "t-20251",
+   "nome": "Liza Colón-Zayas",
+   "foto": "media/p-liza-colon-zayas.jpg",
+   "bio": null,
+   "nascita": "1972",
+   "luogo": "United States",
+   "sesso": "F",
+   "titoli": [
+    "s-the-bear"
+   ]
+  },
+  {
+   "id": "t-137730",
+   "nome": "Matty Matheson",
+   "foto": "media/p-matty-matheson.jpg",
+   "bio": null,
+   "nascita": "1982",
+   "luogo": "Canada",
+   "sesso": "M",
+   "titoli": [
+    "s-the-bear"
+   ]
+  },
+  {
+   "id": "t-251724",
+   "nome": "Ayo Edebiri",
+   "foto": "media/p-ayo-edebiri.jpg",
+   "bio": null,
+   "nascita": "1995",
+   "luogo": "United States",
+   "sesso": "F",
+   "titoli": [
+    "s-the-bear"
+   ]
+  },
+  {
+   "id": "t-203539",
+   "nome": "Lionel Boyce",
+   "foto": "media/p-lionel-boyce.jpg",
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "s-the-bear"
+   ]
+  },
+  {
+   "id": "t-25186",
+   "nome": "Edwin Lee Gibson",
+   "foto": "media/p-edwin-lee-gibson.jpg",
+   "bio": null,
+   "nascita": null,
+   "luogo": null,
+   "sesso": "M",
+   "titoli": [
+    "s-the-bear"
+   ]
+  },
+  {
+   "id": "t-6039",
+   "nome": "Allison Tolman",
+   "foto": "media/p-allison-tolman.jpg",
+   "bio": null,
+   "nascita": "1981",
+   "luogo": "United States",
+   "sesso": "F",
+   "titoli": [
+    "s-fargo"
+   ]
+  },
+  {
+   "id": "t-6040",
+   "nome": "Colin Hanks",
+   "foto": "media/p-colin-hanks.jpg",
+   "bio": null,
+   "nascita": "1977",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-fargo"
+   ]
+  },
+  {
+   "id": "t-6038",
+   "nome": "Billy Bob Thornton",
+   "foto": "media/p-billy-bob-thornton.jpg",
+   "bio": null,
+   "nascita": "1955",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-fargo"
+   ]
+  },
+  {
+   "id": "t-6041",
+   "nome": "Martin Freeman",
+   "foto": "media/p-martin-freeman.jpg",
+   "bio": null,
+   "nascita": "1971",
+   "luogo": "United Kingdom",
+   "sesso": "M",
+   "titoli": [
+    "s-fargo",
+    "s-sherlock"
+   ]
+  },
+  {
+   "id": "t-8813",
+   "nome": "Jesse Plemons",
+   "foto": "media/p-jesse-plemons.jpg",
+   "bio": null,
+   "nascita": "1988",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-fargo"
+   ]
+  },
+  {
+   "id": "t-21355",
+   "nome": "Ted Danson",
+   "foto": "media/p-ted-danson.jpg",
+   "bio": null,
+   "nascita": "1947",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-fargo"
+   ]
+  },
+  {
+   "id": "t-27460",
+   "nome": "Patrick Wilson",
+   "foto": "media/p-patrick-wilson.jpg",
+   "bio": null,
+   "nascita": "1973",
+   "luogo": "United States",
+   "sesso": "M",
+   "titoli": [
+    "s-fargo"
+   ]
+  },
+  {
+   "id": "t-25072",
+   "nome": "Carrie Coon",
+   "foto": "media/p-carrie-coon.jpg",
+   "bio": null,
+   "nascita": "1981",
+   "luogo": "United States",
+   "sesso": "F",
+   "titoli": [
+    "s-fargo"
+   ]
+  },
+  {
+   "id": "t-40682",
+   "nome": "Benedict Cumberbatch",
+   "foto": "media/p-benedict-cumberbatch.jpg",
+   "bio": null,
+   "nascita": "1976",
+   "luogo": "United Kingdom",
+   "sesso": "M",
+   "titoli": [
+    "s-sherlock"
+   ]
+  }
+ ],
+ "collezioni": []
+}

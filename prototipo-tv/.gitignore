@@ -1,0 +1,6 @@
+node_modules
+dist
+
+# immagini e video scaricati (si rigenerano con strumenti/, vedi README)
+public/media/*.jpg
+public/media/video.mp4

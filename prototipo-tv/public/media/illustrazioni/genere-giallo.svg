@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(50 38% 16%)"/><stop offset="1" stop-color="hsl(50 45% 8%)"/></linearGradient>
+  <radialGradient id="alone" cx="0.72" cy="0.42" r="0.55"><stop offset="0" stop-color="hsl(50 48% 42%)" stop-opacity="0.45"/><stop offset="1" stop-color="hsl(50 48% 42%)" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#g)"/>
+<rect width="1600" height="900" fill="url(#alone)"/>
+<path d="M1050 560 q90 -160 200 0" stroke="hsl(50 48% 42%)" stroke-width="10" fill="none"/><path d="M1028 554 q112 -180 244 0" stroke="hsl(50 48% 42%)" stroke-width="10" fill="none"/><path d="M1006 548 q134 -200 288 0" stroke="hsl(50 48% 42%)" stroke-width="10" fill="none"/><path d="M984 542 q156 -220 332 0" stroke="hsl(50 48% 42%)" stroke-width="10" fill="none"/><path d="M962 536 q178 -240 376 0" stroke="hsl(50 48% 42%)" stroke-width="10" fill="none"/><path d="M940 530 q200 -260 420 0" stroke="hsl(50 48% 42%)" stroke-width="10" fill="none"/>
+<g transform="translate(1120 380) rotate(-35)">
+  <circle r="200" fill="hsl(50 45% 8%)" opacity=".35" stroke="hsl(50 60% 66%)" stroke-width="44"/>
+  <rect x="-34" y="222" width="68" height="300" rx="34" fill="hsl(50 60% 66%)"/>
+  <path d="M-120 -80 A150 150 0 0 1 -40 -150" stroke="hsl(50 75% 86%)" stroke-width="20" fill="none" stroke-linecap="round"/>
+</g>
+</svg>

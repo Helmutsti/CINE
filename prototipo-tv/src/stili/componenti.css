@@ -1,0 +1,630 @@
+/* Componenti della Libreria (docs/design/componenti.md) */
+
+/* Fuoco comune: anello chiaro di 2 px a 4 px dall'elemento */
+.anello:focus {
+  outline: var(--focus-spessore) solid var(--focus-ring);
+  outline-offset: var(--focus-distanza);
+}
+
+/* ---------- Icona ---------- */
+.icona {
+  width: var(--icona);
+  height: var(--icona);
+  flex: none;
+}
+
+/* ---------- CMP-01 Pulsante ---------- */
+.pulsante {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-gap-icona);
+  height: var(--icon-slot);
+  padding: var(--sp-controllo-v) var(--sp-controllo-o);
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+  transition: transform var(--fuoco-durata) ease;
+  flex: none;
+}
+.pulsante--principale {
+  background: var(--control-light);
+  color: var(--on-light);
+}
+.pulsante--secondario,
+.pulsante--icona {
+  background: var(--surface-glass);
+  box-shadow: inset 0 0 0 var(--bordo-spessore) var(--line-on-image);
+  color: var(--text);
+}
+.pulsante--icona {
+  width: var(--icon-slot);
+  padding: 0;
+  justify-content: center;
+}
+.pulsante--disabilitato {
+  background: var(--surface-raised);
+  color: var(--text-4);
+}
+.pulsante:focus {
+  outline: var(--focus-spessore) solid var(--focus-ring);
+  outline-offset: var(--focus-distanza);
+}
+
+/* ---------- CMP-03 Menu in alto ---------- */
+.menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 48px;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: transform var(--fuoco-durata) ease, opacity var(--fuoco-durata) ease;
+}
+.menu--nascosto {
+  transform: translateY(-160px);
+  opacity: 0;
+}
+.menu__vuoto {
+  width: 240px;
+}
+.menu__pillola {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-menu-gap);
+  padding: var(--sp-menu-margine);
+  background: var(--surface-glass);
+  border-radius: var(--r-pill);
+}
+.menu__profilo {
+  width: 240px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--sp-16);
+}
+
+/* CMP-02 Voce del menu */
+.voce-menu {
+  height: var(--icon-slot);
+  padding: 0 var(--sp-voce-o);
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--r-pill);
+  color: var(--text-2);
+  transition: transform var(--fuoco-durata) ease;
+}
+.voce-menu--icona {
+  width: var(--icon-slot);
+  padding: 0;
+  justify-content: center;
+}
+.voce-menu--attiva {
+  background: var(--surface-active);
+  color: var(--text);
+}
+.voce-menu:focus {
+  background: var(--control-light);
+  color: var(--on-light);
+}
+
+/* ---------- CMP-04 Card ---------- */
+.card {
+  display: block;
+  flex: none;
+  container-type: inline-size;
+  --rapporto: 9 / 16;
+}
+.card--locandina { --rapporto: 3 / 2; }
+.card__img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--r-card);
+  background: var(--surface-art);
+  transition: transform var(--fuoco-durata) ease, box-shadow var(--fuoco-durata) ease;
+}
+.card--locandina .card__img { aspect-ratio: 2 / 3; }
+.card__img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--r-card);
+}
+.card__segnaposto {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-card-interno);
+  text-align: center;
+  color: var(--text-3);
+}
+.card__img::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--focus-distanza) - var(--focus-spessore));
+  border: var(--focus-spessore) solid transparent;
+  border-radius: var(--r-card-fuoco);
+  transition: border-color var(--fuoco-durata) ease;
+}
+.card:focus .card__img {
+  transform: scale(var(--fuoco-scala));
+  box-shadow: var(--elevazione-sollevata);
+  z-index: 2;
+}
+.card:focus .card__img::after {
+  border-color: var(--focus-ring);
+}
+.card__barra {
+  position: absolute;
+  z-index: 1;
+  left: var(--sp-card-interno);
+  right: var(--sp-card-interno);
+  bottom: var(--sp-card-interno);
+}
+.card__numero {
+  position: absolute;
+  left: var(--sp-card-interno);
+  top: var(--sp-card-interno);
+  min-width: 40px;
+  height: 40px;
+  padding: 0 var(--sp-badge-o);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-pill);
+  background: var(--surface-glass);
+}
+.card__nome {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--sp-card-interno);
+  border-radius: var(--r-card);
+  background: var(--sfumatura-card);
+}
+.card__testo {
+  margin-top: var(--sp-card-testo);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-card-meta);
+  visibility: hidden;
+  transition: transform var(--fuoco-durata) ease;
+}
+.card--sempre .card__testo,
+.card:focus .card__testo {
+  visibility: visible;
+}
+/* il testo scende quanto si allarga l'immagine sollevata (5% dell'altezza) */
+.card:focus .card__testo {
+  transform: translateY(calc(100cqw * 9 / 16 * 0.05));
+}
+.card--locandina:focus .card__testo {
+  transform: translateY(calc(100cqw * 1.5 * 0.05));
+}
+.card__riga-meta {
+  display: flex;
+  gap: var(--sp-8);
+  align-items: baseline;
+}
+
+/* ---------- CMP-05 Riga di card ---------- */
+.riga {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-32);
+}
+.riga__titolo {
+  padding: 0 var(--gutter);
+}
+.riga__binario {
+  display: flex;
+  gap: var(--rail-gap);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 24px var(--gutter) 24px;
+  margin: -24px 0 -24px;
+  scrollbar-width: none;
+}
+.riga__binario > :last-child {
+  margin-right: var(--gutter);
+}
+
+/* ---------- CMP-07 Barra di avanzamento ---------- */
+.avanzamento {
+  height: var(--avanzamento);
+  border-radius: var(--r-pill);
+  background: var(--track);
+  overflow: hidden;
+}
+.avanzamento > div {
+  height: 100%;
+  background: var(--accent);
+  border-radius: var(--r-pill);
+}
+
+/* ---------- CMP-08 Avatar ---------- */
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--avatar);
+  flex: none;
+}
+.avatar__tondo {
+  width: var(--avatar);
+  height: var(--avatar);
+  border-radius: var(--r-pill);
+  background: var(--surface-raised);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--fuoco-durata) ease, box-shadow var(--fuoco-durata) ease;
+}
+.avatar--piccolo,
+.avatar--piccolo .avatar__tondo {
+  width: var(--icon-slot);
+  height: var(--icon-slot);
+}
+.avatar__nome {
+  margin-top: var(--sp-card-testo);
+  color: var(--text-2);
+  text-align: center;
+}
+.avatar__nota {
+  margin-top: var(--sp-8);
+  color: var(--text-2);
+}
+.avatar:focus .avatar__tondo {
+  box-shadow: var(--elevazione-sollevata), 0 0 0 var(--focus-distanza) var(--bg),
+    0 0 0 calc(var(--focus-distanza) + var(--focus-spessore)) var(--focus-ring);
+}
+.avatar:focus .avatar__nome {
+  color: var(--text);
+}
+
+/* ---------- CMP-09 Persona del cast ---------- */
+.persona {
+  width: var(--cast);
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.persona__foto {
+  width: var(--cast);
+  height: var(--cast);
+  border-radius: var(--r-pill);
+  background: var(--surface-art);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--fuoco-durata) ease, box-shadow var(--fuoco-durata) ease;
+}
+.persona__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.persona__nome {
+  margin-top: var(--sp-card-testo);
+  color: var(--text-2);
+}
+.persona:focus .persona__foto {
+  transform: scale(var(--fuoco-scala));
+  box-shadow: var(--elevazione-sollevata), 0 0 0 var(--focus-distanza) var(--bg),
+    0 0 0 calc(var(--focus-distanza) + var(--focus-spessore)) var(--focus-ring);
+}
+.persona:focus .persona__nome {
+  color: var(--text);
+  transform: translateY(8px);
+}
+
+/* ---------- CMP-10 Etichetta tecnica ---------- */
+.etichetta {
+  display: inline-block;
+  padding: var(--sp-badge-v) var(--sp-badge-o);
+  border-radius: var(--r-badge);
+  background: var(--surface-raised);
+  color: var(--text-2);
+}
+
+/* ---------- CMP-11 Scelta ---------- */
+.scelta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-gap-icona);
+  height: var(--icon-slot);
+  padding: var(--sp-controllo-v) var(--sp-controllo-o);
+  border-radius: var(--r-pill);
+  background: var(--surface-glass);
+  box-shadow: inset 0 0 0 var(--bordo-spessore) var(--line-on-image);
+  color: var(--text-2);
+  white-space: nowrap;
+  flex: none;
+}
+.scelta--selezionata {
+  background: var(--surface-active);
+  color: var(--text);
+}
+.scelta:focus {
+  outline: var(--focus-spessore) solid var(--focus-ring);
+  outline-offset: var(--focus-distanza);
+}
+
+/* ---------- CMP-12 Tasto ---------- */
+.tasto {
+  height: var(--tasto);
+  border-radius: var(--r-card);
+  background: var(--surface-raised);
+  color: var(--text-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tasto:focus {
+  background: var(--control-light);
+  color: var(--on-light);
+}
+
+/* ---------- CMP-13 Casella del PIN ---------- */
+.casella-pin {
+  width: var(--pin);
+  height: var(--pin);
+  border-radius: var(--r-card);
+  background: var(--surface-raised);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.casella-pin--attiva {
+  box-shadow: inset 0 0 0 var(--bordo-spessore) var(--line-strong);
+}
+.casella-pin__punto {
+  width: var(--punto);
+  height: var(--punto);
+  border-radius: var(--r-pill);
+  background: var(--text);
+}
+
+/* ---------- CMP-14 Campo di testo ---------- */
+.campo {
+  height: var(--campo);
+  padding: 0 var(--sp-controllo-o);
+  border-radius: var(--r-pill);
+  background: var(--surface-raised);
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.campo__vuoto {
+  color: var(--text-4);
+}
+.campo__cursore {
+  width: var(--cursore);
+  height: var(--icona);
+  margin-left: 2px;
+  background: var(--text);
+  animation: lampeggia 1s steps(1) infinite;
+}
+@keyframes lampeggia {
+  50% { opacity: 0; }
+}
+
+/* ---------- CMP-15 Interruttore ---------- */
+.interruttore {
+  width: var(--interruttore-l);
+  height: var(--interruttore-a);
+  border-radius: var(--r-pill);
+  background: var(--surface-active);
+  padding: var(--sp-interruttore);
+  flex: none;
+  transition: background var(--fuoco-durata) ease;
+}
+.interruttore--acceso {
+  background: var(--accent);
+}
+.interruttore__pomello {
+  width: var(--pomello);
+  height: var(--pomello);
+  border-radius: var(--r-pill);
+  background: var(--text);
+  transition: transform var(--fuoco-durata) ease;
+}
+.interruttore--acceso .interruttore__pomello {
+  transform: translateX(calc(var(--interruttore-l) - var(--pomello) - 2 * var(--sp-interruttore)));
+}
+
+/* ---------- CMP-16 Voce di elenco ---------- */
+.voce {
+  width: 100%;
+  min-height: var(--voce);
+  padding: var(--sp-controllo-v) var(--sp-voce-o);
+  border-radius: var(--r-card);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-gap-icona);
+  color: var(--text-2);
+}
+.voce__testi {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-card-meta);
+}
+.voce__dettaglio {
+  color: var(--text-3);
+}
+.voce__locandina {
+  width: 48px;
+  height: var(--voce);
+  margin: calc(-1 * var(--sp-controllo-v) + 8px) 0;
+  border-radius: var(--r-badge);
+  background: var(--surface-art);
+  object-fit: cover;
+  flex: none;
+}
+.voce--selezionata {
+  background: var(--surface-active);
+  color: var(--text);
+}
+.voce--selezionata .voce__dettaglio {
+  color: var(--text-2);
+}
+.voce:focus {
+  background: var(--control-light);
+  color: var(--on-light);
+}
+.voce:focus .voce__dettaglio {
+  color: var(--on-light);
+}
+
+/* ---------- Menu a tendina ---------- */
+.tendina {
+  position: absolute;
+  z-index: 20;
+  min-width: 320px;
+  padding: var(--sp-16); /* spazio/elenco/margine (16 dal 2026-10-10) */
+  border-radius: var(--r-finestra);
+  background: var(--surface);
+  box-shadow: var(--elevazione-sollevata);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8); /* spazio/elenco/gap */
+}
+
+/* ---------- Finestra ---------- */
+.velo {
+  position: absolute;
+  inset: 0;
+  background: var(--scrim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+.finestra {
+  width: 820px;
+  padding: var(--sp-48);
+  border-radius: var(--r-finestra);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-16);
+}
+.finestra__azioni {
+  display: flex;
+  gap: var(--sp-16);
+  margin-top: var(--sp-16);
+}
+
+/* ---------- Stato vuoto ---------- */
+.vuoto {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-16);
+  text-align: center;
+}
+.vuoto p {
+  margin: 0 0 var(--sp-16);
+  max-width: 760px;
+}
+
+/* ---------- Schede del pannello opzioni del player ---------- */
+.voce-tab {
+  height: var(--icon-slot);
+  padding: 0 var(--sp-voce-o);
+  border-radius: var(--r-pill);
+  color: var(--text-2);
+  display: inline-flex;
+  align-items: center;
+}
+.voce-tab--attiva {
+  background: var(--surface-active);
+  color: var(--text);
+}
+.voce-tab:focus {
+  outline: var(--focus-spessore) solid var(--focus-ring);
+  outline-offset: var(--focus-distanza);
+}
+.icona svg {
+  width: 100%;
+  height: 100%;
+}
+.pulsante--chiaro {
+  background: var(--control-light);
+  box-shadow: none;
+  color: var(--on-light);
+}
+.avatar__tondo {
+  overflow: hidden;
+}
+.avatar__foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--r-pill);
+}
+.tendina__titolo {
+  padding: var(--sp-controllo-v) var(--sp-voce-o) var(--sp-8);
+  color: var(--text);
+}
+/* Generi e Mood: immagine in un solo colore */
+.card--mono .card__img > img {
+  filter: grayscale(1) contrast(1.15) brightness(0.75);
+}
+.pulsante--acceso {
+  background: var(--surface-active);
+}
+.tendina__gruppo {
+  padding: var(--sp-16) var(--sp-voce-o) var(--sp-8);
+  color: var(--text-2);
+}
+
+/* Link discreto ("Vedi tutti i 20 film ›"): testo grigio; a fuoco bianco con l'anello */
+.link {
+  align-self: flex-start;
+  padding: var(--sp-8) var(--sp-16);
+  margin-left: calc(-1 * var(--sp-16));
+  color: var(--text-2);
+  border-radius: var(--r-badge);
+}
+.link:focus {
+  color: var(--text);
+  outline: var(--focus-spessore) solid var(--focus-ring);
+  outline-offset: var(--focus-distanza);
+}
+
+
+/* Sotto la barra di avanzamento: sfumatura scura dal basso (Sfumatura/Card), così la barra si vede anche sulle immagini chiare */
+.card__sfumatura {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-card);
+  background: var(--sfumatura-avanzamento);
+  pointer-events: none;
+}
+
+/* La foto del profilo dentro la pillola del menu: tondo 60, a fuoco l'anello */
+.voce-menu--profilo {
+  width: var(--avatar-piccolo);
+  height: var(--avatar-piccolo);
+  padding: 0;
+  justify-content: center;
+}
+.voce-menu--profilo:focus {
+  background: none;
+  outline: var(--focus-spessore) solid var(--focus-ring);
+  outline-offset: calc(-1 * var(--focus-spessore));
+}

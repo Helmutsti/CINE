@@ -1,0 +1,115 @@
+/* Token della Libreria Figma (docs/design/tokens.md). Unica fonte dei valori di stile. */
+:root {
+  /* Primitivi */
+  --grigio-950: #0c0c0d;
+  --grigio-925: #0f1012;
+  --grigio-875: #17181b;
+  --grigio-850: #1c1d21;
+  --grigio-800: #212329;
+  --grigio-750: #2b2e35;
+  --grigio-600: #74777e;
+  --grigio-500: #878991;
+  --grigio-400: #9a9ca4;
+  --grigio-300: #b9bbc2;
+  --grigio-100: #eceef2;
+  --blu-500: #4d97ff;
+  --blu-800: #0a4f97;
+  --velo-chiaro-12: rgb(236 238 242 / 0.12);
+  --velo-chiaro-35: rgb(236 238 242 / 0.35);
+  --velo-chiaro-72: rgb(236 238 242 / 0.72);
+  --velo-scuro-55: rgb(12 12 13 / 0.55);
+  --vetro-72: rgb(23 24 27 / 0.72);
+
+  /* Colore */
+  --bg: var(--grigio-925);
+  --bg-player: var(--grigio-950);
+  --surface: var(--grigio-875);
+  --surface-raised: var(--grigio-850);
+  --surface-art: var(--grigio-800);
+  --surface-active: var(--grigio-750);
+  --surface-glass: var(--vetro-72);
+  --line: var(--grigio-750);
+  --line-strong: var(--grigio-600);
+  --line-on-image: var(--velo-chiaro-12);
+  --text: var(--grigio-100);
+  --text-2: var(--grigio-300);
+  --text-3: var(--grigio-400);
+  --text-4: var(--grigio-500);
+  --on-light: var(--grigio-925);
+  --text-on-image: var(--velo-chiaro-72);
+  --accent: var(--blu-500);
+  --accent-deep: var(--blu-800);
+  --track: var(--velo-chiaro-35); /* era 12: la parte vuota della barra si vedeva poco (2026-10-10) */
+  --indicator: var(--velo-chiaro-35);
+  --scrim: var(--velo-scuro-55);
+  --focus-ring: var(--grigio-100);
+  --control-light: var(--grigio-100);
+  --shadow-raised: var(--velo-scuro-55);
+
+  /* Spazi */
+  --gutter: 96px;
+  --rail-gap: 48px; /* era 24: le card ingrandite a fuoco toccavano le vicine (2026-10-10) */
+  --sp-controllo-v: 16px;
+  --sp-controllo-o: 32px;
+  --sp-gap-icona: 12px;
+  --sp-menu-gap: 16px; /* 8 nella Libreria: portato a 16 su richiesta (2026-10-10), da riportare in Figma */
+  --sp-menu-margine: 12px; /* scelta C del 2026-10-10 */
+  --sp-voce-o: 24px;
+  --sp-card-testo: 12px;
+  --sp-card-meta: 4px;
+  --sp-card-interno: 16px;
+  --sp-badge-v: 4px;
+  --sp-badge-o: 8px;
+  --sp-interruttore: 4px;
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+
+  /* Misure */
+  --icona: 28px;
+  --icon-slot: 60px;
+  --focus-spessore: 2px;
+  --focus-distanza: 4px;
+  --bordo-spessore: 1.5px;
+  --tasto: 72px;
+  --campo: 72px;
+  --pin: 96px;
+  --punto: 16px;
+  --cursore: 2px;
+  --interruttore-l: 72px;
+  --interruttore-a: 40px;
+  --pomello: 32px;
+  --voce: 72px;
+  --avatar: 160px;
+  --avatar-piccolo: 48px; /* la foto nel menu in alto (scelta C) */ /* era 200, portato a 160 su richiesta (2026-10-10) */
+  --cast: 160px;
+  --avanzamento: 4px;
+
+  /* Raggi */
+  --r-card-fuoco: 16px;
+  --r-pill: 999px;
+  --r-badge: 10px;
+  --r-card: 12px;
+  --r-panel: 14px;
+  --r-finestra: 20px;
+
+  /* Movimento */
+  --fuoco-scala: 1.1;
+  --fuoco-durata: 150ms;
+
+  /* Ombra */
+  --elevazione-sollevata: 0 24px 48px var(--shadow-raised);
+
+  /* Sfumature */
+  --sfumatura-basso: linear-gradient(to bottom, rgb(15 16 18 / 0) 35%, rgb(15 16 18 / 1) 92%);
+  --sfumatura-sinistra: linear-gradient(to right, rgb(15 16 18 / 0.75), rgb(15 16 18 / 0));
+  --sfumatura-alto: linear-gradient(to bottom, rgb(15 16 18 / 0.6), rgb(15 16 18 / 0));
+  --sfumatura-card: linear-gradient(to bottom, rgb(12 12 13 / 0) 50%, rgb(12 12 13 / 0.7));
+  --sfumatura-avanzamento: linear-gradient(to bottom, rgb(12 12 13 / 0) 50%, rgb(12 12 13 / 0.85));
+
+  /* Tipografia */
+  --font: "Instrument Sans", system-ui, sans-serif;
+}

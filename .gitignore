@@ -1,2 +1,6 @@
 .DS_Store
 Thumbs.db
+
+# screenshot delle prove e copie di backup
+.playwright-mcp/
+.claude/comunicazione-backup/
