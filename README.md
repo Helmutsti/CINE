@@ -26,7 +26,7 @@ Crea una cartella, per esempio `cineteca` sulla Scrivania, e dentro un file chia
 ```yaml
 services:
   cineteca:
-    image: ghcr.io/helmutsti/cineteca:1.0.0
+    image: ghcr.io/helmutsti/cineteca:1.1.0
     container_name: cineteca
     ports:
       - "8080:80"
