@@ -14,6 +14,7 @@ import { useStato } from '../stato'
 import { CAMPI, metaBreve, sigla, useAzionePrincipale } from './comune'
 import { useRipresa } from './Ripresa'
 import { Tastiera } from './Tastiera'
+import { CambiaImmagini } from './Immagini'
 
 export function Scheda({ id }: { id: string }) {
   const nav = useNav()
@@ -26,7 +27,7 @@ export function Scheda({ id }: { id: string }) {
   const principale = useAzionePrincipale(t)
   const [preferito, setPreferito] = useState<boolean | null>(null)
   const [altro, setAltro] = useState(false)
-  const [metadati, setMetadati] = useState<null | 'scegli' | 'correggi' | 'in-corso'>(null)
+  const [metadati, setMetadati] = useState<null | 'scegli' | 'correggi' | 'in-corso' | 'immagini'>(null)
   useFuocoIniziale(t && principale ? 's-principale' : null, [!!t, !!principale])
 
   if (!t) {
@@ -113,15 +114,18 @@ export function Scheda({ id }: { id: string }) {
                 <Pulsante fid="s-altro" tipo="icona" icona="matita" etichetta="Modifica" onOk={() => setAltro(true)} />
                 {altro && (
                   <Tendina
-                    voci={[{ id: 'metadati', testo: 'Aggiorna metadati' }]}
+                    voci={[
+                      { id: 'metadati', testo: 'Aggiorna metadati' },
+                      { id: 'immagini', testo: 'Cambia immagini' },
+                    ]}
                     stile={{ top: 76, left: 0 }}
                     onChiudi={() => {
                       setAltro(false)
                       setTimeout(() => mettiId('s-altro'))
                     }}
-                    onScegli={() => {
+                    onScegli={(v) => {
                       setAltro(false)
-                      setMetadati('scegli')
+                      setMetadati(v === 'immagini' ? 'immagini' : 'scegli')
                     }}
                   />
                 )}
@@ -135,7 +139,7 @@ export function Scheda({ id }: { id: string }) {
           {cast.length > 0 && (
             <Riga g="cast" titolo="Cast">
               {cast.map((p) => (
-                <PersonaCast key={p.Id} fid={'cast-' + p.Id} nome={p.Name ?? ''} foto={fotoPersona(p.Id, p.PrimaryImageTag)} onOk={() => nav.vai({ s: 'attore', id: p.Id! })} />
+                <PersonaCast key={p.Id} fid={'cast-' + p.Id} nome={p.Name ?? ''} foto={fotoPersona(p.Id, p.PrimaryImageTag)} ruolo={p.Role} onOk={() => nav.vai({ s: 'attore', id: p.Id! })} />
               ))}
             </Riga>
           )}
@@ -173,6 +177,18 @@ export function Scheda({ id }: { id: string }) {
           t={t}
           onFatto={() => {
             dimentica(`titolo:${uid}:${id}`)
+            voce.ricarica()
+            chiudiMetadati()
+          }}
+          onChiudi={chiudiMetadati}
+        />
+      )}
+      {metadati === 'immagini' && (
+        <CambiaImmagini
+          t={t}
+          onFatto={() => {
+            // le immagini cambiano anche nelle righe delle altre schermate
+            dimentica('')
             voce.ricarica()
             chiudiMetadati()
           }}
@@ -252,6 +268,10 @@ function Episodi({ serie: t, avvia }: { serie: BaseItemDto; avvia: ReturnType<ty
   const st = stagioni.dati ?? []
   const stagioneId = scelta ?? st.find((s) => !s.UserData?.Played)?.Id ?? st[0]?.Id ?? null
   const episodi = useCarica(stagioneId ? `episodi:${uid}:${stagioneId}` : null, async () => (await show.getEpisodes({ seriesId: t.Id!, seasonId: stagioneId!, userId: uid, fields: ['Overview'] })).data.Items ?? [])
+  // mentre carica una stagione, tanti segnaposto quanti episodi ci si aspetta: la riga non si svuota e la pagina non salta
+  const [ultimoNumero, setUltimoNumero] = useState(6)
+  if (episodi.dati?.length && episodi.dati.length !== ultimoNumero) setUltimoNumero(episodi.dati.length)
+  const attesi = st.find((s) => s.Id === stagioneId)?.ChildCount || ultimoNumero
   if (!st.length) return null
   return (
     <>
@@ -261,6 +281,7 @@ function Episodi({ serie: t, avvia }: { serie: BaseItemDto; avvia: ReturnType<ty
         ))}
       </section>
       <Riga g={'episodi-' + stagioneId} y="inizio" stile={{ marginTop: -24 }}>
+        {!episodi.dati && Array.from({ length: attesi }, (_, i) => <CardInCaricamento key={i} />)}
         {(episodi.dati ?? []).map((e) => {
           const pos = secondi(e.UserData?.PlaybackPositionTicks)
           const tot = secondi(e.RunTimeTicks)
@@ -280,5 +301,22 @@ function Episodi({ serie: t, avvia }: { serie: BaseItemDto; avvia: ReturnType<ty
         })}
       </Riga>
     </>
+  )
+}
+
+/** Segnaposto di una card episodio mentre la stagione carica: stesse misure, pulsa. */
+function CardInCaricamento() {
+  return (
+    <div className="card card--sempre card--caricamento" style={{ width: 336 }} aria-hidden>
+      <div className="card__img" />
+      <div className="card__testo">
+        <div className="t-card-titolo">
+          <span className="card__riga-vuota" style={{ width: '70%' }}>&nbsp;</span>
+        </div>
+        <div className="t-meta-card">
+          <span className="card__riga-vuota" style={{ width: '30%' }}>&nbsp;</span>
+        </div>
+      </div>
+    </div>
   )
 }

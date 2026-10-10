@@ -21,6 +21,7 @@ Il disegno vive in Figma, nel file dei mockup (link in `AGENTS.md`). Qui c'è tu
 | SC-15 | Player · Prossimo episodio | E | 3 | — | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=24-260) approvato per ora |
 | SC-16 | Aggiorna metadati | F | 11 | Correggi titolo (elenco dei risultati) | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=25-459) approvato per ora |
 | SC-17 | Impostazioni | F | 11, 12 | Libreria · Profili · profilo con 18+ e PIN | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=25-517) approvato per ora |
+| SC-18 | Cambia immagini | F | 11 | Sfondo · Applico l'immagine… · Nessuna immagine trovata | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=51-10) da approvare |
 
 I casi vuoti e gli errori sono stati della schermata in cui capitano, non schermate a sé.
 
@@ -32,6 +33,6 @@ I casi vuoti e gli errori sono stati della schermata in cui capitano, non scherm
 | C · Scheda | Immagine piena, informazioni e azioni a sinistra, righe sotto (Cast, Altri film, Episodi) | SC-07, SC-10, SC-11, SC-12 |
 | D · Cerca | Tastiera a sinistra, filtri e risultati a destra | SC-09 |
 | E · Player | Video a tutto schermo con livelli sopra: comandi, opzioni, prossimo episodio | SC-13, SC-14, SC-15 |
-| F · Centrata o a pannelli | Scelte al centro (profili, PIN) o elenco a sinistra e dettaglio a destra | SC-01, SC-02, SC-16, SC-17 |
+| F · Centrata o a pannelli | Scelte al centro (profili, PIN) o elenco a sinistra e dettaglio a destra | SC-01, SC-02, SC-16, SC-17, SC-18 |
 
 Wireframe: file Mockup, pagina **Wireframe TV**: una riga per schermata, con gli stati affiancati a destra, e sotto ogni frame le note su fuoco e comandi. Il 2026-10-08 prima le 6 di riferimento (approvate), poi le altre 11 e tutti gli stati: 34 frame.

@@ -113,6 +113,9 @@
 .card {
   display: block;
   flex: none;
+  /* in riga o in griglia la card non si stira: un <button> più alto del contenuto lo centra,
+     e le immagini scenderebbero quando il titolo è su una riga sola. Il testo cresce solo verso il basso */
+  align-self: start;
   container-type: inline-size;
   --rapporto: 9 / 16;
 }
@@ -291,6 +294,7 @@
 .persona {
   width: var(--cast);
   flex: none;
+  align-self: start;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -323,6 +327,14 @@
 }
 .persona:focus .persona__nome {
   color: var(--text);
+  transform: translateY(8px);
+}
+/* il personaggio, sotto l'attore: meno importante */
+.persona__ruolo {
+  margin-top: var(--sp-card-meta);
+  color: var(--text-4);
+}
+.persona:focus .persona__ruolo {
   transform: translateY(8px);
 }
 
@@ -627,4 +639,27 @@
   background: none;
   outline: var(--focus-spessore) solid var(--focus-ring);
   outline-offset: calc(-1 * var(--focus-spessore));
+}
+
+/* Card in caricamento (episodi di una stagione): stesse misure, pulsa solo in opacità */
+.card--caricamento .card__img,
+.card__riga-vuota {
+  animation: pulsa 1.2s ease-in-out infinite;
+}
+.card__riga-vuota {
+  display: inline-block;
+  border-radius: var(--r-badge);
+  background: var(--surface-art);
+}
+@keyframes pulsa {
+  50% { opacity: 0.45; }
+}
+/* gli episodi arrivati entrano in dissolvenza, al posto dei segnaposto */
+.riga__binario[data-g^="episodi-"] > .card:not(.card--caricamento) {
+  animation: dissolvi 250ms ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .card--caricamento .card__img,
+  .card__riga-vuota,
+  .riga__binario[data-g^="episodi-"] > .card { animation: none; }
 }

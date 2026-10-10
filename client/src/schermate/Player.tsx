@@ -42,6 +42,18 @@ function tempo(s: number) {
 
 const lingua = (s: MediaStream) => s.DisplayTitle || s.Language || `Traccia ${s.Index}`
 
+/** Schermo intero su tutta la pagina, non sul solo <video>: così restano i nostri comandi e il telecomando. */
+function useSchermoIntero() {
+  const [attivo, setAttivo] = useState(() => !!document.fullscreenElement)
+  useEffect(() => {
+    const f = () => setAttivo(!!document.fullscreenElement)
+    document.addEventListener('fullscreenchange', f)
+    return () => document.removeEventListener('fullscreenchange', f)
+  }, [])
+  const cambia = () => (document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen()).catch(() => {})
+  return [attivo, cambia] as const
+}
+
 export function Player({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
   if (voce.trailer?.youtube) return <TrailerYoutube url={voce.trailer.youtube} titolo={voce.trailer.titolo} />
   return <PlayerJellyfin voce={voce} />
@@ -102,6 +114,7 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
     const i = setInterval(() => video.current && setPos(video.current.currentTime), 500)
     return () => clearInterval(i)
   }, [])
+  const [schermoIntero, cambiaSchermoIntero] = useSchermoIntero()
   const timer = useRef(0)
   const pannelloRef = useRef(pannello)
   pannelloRef.current = pannello
@@ -276,11 +289,27 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
     }
     if (tasto === 'indietro') return esci(), true
     const f = corrente()?.dataset.f
+    const nelMenu = !!corrente()?.closest('[data-g="pl-menu"]')
     if (f === 'pl-barra' && (tasto === 'sinistra' || tasto === 'destra')) {
       salta((tasto === 'destra' ? 1 : -1) * durata * (e.repeat ? 0.04 : 0.02))
       return true
     }
-    if (tasto === 'giu' && f !== 'pl-barra' && !trailer) {
+    // ← → saltano di 10 s (30 tenendo premuto); nel menu in alto spostano il fuoco
+    if ((tasto === 'sinistra' || tasto === 'destra') && !nelMenu) {
+      salta((tasto === 'destra' ? 1 : -1) * (e.repeat ? 30 : 10))
+      return true
+    }
+    // ↑ porta dritto al menu in alto, ↓ dal menu torna al play
+    if (tasto === 'su' && !nelMenu) {
+      const voce = document.querySelector<HTMLElement>('[data-g="pl-menu"] [data-f]')
+      if (voce?.dataset.f) mettiId(voce.dataset.f)
+      return true
+    }
+    if (tasto === 'giu' && nelMenu) {
+      mettiId('pl-pausa')
+      return true
+    }
+    if (tasto === 'giu' && f === 'pl-pausa' && !trailer) {
       setPannello(true)
       setTimeout(() => mettiId('tab-' + scheda))
       return true
@@ -327,6 +356,10 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
             <div className="t-titolo-riga">{titoloSopra}</div>
             {sottotitolo && <div className="t-meta c-2">{sottotitolo}</div>}
           </div>
+          <div data-g="pl-menu" style={{ position: 'absolute', right: 96, top: 64, display: 'flex', gap: 16 }}>
+            {prossimo.dati && <Pulsante fid="pl-successivo" onOk={vaiAlProssimo}>Episodio successivo</Pulsante>}
+            {document.fullscreenEnabled && <Pulsante fid="pl-schermo" onOk={cambiaSchermoIntero}>{schermoIntero ? 'Esci da schermo intero' : 'Schermo intero'}</Pulsante>}
+          </div>
           <div style={{ position: 'absolute', left: 96, right: 96, bottom: 72, display: 'flex', flexDirection: 'column', gap: 16 }}>
             <button data-f="pl-barra" className="anello" aria-label="Posizione" style={{ position: 'relative', height: 24, borderRadius: 8, display: 'flex', alignItems: 'center', gap: 4 }}>
               {punti.slice(0, -1).map((da, i) => {
@@ -344,14 +377,10 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
                   ↓ Sottotitoli · Audio · Velocità · Transcodifica
                 </div>
               )}
-              <Pulsante fid="pl-indietro" onOk={() => salta(-10)}>− 10 s</Pulsante>
               <Pulsante fid="pl-pausa" tipo="icona" chiaro icona={inPausa ? 'play' : 'pausa'} etichetta={inPausa ? 'Riproduci' : 'Pausa'} onOk={() => pausa(!inPausa)} />
-              <Pulsante fid="pl-avanti" onOk={() => salta(10)}>+ 10 s</Pulsante>
-              {prossimo.dati && (
-                <div style={{ position: 'absolute', right: 0 }}>
-                  <Pulsante fid="pl-successivo" onOk={vaiAlProssimo}>Episodio successivo</Pulsante>
-                </div>
-              )}
+              <div className="t-meta" style={{ position: 'absolute', right: 0, color: 'var(--text-on-image)' }}>
+                ← → 10 s · ↑ Menu
+              </div>
             </div>
           </div>
         </div>

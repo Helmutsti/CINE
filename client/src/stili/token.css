@@ -1,6 +1,7 @@
 /* Token della Libreria Figma (docs/design/tokens.md). Unica fonte dei valori di stile. */
 :root {
   /* Primitivi */
+  --nero: #000;
   --grigio-950: #0c0c0d;
   --grigio-925: #0f1012;
   --grigio-875: #17181b;
@@ -22,7 +23,7 @@
 
   /* Colore */
   --bg: var(--grigio-925);
-  --bg-player: var(--grigio-950);
+  --bg-player: var(--nero); /* era grigio/950: il fondo del video deve essere nero (2026-10-10), da riportare in Figma */
   --surface: var(--grigio-875);
   --surface-raised: var(--grigio-850);
   --surface-art: var(--grigio-800);

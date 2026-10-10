@@ -141,13 +141,14 @@ export function Avatar(p: {
 }
 
 // ---------- CMP-09 Persona del cast ----------
-export function PersonaCast(p: { fid: string; nome: string; foto: string | null; onOk: () => void }) {
+export function PersonaCast(p: { fid: string; nome: string; foto: string | null; ruolo?: string | null; onOk: () => void }) {
   return (
     <button data-f={p.fid} className="persona" onClick={p.onOk}>
       <div className="persona__foto t-didascalia c-3">
         {p.foto ? <img src={p.foto} alt="" loading="lazy" /> : iniziali(p.nome)}
       </div>
       <div className="persona__nome t-etichetta">{p.nome}</div>
+      {p.ruolo && <div className="persona__ruolo t-meta-card">({p.ruolo})</div>}
     </button>
   )
 }
