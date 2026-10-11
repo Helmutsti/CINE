@@ -15,6 +15,8 @@ export interface Profilo {
   /** contenuti limitati da Jellyfin (controllo parentale attivo) */
   limitato: boolean
   amministratore: boolean
+  /** può creare e modificare le collezioni (permesso "Gestione collezioni" di Jellyfin) */
+  collezioni: boolean
 }
 
 const daUtente = (u: UserDto): Profilo => ({
@@ -23,6 +25,7 @@ const daUtente = (u: UserDto): Profilo => ({
   foto: fotoUtente(u.Id, u.PrimaryImageTag),
   limitato: u.Policy?.MaxParentalRating != null,
   amministratore: !!u.Policy?.IsAdministrator,
+  collezioni: !!u.Policy?.IsAdministrator || !!u.Policy?.EnableCollectionManagement,
 })
 
 function leggi(k: string) {

@@ -1,20 +1,21 @@
 /* SC-10 Scheda film · SC-11 Scheda serie (schema C) · SC-16 Aggiorna metadati, con i dati del server. */
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { getLibraryApi } from '@jellyfin/sdk/lib/utils/api/library-api'
 import { getShowApi } from '@jellyfin/sdk/lib/utils/api/show-api'
 import { getUserDataApi } from '@jellyfin/sdk/lib/utils/api/user-data-api'
 import { getItemLookupApi } from '@jellyfin/sdk/lib/utils/api/item-lookup-api'
 import type { BaseItemDto, RemoteSearchResult } from '@jellyfin/sdk/lib/generated-client/models'
-import { Campo, Card, Etichetta, Finestra, PersonaCast, Pulsante, Riga, Scelta, Sfondo, Tendina, VoceElenco } from '../componenti'
+import { Campo, Card, Finestra, PersonaCast, Pulsante, Riga, Scelta, Sfondo, Tendina, VoceElenco } from '../componenti'
 import { durata } from '../dati'
-import { api, dimentica, fotoPersona, minuti, orizzontale, secondi, sfondo, tecnici, useCarica } from '../jf'
+import { api, dimentica, fotoPersona, minuti, orizzontale, secondi, sfondo, useCarica } from '../jf'
 import { mettiId } from '../fuoco'
-import { useFuocoIniziale, useNav, useTasti } from '../nav'
+import { useFuocoIniziale, useNav } from '../nav'
 import { useStato } from '../stato'
 import { CAMPI, metaBreve, sigla, useAzionePrincipale } from './comune'
 import { useRipresa } from './Ripresa'
 import { Tastiera } from './Tastiera'
 import { CambiaImmagini } from './Immagini'
+import { PannelloTrama, RigaDati, TramaBreve } from './Titolo'
 
 export function Scheda({ id }: { id: string }) {
   const nav = useNav()
@@ -43,14 +44,6 @@ export function Scheda({ id }: { id: string }) {
 
   const inLista = preferito ?? !!t.UserData?.IsFavorite
   const regia = t.People?.find((p) => p.Type === 'Director')
-  // riga sotto il titolo: anno · generi · durata (serie: stagioni); età e voto a parte
-  const dati = [
-    t.ProductionYear ? String(t.ProductionYear) : null,
-    t.Genres?.slice(0, 2).join(', ') || null,
-    t.Type === 'Movie' && t.RunTimeTicks ? durata(minuti(t)) : null,
-    t.Type === 'Series' && t.ChildCount ? (t.ChildCount === 1 ? '1 stagione' : `${t.ChildCount} stagioni`) : null,
-  ].filter(Boolean)
-  const voto = t.CommunityRating ? t.CommunityRating.toFixed(1).replace('.', ',') : null
   const cast = (t.People ?? []).filter((p) => p.Type === 'Actor').slice(0, 20)
   const trailerYoutube = t.RemoteTrailers?.find((r) => r.Url?.includes('youtu'))?.Url
 
@@ -97,15 +90,8 @@ export function Scheda({ id }: { id: string }) {
           </div>
           <div style={{ position: 'absolute', left: 96, bottom: 40, width: 1100, display: 'flex', flexDirection: 'column', gap: 20 }}>
             <h1 className="t-titolo-scheda" style={{ margin: 0 }}>{t.Name}</h1>
-            <div className="t-meta" style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
-              {t.OfficialRating && <span className="bollino-eta t-etichetta">{t.OfficialRating}</span>}
-              {voto && <span>★ {voto}</span>}
-              {dati.length > 0 && <span>{dati.join('  ·  ')}</span>}
-              {tecnici(t).map((x) => (
-                <Etichetta key={x}>{x}</Etichetta>
-              ))}
-            </div>
-            {t.Overview && <TramaBreve testo={t.Overview} onLeggi={() => setTrama(true)} />}
+            <RigaDati t={t} />
+            {t.Overview && <TramaBreve fid="s-trama" testo={t.Overview} onLeggi={() => setTrama(true)} />}
             <div style={{ display: 'flex', gap: 16, marginTop: 40 }} data-g="azioni">
               <Pulsante fid="s-principale" tipo="principale" icona="play" pref onOk={() => principale && ripresa.avvia(principale.voce, principale.iniziato, principale, 's-principale')}>
                 {principale?.testo ?? 'Guarda'}
@@ -161,7 +147,7 @@ export function Scheda({ id }: { id: string }) {
 
       {trama && (
         <PannelloTrama
-          t={t}
+          id={t.Id!}
           onChiudi={() => {
             setTrama(false)
             setTimeout(() => mettiId('s-trama'))
@@ -336,102 +322,3 @@ function CardInCaricamento() {
   )
 }
 
-/** La trama in 3 righe al massimo; se è più lunga finisce con il link "Leggi altro". */
-function TramaBreve({ testo, onLeggi }: { testo: string; onLeggi: () => void }) {
-  const ref = useRef<HTMLParagraphElement>(null)
-  const parole = testo.split(/\s+/)
-  /** quante parole stanno prima del link; null = la trama sta tutta */
-  const [taglio, setTaglio] = useState<number | null>(null)
-  useLayoutEffect(() => {
-    const p = ref.current
-    if (!p) return
-    const prova = p.cloneNode(false) as HTMLParagraphElement
-    prova.style.cssText += `;position:absolute;visibility:hidden;width:${p.clientWidth}px;max-width:none`
-    p.parentElement!.appendChild(prova)
-    const max = parseFloat(getComputedStyle(p).lineHeight) * 3 + 2
-    const sta = (n: number | null) => {
-      prova.textContent = n == null ? testo : parole.slice(0, n).join(' ') + '…  Leggi altro'
-      return prova.offsetHeight <= max
-    }
-    let n: number | null = null
-    if (!sta(null)) {
-      let lo = 0
-      let hi = parole.length
-      while (lo < hi) {
-        const m = Math.ceil((lo + hi) / 2)
-        if (sta(m)) lo = m
-        else hi = m - 1
-      }
-      n = lo
-    }
-    prova.remove()
-    setTaglio(n)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [testo])
-  return (
-    <p ref={ref} className="t-sinossi c-2" style={{ margin: '8px 0 0', maxWidth: 900 }}>
-      {taglio == null ? testo : parole.slice(0, taglio).join(' ') + '… '}
-      {taglio != null && (
-        <>
-          {' '}
-          <button data-f="s-trama" className="link-trama anello" onClick={onLeggi}>
-            Leggi altro
-          </button>
-        </>
-      )}
-    </p>
-  )
-}
-
-const nomeLingua = (codice?: string | null) => {
-  if (!codice) return null
-  try {
-    const n = new Intl.DisplayNames(['it'], { type: 'language' }).of(codice)
-    return n ? n[0].toUpperCase() + n.slice(1) : codice
-  } catch {
-    return codice.toUpperCase()
-  }
-}
-
-/** SC-10 Trama: la trama intera in un pannello a destra, con regia, attori, audio e sottotitoli. */
-function PannelloTrama({ t, onChiudi }: { t: BaseItemDto; onChiudi: () => void }) {
-  const scorre = useRef<HTMLDivElement>(null)
-  useTasti((tasto) => {
-    if (tasto === 'indietro') return onChiudi(), true
-    if (tasto === 'su' || tasto === 'giu') {
-      scorre.current?.scrollBy({ top: tasto === 'giu' ? 160 : -160, behavior: 'smooth' })
-      return true
-    }
-    return true
-  })
-  const flussi = t.MediaSources?.[0]?.MediaStreams ?? t.MediaStreams ?? []
-  const lingue = (tipo: string) => [...new Set(flussi.filter((s) => s.Type === tipo).map((s) => nomeLingua(s.Language)).filter(Boolean))].join(' · ')
-  const crediti = [
-    ['Regia', (t.People ?? []).filter((p) => p.Type === 'Director').map((p) => p.Name).join(', ')],
-    ['Con', (t.People ?? []).filter((p) => p.Type === 'Actor').slice(0, 4).map((p) => p.Name).join(', ')],
-    ['Audio', lingue('Audio')],
-    ['Sottotitoli', lingue('Subtitle')],
-  ].filter(([, v]) => v)
-  return (
-    <div data-livello style={{ position: 'absolute', inset: 0, background: 'var(--scrim)' }}>
-      <div ref={scorre} role="dialog" aria-label={`Trama · ${t.Name}`} style={{ position: 'absolute', top: 0, right: 0, bottom: 0, width: 800, padding: '72px 64px', background: 'var(--surface)', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 28 }}>
-        <div className="t-occhiello c-3">Trama</div>
-        <h2 className="t-titolo-sezione" style={{ margin: 0 }}>{t.Name}</h2>
-        {(t.Overview ?? '').split(/\n+/).map((x, i) => (
-          <p key={i} className="t-sinossi c-2" style={{ margin: 0 }}>
-            {x}
-          </p>
-        ))}
-        {crediti.length > 0 && <div style={{ height: 1.5, background: 'var(--line)', flex: 'none' }} />}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-          {crediti.map(([k, v]) => (
-            <div key={k} style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-              <div className="t-occhiello c-3">{k}</div>
-              <div className="t-meta">{v}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}

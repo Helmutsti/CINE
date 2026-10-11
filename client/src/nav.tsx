@@ -14,6 +14,10 @@ export type Voce =
   | { s: 'player'; id: string; daCapo?: boolean; trailer?: { id?: string; youtube?: string; titolo: string } }
   | { s: 'raccolta'; nome: string; occhiello: string; generi?: string[]; ids?: string[] }
   | { s: 'impostazioni'; sezione?: 'libreria' | 'profili' }
+  /** SC-19: nome di una collezione nuova, o rinomina (id e nome della collezione) */
+  | { s: 'nome-collezione'; id?: string; nome?: string }
+  /** SC-20: aggiungere e togliere titoli; nuova: si arriva da SC-19 e Fine apre la collezione */
+  | { s: 'titoli-collezione'; id: string; nuova?: boolean }
 
 type Elemento = Voce & { fuoco?: string; chiave: number }
 

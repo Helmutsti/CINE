@@ -7,10 +7,12 @@ import type { BaseItemDto } from '@jellyfin/sdk/lib/generated-client/models'
 import { Card, Menu, Pulsante, Riga } from '../componenti'
 import { MOOD, generiDelMood, illustrazioneGenere } from '../dati'
 import { api, dimentica, orizzontale, secondi, sfondo, useCarica } from '../jf'
+import { mettiId } from '../fuoco'
 import { useFuocoIniziale, useNav } from '../nav'
 import { useStato } from '../stato'
 import { CAMPI, metaBreve, restano, sigla, useAzionePrincipale } from './comune'
 import { useRipresa } from './Ripresa'
+import { PannelloTrama, RigaDati, TramaBreve } from './Titolo'
 
 export function Home() {
   const nav = useNav()
@@ -19,9 +21,11 @@ export function Home() {
   const lib = getLibraryApi(api)
   const [n, setN] = useState(0)
   const [riga, setRiga] = useState(-1) // -1: menu o titolo in evidenza
+  /** il titolo di cui è aperto il pannello della trama */
+  const [trama, setTrama] = useState<string | null>(null)
 
   const evidenza = useCarica(`home:evidenza:${uid}`, async () =>
-    (await lib.getItems({ userId: uid, includeItemTypes: ['Movie', 'Series'], recursive: true, sortBy: ['Random'], limit: 6, imageTypes: ['Backdrop'], hasOverview: true, fields: [...CAMPI] })).data.Items ?? [],
+    (await lib.getItems({ userId: uid, includeItemTypes: ['Movie', 'Series'], recursive: true, sortBy: ['Random'], limit: 6, imageTypes: ['Backdrop'], hasOverview: true, fields: [...CAMPI, 'MediaStreams'] })).data.Items ?? [],
   )
   const riprendi = useCarica(`home:riprendi:${uid}`, async () =>
     (await lib.getResumeItems({ userId: uid, mediaTypes: ['Video'], limit: 16, fields: [...CAMPI], enableUserData: true })).data.Items ?? [],
@@ -169,12 +173,9 @@ export function Home() {
           </div>
           {corrente && (
             <div style={{ position: 'absolute', left: 96, bottom: 64, width: 900, display: 'flex', flexDirection: 'column', gap: 16 }}>
-              <div className="t-occhiello c-2">{corrente.Type === 'Series' ? 'Serie' : 'Film'}</div>
               <h1 className="t-titolo-evidenza" style={{ margin: 0 }}>{corrente.Name}</h1>
-              <div className="t-meta c-2">{metaBreve(corrente, true)}</div>
-              <p className="t-sinossi c-2" style={{ margin: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                {corrente.Overview}
-              </p>
+              <RigaDati t={corrente} />
+              {corrente.Overview && <TramaBreve fid="ev-trama" testo={corrente.Overview} onLeggi={() => setTrama(corrente.Id!)} />}
               <div style={{ display: 'flex', gap: 16, marginTop: 24 }} data-g="evidenza">
                 <Pulsante fid="ev-principale" tipo="principale" icona="play" pref onOk={() => principale && ripresa.avvia(principale.voce, principale.iniziato, principale, 'ev-principale')}>
                   {principale?.testo ?? 'Guarda'}
@@ -204,6 +205,15 @@ export function Home() {
         </div>
       </div>
       {ripresa.finestra}
+      {trama && (
+        <PannelloTrama
+          id={trama}
+          onChiudi={() => {
+            setTrama(null)
+            setTimeout(() => mettiId('ev-trama'))
+          }}
+        />
+      )}
     </div>
   )
 }

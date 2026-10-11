@@ -8,6 +8,7 @@ import { Griglia } from './schermate/Griglia'
 import { Collezioni, PaginaCollezione } from './schermate/Collezioni'
 import { Cerca } from './schermate/Cerca'
 import { Scheda } from './schermate/Scheda'
+import { NomeCollezione, TitoliCollezione } from './schermate/EditorCollezioni'
 import { PaginaAttore } from './schermate/Attore'
 import { Player } from './schermate/Player'
 import { Impostazioni } from './schermate/Impostazioni'
@@ -51,6 +52,10 @@ function Schermata() {
       return <PaginaAttore key={k} id={cima.id} />
     case 'player':
       return <Player key={k} voce={cima} />
+    case 'nome-collezione':
+      return <NomeCollezione key={k} id={cima.id} nome={cima.nome} />
+    case 'titoli-collezione':
+      return <TitoliCollezione key={k} id={cima.id} nuova={cima.nuova} />
     case 'impostazioni':
       return <Impostazioni key={k} voce={cima} />
   }

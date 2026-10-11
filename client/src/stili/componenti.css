@@ -718,3 +718,21 @@
   text-underline-offset: 4px;
   cursor: pointer;
 }
+
+/* ---------- SC-20 Titoli della collezione: pallino della spunta sulla card (2026-10-11) ---------- */
+.spunta-collezione {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  padding: 6px;
+  border-radius: var(--r-pill);
+  background: var(--control-light);
+  color: var(--on-light);
+  pointer-events: none;
+  z-index: 3;
+}
+.spunta-collezione .icona {
+  width: 24px;
+  height: 24px;
+}

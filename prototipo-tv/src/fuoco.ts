@@ -115,6 +115,13 @@ function scorri(el: HTMLElement) {
   }
 }
 
+/** Per ↑ ↓: l'elemento b è davvero nella riga sopra / sotto di a? Una card della stessa riga
+ *  ma più alta (titolo su più righe) ha il centro più in basso: conta da dove comincia. */
+function fuoriRiga(dir: 'su' | 'giu', a: DOMRect, b: DOMRect, ay: number, by: number) {
+  if (dir === 'giu') return by <= ay + 1 || b.bottom <= a.bottom || b.top < a.top + a.height / 2
+  return by >= ay - 1 || b.top >= a.top || b.bottom > a.bottom - a.height / 2
+}
+
 /** Sposta il fuoco nella direzione, scegliendo l'elemento più vicino. */
 export function muovi(dir: Direzione): boolean {
   const da = corrente()
@@ -132,7 +139,7 @@ export function muovi(dir: Direzione): boolean {
       if (el === da || !visibile(el)) continue
       const b = el.getBoundingClientRect()
       const by = b.top + b.height / 2
-      if (dir === 'giu' ? by <= ay + 1 || b.bottom <= a.bottom : by >= ay - 1 || b.top >= a.top) continue
+      if (fuoriRiga(dir as 'su' | 'giu', a, b, ay, by)) continue
       const g = dir === 'giu' ? Math.max(0, b.top - a.bottom) : Math.max(0, a.top - b.bottom)
       if (g < gap) (gap = g), (riga = b)
     }
@@ -151,7 +158,7 @@ export function muovi(dir: Direzione): boolean {
       if (Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) <= 0) continue
       laterale = Math.abs(by - ay) * 0.05
     } else {
-      if (dir === 'giu' ? by <= ay + 1 || b.bottom <= a.bottom : by >= ay - 1 || b.top >= a.top) continue
+      if (fuoriRiga(dir as 'su' | 'giu', a, b, ay, by)) continue
       if (riga && Math.min(riga.bottom, b.bottom) - Math.max(riga.top, b.top) <= 0) continue
       principale = dir === 'giu' ? Math.max(0, b.top - a.bottom) : Math.max(0, a.top - b.bottom)
       const sovrapposti = Math.min(a.right, b.right) - Math.max(a.left, b.left) > 0
