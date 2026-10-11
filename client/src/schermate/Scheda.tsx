@@ -103,17 +103,13 @@ export function Scheda({ id }: { id: string }) {
                   Trailer
                 </Pulsante>
               )}
-              {profilo?.collezioni && (
-                <Pulsante fid="s-collezione" onOk={() => setCollezione(true)}>
-                  Aggiungi a collezione
-                </Pulsante>
-              )}
               <Pulsante fid="s-lista" tipo="icona" icona={inLista ? 'spunta' : 'piu'} etichetta={inLista ? 'Nella mia lista' : 'Aggiungi alla mia lista'} onOk={cambiaLista} />
               <div style={{ position: 'relative' }}>
                 <Pulsante fid="s-altro" tipo="icona" icona="matita" etichetta="Modifica" onOk={() => setAltro(true)} />
                 {altro && (
                   <Tendina
                     voci={[
+                      ...(profilo?.collezioni ? [{ id: 'collezione', testo: 'Aggiungi a collezione' }] : []),
                       { id: 'metadati', testo: 'Aggiorna metadati' },
                       { id: 'immagini', testo: 'Cambia immagini' },
                     ]}
@@ -124,7 +120,8 @@ export function Scheda({ id }: { id: string }) {
                     }}
                     onScegli={(v) => {
                       setAltro(false)
-                      setMetadati(v === 'immagini' ? 'immagini' : 'scegli')
+                      if (v === 'collezione') setCollezione(true)
+                      else setMetadati(v === 'immagini' ? 'immagini' : 'scegli')
                     }}
                   />
                 )}
@@ -157,7 +154,7 @@ export function Scheda({ id }: { id: string }) {
           titolo={t}
           onChiudi={() => {
             setCollezione(false)
-            setTimeout(() => mettiId('s-collezione'))
+            setTimeout(() => mettiId('s-altro'))
           }}
         />
       )}
