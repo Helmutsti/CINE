@@ -7,6 +7,8 @@
  * - Un contenitore con data-g="<nome>" ricorda l'ultimo elemento a fuoco: rientrandoci
  *   si torna lì. Senza ricordo si va su [data-fpref], se c'è.
  * - ↑ ↓ vanno sempre alla riga più vicina: i livelli non si saltano (es. griglia → filtri → menu).
+ * - Colonne affiancate ([data-colonna], es. tastiera e risultati): ↑ ↓ restano nella colonna in cui si è;
+ *   si cambia colonna con ← →. Gli elementi fuori da ogni colonna (il menu) restano raggiungibili.
  * - Lo scorrimento verticale lo decide [data-y] sull'antenato più vicino:
  *   "cima" porta il contenitore [data-yscroll] in alto, "inizio" allinea quell'elemento in alto.
  */
@@ -133,19 +135,36 @@ export function muovi(dir: Direzione): boolean {
   // ↑ ↓ non saltano le righe: si sceglie solo nella riga più vicina (gli elementi che si
   // sovrappongono in altezza al più vicino), poi il più allineato in orizzontale
   let riga: DOMRect | null = null
+  const colonna = da.closest('[data-colonna]')
+  /** per ↑ ↓: l'elemento sta in un'altra colonna affiancata? */
+  const altraColonna = (el: HTMLElement) => {
+    if (!colonna || (dir !== 'su' && dir !== 'giu')) return false
+    if (dentroColonna) return !colonna.contains(el)
+    const c = el.closest('[data-colonna]')
+    return !!c && c !== colonna
+  }
+  /** la riga scelta per ↑ ↓ sta nella propria colonna: si sceglie solo lì */
+  let dentroColonna = false
   if (dir === 'su' || dir === 'giu') {
-    let gap = Infinity
-    for (const el of livello().querySelectorAll<HTMLElement>('[data-f]')) {
-      if (el === da || !visibile(el)) continue
-      const b = el.getBoundingClientRect()
-      const by = b.top + b.height / 2
-      if (fuoriRiga(dir as 'su' | 'giu', a, b, ay, by)) continue
-      const g = dir === 'giu' ? Math.max(0, b.top - a.bottom) : Math.max(0, a.top - b.bottom)
-      if (g < gap) (gap = g), (riga = b)
+    // prima dentro la propria colonna (anche se la riga è scorsa sotto il menu), poi fuori
+    for (const soloColonna of colonna ? [true, false] : [false]) {
+      let gap = Infinity
+      for (const el of livello().querySelectorAll<HTMLElement>('[data-f]')) {
+        if (el === da || !visibile(el) || altraColonna(el) || (soloColonna && !colonna!.contains(el))) continue
+        const b = el.getBoundingClientRect()
+        const by = b.top + b.height / 2
+        if (fuoriRiga(dir as 'su' | 'giu', a, b, ay, by)) continue
+        const g = dir === 'giu' ? Math.max(0, b.top - a.bottom) : Math.max(0, a.top - b.bottom)
+        if (g < gap) (gap = g), (riga = b)
+      }
+      if (riga) {
+        dentroColonna = soloColonna
+        break
+      }
     }
   }
   for (const el of livello().querySelectorAll<HTMLElement>('[data-f]')) {
-    if (el === da || !visibile(el)) continue
+    if (el === da || !visibile(el) || altraColonna(el)) continue
     const b = el.getBoundingClientRect()
     const bx = b.left + b.width / 2
     const by = b.top + b.height / 2

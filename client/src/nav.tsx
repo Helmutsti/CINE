@@ -35,15 +35,16 @@ function useNavInterna() {
       return p.map((x, i) => (i === p.length - 1 ? { ...x, fuoco: f } : x))
     }
     return {
-      vai: (v: Voce) =>
+      /** fuoco: l'elemento che prende il fuoco nella schermata nuova (la voce del menu, cambiando sezione) */
+      vai: (v: Voce, fuoco?: string) =>
         setPila((p) => {
           if (SEZIONI.includes(v.s as Sezione)) {
             // le sezioni del menu sono sorelle: si parte sempre dalla Home
             const home = p.find((x) => x.s === 'home')
             const base = home && p[p.length - 1].s === 'home' ? salvaFuoco([home])[0] : home
             return v.s === 'home'
-              ? [{ s: 'home', chiave: base?.chiave ?? chiavi++ }]
-              : [base ?? { s: 'home', chiave: chiavi++ }, { ...v, chiave: chiavi++ }]
+              ? [{ s: 'home', chiave: base?.chiave ?? chiavi++, fuoco: fuoco ?? (base as Elemento | undefined)?.fuoco }]
+              : [base ?? { s: 'home', chiave: chiavi++ }, { ...v, chiave: chiavi++, fuoco }]
           }
           return [...salvaFuoco(p), { ...v, chiave: chiavi++ }]
         }),

@@ -736,3 +736,22 @@
   width: 24px;
   height: 24px;
 }
+
+/* card fatta solo di testo (Home: nessuna collezione) */
+.card__img--testo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 40px;
+  text-align: left;
+  aspect-ratio: 32 / 9;
+}
+
+/* una sezione che carica: il cerchio su tutta la pagina, il menu resta sopra */
+.caricamento-pagina {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  background: var(--bg);
+}

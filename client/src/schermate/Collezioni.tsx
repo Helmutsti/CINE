@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import { getLibraryApi } from '@jellyfin/sdk/lib/utils/api/library-api'
 import { getUserDataApi } from '@jellyfin/sdk/lib/utils/api/user-data-api'
-import { Card, Finestra, Menu, OrdinaFiltra, Pulsante, Riga, Sfondo, Tendina } from '../componenti'
+import type { BaseItemDto } from '@jellyfin/sdk/lib/generated-client/models'
+import { Card, Finestra, Menu, OrdinaFiltra, Pulsante, Riga, Sfondo, Tendina, CaricamentoPagina } from '../componenti'
 import { api, dimentica, orizzontale, secondi, sfondo, useCarica } from '../jf'
 import { mettiId } from '../fuoco'
 import { useFuocoIniziale, useNav } from '../nav'
@@ -11,11 +12,24 @@ import { useStato } from '../stato'
 import { CAMPI } from './comune'
 import { useRipresa } from './Ripresa'
 import { CambiaImmagini } from './Immagini'
+import { aggiungiAllaCollezione, creaCollezione, dimenticaCollezioni, useSuggeriti } from './EditorCollezioni'
 
 export function Collezioni() {
   const nav = useNav()
   const { uid, profilo } = useStato()
   const modifica = !!profilo?.collezioni
+  const [creo, setCreo] = useState(false)
+  // come una playlist: la collezione nasce subito, vuota, e si apre la sua pagina
+  const nuova = async () => {
+    if (creo) return
+    setCreo(true)
+    try {
+      const id = await creaCollezione(uid)
+      nav.vai({ s: 'collezione', id })
+    } finally {
+      setCreo(false)
+    }
+  }
   const [ordine, setOrdine] = useState('nome')
   const [riga, setRiga] = useState(0)
   const c = useCarica(`collezioni:${uid}:${ordine}`, async () =>
@@ -35,6 +49,7 @@ export function Collezioni() {
 
   return (
     <div className="schermata" data-livello>
+      {!c.pronto && <CaricamentoPagina />}
       <Menu attiva="collezioni" nascosto={riga > 1} />
       <div className="scorre" data-yscroll="0">
         <header
@@ -75,9 +90,9 @@ export function Collezioni() {
           >
             {modifica && (
               <div data-i={0} data-y="cima">
-                <button data-f="c-nuova" className="card" style={{ width: '100%' }} aria-label="Nuova collezione" onClick={() => nav.vai({ s: 'nome-collezione' })}>
+                <button data-f="c-nuova" className="card" style={{ width: '100%' }} aria-label="Nuova collezione" onClick={nuova}>
                   <div className="card__img">
-                    <div className="card__segnaposto t-card-titolo">+  Nuova collezione</div>
+                    <div className="card__segnaposto t-card-titolo">{creo ? 'Creo…' : '+  Nuova collezione'}</div>
                   </div>
                 </button>
               </div>
@@ -111,6 +126,9 @@ export function PaginaCollezione({ id }: { id: string }) {
   const [menu, setMenu] = useState(false)
   const [finestra, setFinestra] = useState<null | 'elimina' | 'immagini'>(null)
   const [elimino, setElimino] = useState(false)
+  const [giro, setGiro] = useState(0)
+  /** i suggeriti appena aggiunti spariscono subito dalla riga */
+  const [aggiunti, setAggiunti] = useState<string[]>([])
   const ripresa = useRipresa()
   const lib = getLibraryApi(api)
   const c = useCarica(`collezione:${uid}:${id}`, async () => (await lib.getItem({ itemId: id, userId: uid })).data)
@@ -120,10 +138,24 @@ export function PaginaCollezione({ id }: { id: string }) {
   )
   const [preferita, setPreferita] = useState<boolean | null>(null)
   const el = film.dati ?? []
+  const modifica = !!profilo?.collezioni
+  const suggeriti = useSuggeriti(uid, modifica ? c.dati : undefined, film.dati, giro)
+  const daSuggerire = (suggeriti.dati ?? []).filter((t) => !aggiunti.includes(t.Id!))
+  const aggiungi = async (t: BaseItemDto, k: number) => {
+    setAggiunti((a) => [...a, t.Id!])
+    const vicino = daSuggerire[k + 1] ?? daSuggerire[k - 1]
+    setTimeout(() => mettiId(vicino ? 'sg-' + vicino.Id : 'col-cerca'))
+    try {
+      await aggiungiAllaCollezione(uid, id, t.Id!)
+      film.ricarica()
+    } catch {
+      setAggiunti((a) => a.filter((x) => x !== t.Id))
+    }
+  }
   const anni = el.map((f) => f.ProductionYear ?? 0).filter(Boolean)
   const primoNonVisto = el.find((f) => !f.UserData?.Played) ?? el[0]
   const inLista = preferita ?? !!c.dati?.UserData?.IsFavorite
-  useFuocoIniziale(film.pronto ? 'col-guarda' : null, [film.pronto])
+  useFuocoIniziale(film.pronto ? (el.length ? 'col-guarda' : modifica ? 'col-cerca' : 'col-lista') : null, [film.pronto])
 
   const meta = [
     `${el.length} film`,
@@ -141,7 +173,13 @@ export function PaginaCollezione({ id }: { id: string }) {
             <div className="t-occhiello c-2">Collezione</div>
             <h1 className="t-titolo-scheda" style={{ margin: 0 }}>{c.dati?.Name}</h1>
             <div className="t-meta c-2">{meta.join(' · ')}</div>
+            {film.pronto && !el.length && (
+              <p className="t-sinossi c-2" style={{ margin: 0 }}>
+                {modifica ? 'La collezione è vuota. Aggiungi i suggeriti qui sotto, o cerca un film o una serie.' : 'La collezione è vuota.'}
+              </p>
+            )}
             <div style={{ display: 'flex', gap: 16, marginTop: 40 }}>
+              {el.length > 0 && (
               <Pulsante
                 fid="col-guarda"
                 tipo="principale"
@@ -154,6 +192,12 @@ export function PaginaCollezione({ id }: { id: string }) {
               >
                 Guarda dal primo
               </Pulsante>
+              )}
+              {modifica && (
+                <Pulsante fid="col-cerca" tipo={el.length ? 'secondario' : 'principale'} icona="cerca" onOk={() => nav.vai({ s: 'titoli-collezione', id })}>
+                  Cerca
+                </Pulsante>
+              )}
               <Pulsante
                 fid="col-lista"
                 tipo="icona"
@@ -196,11 +240,25 @@ export function PaginaCollezione({ id }: { id: string }) {
           </div>
         </section>
         <div style={{ position: 'relative', paddingTop: 40, paddingBottom: 400 }}>
-          <Riga g="col-film" titolo="I film, in ordine">
-            {el.map((f, i) => (
-              <Card key={f.Id} fid={'cf-' + f.Id} formato="orizzontale" numero={i + 1} img={orizzontale(f)} titolo={f.Name ?? ''} meta={f.ProductionYear ?? undefined} onOk={() => nav.vai({ s: 'titolo', id: f.Id! })} />
-            ))}
-          </Riga>
+          {el.length > 0 && (
+            <Riga g="col-film" titolo="I film, in ordine">
+              {el.map((f, i) => (
+                <Card key={f.Id} fid={'cf-' + f.Id} formato="orizzontale" numero={i + 1} img={orizzontale(f)} titolo={f.Name ?? ''} meta={f.ProductionYear ?? undefined} onOk={() => nav.vai({ s: 'titolo', id: f.Id! })} />
+              ))}
+            </Riga>
+          )}
+          {modifica && daSuggerire.length > 0 && (
+            <Riga g="col-suggeriti" titolo="Suggeriti" stile={{ marginTop: el.length ? 56 : 0 }}>
+              {daSuggerire.map((t, k) => (
+                <Card key={t.Id} fid={'sg-' + t.Id} formato="orizzontale" img={orizzontale(t)} titolo={t.Name ?? ''} meta="＋ Aggiungi alla collezione" onOk={() => aggiungi(t, k)} />
+              ))}
+              <button data-f="sg-altri" className="card" style={{ width: 400 }} aria-label="Altri suggerimenti" onClick={() => (setAggiunti([]), setGiro((g) => g + 1))}>
+                <div className="card__img">
+                  <div className="card__segnaposto t-card-titolo">Altri suggerimenti</div>
+                </div>
+              </button>
+            </Riga>
+          )}
         </div>
       </div>
       {ripresa.finestra}
@@ -219,7 +277,7 @@ export function PaginaCollezione({ id }: { id: string }) {
               setElimino(true)
               try {
                 await getLibraryApi(api).deleteItem({ itemId: id })
-                dimentica(`collezioni:${uid}:`)
+                dimenticaCollezioni(uid, id)
                 nav.indietro()
               } catch {
                 setElimino(false)

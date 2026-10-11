@@ -4,7 +4,7 @@ import { getLibraryApi } from '@jellyfin/sdk/lib/utils/api/library-api'
 import { getGenreApi } from '@jellyfin/sdk/lib/utils/api/genre-api'
 import { getUserDataApi } from '@jellyfin/sdk/lib/utils/api/user-data-api'
 import type { BaseItemDto } from '@jellyfin/sdk/lib/generated-client/models'
-import { Card, Menu, Pulsante, Riga } from '../componenti'
+import { Card, Menu, Pulsante, Riga, CaricamentoPagina } from '../componenti'
 import { MOOD, generiDelMood, illustrazioneGenere } from '../dati'
 import { api, dimentica, orizzontale, secondi, sfondo, useCarica } from '../jf'
 import { mettiId } from '../fuoco'
@@ -16,7 +16,7 @@ import { PannelloTrama, RigaDati, TramaBreve } from './Titolo'
 
 export function Home() {
   const nav = useNav()
-  const { uid } = useStato()
+  const { uid, profilo } = useStato()
   const ripresa = useRipresa()
   const lib = getLibraryApi(api)
   const [n, setN] = useState(0)
@@ -113,6 +113,27 @@ export function Home() {
   add('La mia lista', lista.dati)
   add('Aggiunti di recente', recenti.dati)
 
+  // Collezioni: se non ce ne sono, chi può crearle trova una card che lo manda nella sezione Collezioni
+  if (collezioni.dati?.length || (collezioni.pronto && profilo?.collezioni)) {
+    const r = righe.length
+    const el = collezioni.dati ?? []
+    righe.push({
+      titolo: 'Collezioni',
+      contenuto: el.length
+        ? el.map((c, i) => (
+            <Card key={c.Id} fid={`r${r}-${i}`} formato="collezione" larghezza={400} img={orizzontale(c)} titolo={c.Name ?? ''} meta={c.ChildCount ? `${c.ChildCount} film` : undefined} onOk={() => apri(c)} />
+          ))
+        : [
+            <button key="vuota" data-f={`r${r}-0`} className="card" style={{ width: 640 }} aria-label="Vai a Collezioni" onClick={() => nav.vai({ s: 'collezioni' })}>
+              <div className="card__img card__img--testo">
+                <div className="t-card-titolo">Non ci sono ancora collezioni</div>
+                <div className="t-meta c-2">Per crearne una vai nella sezione Collezioni del menu.</div>
+              </div>
+            </button>,
+          ],
+    })
+  }
+
   // Generi e Mood con le illustrazioni monocromatiche
   const nomiGeneri = (generi.dati ?? []).map((g) => g.Name ?? '').filter(Boolean)
   const raccolta = (nome: string, occhiello: string, gg: string[], img: string, r: number, i: number, meta?: string) => (
@@ -134,16 +155,6 @@ export function Home() {
     const r = righe.length
     righe.push({ titolo: 'Mood', contenuto: mood.map((m, i) => raccolta(m.nome, 'Mood', m.reali, `media/illustrazioni/mood-${m.id}.svg`, r, i)) })
   }
-  if (collezioni.dati?.length) {
-    const r = righe.length
-    righe.push({
-      titolo: 'Collezioni',
-      contenuto: collezioni.dati.map((c, i) => (
-        <Card key={c.Id} fid={`r${r}-${i}`} formato="collezione" larghezza={400} img={orizzontale(c)} titolo={c.Name ?? ''} meta={c.ChildCount ? `${c.ChildCount} film` : undefined} onOk={() => apri(c)} />
-      )),
-    })
-  }
-
   const cambiaLista = async (t: BaseItemDto) => {
     const ora = preferito(t)
     setInLista((x) => ({ ...x, [t.Id!]: !ora }))
@@ -157,6 +168,7 @@ export function Home() {
 
   return (
     <div className="schermata" data-livello>
+      {!caricato && <CaricamentoPagina />}
       <Menu attiva="home" nascosto={riga > 0} />
       <div
         className="scorre"

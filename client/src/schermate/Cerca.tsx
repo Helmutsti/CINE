@@ -72,12 +72,12 @@ export function Cerca() {
   return (
     <div className="schermata" data-livello>
       <Menu attiva="cerca" />
-      <div style={{ position: 'absolute', left: 96, top: 172, display: 'flex', flexDirection: 'column', gap: 32 }}>
+      <div data-colonna="tastiera" style={{ position: 'absolute', left: 96, top: 172, display: 'flex', flexDirection: 'column', gap: 32 }}>
         <Campo testo={q} suggerimento="Titolo o attore" larghezza={608} />
         <Tastiera testo={q} onCambia={setQ} />
       </div>
       {/* margine di 32 attorno ai risultati: la card a fuoco si ingrandisce e non deve essere tagliata */}
-      <div className="scorre" data-yscroll="0" style={{ left: 744, top: 140, padding: '32px 96px 300px 32px' }}>
+      <div data-colonna="risultati" className="scorre" data-yscroll="0" style={{ left: 744, top: 140, padding: '32px 96px 300px 32px' }}>
         {!cercato ? (
           <p className="t-sinossi c-2" style={{ margin: '12px 0' }}>Scrivi per cercare fra film, serie e attori.</p>
         ) : !pronto ? (

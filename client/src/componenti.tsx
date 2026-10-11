@@ -1,7 +1,7 @@
 /* Componenti della Libreria Figma, in codice. Nomi e varianti come in docs/design/componenti.md. */
 import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import { Icona, type NomeIcona } from './icone'
-import { mettiId, primo } from './fuoco'
+import { mettiId, primo, fuocoDaiTasti } from './fuoco'
 import { useNav, useTasti, type Sezione } from './nav'
 import { useStato } from './stato'
 import { iniziali } from './dati'
@@ -432,6 +432,17 @@ const VOCI: { id: Sezione; testo: string }[] = [
   { id: 'lista', testo: 'La mia lista' },
 ]
 
+let cambioSezione = 0
+
+/** Mentre una sezione carica: un cerchio che gira su tutta la pagina, sotto il menu. */
+export function CaricamentoPagina() {
+  return (
+    <div className="caricamento-pagina" role="status" aria-label="Caricamento">
+      <div className="caricamento-video" />
+    </div>
+  )
+}
+
 export function Menu({ attiva, nascosto }: { attiva: Sezione; nascosto?: boolean }) {
   const nav = useNav()
   const { profilo } = useStato()
@@ -451,7 +462,16 @@ export function Menu({ attiva, nascosto }: { attiva: Sezione; nascosto?: boolean
             className={`voce-menu t-pulsante ${v.id === 'cerca' ? 'voce-menu--icona' : ''} ${attiva === v.id ? 'voce-menu--attiva' : ''}`}
             aria-label={v.id === 'cerca' ? 'Cerca' : undefined}
             aria-current={attiva === v.id ? 'page' : undefined}
-            onClick={() => attiva !== v.id && nav.vai({ s: v.id })}
+            onClick={() => attiva !== v.id && nav.vai({ s: v.id }, 'menu-' + v.id)}
+            onFocus={() => {
+              // solo nella barra del menu: spostandosi con le frecce la sezione cambia da sola, dopo un attimo
+              // (passando di corsa sulle voci non si caricano tutte); col mouse si clicca
+              if (attiva === v.id || !fuocoDaiTasti()) return
+              clearTimeout(cambioSezione)
+              cambioSezione = window.setTimeout(() => {
+                if (document.activeElement?.getAttribute('data-f') === 'menu-' + v.id) nav.vai({ s: v.id }, 'menu-' + v.id)
+              }, 250)
+            }}
           >
             {v.id === 'cerca' ? <Icona nome="cerca" /> : v.testo}
           </button>

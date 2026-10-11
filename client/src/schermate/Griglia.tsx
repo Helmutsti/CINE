@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { getLibraryApi } from '@jellyfin/sdk/lib/utils/api/library-api'
 import { getGenreApi } from '@jellyfin/sdk/lib/utils/api/genre-api'
 import type { BaseItemDto, BaseItemKind, ItemSortBy, SortOrder } from '@jellyfin/sdk/lib/generated-client/models'
-import { Card, FilaGeneri, Menu, OrdinaFiltra, Pulsante } from '../componenti'
+import { Card, FilaGeneri, Menu, OrdinaFiltra, Pulsante, CaricamentoPagina } from '../componenti'
 import { api, locandina, useCarica } from '../jf'
 import { useFuocoIniziale, useNav } from '../nav'
 import { useStato } from '../stato'
@@ -112,6 +112,7 @@ export function Griglia({ sezione }: { sezione: 'film' | 'serie' | 'lista' }) {
 
   return (
     <div className="schermata" data-livello>
+      {!pronto && <CaricamentoPagina />}
       <Menu attiva={sezione} nascosto={riga > 1} />
       {listaVuota ? (
         <div className="vuoto">

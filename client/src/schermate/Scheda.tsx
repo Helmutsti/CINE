@@ -16,10 +16,11 @@ import { useRipresa } from './Ripresa'
 import { Tastiera } from './Tastiera'
 import { CambiaImmagini } from './Immagini'
 import { PannelloTrama, RigaDati, TramaBreve } from './Titolo'
+import { AggiungiACollezione } from './EditorCollezioni'
 
 export function Scheda({ id }: { id: string }) {
   const nav = useNav()
-  const { uid } = useStato()
+  const { uid, profilo } = useStato()
   const ripresa = useRipresa()
   const lib = getLibraryApi(api)
   const voce = useCarica(`titolo:${uid}:${id}`, async () => (await lib.getItem({ itemId: id, userId: uid })).data)
@@ -30,6 +31,7 @@ export function Scheda({ id }: { id: string }) {
   const [altro, setAltro] = useState(false)
   const [metadati, setMetadati] = useState<null | 'scegli' | 'correggi' | 'in-corso' | 'immagini'>(null)
   const [trama, setTrama] = useState(false)
+  const [collezione, setCollezione] = useState(false)
   useFuocoIniziale(t && principale ? 's-principale' : null, [!!t, !!principale])
 
   if (!t) {
@@ -101,6 +103,11 @@ export function Scheda({ id }: { id: string }) {
                   Trailer
                 </Pulsante>
               )}
+              {profilo?.collezioni && (
+                <Pulsante fid="s-collezione" onOk={() => setCollezione(true)}>
+                  Aggiungi a collezione
+                </Pulsante>
+              )}
               <Pulsante fid="s-lista" tipo="icona" icona={inLista ? 'spunta' : 'piu'} etichetta={inLista ? 'Nella mia lista' : 'Aggiungi alla mia lista'} onOk={cambiaLista} />
               <div style={{ position: 'relative' }}>
                 <Pulsante fid="s-altro" tipo="icona" icona="matita" etichetta="Modifica" onOk={() => setAltro(true)} />
@@ -145,6 +152,15 @@ export function Scheda({ id }: { id: string }) {
         </div>
       </div>
 
+      {collezione && (
+        <AggiungiACollezione
+          titolo={t}
+          onChiudi={() => {
+            setCollezione(false)
+            setTimeout(() => mettiId('s-collezione'))
+          }}
+        />
+      )}
       {trama && (
         <PannelloTrama
           id={t.Id!}
@@ -239,14 +255,14 @@ function Correggi({ t, onFatto, onChiudi }: { t: BaseItemDto; onFatto: () => voi
   return (
     <Finestra titolo="Correggi titolo" larghezza={1640} onChiudi={onChiudi}>
       <div style={{ display: 'flex', gap: 64, marginTop: 16 }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+        <div data-colonna="tastiera" style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           <Campo testo={q} suggerimento="Titolo da cercare" larghezza={608} />
           <Tastiera testo={q} onCambia={setQ} g="tastiera-correggi" />
           <Pulsante fid="cor-cerca" onOk={() => setCerca(q.trim())}>
             Cerca
           </Pulsante>
         </div>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 4, maxHeight: 700, overflow: 'auto', scrollbarWidth: 'none' }}>
+        <div data-colonna="risultati" style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 4, maxHeight: 700, overflow: 'auto', scrollbarWidth: 'none' }}>
           <div className="t-meta c-2" style={{ margin: '0 0 12px 24px' }}>
             {applico ? 'Applico il titolo scelto…' : !risultati.pronto ? 'Cerco…' : el.length ? 'Titoli trovati' : 'Nessun titolo trovato.'}
           </div>
