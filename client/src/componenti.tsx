@@ -23,13 +23,15 @@ export function Pulsante(p: {
   iconaDopo?: NomeIcona
   /** un filtro attivo: fondo come la scelta selezionata */
   acceso?: boolean
+  /** classe in più (le misure dei tasti del player) */
+  classe?: string
 }) {
   const tipo = p.tipo ?? 'secondario'
   return (
     <button
       data-f={p.fid}
       data-fpref={p.pref ? '' : undefined}
-      className={`pulsante pulsante--${tipo} ${p.chiaro ? 'pulsante--chiaro' : ''} ${p.acceso ? 'pulsante--acceso' : ''} t-pulsante`}
+      className={`pulsante pulsante--${tipo} ${p.chiaro ? 'pulsante--chiaro' : ''} ${p.acceso ? 'pulsante--acceso' : ''} ${p.classe ?? ''} t-pulsante`}
       aria-label={p.etichetta}
       onClick={p.onOk}
     >

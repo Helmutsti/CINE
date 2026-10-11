@@ -6,6 +6,7 @@
  *   (la schermata, oppure una finestra o un menu aperto sopra).
  * - Un contenitore con data-g="<nome>" ricorda l'ultimo elemento a fuoco: rientrandoci
  *   si torna lì. Senza ricordo si va su [data-fpref], se c'è.
+ * - ↑ ↓ vanno sempre alla riga più vicina: i livelli non si saltano (es. griglia → filtri → menu).
  * - Lo scorrimento verticale lo decide [data-y] sull'antenato più vicino:
  *   "cima" porta il contenitore [data-yscroll] in alto, "inizio" allinea quell'elemento in alto.
  */
@@ -122,6 +123,20 @@ export function muovi(dir: Direzione): boolean {
   const ax = a.left + a.width / 2
   const ay = a.top + a.height / 2
   let migliore: { el: HTMLElement; punti: number } | null = null
+  // ↑ ↓ non saltano le righe: si sceglie solo nella riga più vicina (gli elementi che si
+  // sovrappongono in altezza al più vicino), poi il più allineato in orizzontale
+  let riga: DOMRect | null = null
+  if (dir === 'su' || dir === 'giu') {
+    let gap = Infinity
+    for (const el of livello().querySelectorAll<HTMLElement>('[data-f]')) {
+      if (el === da || !visibile(el)) continue
+      const b = el.getBoundingClientRect()
+      const by = b.top + b.height / 2
+      if (dir === 'giu' ? by <= ay + 1 || b.bottom <= a.bottom : by >= ay - 1 || b.top >= a.top) continue
+      const g = dir === 'giu' ? Math.max(0, b.top - a.bottom) : Math.max(0, a.top - b.bottom)
+      if (g < gap) (gap = g), (riga = b)
+    }
+  }
   for (const el of livello().querySelectorAll<HTMLElement>('[data-f]')) {
     if (el === da || !visibile(el)) continue
     const b = el.getBoundingClientRect()
@@ -137,6 +152,7 @@ export function muovi(dir: Direzione): boolean {
       laterale = Math.abs(by - ay) * 0.05
     } else {
       if (dir === 'giu' ? by <= ay + 1 || b.bottom <= a.bottom : by >= ay - 1 || b.top >= a.top) continue
+      if (riga && Math.min(riga.bottom, b.bottom) - Math.max(riga.top, b.top) <= 0) continue
       principale = dir === 'giu' ? Math.max(0, b.top - a.bottom) : Math.max(0, a.top - b.bottom)
       const sovrapposti = Math.min(a.right, b.right) - Math.max(a.left, b.left) > 0
       laterale = sovrapposti ? Math.abs(bx - ax) * 0.05 : Math.abs(bx - ax)

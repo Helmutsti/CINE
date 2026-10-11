@@ -10,8 +10,10 @@ import cancella from './cancella.svg?raw'
 import frecciaGiu from './freccia-giu.svg?raw'
 import pausa from './pausa.svg?raw'
 import matita from './matita.svg?raw'
+import prossimo from './prossimo.svg?raw'
+import sottotitoli from './sottotitoli.svg?raw'
 
-const SVG = { cerca, play, piu, info, impostazioni, spunta, cancella, 'freccia-giu': frecciaGiu, pausa, matita }
+const SVG = { cerca, play, piu, info, impostazioni, spunta, cancella, 'freccia-giu': frecciaGiu, pausa, matita, prossimo, sottotitoli }
 export type NomeIcona = keyof typeof SVG
 
 const pronte = Object.fromEntries(

@@ -8,6 +8,12 @@ import { api, BASE, DISPOSITIVO, TICK } from './jf'
 
 export type Conversione = 'auto' | 'sempre' | 'mai'
 
+/** Qualità scelta nel player: Automatica, Originale (niente conversione del video) o un'altezza massima. */
+export type Qualita = 'auto' | 'originale' | 1080 | 720 | 480 | 360
+export const ALTEZZE = [1080, 720, 480, 360] as const
+/** bitrate massimo per ogni altezza, quando il server converte */
+const BITRATE: Record<number, number> = { 1080: 12_000_000, 720: 6_000_000, 480: 3_000_000, 360: 1_500_000 }
+
 function profilo(): DeviceProfile {
   const v = document.createElement('video')
   const puo = (t: string) => v.canPlayType(t) !== ''
@@ -68,7 +74,11 @@ export async function chiediSorgente(p: {
   audio?: number
   sottotitoli?: number
   conversione: Conversione
+  /** altezza massima: il server converte il video a questa risoluzione */
+  altezza?: number
 }): Promise<Sorgente | null> {
+  const conversione = p.altezza ? 'sempre' : p.conversione
+  const bitrate = p.altezza ? BITRATE[p.altezza] : 120_000_000
   const r = await getMediaInfoApi(api).getPostedPlaybackInfo({
     itemId: p.itemId,
     userId: p.uid,
@@ -78,16 +88,19 @@ export async function chiediSorgente(p: {
       StartTimeTicks: Math.round(p.inizio * TICK),
       AudioStreamIndex: p.audio,
       SubtitleStreamIndex: p.sottotitoli,
-      EnableDirectPlay: p.conversione !== 'sempre',
-      EnableDirectStream: p.conversione !== 'sempre',
-      EnableTranscoding: p.conversione !== 'mai',
-      AllowVideoStreamCopy: p.conversione !== 'sempre',
-      AllowAudioStreamCopy: p.conversione !== 'sempre',
+      EnableDirectPlay: conversione !== 'sempre',
+      EnableDirectStream: conversione !== 'sempre',
+      EnableTranscoding: conversione !== 'mai',
+      AllowVideoStreamCopy: conversione !== 'sempre',
+      AllowAudioStreamCopy: conversione !== 'sempre',
       AutoOpenLiveStream: true,
-      MaxStreamingBitrate: 120_000_000,
+      MaxStreamingBitrate: bitrate,
     },
   })
-  return scegli(r.data, p.itemId)
+  const s = scegli(r.data, p.itemId)
+  // l'altezza massima il server la legge dall'indirizzo della conversione
+  if (s && p.altezza && s.modo !== 'diretta') s.url += `&maxHeight=${p.altezza}`
+  return s
 }
 
 function scegli(info: PlaybackInfoResponse, itemId: string): Sorgente | null {

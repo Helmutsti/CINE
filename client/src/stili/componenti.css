@@ -663,3 +663,58 @@
   .card__riga-vuota,
   .riga__binario[data-g^="episodi-"] > .card { animation: none; }
 }
+
+/* ---------- SC-13 Player: tasti e caricamento ---------- */
+/* Pausa / play più grande, gli altri tasti più piccoli (2026-10-11) */
+.pulsante.tasto-player--grande {
+  width: 84px;
+  height: 84px;
+}
+.tasto-player--grande .icona {
+  width: 36px;
+  height: 36px;
+}
+.pulsante.tasto-player--piccolo {
+  width: 48px;
+  height: 48px;
+}
+.tasto-player--piccolo .icona {
+  width: 24px;
+  height: 24px;
+}
+.caricamento-video {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 72px;
+  height: 72px;
+  margin: -36px 0 0 -36px;
+  border-radius: 50%;
+  border: 5px solid var(--track);
+  border-top-color: var(--text);
+  animation: gira 900ms linear infinite;
+  pointer-events: none;
+}
+@keyframes gira {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- SC-10 Scheda: riga sotto il titolo e link della trama (2026-10-11) ---------- */
+.bollino-eta {
+  padding: 2px 10px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 var(--bordo-spessore) var(--text-on-image);
+  color: var(--text);
+}
+.link-trama {
+  display: inline;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  font: inherit;
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}

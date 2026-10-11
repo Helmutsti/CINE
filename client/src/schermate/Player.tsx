@@ -1,5 +1,6 @@
 /*
- * SC-13 Player · SC-14 opzioni · SC-15 Prossimo episodio (schema E), con i video del server Jellyfin.
+ * SC-13 Player (menu e capitoli) · SC-14 Sottotitoli e Impostazioni (pannelli laterali) ·
+ * SC-15 Prossimo episodio (schema E), con i video del server Jellyfin.
  * Il punto raggiunto si salva sul profilo Jellyfin ogni 10 secondi e all'uscita.
  */
 import { useEffect, useRef, useState } from 'react'
@@ -9,28 +10,19 @@ import { getShowApi } from '@jellyfin/sdk/lib/utils/api/show-api'
 import { getUserDataApi } from '@jellyfin/sdk/lib/utils/api/user-data-api'
 import { getSessionApi } from '@jellyfin/sdk/lib/utils/api/session-api'
 import type { BaseItemDto, MediaStream } from '@jellyfin/sdk/lib/generated-client/models'
-import { Avanzamento, Finestra, Pulsante, Scelta } from '../componenti'
-import { api, dimentica, orizzontale, secondi, TICK, useCarica } from '../jf'
+import { Avanzamento, Card, Finestra, Pulsante, Scelta } from '../componenti'
+import { api, BASE, dimentica, orizzontale, secondi, TICK, useCarica } from '../jf'
 import { corrente, mettiId } from '../fuoco'
 import { useFuocoIniziale, useNav, useTasti, type Voce } from '../nav'
 import { useStato } from '../stato'
-import { chiediSorgente, urlSottotitoli, type Conversione, type Sorgente } from '../riproduzione'
+import { ALTEZZE, chiediSorgente, urlSottotitoli, type Qualita, type Sorgente } from '../riproduzione'
 import { sigla } from './comune'
 
 const VELOCITA = [0.5, 0.75, 1, 1.25, 1.5, 2]
 const NOMI_VELOCITA = ['0,5×', '0,75×', 'Normale', '1,25×', '1,5×', '2×']
-const CONVERSIONI: { id: Conversione; testo: string }[] = [
-  { id: 'auto', testo: 'Automatica' },
-  { id: 'mai', testo: 'Spenta' },
-  { id: 'sempre', testo: 'Sempre' },
-]
-type Scheda = 'sottotitoli' | 'audio' | 'velocita' | 'transcodifica'
-const SCHEDE: { id: Scheda; nome: string }[] = [
-  { id: 'sottotitoli', nome: 'Sottotitoli' },
-  { id: 'audio', nome: 'Audio' },
-  { id: 'velocita', nome: 'Velocità' },
-  { id: 'transcodifica', nome: 'Transcodifica' },
-]
+type Pannello = 'sottotitoli' | 'impostazioni'
+/** il tasto da cui si apre ogni riga di scelte: chiudendola si torna lì */
+const TASTO_PANNELLO: Record<Pannello, string> = { sottotitoli: 'pl-sottotitoli', impostazioni: 'pl-impostazioni' }
 
 function tempo(s: number) {
   s = Math.max(0, Math.round(s))
@@ -41,18 +33,6 @@ function tempo(s: number) {
 }
 
 const lingua = (s: MediaStream) => s.DisplayTitle || s.Language || `Traccia ${s.Index}`
-
-/** Schermo intero su tutta la pagina, non sul solo <video>: così restano i nostri comandi e il telecomando. */
-function useSchermoIntero() {
-  const [attivo, setAttivo] = useState(() => !!document.fullscreenElement)
-  useEffect(() => {
-    const f = () => setAttivo(!!document.fullscreenElement)
-    document.addEventListener('fullscreenchange', f)
-    return () => document.removeEventListener('fullscreenchange', f)
-  }, [])
-  const cambia = () => (document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen()).catch(() => {})
-  return [attivo, cambia] as const
-}
 
 export function Player({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
   if (voce.trailer?.youtube) return <TrailerYoutube url={voce.trailer.youtube} titolo={voce.trailer.titolo} />
@@ -96,14 +76,18 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
   const [pos, setPos] = useState(0)
   const [inPausa, setInPausa] = useState(false)
   const [comandi, setComandi] = useState(true)
-  const [pannello, setPannello] = useState(false)
-  const [scheda, setScheda] = useState<Scheda>('sottotitoli')
+  const [pannello, setPannello] = useState<Pannello | null>(null)
+  const [fila, setFila] = useState(false)
   const [velocita, setVelocita] = useState(2)
-  const [conversione, setConversione] = useState<Conversione>('auto')
+  const [qualita, setQualita] = useState<Qualita>('auto')
+  /** "Prova la transcodifica": converte anche quando il server proverebbe a mandare il file così com'è */
+  const [forza, setForza] = useState(false)
   const [audio, setAudio] = useState<number | undefined>(undefined)
   const [sotto, setSotto] = useState<number>(-1)
   const [sorgente, setSorgente] = useState<Sorgente | null>(null)
   const [nonRiproducibile, setNonRiproducibile] = useState(false)
+  /** il video sta caricando: si vede il cerchio che gira al posto dello schermo nero */
+  const [carica, setCarica] = useState(true)
   const [prossimoChiuso, setProssimoChiuso] = useState(false)
   const posRef = useRef(0)
   posRef.current = pos
@@ -114,12 +98,12 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
     const i = setInterval(() => video.current && setPos(video.current.currentTime), 500)
     return () => clearInterval(i)
   }, [])
-  const [schermoIntero, cambiaSchermoIntero] = useSchermoIntero()
   const timer = useRef(0)
-  const pannelloRef = useRef(pannello)
-  pannelloRef.current = pannello
+  /** con un pannello o i capitoli aperti il menu non si nasconde da solo */
+  const apertoRef = useRef(false)
+  apertoRef.current = !!pannello || fila
 
-  // ---------- apre lo stream (e lo riapre quando cambiano audio, sottotitoli impressi o conversione) ----------
+  // ---------- apre lo stream (e lo riapre quando cambiano audio, sottotitoli impressi o qualità) ----------
   const inizio = useRef<number | null>(null)
   if (inizio.current === null && t) inizio.current = voce.daCapo || trailer ? 0 : secondi(t.UserData?.PlaybackPositionTicks)
   const [giro, setGiro] = useState(0)
@@ -129,7 +113,16 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
     const da = giro === 0 ? inizio.current ?? 0 : posizione()
     const sottoImpresso = sotto >= 0 && t.MediaStreams?.find((s) => s.Index === sotto)?.IsTextSubtitleStream === false ? sotto : undefined
     setNonRiproducibile(false)
-    chiediSorgente({ itemId: voce.id, uid, inizio: da, audio, sottotitoli: sottoImpresso, conversione })
+    setCarica(true)
+    chiediSorgente({
+      itemId: voce.id,
+      uid,
+      inizio: da,
+      audio,
+      sottotitoli: sottoImpresso,
+      conversione: forza ? 'sempre' : qualita === 'originale' ? 'mai' : 'auto',
+      altezza: typeof qualita === 'number' ? qualita : undefined,
+    })
       .then((s) => {
         if (!vivo) return
         if (!s) return setNonRiproducibile(true)
@@ -157,7 +150,7 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
       vivo = false
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [t?.Id, giro, audio, conversione])
+  }, [t?.Id, giro, audio, qualita, forza])
 
   // sottotitoli testuali: una <track> sul video, senza riaprire lo stream
   const urlSub = sorgente && sotto >= 0 ? urlSottotitoli(sorgente.media, sotto) : null
@@ -225,7 +218,7 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
   const mostra = () => {
     setComandi(true)
     clearTimeout(timer.current)
-    timer.current = window.setTimeout(() => !pannelloRef.current && setComandi(false), 4000)
+    timer.current = window.setTimeout(() => !apertoRef.current && setComandi(false), 4000)
   }
   useEffect(() => {
     mostra()
@@ -245,6 +238,10 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
     const v = video.current
     if (!v) return
     v.currentTime = Math.max(0, Math.min((durata || v.duration) - 1, v.currentTime + sec))
+  }
+  const vaiA = (sec: number) => {
+    const v = video.current
+    if (v) v.currentTime = Math.max(0, sec)
   }
 
   // SC-15: negli ultimi 40 s di un episodio compare il prossimo, con 10 s di conto alla rovescia
@@ -266,20 +263,46 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
     if (!nonRiproducibile && !titoliDiCoda) setTimeout(() => mettiId('pl-pausa'))
   }, [nonRiproducibile, titoliDiCoda])
 
+  // ---------- capitoli ----------
+  const capitoli = (t?.Chapters ?? [])
+    .map((c, i) => ({ i, da: secondi(c.StartPositionTicks), nome: c.Name || `Capitolo ${i + 1}`, img: c.ImageTag ? `${BASE}/Items/${voce.id}/Images/Chapter/${i}?fillWidth=480&quality=80&tag=${c.ImageTag}` : null }))
+    .filter((c) => c.da < durata || !durata)
+  const inCorso = capitoli.reduce((r, c, k) => (c.da <= pos ? k : r), 0)
+  const apriFila = () => {
+    if (capitoli.length < 2) return
+    setFila(true)
+    setTimeout(() => mettiId(`cap-${inCorso}`))
+  }
+  const chiudiFila = () => {
+    setFila(false)
+    mostra()
+    setTimeout(() => mettiId('pl-pausa'))
+  }
+
+  // ---------- pannelli ----------
+  const apri = (p: Pannello) => {
+    setPannello(p)
+    setFila(false)
+  }
+  const chiudi = () => {
+    const da = pannello
+    setPannello(null)
+    mostra()
+    setTimeout(() => mettiId(da ? TASTO_PANNELLO[da] : 'pl-pausa'))
+  }
+
   useTasti((tasto, e) => {
     if (nonRiproducibile || titoliDiCoda) return false
-    if (pannello) {
-      const suTab = corrente()?.dataset.f?.startsWith('tab-')
-      if (tasto === 'indietro' || (tasto === 'su' && suTab)) {
-        setPannello(false)
-        mostra()
-        setTimeout(() => mettiId('pl-pausa'))
-        return true
-      }
-      return false
-    }
     const eraNascosto = !comandi
     mostra()
+    if (pannello) {
+      // ↓ dall'ultima riga di scelte (o dall'unica, nei Sottotitoli) chiude e torna al tasto
+      const f = corrente()?.dataset.f ?? ''
+      const ultima = pannello === 'sottotitoli' || f.startsWith('op-velocita-')
+      if (tasto === 'indietro' || (tasto === 'giu' && ultima)) return chiudi(), true
+      return false
+    }
+    // a menu chiuso: OK pausa, ← → saltano di 10 s (30 tenendo premuto), gli altri tasti mostrano il menu
     if (eraNascosto) {
       if (tasto === 'ok') pausa(!inPausa)
       if (tasto === 'sinistra' || tasto === 'destra') salta((tasto === 'destra' ? 1 : -1) * (e.repeat ? 30 : 10))
@@ -287,50 +310,60 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
       setTimeout(() => mettiId('pl-pausa'))
       return true
     }
+    if (fila) {
+      if (tasto === 'indietro' || tasto === 'giu') return chiudiFila(), true
+      if (tasto === 'su') return true
+      return false
+    }
     if (tasto === 'indietro') return esci(), true
     const f = corrente()?.dataset.f
-    const nelMenu = !!corrente()?.closest('[data-g="pl-menu"]')
     if (f === 'pl-barra' && (tasto === 'sinistra' || tasto === 'destra')) {
       salta((tasto === 'destra' ? 1 : -1) * durata * (e.repeat ? 0.04 : 0.02))
       return true
     }
-    // ← → saltano di 10 s (30 tenendo premuto); nel menu in alto spostano il fuoco
-    if ((tasto === 'sinistra' || tasto === 'destra') && !nelMenu) {
-      salta((tasto === 'destra' ? 1 : -1) * (e.repeat ? 30 : 10))
-      return true
-    }
-    // ↑ porta dritto al menu in alto, ↓ dal menu torna al play
-    if (tasto === 'su' && !nelMenu) {
-      const voce = document.querySelector<HTMLElement>('[data-g="pl-menu"] [data-f]')
-      if (voce?.dataset.f) mettiId(voce.dataset.f)
-      return true
-    }
-    if (tasto === 'giu' && nelMenu) {
-      mettiId('pl-pausa')
-      return true
-    }
-    if (tasto === 'giu' && f === 'pl-pausa' && !trailer) {
-      setPannello(true)
-      setTimeout(() => mettiId('tab-' + scheda))
+    // dalla barra si torna ai tasti con ↓ o OK (← → lì spostano il punto)
+    if (f === 'pl-barra' && (tasto === 'giu' || tasto === 'ok')) return mettiId('pl-pausa'), true
+    if (tasto === 'su') return apriFila(), true
+    // ↓ dai tasti chiude il menu
+    if (tasto === 'giu') {
+      clearTimeout(timer.current)
+      setComandi(false)
       return true
     }
     return false
   })
 
-  // ---------- opzioni ----------
+  // ---------- scelte dei pannelli ----------
   const flussi = sorgente?.media.MediaStreams ?? t?.MediaStreams ?? []
   const subs = flussi.filter((s) => s.Type === 'Subtitle')
   const audios = flussi.filter((s) => s.Type === 'Audio')
   const audioAttivo = audio ?? sorgente?.media.DefaultAudioStreamIndex ?? audios[0]?.Index
-  const scelte: Record<Scheda, { id: string; testo: string; attiva: boolean; ok: () => void }[]> = {
-    sottotitoli: [{ id: '-1', testo: 'Nessuno', attiva: sotto < 0, ok: () => cambiaSottotitoli(-1) }, ...subs.map((s) => ({ id: String(s.Index), testo: lingua(s), attiva: sotto === s.Index, ok: () => cambiaSottotitoli(s.Index!) }))],
-    audio: audios.map((s) => ({ id: String(s.Index), testo: lingua(s), attiva: audioAttivo === s.Index, ok: () => setAudio(s.Index!) })),
-    velocita: NOMI_VELOCITA.map((n, i) => ({ id: String(i), testo: n, attiva: velocita === i, ok: () => setVelocita(i) })),
-    transcodifica: CONVERSIONI.map((c) => ({ id: c.id, testo: c.testo, attiva: conversione === c.id, ok: () => setConversione(c.id) })),
-  }
+  const altezzaFile = (t?.MediaStreams ?? []).find((s) => s.Type === 'Video')?.Height ?? 1080
+  type Opzione = { id: string; testo: string; attiva: boolean; ok: () => void }
+  const sceltaSottotitoli: Opzione[] = [{ id: '-1', testo: 'Nessuno', attiva: sotto < 0, ok: () => cambiaSottotitoli(-1) }, ...subs.map((s) => ({ id: String(s.Index), testo: lingua(s), attiva: sotto === s.Index, ok: () => cambiaSottotitoli(s.Index!) }))]
+  const gruppi: { id: string; nome: string; scelte: Opzione[] }[] = [
+    { id: 'audio', nome: 'Audio', scelte: audios.map((s) => ({ id: String(s.Index), testo: lingua(s), attiva: audioAttivo === s.Index, ok: () => setAudio(s.Index!) })) },
+    {
+      id: 'qualita',
+      nome: 'Qualità',
+      scelte: [
+        { id: 'auto', testo: 'Automatica', valore: 'auto' as Qualita },
+        { id: 'originale', testo: 'Originale', valore: 'originale' as Qualita },
+        ...ALTEZZE.filter((h) => h <= altezzaFile).map((h) => ({ id: String(h), testo: `${h}p`, valore: h as Qualita })),
+      ].map((q) => ({ id: q.id, testo: q.testo, attiva: qualita === q.valore, ok: () => (setForza(false), setQualita(q.valore)) })),
+    },
+    { id: 'velocita', nome: 'Velocità', scelte: NOMI_VELOCITA.map((n, i) => ({ id: String(i), testo: n, attiva: velocita === i, ok: () => setVelocita(i) })) },
+  ]
+  // aprendo un pannello il fuoco va sulla scelta in uso (nelle Impostazioni, quella dell'Audio)
+  useEffect(() => {
+    if (!pannello) return
+    const prima = pannello === 'sottotitoli' ? [{ id: 'sottotitoli', scelte: sceltaSottotitoli }] : gruppi.filter((g) => g.scelte.length)
+    const g = prima[0]
+    if (g) setTimeout(() => mettiId(`op-${g.id}-${(g.scelte.find((s) => s.attiva) ?? g.scelte[0]).id}`))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pannello])
 
-  const capitoli = (t?.Chapters ?? []).map((c) => secondi(c.StartPositionTicks)).filter((s) => s > 0 && s < durata)
-  const punti = [0, ...capitoli, durata]
+  const punti = [0, ...capitoli.map((c) => c.da).filter((s) => s > 0 && s < durata), durata]
   const titoloSopra = trailer ? `Trailer · ${voce.trailer!.titolo}` : ep ? t?.SeriesName : t?.Name
   const sottotitolo = ep && t ? `${sigla(t)} · ${t.Name}` : null
 
@@ -343,6 +376,11 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
         onTimeUpdate={(e) => setPos(e.currentTarget.currentTime)}
         onPause={() => setInPausa(true)}
         onPlay={() => setInPausa(false)}
+        onWaiting={() => setCarica(true)}
+        onPlaying={() => setCarica(false)}
+        onCanPlay={() => setCarica(false)}
+        onSeeking={() => setCarica(true)}
+        onSeeked={() => setCarica(false)}
         onEnded={() => (prossimo.dati && !trailer ? vaiAlProssimo() : (fermaESalva(true), nav.indietro()))}
         onError={() => !hls.current && setNonRiproducibile(true)}
         style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', opacity: nonRiproducibile ? 0 : 1 }}
@@ -350,67 +388,87 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
         {urlSub && <track key={urlSub} kind="subtitles" src={urlSub} default />}
       </video>
 
-      {!nonRiproducibile && !pannello && (
-        <div style={{ position: 'absolute', inset: 0, opacity: comandi ? 1 : 0, transition: 'opacity 300ms', background: 'linear-gradient(to bottom, var(--scrim), transparent 22%, transparent 70%, var(--scrim))' }}>
+      {carica && !nonRiproducibile && <div className="caricamento-video" role="status" aria-label="Caricamento" />}
+
+      {!nonRiproducibile && (
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            opacity: comandi ? 1 : 0,
+            transition: 'opacity 300ms',
+            background: fila || pannello ? 'linear-gradient(to bottom, var(--scrim), transparent 22%, transparent 35%, var(--scrim) 55%, var(--bg-player))' : 'linear-gradient(to bottom, var(--scrim), transparent 22%, transparent 70%, var(--scrim))',
+          }}
+        >
           <div style={{ position: 'absolute', left: 96, top: 64, display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div className="t-titolo-riga">{titoloSopra}</div>
             {sottotitolo && <div className="t-meta c-2">{sottotitolo}</div>}
           </div>
-          <div data-g="pl-menu" style={{ position: 'absolute', right: 96, top: 64, display: 'flex', gap: 16 }}>
-            {prossimo.dati && <Pulsante fid="pl-successivo" onOk={vaiAlProssimo}>Episodio successivo</Pulsante>}
-            {document.fullscreenEnabled && <Pulsante fid="pl-schermo" onOk={cambiaSchermoIntero}>{schermoIntero ? 'Esci da schermo intero' : 'Schermo intero'}</Pulsante>}
-          </div>
-          <div style={{ position: 'absolute', left: 96, right: 96, bottom: 72, display: 'flex', flexDirection: 'column', gap: 16 }}>
-            <button data-f="pl-barra" className="anello" aria-label="Posizione" style={{ position: 'relative', height: 24, borderRadius: 8, display: 'flex', alignItems: 'center', gap: 4 }}>
-              {punti.slice(0, -1).map((da, i) => {
-                const a = punti[i + 1]
-                return <Avanzamento key={i} valore={(pos - da) / Math.max(1, a - da)} stile={{ flex: a - da, background: 'var(--track)' }} />
-              })}
-            </button>
-            <div className="t-meta" style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-on-image)' }}>
-              <span>{tempo(pos)}</span>
-              <span>−{tempo(durata - pos)}</span>
+
+          {fila && (
+            <div data-g="capitoli" data-xscroll="96" style={{ position: 'absolute', left: 0, right: 0, bottom: 212, display: 'flex', gap: 'var(--rail-gap)', padding: '24px 96px', overflow: 'hidden' }}>
+              {capitoli.map((c, k) => (
+                <Card
+                  key={c.i}
+                  fid={`cap-${k}`}
+                  formato="episodio"
+                  img={c.img}
+                  titolo={c.nome}
+                  meta={tempo(c.da)}
+                  onOk={() => {
+                    vaiA(c.da)
+                    chiudiFila()
+                  }}
+                />
+              ))}
             </div>
-            <div style={{ position: 'relative', height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 24, marginTop: 8 }}>
-              {!trailer && (
-                <div className="t-meta" style={{ position: 'absolute', left: 0, color: 'var(--text-on-image)' }}>
-                  ↓ Sottotitoli · Audio · Velocità · Transcodifica
+          )}
+
+          {pannello && (
+            <div style={{ position: 'absolute', left: 96, right: 96, bottom: 228, display: 'flex', flexDirection: 'column', gap: 24 }}>
+              {(pannello === 'sottotitoli' ? [{ id: 'sottotitoli', nome: 'Sottotitoli', scelte: sceltaSottotitoli }] : gruppi).map((g) => (
+                <div key={g.id} style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
+                  <div className="t-meta c-2" style={{ width: 160, flex: 'none' }}>
+                    {g.nome}
+                  </div>
+                  {g.scelte.length === 0 && <span className="t-meta c-3">Nessuna traccia disponibile.</span>}
+                  <div data-g={`op-${g.id}`} data-xscroll="0" style={{ display: 'flex', gap: 12, overflow: 'hidden', padding: 8, margin: -8 }}>
+                    {g.scelte.map((s) => (
+                      <Scelta
+                        key={s.id}
+                        fid={`op-${g.id}-${s.id}`}
+                        testo={s.testo}
+                        selezionata={s.attiva}
+                        onOk={() => {
+                          s.ok()
+                          if (pannello === 'sottotitoli') chiudi()
+                        }}
+                      />
+                    ))}
+                  </div>
                 </div>
-              )}
-              <Pulsante fid="pl-pausa" tipo="icona" chiaro icona={inPausa ? 'play' : 'pausa'} etichetta={inPausa ? 'Riproduci' : 'Pausa'} onOk={() => pausa(!inPausa)} />
-              <div className="t-meta" style={{ position: 'absolute', right: 0, color: 'var(--text-on-image)' }}>
-                ← → 10 s · ↑ Menu
+              ))}
+            </div>
+          )}
+          <div style={{ position: 'absolute', left: 96, right: 96, bottom: 96, display: 'flex', alignItems: 'center', gap: 48 }}>
+            <div style={{ flex: 1, position: 'relative' }}>
+              <button data-f="pl-barra" className="anello" aria-label="Posizione" style={{ width: '100%', height: 24, borderRadius: 8, display: 'flex', alignItems: 'center', gap: 4 }}>
+                {punti.slice(0, -1).map((da, i) => {
+                  const a = punti[i + 1]
+                  return <Avanzamento key={i} valore={(pos - da) / Math.max(1, a - da)} stile={{ flex: a - da, background: 'var(--track)' }} />
+                })}
+              </button>
+              <div className="t-meta" style={{ position: 'absolute', left: 0, right: 0, top: 'calc(100% + 12px)', display: 'flex', justifyContent: 'space-between', color: 'var(--text-on-image)' }}>
+                <span>{tempo(pos)}</span>
+                <span>−{tempo(durata - pos)}</span>
               </div>
             </div>
-          </div>
-        </div>
-      )}
-
-      {pannello && (
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 30%, var(--scrim) 55%, var(--bg-player))' }}>
-          <div style={{ position: 'absolute', left: 96, right: 96, bottom: 120, display: 'flex', flexDirection: 'column', gap: 40 }}>
-            <div className="t-meta c-2">{[titoloSopra, sottotitolo].filter(Boolean).join(' · ')}</div>
-            <div style={{ display: 'flex', gap: 16 }} data-g="tab">
-              {SCHEDE.map((k) => (
-                <button
-                  key={k.id}
-                  data-f={'tab-' + k.id}
-                  data-fpref={k.id === scheda ? '' : undefined}
-                  className={`voce-tab t-pulsante ${k.id === scheda ? 'voce-tab--attiva' : ''}`}
-                  onFocus={() => setScheda(k.id)}
-                  onClick={() => mettiId(`op-${k.id}-${scelte[k.id].find((s) => s.attiva)?.id ?? scelte[k.id][0]?.id}`)}
-                >
-                  {k.nome}
-                </button>
-              ))}
+            <div data-g="pl-tasti" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+              <Pulsante fid="pl-pausa" tipo="icona" chiaro classe="tasto-player--grande" icona={inPausa ? 'play' : 'pausa'} etichetta={inPausa ? 'Riproduci' : 'Pausa'} onOk={() => pausa(!inPausa)} />
+              {prossimo.dati && <Pulsante fid="pl-prossimo" tipo="icona" classe="tasto-player--piccolo" icona="prossimo" etichetta="Episodio successivo" onOk={vaiAlProssimo} />}
+              {!trailer && <Pulsante fid="pl-sottotitoli" tipo="icona" classe="tasto-player--piccolo" icona="sottotitoli" etichetta="Sottotitoli" onOk={() => apri('sottotitoli')} />}
+              {!trailer && <Pulsante fid="pl-impostazioni" tipo="icona" classe="tasto-player--piccolo" icona="impostazioni" etichetta="Impostazioni" onOk={() => apri('impostazioni')} />}
             </div>
-            <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }} data-g={'scelte-' + scheda}>
-              {scelte[scheda].length === 0 && <span className="t-meta c-2">Nessuna traccia disponibile.</span>}
-              {scelte[scheda].map((s) => (
-                <Scelta key={s.id} fid={`op-${scheda}-${s.id}`} testo={s.testo} selezionata={s.attiva} pref={s.attiva} onOk={s.ok} />
-              ))}
-            </div>
-            {scheda === 'transcodifica' && sorgente && <div className="t-meta c-2">Adesso: {sorgente.modo === 'diretta' ? 'riproduzione diretta' : sorgente.modo === 'parziale' ? 'conversione leggera' : 'conversione completa'} · {sorgente.dettaglio}</div>}
           </div>
         </div>
       )}
@@ -420,12 +478,13 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
       {nonRiproducibile && (
         <Finestra
           titolo="Questo titolo non si può riprodurre"
-          testo={conversione === 'mai' ? 'Il file usa un formato che questo dispositivo non legge e la transcodifica è spenta.' : 'Il file usa un formato che questo dispositivo non legge. Puoi provare a convertirlo mentre lo guardi.'}
+          testo={qualita === 'originale' ? 'Il file usa un formato che questo dispositivo non legge e la qualità è su Originale, senza conversione.' : 'Il file usa un formato che questo dispositivo non legge. Puoi provare a convertirlo mentre lo guardi.'}
           onChiudi={() => nav.indietro()}
         >
           <NonRiproducibileAzioni
             onProva={() => {
-              setConversione('sempre')
+              if (qualita === 'originale') setQualita('auto')
+              else setForza(true)
               setGiro((g) => g + 1)
             }}
             onTorna={() => nav.indietro()}

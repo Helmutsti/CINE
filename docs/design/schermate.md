@@ -13,11 +13,11 @@ Il disegno vive in Figma, nel file dei mockup (link in `AGENTS.md`). Qui c'è tu
 | SC-07 | Pagina collezione | C | 9 | — | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=23-349) approvato per ora |
 | SC-08 | La mia lista | B | 8 | Lista vuota | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=22-222) approvato per ora |
 | SC-09 | Cerca | D | 6 | Nessun risultato · filtri attivi | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=18-70) approvato per ora |
-| SC-10 | Scheda film | C | 2, 5, 7, 8, 11 | Titolo già iniziato · menu "Altro" aperto | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=17-158) approvato per ora |
+| SC-10 | Scheda film | C | 2, 5, 7, 8, 11 | Titolo già iniziato · menu "Altro" aperto · Trama (Leggi altro) | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=17-158) approvato per ora |
 | SC-11 | Scheda serie | C | 3 | Stagione scelta | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=23-212) approvato per ora |
 | SC-12 | Pagina attore | C | 7 | — | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=23-311) approvato per ora |
-| SC-13 | Player | E | 4, 5 | Comandi nascosti / visibili · titolo non riproducibile | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=18-208) approvato per ora |
-| SC-14 | Player · opzioni | E | 4 | Sottotitoli · Audio · Velocità · Transcodifica | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=24-145) approvato per ora |
+| SC-13 | Player | E | 4, 5 | Menu (tasti a destra della barra) · Capitoli (↑) · titolo non riproducibile | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=57-98) approvato per ora |
+| SC-14 | Player · Sottotitoli e Impostazioni | E | 4 | Sottotitoli · Impostazioni (Audio, Qualità, Velocità), righe di scelte sopra la barra | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=63-207) approvato per ora |
 | SC-15 | Player · Prossimo episodio | E | 3 | — | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=24-260) approvato per ora |
 | SC-16 | Aggiorna metadati | F | 11 | Correggi titolo (elenco dei risultati) | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=25-459) approvato per ora |
 | SC-17 | Impostazioni | F | 11, 12 | Libreria · Profili · profilo con 18+ e PIN | [Wireframe](https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9?node-id=25-517) approvato per ora |

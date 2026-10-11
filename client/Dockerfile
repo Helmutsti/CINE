@@ -7,7 +7,7 @@ COPY . .
 RUN npm run build
 
 FROM nginx:1.29-alpine
-ARG VERSIONE=1.1.0
+ARG VERSIONE=1.2.0
 ENV CINETECA_VERSIONE=${VERSIONE} \
     JELLYFIN_URL=http://jellyfin:8096 \
     JELLYFIN_API_KEY=""
