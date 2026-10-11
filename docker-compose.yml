@@ -4,7 +4,7 @@
 # 3. Apri http://localhost:8080
 services:
   cineteca:
-    image: ghcr.io/helmutsti/cineteca:1.2.0
+    image: ghcr.io/helmutsti/cineteca:1.3.0
     container_name: cineteca
     ports:
       - "8080:80"
