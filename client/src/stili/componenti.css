@@ -701,8 +701,8 @@
 
 /* ---------- SC-10 Scheda: riga sotto il titolo e link della trama (2026-10-11) ---------- */
 .bollino-eta {
-  padding: 2px 10px;
-  border-radius: 6px;
+  padding: var(--sp-badge-v) var(--sp-badge-o);
+  border-radius: var(--r-badge);
   box-shadow: inset 0 0 0 var(--bordo-spessore) var(--text-on-image);
   color: var(--text);
 }
@@ -754,4 +754,230 @@
   inset: 0;
   z-index: 8;
   background: var(--bg);
+}
+
+/* ---------- SC-03 Home a sezioni (2026-10-16) ----------
+   Una sezione alla volta fra due bande vuote (0–160 e 920–1080). Cambiando sezione quella che lascia
+   si stringe verso la banda, quella che arriva si allarga dalla banda; lo sfondo si dissolve. */
+.sfondo-home {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+}
+.sfondo-home__livello {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+}
+.sfondo-home__livello img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sfondo-home__livello--entra {
+  animation: dissolvi var(--sezione-durata) ease-in-out;
+}
+.sfondo-home__sfumature {
+  position: absolute;
+  inset: 0;
+  background: var(--sfumatura-alto) top / 100% 420px no-repeat, var(--sfumatura-basso), var(--sfumatura-sinistra);
+}
+.sezione-home {
+  position: absolute;
+  inset: 0;
+  transform-origin: 0 0;
+  transition:
+    transform var(--sezione-durata) ease-in-out,
+    opacity var(--sezione-durata) ease-in-out,
+    visibility 0s linear var(--sezione-durata);
+}
+.sezione-home--attiva {
+  transition:
+    transform var(--sezione-durata) ease-in-out,
+    opacity var(--sezione-durata) ease-in-out,
+    visibility 0s;
+}
+/* fuori fuoco: al 50%, allineata a sinistra sul margine, dentro la banda sopra o sotto, e invisibile */
+.sezione-home--sopra {
+  transform: translate(calc(var(--gutter) / 2), -320px) scale(0.5);
+  opacity: 0;
+  visibility: hidden;
+}
+.sezione-home--sotto {
+  transform: translate(calc(var(--gutter) / 2), 864px) scale(0.5);
+  opacity: 0;
+  visibility: hidden;
+}
+.sezione-home__etichetta {
+  position: absolute;
+  left: var(--gutter);
+  top: 184px;
+  margin: 0;
+}
+.sezione-home__testo {
+  position: absolute;
+  left: var(--gutter);
+  bottom: 180px;
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-16);
+}
+.sezione-home__testo--stretto {
+  width: 820px;
+}
+.sezione-home__azioni {
+  display: flex;
+  gap: var(--sp-16);
+  margin-top: var(--sp-24);
+}
+.sezione-home__trama {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.sezione-home__card {
+  position: absolute;
+  left: 904px;
+  right: 0;
+  top: 605px;
+}
+.sezione-home__locandine {
+  position: absolute;
+  left: 904px;
+  right: 0;
+  top: 505px;
+}
+.sezione-home__pillbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 244px;
+  gap: var(--sp-scelte-gap);
+}
+.sezione-home__griglia {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 340px;
+  bottom: 0;
+  padding: 24px 0 240px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.sezione-home__riga-griglia {
+  display: flex;
+  gap: var(--rail-gap);
+  padding: 0 var(--gutter);
+  margin-bottom: var(--rail-gap);
+}
+
+/* i pallini dell'Hero: un solo elemento che prende il fuoco, ← → cambiano titolo */
+.pallini {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-8);
+  padding: var(--sp-menu-margine);
+  border-radius: var(--r-pill);
+}
+.pallini:focus {
+  background: var(--surface-glass);
+  outline: var(--focus-spessore) solid var(--focus-ring);
+  outline-offset: var(--focus-distanza);
+}
+.pallini__punto {
+  width: var(--punto);
+  height: var(--avanzamento);
+  border-radius: var(--r-pill);
+  background: var(--indicator);
+  transition: width var(--fuoco-durata) ease;
+}
+.pallini__punto--acceso {
+  width: 40px;
+  background: var(--text);
+}
+
+/* menu laterale: si apre con ← dal primo elemento a sinistra; chiuso non si vede */
+.menu-laterale {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+}
+.menu-laterale__velo {
+  position: absolute;
+  inset: 0;
+  background: var(--scrim);
+  animation: dissolvi 250ms ease;
+}
+.menu-laterale__pannello {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 440px;
+  padding: var(--sp-48);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: var(--bg);
+  animation: entra-da-sinistra 250ms ease-out;
+}
+@keyframes entra-da-sinistra {
+  from { transform: translateX(-100%); }
+  to { transform: none; }
+}
+.menu-laterale__profilo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-16);
+  padding: var(--sp-8) var(--sp-24) var(--sp-8) var(--sp-8);
+  border-radius: var(--r-pill);
+  color: var(--text);
+}
+.menu-laterale__profilo:focus {
+  background: var(--control-light);
+  color: var(--on-light);
+}
+@media (prefers-reduced-motion: reduce) {
+  .sezione-home,
+  .sfondo-home__livello--entra,
+  .menu-laterale__pannello,
+  .menu-laterale__velo { transition: none; animation: none; }
+}
+/* Continua a guardare · La mia lista: il titolo parte più in alto, sotto il tempo guardato e quello che manca */
+.sezione-home__testo--titoli {
+  top: 360px;
+  bottom: auto;
+  width: 820px;
+}
+.sezione-home__tempo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-16);
+}
+.sezione-home__tempo .avanzamento {
+  width: 320px;
+  flex: none;
+}
+/* cambiando titolo o collezione il contenuto si dissolve, invece di scattare */
+.sezione-home__cambia {
+  animation: dissolvi 300ms ease;
+}
+/* Intero catalogo: griglia da 6 centrata; scritta e ordinamento allineati al suo bordo */
+.sezione-home__riga-griglia {
+  width: calc(6 * 226px + 5 * var(--rail-gap));
+  margin: 0 auto var(--rail-gap);
+  padding: 0;
+}
+.sezione-home__etichetta--catalogo {
+  left: calc((1920px - 6 * 226px - 5 * var(--rail-gap)) / 2);
+}
+.sezione-home__pillbar--catalogo {
+  padding-left: calc((1920px - 6 * 226px - 5 * var(--rail-gap)) / 2);
+}
+@media (prefers-reduced-motion: reduce) {
+  .sezione-home__cambia { animation: none; }
 }

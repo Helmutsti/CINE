@@ -13,7 +13,7 @@ Il lavoro grafico segue la skill **design-figma** (il metodo è nel file `guida.
 | File | Link | Note |
 |---|---|---|
 | Libreria (design system) | https://www.figma.com/design/eYNqEwanEOjEg1AvAuvqaE | Pagine: Moodboard, Direzioni, Token, Componenti base, Componenti composti, Prove |
-| Mockup (file di lavoro) | https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9 | Usa la libreria pubblicata. Frame delle schermate con il codice `SC-`. Pagine: TV (`0:1`), Mobile (`1:2`) |
+| Mockup (file di lavoro) | https://www.figma.com/design/e5fAumwlY1theDJrlsmnD9 | Usa la libreria pubblicata. Frame delle schermate con il codice `SC-`. Pagine: Wireframe TV (`16:74`) e Mockup TV (`102:504`), divise in sezioni per area: Avvio · Home · Sfogliare · Collezioni · Schede · Player · Impostazioni; una riga per schermata, stati a destra, nota sotto ogni frame |
 | Riferimento (vecchio design "Granito") | https://www.figma.com/design/w5Lw5jmVjFjBilyf5Vynvq | **Solo lettura.** Pagine: 01 · TV — Granito (`0:1`), 02 · Mobile (`2:2`), 03 · Componenti Granito (`2:3`), 04 · Fondamenti e consegna (`2:4`), 05 · Archivio — sistemi visivi (`2:5`, fuori perimetro). Non è una fonte di verità: serve per recuperare i token |
 
 ID delle pagine (per i controlli automatici):

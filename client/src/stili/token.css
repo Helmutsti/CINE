@@ -62,6 +62,8 @@
   --sp-badge-v: 4px;
   --sp-badge-o: 8px;
   --sp-interruttore: 4px;
+  --sp-scelte-gap: 12px;
+  --sp-dati-gap: 16px; /* spazio/dati/gap, creato il 2026-10-16 */
   --sp-8: 8px;
   --sp-16: 16px;
   --sp-24: 24px;
@@ -100,6 +102,7 @@
   /* Movimento */
   --fuoco-scala: 1.1;
   --fuoco-durata: 150ms;
+  --sezione-durata: 450ms; /* cambio di sezione nella Home: scorrimento a voci e dissolvenza dello sfondo */
 
   /* Ombra */
   --elevazione-sollevata: 0 24px 48px var(--shadow-raised);

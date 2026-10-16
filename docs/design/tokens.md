@@ -83,6 +83,18 @@ Primitivi (R3d, 2026-10-08): `spazio/0, 4, 8, 12, 16, 24, 32, 48, 64, 96`. Gli s
 | `spazio/interruttore/margine` | spazio/4 | rinviato | Dal bordo dell'Interruttore al pomello (CMP-15) |
 | `spazio/elenco/margine` | spazio/16 | rinviato | Margine interno del Menu a tendina (CMP-17), ruolo Elenco (2026-10-10) |
 | `spazio/elenco/gap` | spazio/8 | rinviato | Distanza fra le voci del Menu a tendina (CMP-17) (2026-10-10) |
+| `spazio/tasto-player/grande` | spazio/24 | rinviato | Margine interno del tasto grande del player: 24 + icona 36 + 24 = 84 (2026-10-11) |
+| `spazio/tasto-player/piccolo` | spazio/12 | rinviato | Margine interno dei tasti piccoli del player: 12 + icona 24 + 12 = 48 (2026-10-11) |
+| `spazio/azioni/gap` | spazio/16 | `--sp-16` | Fra i pulsanti di una fila di azioni (scheda, finestre, tasti del player) e fra le parti della riga sotto il titolo (2026-10-11) |
+| `spazio/scelte/gap` | spazio/12 | rinviato | Fra le pillole Scelta (CMP-11) di una fila (2026-10-11) |
+| `spazio/scelte/righe` | spazio/24 | `--sp-24` | Fra le righe di scelte del player (Sottotitoli, Impostazioni) (2026-10-11) |
+| `spazio/scelte/etichetta` | spazio/32 | rinviato | Dall'etichetta di una riga di scelte alle sue pillole (2026-10-11) |
+| `spazio/pannello/margine` | spazio/64 | `--sp-64` | Margine interno dei pannelli laterali (trama) (2026-10-11) |
+| `spazio/pannello/gap` | spazio/24 | `--sp-24` | Fra i blocchi di un pannello laterale (2026-10-11) |
+| `spazio/finestra/margine` | spazio/48 | `--sp-48` | Margine interno delle finestre (2026-10-11) |
+| `spazio/finestra/gap` | spazio/16 | `--sp-16` | Fra titolo, testo e contenuto di una finestra (2026-10-11) |
+| `spazio/testo/gap` | spazio/12 | rinviato | Fra blocchi di testo vicini (i crediti della trama) (2026-10-11) |
+| `spazio/tavola/margine` · `/gap` · `/nota` | spazio/64 · 32 · 8 | — | Solo nelle schede dei wireframe del Mockup (documentazione): margine della scheda, distanza fra titolo, schermata e nota, righe della nota (2026-10-11) |
 
 ## Semantici · dimensioni e movimento
 Primitivi: `misura/1,5, 2, 3, 28, 32, 40, 60, 72, 96, 104, 160, 200` (1,5, 2 e 28 aggiunti il 2026-10-08; 32, 40, 72, 96, 160 e 200 il 2026-10-09); `raggio/10, 12, 14, 16, 20, 999` (16 aggiunto il 2026-10-09). Scartati da Granito i raggi 16, 22, 34 e i raggi a mano (30, 28,5, 24,5…, che erano pillole).
@@ -108,6 +120,8 @@ Primitivi: `misura/1,5, 2, 3, 28, 32, 40, 60, 72, 96, 104, 160, 200` (1,5, 2 e 2
 | `misura/avatar` | misura/160 | rinviato | Lato dell'Avatar del profilo grande (CMP-08). Era misura/200, troppo grande (2026-10-10) |
 | `misura/cast` | misura/160 | rinviato | Lato della foto della Persona del cast (CMP-09) |
 | `misura/avanzamento` | spazio/4 | rinviato | Spessore della barra di avanzamento (CMP-07) |
+| `misura/icona/grande` | misura/36 (primitivo nuovo) | rinviato | Icona del tasto grande del player (pausa / play) (2026-10-11) |
+| `misura/icona/piccola` | misura/24 (primitivo nuovo) | rinviato | Icona dei tasti piccoli del player (2026-10-11) |
 | `raggio/card/fuoco` | raggio/16 | rinviato | Bordo di fuoco della card: `raggio/card` 12 + `misura/focus/distanza` 4, parallelo alla card |
 | `raggio/pillola` | raggio/999 | `--r-pill` | Controlli alti una riga |
 | `raggio/badge` | raggio/10 | `--r-badge` | Badge |

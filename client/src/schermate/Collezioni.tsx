@@ -310,7 +310,7 @@ export function PaginaCollezione({ id }: { id: string }) {
 }
 
 /** Elimina collezione: il fuoco parte da Annulla, perché eliminare non si può annullare. */
-function AzioniElimina({ elimino, onElimina, onAnnulla }: { elimino: boolean; onElimina: () => void; onAnnulla: () => void }) {
+export function AzioniElimina({ elimino, onElimina, onAnnulla }: { elimino: boolean; onElimina: () => void; onAnnulla: () => void }) {
   useFuocoIniziale('el-annulla')
   return (
     <div className="finestra__azioni">

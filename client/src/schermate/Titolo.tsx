@@ -19,7 +19,7 @@ export function RigaDati({ t }: { t: BaseItemDto }) {
   ].filter(Boolean)
   const voto = t.CommunityRating ? t.CommunityRating.toFixed(1).replace('.', ',') : null
   return (
-    <div className="t-meta" style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+    <div className="t-meta" style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-dati-gap)', flexWrap: 'wrap' }}>
       {t.OfficialRating && <span className="bollino-eta t-etichetta">{t.OfficialRating}</span>}
       {voto && <span>★ {voto}</span>}
       {dati.length > 0 && <span>{dati.join('  ·  ')}</span>}
@@ -113,7 +113,7 @@ export function PannelloTrama({ id, onChiudi }: { id: string; onChiudi: () => vo
   ].filter(([, v]) => v)
   return (
     <div data-livello style={{ position: 'absolute', inset: 0, zIndex: 50, background: 'var(--scrim)' }}>
-      <div ref={scorre} role="dialog" aria-label={`Trama · ${t.Name}`} style={{ position: 'absolute', top: 0, right: 0, bottom: 0, width: 800, padding: '72px 64px', background: 'var(--surface)', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 28 }}>
+      <div ref={scorre} role="dialog" aria-label={`Trama · ${t.Name}`} style={{ position: 'absolute', top: 0, right: 0, bottom: 0, width: 800, padding: 'var(--sp-64)', background: 'var(--surface)', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 'var(--sp-24)' }}>
         <div className="t-occhiello c-3">Trama</div>
         <h2 className="t-titolo-sezione" style={{ margin: 0 }}>{t.Name}</h2>
         {(t.Overview ?? '').split(/\n+/).map((x, i) => (

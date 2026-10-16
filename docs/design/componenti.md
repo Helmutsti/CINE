@@ -166,7 +166,7 @@ Un set di componenti per icona, variante `Dimensione=28` (`misura/icona`). `Icon
 | Formato | Rapporto | Larghezza dell'anteprima | Testo sotto |
 |---|---|---|---|
 | Orizzontale | 16:9 | 400 | Solo a fuoco: titolo e meta |
-| Locandina | 2:3 | 226 | Solo a fuoco: titolo |
+| Locandina | 2:3 | 226 (a fuoco l'immagine si ingrandisce dal centro a `movimento/fuoco/scala` 1,10, come uno zoom: la card resta 226, non si alza e non sposta le altre; dal 2026-10-16) | Solo a fuoco: titolo |
 | Episodio | 16:9 | 336 | Sempre: titolo ("E4 · Il lago") e durata (eccezione alla regola 4) |
 | Collezione | 16:9 | 416 | Il nome sta sull'immagine, in basso a sinistra (`Titolo/Riga`), sopra `Sfumatura/Card`; a fuoco sotto la meta ("3 film") |
 
