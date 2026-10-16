@@ -9,6 +9,8 @@
  * - ↑ ↓ vanno sempre alla riga più vicina: i livelli non si saltano (es. griglia → filtri → menu).
  * - Colonne affiancate ([data-colonna], es. tastiera e risultati): ↑ ↓ restano nella colonna in cui si è;
  *   si cambia colonna con ← →. Gli elementi fuori da ogni colonna (il menu) restano raggiungibili.
+ * - Griglia con scorrimento continuo ([data-griglia="continua"], solo la libreria Film): → sull'ultimo
+ *   della riga va al primo della riga sotto, prima di ogni altra scelta.
  * - Lo scorrimento verticale lo decide [data-y] sull'antenato più vicino:
  *   "cima" porta il contenitore [data-yscroll] in alto, "inizio" allinea quell'elemento in alto.
  */
@@ -128,6 +130,15 @@ function fuoriRiga(dir: 'su' | 'giu', a: DOMRect, b: DOMRect, ay: number, by: nu
 export function muovi(dir: Direzione): boolean {
   const da = corrente()
   if (!da) return primo()
+  if (dir === 'destra') {
+    const continua = da.closest<HTMLElement>('[data-griglia="continua"]')
+    if (continua) {
+      const tutti = [...continua.querySelectorAll<HTMLElement>('[data-f]')].filter(visibile)
+      const dopo = tutti[tutti.indexOf(da) + 1]
+      // a fine riga il successivo comincia più in basso: si va lì, il menu o altro non conta
+      if (dopo && dopo.getBoundingClientRect().top > da.getBoundingClientRect().bottom) return metti(dopo)
+    }
+  }
   const a = da.getBoundingClientRect()
   const ax = a.left + a.width / 2
   const ay = a.top + a.height / 2

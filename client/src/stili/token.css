@@ -63,6 +63,8 @@
   --sp-badge-o: 8px;
   --sp-interruttore: 4px;
   --sp-scelte-gap: 12px;
+  --sp-gruppo-gap: 8px; /* spazio tra le voci del gruppo di pulsanti (spazio/gruppo/gap), 2026-10-16 */
+  --sp-gruppo-margine: 4px; /* spazio/gruppo/margine: dal bordo del gruppo di pulsanti alle voci (CMP-18), 2026-10-16 */
   --sp-dati-gap: 16px; /* spazio/dati/gap, creato il 2026-10-16 */
   --sp-8: 8px;
   --sp-16: 16px;
@@ -87,6 +89,7 @@
   --pomello: 32px;
   --voce: 72px;
   --avatar: 160px;
+  --avatar-ritratto: 240px; /* misura/avatar/ritratto: Chi guarda?, profili come card verticali 2:3, 2026-10-16 */
   --avatar-piccolo: 48px; /* la foto nel menu in alto (scelta C) */ /* era 200, portato a 160 su richiesta (2026-10-10) */
   --cast: 160px;
   --avanzamento: 4px;
@@ -101,7 +104,11 @@
 
   /* Movimento */
   --fuoco-scala: 1.1;
+  --fuoco-attenuata: 0.55; /* movimento/fuoco/attenuata: luminosità delle immagini vicine a quella in fuoco, 2026-10-16 */
   --fuoco-durata: 150ms;
+  --gruppo-durata: 380ms; /* movimento/gruppo/durata: lo scorrere del fondo del gruppo di pulsanti, 2026-10-16 (era 300) */
+  --gruppo-curva: cubic-bezier(0.34, 1.35, 0.64, 1); /* movimento/gruppo/curva: arriva con un piccolo rimbalzo, 2026-10-16 */
+  --catalogo-ingresso: 380px; /* Intero catalogo: di quanto è più in basso entrando, finché il fuoco è sull'ordinamento (2026-10-16) */
   --sezione-durata: 450ms; /* cambio di sezione nella Home: scorrimento a voci e dissolvenza dello sfondo */
 
   /* Ombra */

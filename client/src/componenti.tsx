@@ -52,6 +52,25 @@ export function Avanzamento({ valore, stile }: { valore: number; stile?: CSSProp
 }
 
 // ---------- CMP-04 Card ----------
+/** L'immagine di una card: se non arriva (server lento o in errore) riprova una volta dopo 2 s,
+ *  poi mostra il titolo come quando l'immagine non c'è, invece dell'immagine rotta. */
+function ImmagineCard({ src, titolo }: { src: string; titolo: string }) {
+  // 0 = primo tentativo; un numero = l'ora del secondo (rende diverso l'indirizzo); -1 = rinuncia
+  const [riprova, setRiprova] = useState(0)
+  useEffect(() => setRiprova(0), [src])
+  if (riprova < 0) return <div className="card__segnaposto t-card-titolo">{titolo}</div>
+  const url = riprova ? `${src}${src.includes('?') ? '&' : '?'}riprova=${riprova}` : src
+  return (
+    <img
+      key={url}
+      src={url}
+      alt=""
+      loading="lazy"
+      onError={() => (riprova === 0 ? setTimeout(() => setRiprova(Date.now()), 2000) : setRiprova(-1))}
+    />
+  )
+}
+
 export function Card(p: {
   fid: string
   formato: 'orizzontale' | 'locandina' | 'episodio' | 'collezione'
@@ -79,7 +98,7 @@ export function Card(p: {
     >
       <div className="card__img">
         {p.img ? (
-          <img src={p.img} alt="" loading="lazy" />
+          <ImmagineCard src={p.img} titolo={p.titolo} />
         ) : (
           <div className="card__segnaposto t-card-titolo">{p.titolo}</div>
         )}
@@ -122,8 +141,11 @@ export function Avatar(p: {
   nota?: string
   piccolo?: boolean
   piu?: boolean
+  /** verticale 2:3, come una locandina (Chi guarda?) */
+  ritratto?: boolean
   onOk?: () => void
 }) {
+  const classe = `avatar ${p.piccolo ? 'avatar--piccolo' : ''} ${p.ritratto ? 'avatar--ritratto' : ''}`
   const contenuto = (
     <>
       <div className={`avatar__tondo ${p.piccolo ? 't-etichetta' : 't-titolo-sezione'}`}>
@@ -134,11 +156,11 @@ export function Avatar(p: {
     </>
   )
   return p.fid ? (
-    <button data-f={p.fid} className={`avatar ${p.piccolo ? 'avatar--piccolo' : ''}`} aria-label={p.nome} onClick={p.onOk}>
+    <button data-f={p.fid} className={classe} aria-label={p.nome} onClick={p.onOk}>
       {contenuto}
     </button>
   ) : (
-    <div className={`avatar ${p.piccolo ? 'avatar--piccolo' : ''}`}>{contenuto}</div>
+    <div className={classe}>{contenuto}</div>
   )
 }
 
@@ -174,6 +196,80 @@ export function Scelta(p: { fid: string; testo: string; selezionata?: boolean; o
       {p.selezionata && <Icona nome="spunta" />}
       {p.testo}
     </button>
+  )
+}
+
+// ---------- Gruppo di pulsanti (Home, 2026-10-16): una barra sola che scorre, al posto delle Scelte ----------
+export function GruppoPulsanti(p: {
+  strato: string
+  voci: { fid: string; testo: string; selezionata: boolean; onOk?: () => void; onFuoco?: () => void }[]
+  classe?: string
+  ingresso?: boolean
+}) {
+  // il fondo è un elemento solo che scivola da una voce all'altra: segue il fuoco (chiaro)
+  // quando il fuoco è nel gruppo, altrimenti sta sulla voce scelta
+  const barra = useRef<HTMLDivElement>(null)
+  const [fuoco, setFuoco] = useState<number | null>(null)
+  const scelta = fuoco ?? p.voci.findIndex((v) => v.selezionata)
+  const primaVolta = useRef(true)
+  useLayoutEffect(() => {
+    const ind = barra.current?.querySelector<HTMLElement>('.gruppo__indicatore')
+    if (!ind) return
+    const metti = (subito: boolean) => {
+      const v = barra.current?.querySelectorAll<HTMLElement>('.gruppo__voce')[scelta]
+      // all'apertura (e quando cambiano le misure) il fondo è già al suo posto, senza scivolare
+      if (subito) ind.style.transition = 'none'
+      ind.style.opacity = v ? '1' : '0'
+      if (v) {
+        ind.style.width = `${v.offsetWidth}px`
+        ind.style.transform = `translateX(${v.offsetLeft}px)`
+      }
+      if (subito) {
+        void ind.offsetWidth
+        ind.style.transition = ''
+      }
+    }
+    const prima = primaVolta.current
+    primaVolta.current = false
+    metti(prima)
+    if (!prima) return
+    // solo all'apertura: il carattere può arrivare dopo e cambiare la larghezza delle voci
+    let vivo = true
+    document.fonts?.ready.then(() => vivo && metti(true))
+    return () => {
+      vivo = false
+    }
+  }, [scelta, p.voci.length])
+  return (
+    <div
+      ref={barra}
+      className={`gruppo ${p.classe ?? ''}`}
+      role="group"
+      data-strato={p.strato}
+      data-ingresso={p.ingresso ? '' : undefined}
+      data-xscroll="96"
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setFuoco(null)
+      }}
+    >
+      <div className={`gruppo__indicatore ${fuoco != null ? 'gruppo__indicatore--fuoco' : ''}`} aria-hidden />
+      {p.voci.map((v, i) => (
+        <button
+          key={v.fid}
+          data-f={v.fid}
+          data-fpref={v.selezionata ? '' : undefined}
+          className={`gruppo__voce t-pulsante ${v.selezionata ? 'gruppo__voce--selezionata' : ''}`}
+          aria-pressed={v.selezionata}
+          onClick={v.onOk}
+          onFocus={() => {
+            setFuoco(i)
+            v.onFuoco?.()
+          }}
+        >
+          {v.testo}
+        </button>
+      ))}
+    </div>
   )
 }
 

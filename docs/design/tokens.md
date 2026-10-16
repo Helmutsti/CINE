@@ -87,6 +87,8 @@ Primitivi (R3d, 2026-10-08): `spazio/0, 4, 8, 12, 16, 24, 32, 48, 64, 96`. Gli s
 | `spazio/tasto-player/piccolo` | spazio/12 | rinviato | Margine interno dei tasti piccoli del player: 12 + icona 24 + 12 = 48 (2026-10-11) |
 | `spazio/azioni/gap` | spazio/16 | `--sp-16` | Fra i pulsanti di una fila di azioni (scheda, finestre, tasti del player) e fra le parti della riga sotto il titolo (2026-10-11) |
 | `spazio/scelte/gap` | spazio/12 | rinviato | Fra le pillole Scelta (CMP-11) di una fila (2026-10-11) |
+| `spazio/gruppo/gap` | spazio/8 | `--sp-gruppo-gap` | Fra le voci del Gruppo di pulsanti (CMP-18), 2026-10-16 |
+| `spazio/gruppo/margine` | spazio/4 | `--sp-gruppo-margine` | Dal bordo del Gruppo di pulsanti alle voci (CMP-18), 2026-10-16 |
 | `spazio/scelte/righe` | spazio/24 | `--sp-24` | Fra le righe di scelte del player (Sottotitoli, Impostazioni) (2026-10-11) |
 | `spazio/scelte/etichetta` | spazio/32 | rinviato | Dall'etichetta di una riga di scelte alle sue pillole (2026-10-11) |
 | `spazio/pannello/margine` | spazio/64 | `--sp-64` | Margine interno dei pannelli laterali (trama) (2026-10-11) |
@@ -117,6 +119,8 @@ Primitivi: `misura/1,5, 2, 3, 28, 32, 40, 60, 72, 96, 104, 160, 200` (1,5, 2 e 2
 | `misura/interruttore/pomello` | misura/32 | rinviato | Diametro del pomello dell'Interruttore (CMP-15) |
 | `misura/voce` | misura/72 | rinviato | Altezza minima della Voce di elenco (CMP-16) e altezza della sua locandina |
 | `misura/avatar/piccolo` | misura/48 (primitivo nuovo) | rinviato | Lato dell'Avatar piccolo, la foto nel menu in alto (scelta C, 2026-10-10) |
+| `misura/avatar/ritratto` | misura/240 (primitivo nuovo) | `--avatar-ritratto` | Larghezza dell'Avatar Ritratto, Chi guarda? (SC-01), 2026-10-16 |
+| `misura/avatar/ritratto/altezza` | misura/360 (primitivo nuovo) | rinviato (nel codice `aspect-ratio: 2 / 3`) | Altezza dell'Avatar Ritratto, 1,5 × la larghezza, 2026-10-16 |
 | `misura/avatar` | misura/160 | rinviato | Lato dell'Avatar del profilo grande (CMP-08). Era misura/200, troppo grande (2026-10-10) |
 | `misura/cast` | misura/160 | rinviato | Lato della foto della Persona del cast (CMP-09) |
 | `misura/avanzamento` | spazio/4 | rinviato | Spessore della barra di avanzamento (CMP-07) |
@@ -136,6 +140,9 @@ Figma non ha variabili per scala e durata: i valori vivono qui e nelle tavole, n
 |---|---|---|
 | `movimento/fuoco/scala` | 1,10 | Ingrandimento dell'elemento a fuoco (regola 3 della Sala) |
 | `movimento/fuoco/durata` | 150 ms | Passaggio del fuoco da un elemento all'altro |
+| `movimento/fuoco/attenuata` | 0,55 | Luminosità delle immagini vicine a quella in fuoco (`--fuoco-attenuata`), 2026-10-16 |
+| `movimento/gruppo/durata` | 380 ms | Il fondo del Gruppo di pulsanti scivola alla nuova voce (`--gruppo-durata`), 2026-10-16 (era 300: poco evidente) |
+| `movimento/gruppo/curva` | cubic-bezier(0,34; 1,35; 0,64; 1) | Arriva con un piccolo rimbalzo (`--gruppo-curva`), 2026-10-16 |
 
 Altre durate si definiscono quando servono, in R4.
 

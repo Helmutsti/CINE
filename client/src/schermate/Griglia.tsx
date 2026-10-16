@@ -53,11 +53,11 @@ export function useGriglia(chiave: string, carica: (start: number, quanti: numbe
   return { el, totale, altri }
 }
 
-export function GrigliaLocandine({ el, prefisso, altri, onRiga }: { el: BaseItemDto[]; prefisso: string; altri?: () => void; onRiga?: (r: number) => void }) {
+export function GrigliaLocandine({ el, prefisso, altri, onRiga, continua }: { el: BaseItemDto[]; prefisso: string; altri?: () => void; onRiga?: (r: number) => void; continua?: boolean }) {
   const nav = useNav()
   return (
     <div
-      data-griglia
+      data-griglia={continua ? 'continua' : ''}
       style={{ display: 'grid', gridTemplateColumns: `repeat(${COLONNE}, 1fr)`, columnGap: 'var(--rail-gap)', rowGap: 32, padding: '0 96px 400px' }}
       onFocus={(e) => {
         const i = Number((e.target as HTMLElement).closest<HTMLElement>('[data-i]')?.dataset.i ?? 0)
@@ -156,7 +156,8 @@ export function Griglia({ sezione }: { sezione: 'film' | 'serie' | 'lista' }) {
               </Pulsante>
             </div>
           ) : (
-            <GrigliaLocandine el={g.el} prefisso="g-" altri={g.altri} onRiga={setRiga} />
+            // solo Film: → a fine riga continua nella riga sotto (2026-10-16)
+            <GrigliaLocandine el={g.el} prefisso="g-" altri={g.altri} onRiga={setRiga} continua={sezione === 'film'} />
           )}
         </div>
       )}

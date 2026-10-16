@@ -12,7 +12,7 @@ I componenti vivono nella libreria Figma: pagina **Componenti base** e pagina **
 | CMP-05 | Riga di card | composto | Da disegnare |
 | CMP-06 | Titolo in evidenza | composto | Da disegnare |
 | CMP-07 | Barra di avanzamento | base | Approvato (2026-10-09) |
-| CMP-08 | Avatar del profilo (Piccolo, Grande) | base | Approvato (2026-10-09) |
+| CMP-08 | Avatar del profilo (Piccolo, Grande, Ritratto) | base | Approvato (2026-10-09); Ritratto disegnato il 2026-10-16, da approvare |
 | CMP-09 | Persona del cast | base | Approvato (2026-10-09) |
 | CMP-10 | Etichetta tecnica | base | Approvato (2026-10-09) |
 | CMP-11 | Scelta | base | Approvato (2026-10-09) |
@@ -22,11 +22,19 @@ I componenti vivono nella libreria Figma: pagina **Componenti base** e pagina **
 | CMP-15 | Interruttore | base | Disegnato (2026-10-09), da approvare |
 | CMP-16 | Voce di elenco (Semplice, Con dettaglio, Con locandina, Con interruttore) | base | Disegnato (2026-10-09), da approvare |
 | CMP-17 | Menu a tendina (con la parte interna Intestazione del menu) | composto | Disegnato (2026-10-10), da approvare |
+| CMP-18 | Gruppo di pulsanti (con la parte interna Voce del gruppo) | composto | Disegnato (2026-10-16), da approvare |
 
 Inventario dai wireframe (approvato il 2026-10-09), ancora da disegnare. Composti: Intestazione di sezione, Tastiera a schermo e tastierino del PIN, Finestra, Comandi del player e pannello opzioni, Riquadro Prossimo episodio, Stato vuoto. Da rivedere: CMP-03 (voci Collezioni e La mia lista, immagine del profilo al posto dell'ingranaggio).
 
+### Fuoco: solo colori (2026-10-16)
+Vale per tutti i componenti e **supera** gli anelli scritti negli stati Focus qui sotto (`focus/anello`, `misura/focus/spessore`, `misura/focus/distanza` non si usano più).
+- **Controlli** (Pulsante, Voce del menu, Scelta, Voce del gruppo, Tasto, Voce di elenco, Campo di testo, link): in fuoco si accendono in chiaro, fondo `controllo/chiaro` e testo e icone `testo/su-chiaro`; senza contorno. Il Pulsante **Principale** e il Solo icona chiaro, senza fuoco, sono vetro come il Secondario: chiaro è solo il fuoco. Selezionata + Focus: chiaro anche lei (la Scelta tiene la spunta).
+- **Immagini** (Card, Avatar, Persona del cast, foto del profilo nel menu): in fuoco si ingrandiscono a `movimento/fuoco/scala` con `Elevazione/Sollevata`; le altre della stessa riga scendono a `movimento/fuoco/attenuata` (luminosità 0,55).
+- Pallini dell'Hero: solo indicatore, non prendono il fuoco.
+
 ### Parti interne
 - CMP-02 Voce del menu (pagina Componenti composti, sezione Parti interne): pezzo del CMP-03 Menu in alto.
+- Voce del gruppo (pagina Componenti composti, sezione Parti interne, set `107:405`): pezzo del CMP-18 Gruppo di pulsanti.
 
 ### Spazi dei contenitori
 | Ruolo | Token | Valore | Dove |
@@ -206,6 +214,7 @@ Un set di componenti per icona, variante `Dimensione=28` (`misura/icona`). `Icon
 - **Dimensione:** Piccolo, lato `misura/avatar/piccolo` (48; era 60, scelta C del 2026-10-10), iniziali `Etichetta`, senza testo sotto, usato dentro il Menu in alto; Grande, lato `misura/avatar` (160), iniziali `Titolo/Riga`, sotto nome (`Etichetta`) e nota facoltativa (`Didascalia`, `testo/tenue`, es. "18+ nascosti").
 - Tondo `raggio/pillola`, fondo `superficie/rialzata`, iniziali `testo/primario`; l'immagine del profilo, se c'è, lo riempie. Testo sotto a `spazio/card/testo`, nome e nota a `spazio/card/meta`. Largo quanto il tondo: i nomi lunghi vanno a capo.
 - **Proprietà:** Dimensione, Stato, Iniziali, Nome, Nota, Mostra nota (spenta di base). "Aggiungi" è un Grande con "+" al posto delle iniziali.
+- **Ritratto** (2026-10-16, Chi guarda? SC-01; era tra le proposte da confermare, chiesto dall'utente): card verticale 2:3, larga `misura/avatar/ritratto` (240) e alta `misura/avatar/ritratto/altezza` (360), raggio `raggio/card`, iniziali `Titolo/Sezione` al centro, nome e nota sotto come il Grande. Focus: anello `focus/anello` a `raggio/card/fuoco`. Varianti `107:382` Default, `107:389` Focus.
 
 | Stato | Descrizione |
 |---|---|
@@ -348,3 +357,22 @@ Un set di componenti per icona, variante `Dimensione=28` (`misura/icona`). `Icon
 - **Telecomando:** si apre con OK sul pulsante, fuoco sulla voce scelta; ↑ ↓ fra le voci; OK sceglie e chiude; Indietro chiude senza cambiare; ← → non fanno niente.
 - Stati: quelli delle voci (Default, Selezionata = scelta attuale, Focus).
 
+---
+
+## CMP-18 – Gruppo di pulsanti
+**Tipo:** composto · **Usato in:** SC-03 Home, sezioni Collezioni (nomi delle collezioni) e Intero catalogo (ordinamento); lì **supera** CMP-11 Scelta · **Figma:** pagina Componenti composti, componente `107:406`; parte interna Voce del gruppo, set `107:405`
+
+**Scopo:** scegliere un'opzione fra alcune in una barra sola, quando le opzioni sono tante o lunghe (nomi delle collezioni).
+- Barra `superficie/vetro` con contorno `bordo/su-immagine` di `misura/bordo/spessore`, raggio `raggio/pillola`, margine `spazio/gruppo/margine` (4), voci a `spazio/gruppo/gap` (8). Se le voci non ci stanno, la barra scorre in orizzontale (nel codice `data-xscroll`), larga al massimo quanto lo spazio fra i margini della schermata.
+- **Voce del gruppo:** senza bordo, alta `misura/icona-slot` (60), padding `spazio/controllo/orizzontale`, testo `Controllo/Pulsante`, raggio `raggio/pillola`. Niente spunta: la voce scelta non cambia larghezza. Proprietà: Testo.
+
+| Stato della voce | Descrizione |
+|---|---|
+| Default | Senza fondo, testo `testo/secondario` |
+| Selezionata | Fondo `superficie/attiva`, testo `testo/primario` |
+| Focus · Focus selezionata | Fondo `controllo/chiaro`, testo `testo/su-chiaro` (fuoco a colori, 2026-10-16) |
+| Disabilitato, Errore, Caricamento | Non previsti |
+
+- **Movimento:** il fondo è uno solo e scivola alla nuova voce prendendone la larghezza, in `movimento/gruppo/durata` (380 ms) con `movimento/gruppo/curva` (piccolo rimbalzo); con il fuoco nel gruppo è chiaro e segue il fuoco, senza fuoco sta sulla voce scelta (`superficie/attiva`); il testo cambia colore in dissolvenza. All'apertura è già al suo posto. Con «riduci movimento» il cambio è istantaneo.
+- **Telecomando:** ← → fra le voci; basta arrivare su una voce per sceglierla. Nell'ordinamento la scelta parte quando il fuoco si ferma 400 ms (o subito con OK), così passando veloce non parte una richiesta al server per ogni voce.
+- **Lettori di schermo:** `role="group"`, ogni voce è un pulsante con `aria-pressed`.

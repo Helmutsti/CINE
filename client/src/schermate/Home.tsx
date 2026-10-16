@@ -9,9 +9,8 @@
  */
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import { getLibraryApi } from '@jellyfin/sdk/lib/utils/api/library-api'
-import { getUserDataApi } from '@jellyfin/sdk/lib/utils/api/user-data-api'
 import type { BaseItemDto, ItemSortBy, SortOrder } from '@jellyfin/sdk/lib/generated-client/models'
-import { Avanzamento, Card, CaricamentoPagina, Finestra, Pulsante, Scelta, Tendina } from '../componenti'
+import { Avanzamento, Card, CaricamentoPagina, Finestra, GruppoPulsanti, Icona, Pulsante, Tendina } from '../componenti'
 import { durata, iniziali } from '../dati'
 import { api, dimentica, locandina, orizzontale, secondi, sfondo, useCarica } from '../jf'
 import { corrente, livello, metti, mettiId } from '../fuoco'
@@ -19,7 +18,7 @@ import { useNav, useTasti } from '../nav'
 import { useStato } from '../stato'
 import { CAMPI, episodioDaGuardare, restano, sigla, useAzionePrincipale } from './comune'
 import { useRipresa } from './Ripresa'
-import { PannelloTrama, RigaDati, TramaBreve } from './Titolo'
+import { RigaDati } from './Titolo'
 import { useGriglia } from './Griglia'
 import { AzioniElimina } from './Collezioni'
 import { CambiaImmagini } from './Immagini'
@@ -102,8 +101,6 @@ export function Home() {
   Object.assign(ricordo, { sezione, hero: heroN, continua: contSel, collezione: collSel, lista: listaSel, ordine })
   const [toccato, setToccato] = useState(false)
   const [menu, setMenu] = useState(false)
-  const [trama, setTrama] = useState<{ id: string; torna: string } | null>(null)
-  const [inLista, setInLista] = useState<Record<string, boolean>>({})
   const [finestra, setFinestra] = useState<null | { tipo: 'elimina' | 'immagini'; c: BaseItemDto }>(null)
   const [elimino, setElimino] = useState(false)
 
@@ -155,12 +152,28 @@ export function Home() {
     return null
   }
 
+  // gli sfondi del carosello si caricano subito: cambiando titolo l'immagine c'è già
+  useEffect(() => {
+    for (const t of titoli) {
+      const u = sfondo(t)
+      if (u) new Image().src = u
+    }
+  }, [titoli])
+
   // ---------- il titolo in evidenza cambia da solo ogni 8 s, finché non si tocca il telecomando ----------
   useEffect(() => {
     if (toccato || chiaveAttiva !== 'hero' || titoli.length < 2) return
     const t = setInterval(() => setHeroN((x) => (x + 1) % titoli.length), 8000)
     return () => clearInterval(t)
   }, [toccato, chiaveAttiva, titoli.length])
+
+  // cambiando titolo i pulsanti dell'Hero si rifanno: il fuoco torna sullo stesso pulsante
+  const fuocoHero = useRef<string | undefined>(undefined)
+  useLayoutEffect(() => {
+    if (chiaveAttiva !== 'hero' || corrente()) return
+    if (!mettiId(fuocoHero.current)) entraSezione(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [heroN])
 
   // ---------- fuoco all'apertura e al cambio di sezione ----------
   const ingresso = useRef<'alto' | 'basso' | 'ricordo'>('ricordo')
@@ -193,6 +206,8 @@ export function Home() {
 
   useTasti((t) => {
     if (!t || !pronto) return false
+    // una finestra o un menu aperto sopra la Home: decide la navigazione normale
+    if (!livello().classList.contains('sezione-home')) return false
     if (chiaveAttiva === 'hero' && !toccato) setToccato(true)
     const da = corrente()
     const strato = da?.closest<HTMLElement>('[data-strato]')
@@ -200,12 +215,17 @@ export function Home() {
     if (t === 'ok') return false
     if (!da || !strato) return entraSezione(false), true
     if (t === 'sinistra' || t === 'destra') {
-      // i pallini dell'Hero: ← → cambiano titolo; ← sul primo apre il menu
-      if (da.dataset.f === 'ev-pallini') {
-        if (t === 'destra') setHeroN((x) => (x + 1) % titoli.length)
-        else if (heroN % titoli.length > 0) setHeroN((x) => x - 1)
-        else apriMenu()
-        return true
+      // Hero: i pulsanti scorrono anche il carosello. ← sul primo pulsante = titolo precedente
+      // (sul primo titolo apre il menu), → sull'ultimo = titolo successivo; fra i due pulsanti ← → li cambiano
+      if (strato.dataset.strato === 'hero-pulsanti' && titoli.length > 1) {
+        const el = elementi(strato)
+        const i = el.indexOf(da)
+        if (t === 'destra' && i === el.length - 1) return setHeroN((x) => (x + 1) % titoli.length), true
+        if (t === 'sinistra' && i === 0) {
+          if (heroN % titoli.length > 0) setHeroN((x) => x - 1)
+          else apriMenu()
+          return true
+        }
       }
       const el = elementi(strato)
       const v = el[el.indexOf(da) + (t === 'destra' ? 1 : -1)]
@@ -221,16 +241,6 @@ export function Home() {
   }, [pronto, chiaveAttiva, heroN, titoli.length, toccato, attiva, sezioni.join()])
 
   // ---------- azioni ----------
-  const preferito = (t?: BaseItemDto) => (t ? (inLista[t.Id!] ?? !!t.UserData?.IsFavorite) : false)
-  const cambiaLista = async (t: BaseItemDto) => {
-    const ora = preferito(t)
-    setInLista((x) => ({ ...x, [t.Id!]: !ora }))
-    const ud = getUserDataApi(api)
-    if (ora) await ud.unmarkFavoriteItem({ itemId: t.Id!, userId: uid })
-    else await ud.markFavoriteItem({ itemId: t.Id!, userId: uid })
-    // la sezione La mia lista si aggiorna al prossimo rientro nella Home
-    dimentica(`griglia:lista:${uid}`)
-  }
   const apri = (t: BaseItemDto) => nav.vai({ s: t.Type === 'BoxSet' ? 'collezione' : 'titolo', id: t.Id! })
   /** OK su una card: parte il titolo (per una serie l'episodio da cui ripartire); se è iniziato, Riprendi o Ricomincia */
   const avviaTitolo = async (t: BaseItemDto, fid: string) => {
@@ -261,12 +271,13 @@ export function Home() {
   const contenuto = (k: Chiave): ReactNode => {
     switch (k) {
       case 'hero':
-        return eroe && <SezioneHero t={eroe} n={heroN % titoli.length} totale={titoli.length} inLista={preferito(eroe)} ripresa={ripresa} onLista={() => cambiaLista(eroe)} onTrama={() => setTrama({ id: eroe.Id!, torna: 'ev-trama' })} />
+        return eroe && <SezioneHero t={eroe} n={heroN % titoli.length} totale={titoli.length} ripresa={ripresa} />
       case 'continua':
         return (
           <SezioneTitoli
             k="cont"
             etichetta="Continua a guardare"
+            senzaTrama
             el={elCont}
             sel={Math.min(contSel, elCont.length - 1)}
             onSel={setContSel}
@@ -320,7 +331,7 @@ export function Home() {
           />
         )
       case 'catalogo':
-        return <SezioneCatalogo el={catalogo.el} totale={catalogo.totale} ordine={ordine} onOrdine={setOrdine} onAltri={catalogo.altri} onApri={apri} />
+        return <SezioneCatalogo attiva={chiaveAttiva === 'catalogo'} el={catalogo.el} totale={catalogo.totale} ordine={ordine} onOrdine={setOrdine} onAltri={catalogo.altri} onApri={apri} />
     }
   }
 
@@ -341,6 +352,7 @@ export function Home() {
               const el = e.target as HTMLElement
               const s = el.closest<HTMLElement>('[data-strato]')
               if (s && el.dataset.f) memoriaStrati.set(s.dataset.strato!, el.dataset.f)
+              if (k === 'hero') fuocoHero.current = el.dataset.f
             }}
           >
             {contenuto(k)}
@@ -353,19 +365,17 @@ export function Home() {
             setMenu(false)
             tornaDopo(fuocoPrimaDelMenu.current ?? '')
           }}
-        />
-      )}
-      {ripresa.finestra}
-      {trama && (
-        <PannelloTrama
-          id={trama.id}
-          onChiudi={() => {
-            const torna = trama.torna
-            setTrama(null)
-            tornaDopo(torna)
+          onCatalogo={() => {
+            setMenu(false)
+            if (chiaveAttiva === 'catalogo') tornaDopo('ord-' + ordine)
+            else {
+              ingresso.current = 'alto'
+              setSezione('catalogo')
+            }
           }}
         />
       )}
+      {ripresa.finestra}
       {finestra?.tipo === 'elimina' && (
         <Finestra
           titolo="Eliminare la collezione?"
@@ -416,7 +426,8 @@ function SfondoHome({ img }: { img: string | null }) {
     <div className="sfondo-home" aria-hidden>
       {livelli.map((l, i) => (
         <div key={l.k} className={`sfondo-home__livello ${i > 0 ? 'sfondo-home__livello--entra' : ''}`}>
-          {l.img && <img src={l.img} alt="" />}
+          {/* la dissolvenza parte quando l'immagine è arrivata: niente lampo sul fondo vuoto */}
+          {l.img && <img src={l.img} alt="" onLoad={(e) => e.currentTarget.parentElement?.classList.add('sfondo-home__livello--pronto')} />}
         </div>
       ))}
       <div className="sfondo-home__sfumature" />
@@ -441,27 +452,56 @@ function Principale({ fid, t, ripresa }: { fid: string; t: BaseItemDto; ripresa:
 }
 
 // ---------- Hero ----------
-function SezioneHero(p: { t: BaseItemDto; n: number; totale: number; inLista: boolean; ripresa: Ripresa; onLista: () => void; onTrama: () => void }) {
+/** le prime frasi intere della trama, fino a circa due righe: nell'Hero non c'è «Leggi altro» */
+function descrizioneBreve(trama: string, max = 160, min = 80) {
+  const frasi = trama.match(/[^.!?]+[.!?]+["»”]?\s*|[^.!?]+$/g) ?? [trama]
+  let s = frasi[0]
+  for (const f of frasi.slice(1)) {
+    // una prima frase cortissima («Berlino, 1929.») non basta: si aggiunge la successiva anche se è lunga
+    if ((s + f).length > max && s.length >= min) break
+    s += f
+  }
+  return s.trim()
+}
+
+/** I testi dell'Hero: il vecchio esce mentre il nuovo entra, nello stesso posto (dissolvenza incrociata). */
+function TestiHero({ t }: { t: BaseItemDto }) {
+  const [livelli, setLivelli] = useState([{ t, k: 0 }])
+  const ultimo = livelli[livelli.length - 1]
+  if (ultimo.t.Id !== t.Id) setLivelli([ultimo, { t, k: ultimo.k + 1 }])
   return (
-    <div key={p.t.Id} className="sezione-home__testo sezione-home__cambia">
-      <h1 className="t-titolo-scheda" style={{ margin: 0 }}>{p.t.Name}</h1>
-      <RigaDati t={p.t} />
-      {p.t.Overview && (
-        <div data-strato="hero-trama">
-          <TramaBreve fid="ev-trama" testo={p.t.Overview} onLeggi={p.onTrama} />
+    <div className="hero-testi">
+      {livelli.map((l, i) => (
+        <div
+          key={l.k}
+          className={`sezione-home__blocco hero-testi__livello ${livelli.length > 1 ? (i === 0 ? 'hero-testi__livello--esce' : 'hero-testi__livello--entra') : ''}`}
+          aria-hidden={i < livelli.length - 1}
+          onAnimationEnd={() => i === 0 && livelli.length > 1 && setLivelli((x) => x.slice(-1))}
+        >
+          <h1 className="t-titolo-scheda" style={{ margin: 0 }}>{l.t.Name}</h1>
+          <RigaDati t={l.t} />
+          <p className="t-sinossi c-2 sezione-home__breve">{l.t.Overview ? descrizioneBreve(l.t.Overview) : ''}</p>
         </div>
-      )}
+      ))}
+    </div>
+  )
+}
+
+function SezioneHero(p: { t: BaseItemDto; n: number; totale: number; ripresa: Ripresa }) {
+  return (
+    <div className="sezione-home__testo">
+      {/* a ogni cambio cambiano solo i testi, in dissolvenza incrociata; Guarda e i pallini restano fermi */}
+      <TestiHero t={p.t} />
+      {/* solo Guarda (2026-10-16): ← → scorrono il carosello */}
       <div className="sezione-home__azioni" data-strato="hero-pulsanti" data-ingresso>
         <Principale fid="ev-principale" t={p.t} ripresa={p.ripresa} />
-        <Pulsante fid="ev-lista" tipo="icona" icona={p.inLista ? 'spunta' : 'piu'} etichetta={p.inLista ? 'Nella mia lista' : 'Aggiungi alla mia lista'} onOk={p.onLista} />
       </div>
+      {/* i pallini dicono solo dove si è: non prendono il fuoco, il carosello si scorre dai pulsanti */}
       {p.totale > 1 && (
-        <div data-strato="hero-pallini">
-          <button data-f="ev-pallini" className="pallini" aria-label={`Suggerimento ${p.n + 1} di ${p.totale}`}>
-            {Array.from({ length: p.totale }, (_, i) => (
-              <span key={i} className={`pallini__punto ${i === p.n ? 'pallini__punto--acceso' : ''}`} />
-            ))}
-          </button>
+        <div className="pallini" role="status" aria-label={`Suggerimento ${p.n + 1} di ${p.totale}`}>
+          {Array.from({ length: p.totale }, (_, i) => (
+            <span key={i} className={`pallini__punto ${i === p.n ? 'pallini__punto--acceso' : ''}`} />
+          ))}
         </div>
       )}
     </div>
@@ -470,7 +510,7 @@ function SezioneHero(p: { t: BaseItemDto; n: number; totale: number; inLista: bo
 
 // ---------- Continua a guardare · La mia lista: titolo scelto a sinistra, card in basso a destra ----------
 /* Un solo livello, le card: ci si arriva subito e OK avvia il titolo (se è iniziato chiede Riprendi o Ricomincia). */
-function SezioneTitoli(p: { k: string; etichetta: string; el: BaseItemDto[]; sel: number; onSel: (i: number) => void; card: (t: BaseItemDto, i: number) => ReactNode }) {
+function SezioneTitoli(p: { k: string; etichetta: string; el: BaseItemDto[]; sel: number; onSel: (i: number) => void; card: (t: BaseItemDto, i: number) => ReactNode; senzaTrama?: boolean }) {
   const t = p.el[p.sel]
   if (!t) return null
   const ep = t.Type === 'Episode'
@@ -487,7 +527,7 @@ function SezioneTitoli(p: { k: string; etichetta: string; el: BaseItemDto[]; sel
           <RigaDati t={t} />
         )}
         <Tempo t={t} />
-        {t.Overview && <p className="t-sinossi c-2 sezione-home__trama">{t.Overview}</p>}
+        {!p.senzaTrama && t.Overview && <p className="t-sinossi c-2 sezione-home__trama">{t.Overview}</p>}
       </div>
       <div
         className="riga__binario sezione-home__card"
@@ -521,7 +561,7 @@ function Tempo({ t }: { t: BaseItemDto }) {
   )
 }
 
-// ---------- Collezioni: pillbar, pulsanti, locandine dei film ----------
+// ---------- Collezioni: gruppo di pulsanti, pulsanti, locandine dei film ----------
 function SezioneCollezioni(p: {
   el: BaseItemDto[]
   sel: number
@@ -543,12 +583,12 @@ function SezioneCollezioni(p: {
   return (
     <>
       <Etichetta>Collezioni</Etichetta>
-      <div className="riga__binario sezione-home__pillbar" data-strato="coll-pill" data-xscroll="96">
-        {p.el.map((x, i) => (
-          <Scelta key={x.Id} fid={`pill-${i}`} testo={x.Name ?? ''} selezionata={i === p.sel} pref={i === p.sel} onFuoco={() => p.onSel(i)} />
-        ))}
-      </div>
-      <div key={c.Id} className="sezione-home__testo sezione-home__testo--stretto sezione-home__cambia">
+      <GruppoPulsanti
+        strato="coll-pill"
+        classe="sezione-home__gruppo"
+        voci={p.el.map((x, i) => ({ fid: `pill-${i}`, testo: x.Name ?? '', selezionata: i === p.sel, onFuoco: () => p.onSel(i) }))}
+      />
+      <div key={'testo-' + c.Id} className="sezione-home__testo sezione-home__testo--stretto sezione-home__cambia">
         <h1 className="t-titolo-scheda" style={{ margin: 0 }}>{c.Name}</h1>
         {meta.length > 0 && <div className="t-meta">{meta.join(' · ')}</div>}
         {c.Overview && <p className="t-sinossi c-2 sezione-home__trama">{c.Overview}</p>}
@@ -590,7 +630,7 @@ function SezioneCollezioni(p: {
         </div>
       </div>
       {film.length > 0 && (
-        <div key={c.Id} className="riga__binario sezione-home__locandine sezione-home__cambia" data-strato="coll-loc" data-xscroll="48">
+        <div key={'locandine-' + c.Id} className="riga__binario sezione-home__locandine sezione-home__cambia" data-strato="coll-loc" data-xscroll="48">
           {film.map((f) => (
             <Card key={f.Id} fid={'cl-' + f.Id} formato="locandina" img={locandina(f)} titolo={f.Name ?? ''} onOk={() => p.onApri(f)} />
           ))}
@@ -601,26 +641,42 @@ function SezioneCollezioni(p: {
 }
 
 // ---------- Intero catalogo: film e serie insieme, ordinamento subito sopra ----------
-function SezioneCatalogo(p: { el: BaseItemDto[]; totale: number | null; ordine: string; onOrdine: (o: string) => void; onAltri: () => void; onApri: (t: BaseItemDto) => void }) {
+function SezioneCatalogo(p: { attiva: boolean; el: BaseItemDto[]; totale: number | null; ordine: string; onOrdine: (o: string) => void; onAltri: () => void; onApri: (t: BaseItemDto) => void }) {
   const righe: BaseItemDto[][] = []
   for (let i = 0; i < p.el.length; i += COLONNE) righe.push(p.el.slice(i, i + COLONNE))
+  const attesa = useRef<ReturnType<typeof setTimeout>>(undefined)
+  useEffect(() => () => clearTimeout(attesa.current), [])
+  const scegli = (id: string, dopo: number) => {
+    clearTimeout(attesa.current)
+    if (id === p.ordine) return
+    attesa.current = setTimeout(() => p.onOrdine(id), dopo)
+  }
+  // entrando si vede l'ordinamento con i titoli a metà schermo; scesi nella griglia tutto sale:
+  // l'ordinamento va in alto e le locandine prendono lo schermo. Risalendo resta così;
+  // la posizione bassa torna solo rientrando nella sezione
+  const [inGriglia, setInGriglia] = useState(false)
+  const griglia = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    if (!p.attiva) setInGriglia(false)
+  }, [p.attiva])
   return (
-    <>
+    <div
+      className={`catalogo ${inGriglia ? 'catalogo--griglia' : ''}`}
+      onFocus={(e) => {
+        if (griglia.current?.contains(e.target as Node)) setInGriglia(true)
+        else griglia.current?.scrollTo({ top: 0, behavior: 'smooth' })
+      }}
+    >
       <h2 className="sezione-home__etichetta sezione-home__etichetta--catalogo t-titolo-riga">Intero catalogo</h2>
-      <div className="riga__binario sezione-home__pillbar sezione-home__pillbar--catalogo" data-strato="cat-ordine" data-ingresso data-xscroll="96">
-        {ORDINI.map((o) => (
-          <Scelta
-            key={o.id}
-            fid={'ord-' + o.id}
-            testo={o.testo}
-            selezionata={o.id === p.ordine}
-            pref={o.id === p.ordine}
-            // l'ordine cambia solo con OK: una richiesta sola, non una per ogni pillola attraversata
-            onOk={() => p.onOrdine(o.id)}
-          />
-        ))}
-      </div>
-      <div className="sezione-home__griglia" data-yscroll="0">
+      <GruppoPulsanti
+        strato="cat-ordine"
+        ingresso
+        classe="sezione-home__gruppo sezione-home__gruppo--catalogo"
+        // l'ordine cambia quando il fuoco si ferma su una voce (o subito con OK):
+        // passando veloce non parte una richiesta per ogni voce attraversata
+        voci={ORDINI.map((o) => ({ fid: 'ord-' + o.id, testo: o.testo, selezionata: o.id === p.ordine, onOk: () => scegli(o.id, 0), onFuoco: () => scegli(o.id, 400) }))}
+      />
+      <div ref={griglia} className="sezione-home__griglia" data-yscroll="0">
         {righe.map((r, k) => (
           <div
             key={k}
@@ -636,15 +692,15 @@ function SezioneCatalogo(p: { el: BaseItemDto[]; totale: number | null; ordine: 
         ))}
         {p.totale === 0 && <p className="t-sinossi c-2" style={{ padding: '0 96px' }}>Non ci sono titoli.</p>}
       </div>
-    </>
+    </div>
   )
 }
 
 // ---------- Menu laterale ----------
-function MenuLaterale({ onChiudi }: { onChiudi: () => void }) {
+/** Menu laterale (2026-10-17): solo Cerca, Catalogo e Profili, raggruppati a metà della colonna. */
+function MenuLaterale({ onChiudi, onCatalogo }: { onChiudi: () => void; onCatalogo: () => void }) {
   const nav = useNav()
   const { profilo } = useStato()
-  const [profiloAperto, setProfiloAperto] = useState(false)
   useTasti((t) => {
     if (t === 'indietro' || t === 'destra') return onChiudi(), true
     if (t === 'sinistra') return true
@@ -656,32 +712,21 @@ function MenuLaterale({ onChiudi }: { onChiudi: () => void }) {
     <div className="menu-laterale" data-livello>
       <div className="menu-laterale__velo" onClick={onChiudi} />
       <nav className="menu-laterale__pannello" aria-label="Menu">
-        <Pulsante fid="ml-cerca" icona="cerca" pref onOk={() => nav.vai({ s: 'cerca' })}>
-          Cerca
-        </Pulsante>
-        <div style={{ flex: 1 }} />
-        <div style={{ position: 'relative' }}>
-          <button data-f="ml-profilo" className="menu-laterale__profilo" aria-label={`Profilo: ${profilo?.nome}`} onClick={() => setProfiloAperto(true)}>
-            <span className="avatar__tondo t-didascalia" style={{ width: 'var(--avatar-piccolo)', height: 'var(--avatar-piccolo)' }}>
+        <div className="menu-laterale__voci">
+          <button data-f="ml-cerca" className="menu-laterale__voce t-pulsante" onClick={() => nav.vai({ s: 'cerca' })}>
+            <Icona nome="cerca" />
+            Cerca
+          </button>
+          <button data-f="ml-catalogo" className="menu-laterale__voce t-pulsante" onClick={onCatalogo}>
+            <Icona nome="film" />
+            Catalogo
+          </button>
+          <button data-f="ml-profili" className="menu-laterale__voce t-pulsante" aria-label={`Profili, ora ${profilo?.nome ?? ''}`} onClick={() => nav.vai({ s: 'profili' })}>
+            <span className="menu-laterale__foto t-didascalia">
               {profilo?.foto ? <img className="avatar__foto" src={profilo.foto} alt="" /> : iniziali(profilo?.nome ?? '')}
             </span>
-            <span className="t-meta">{profilo?.nome}</span>
+            Profili
           </button>
-          {profiloAperto && (
-            <Tendina
-              titolo={profilo?.nome}
-              voci={[
-                { id: 'cambia', testo: 'Cambia profilo' },
-                { id: 'impostazioni', testo: 'Impostazioni' },
-              ]}
-              stile={{ bottom: 72, left: 0 }}
-              onChiudi={() => (setProfiloAperto(false), setTimeout(() => mettiId('ml-profilo')))}
-              onScegli={(id) => {
-                setProfiloAperto(false)
-                nav.vai(id === 'cambia' ? { s: 'profili' } : { s: 'impostazioni' })
-              }}
-            />
-          )}
         </div>
       </nav>
     </div>

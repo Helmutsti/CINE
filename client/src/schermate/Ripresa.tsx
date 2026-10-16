@@ -45,13 +45,14 @@ export function useRipresa() {
           setR(null)
           nav.vai({ ...r.voce, daCapo: true })
         }}
+        onAnnulla={chiudi}
       />
     </Finestra>
   )
   return { avvia, finestra }
 }
 
-function Azioni({ onRiprendi, onRicomincia }: { onRiprendi: () => void; onRicomincia: () => void }) {
+function Azioni({ onRiprendi, onRicomincia, onAnnulla }: { onRiprendi: () => void; onRicomincia: () => void; onAnnulla: () => void }) {
   useFuocoIniziale('rr-riprendi')
   return (
     <div className="finestra__azioni">
@@ -60,6 +61,9 @@ function Azioni({ onRiprendi, onRicomincia }: { onRiprendi: () => void; onRicomi
       </Pulsante>
       <Pulsante fid="rr-ricomincia" onOk={onRicomincia}>
         Ricomincia
+      </Pulsante>
+      <Pulsante fid="rr-annulla" onOk={onAnnulla}>
+        Annulla
       </Pulsante>
     </div>
   )

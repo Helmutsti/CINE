@@ -12,8 +12,9 @@ import pausa from './pausa.svg?raw'
 import matita from './matita.svg?raw'
 import prossimo from './prossimo.svg?raw'
 import sottotitoli from './sottotitoli.svg?raw'
+import film from './film.svg?raw'
 
-const SVG = { cerca, play, piu, info, impostazioni, spunta, cancella, 'freccia-giu': frecciaGiu, pausa, matita, prossimo, sottotitoli }
+const SVG = { cerca, play, piu, info, impostazioni, spunta, cancella, 'freccia-giu': frecciaGiu, pausa, matita, prossimo, sottotitoli, film }
 export type NomeIcona = keyof typeof SVG
 
 const pronte = Object.fromEntries(
