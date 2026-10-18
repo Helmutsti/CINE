@@ -893,6 +893,7 @@
 .gruppo {
   position: relative;
   display: flex;
+  width: fit-content;
   gap: var(--sp-gruppo-gap);
   max-width: 100%;
   padding: var(--sp-gruppo-margine);

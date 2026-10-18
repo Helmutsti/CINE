@@ -69,6 +69,8 @@ export interface Sorgente {
 
 export async function chiediSorgente(p: {
   itemId: string
+  /** la versione del file: senza, il server ignora le tracce audio e sottotitoli chieste */
+  mediaSourceId?: string
   uid: string
   inizio: number
   audio?: number
@@ -79,16 +81,29 @@ export async function chiediSorgente(p: {
 }): Promise<Sorgente | null> {
   const conversione = p.altezza ? 'sempre' : p.conversione
   const bitrate = p.altezza ? BITRATE[p.altezza] : 120_000_000
+  const s = await chiedi(p, conversione, bitrate, conversione !== 'sempre')
+  // il file così com'è suona sempre la sua traccia predefinita: per un'altra lingua il server
+  // deve rimandarlo (il video passa intatto, cambia solo l'audio)
+  // (il server riscrive DefaultAudioStreamIndex con la traccia chiesta: la predefinita si legge dalle tracce)
+  const audio = s?.media.MediaStreams?.filter((x) => x.Type === 'Audio') ?? []
+  const predefinita = (audio.find((x) => x.IsDefault) ?? audio[0])?.Index
+  if (s?.modo === 'diretta' && p.audio !== undefined && p.audio !== predefinita && conversione !== 'mai')
+    return chiedi(p, conversione, bitrate, false)
+  return s
+}
+
+async function chiedi(p: Parameters<typeof chiediSorgente>[0], conversione: Conversione, bitrate: number, diretta: boolean) {
   const r = await getMediaInfoApi(api).getPostedPlaybackInfo({
     itemId: p.itemId,
     userId: p.uid,
     playbackInfoDto: {
       UserId: p.uid,
+      MediaSourceId: p.mediaSourceId,
       DeviceProfile: profilo(),
       StartTimeTicks: Math.round(p.inizio * TICK),
       AudioStreamIndex: p.audio,
       SubtitleStreamIndex: p.sottotitoli,
-      EnableDirectPlay: conversione !== 'sempre',
+      EnableDirectPlay: diretta,
       EnableDirectStream: conversione !== 'sempre',
       EnableTranscoding: conversione !== 'mai',
       AllowVideoStreamCopy: conversione !== 'sempre',
@@ -127,6 +142,16 @@ function scegli(info: PlaybackInfoResponse, itemId: string): Sorgente | null {
     }
   }
   return null
+}
+
+/**
+ * Ferma la conversione di una sessione: il server chiude ffmpeg e cancella i pezzi già scritti.
+ * Senza, ogni riapertura (lingua, qualità) lascia sul disco del server un film intero.
+ */
+export function fermaConversione(s: Sorgente) {
+  if (s.modo === 'diretta') return Promise.resolve()
+  const q = new URLSearchParams({ deviceId: DISPOSITIVO, playSessionId: s.playSessionId })
+  return fetch(`${BASE}/Videos/ActiveEncodings?${q}`, { method: 'DELETE' }).catch(() => {})
 }
 
 /** Sottotitoli testuali: indirizzo del file VTT da mettere in una <track>. */

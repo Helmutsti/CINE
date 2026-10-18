@@ -15,7 +15,7 @@ import { api, BASE, dimentica, orizzontale, secondi, TICK, useCarica } from '../
 import { corrente, mettiId } from '../fuoco'
 import { useFuocoIniziale, useNav, useTasti, type Voce } from '../nav'
 import { useStato } from '../stato'
-import { ALTEZZE, chiediSorgente, urlSottotitoli, type Qualita, type Sorgente } from '../riproduzione'
+import { ALTEZZE, chiediSorgente, fermaConversione, urlSottotitoli, type Qualita, type Sorgente } from '../riproduzione'
 import { sigla } from './comune'
 
 const VELOCITA = [0.5, 0.75, 1, 1.25, 1.5, 2]
@@ -103,19 +103,38 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
   const apertoRef = useRef(false)
   apertoRef.current = !!pannello || fila
 
+  function chiudiSessione(s: Sorgente, p: number) {
+    return Promise.all([
+      getSessionApi(api)
+        .reportPlaybackStopped({ playbackStopInfo: { ItemId: voce.id, MediaSourceId: s.media.Id, PlaySessionId: s.playSessionId, PositionTicks: Math.round(p * TICK) } })
+        .catch(() => {}),
+      fermaConversione(s),
+    ])
+  }
+
   // ---------- apre lo stream (e lo riapre quando cambiano audio, sottotitoli impressi o qualità) ----------
   const inizio = useRef<number | null>(null)
   if (inizio.current === null && t) inizio.current = voce.daCapo || trailer ? 0 : secondi(t.UserData?.PlaybackPositionTicks)
   const [giro, setGiro] = useState(0)
+  /** lo stream è già stato aperto: riaprendolo (audio, qualità, sottotitoli) si riparte dal punto raggiunto */
+  const aperto = useRef(false)
   useEffect(() => {
     if (!t) return
     let vivo = true
-    const da = giro === 0 ? inizio.current ?? 0 : posizione()
+    const da = aperto.current ? posizione() : inizio.current ?? 0
+    aperto.current = true
+    // la sessione di prima si chiude: il server smette di convertire e cancella i suoi file
+    if (sorgente) {
+      hls.current?.destroy()
+      hls.current = null
+      chiudiSessione(sorgente, da)
+    }
     const sottoImpresso = sotto >= 0 && t.MediaStreams?.find((s) => s.Index === sotto)?.IsTextSubtitleStream === false ? sotto : undefined
     setNonRiproducibile(false)
     setCarica(true)
     chiediSorgente({
       itemId: voce.id,
+      mediaSourceId: sorgente?.media.Id ?? t.MediaSources?.[0]?.Id ?? undefined,
       uid,
       inizio: da,
       audio,
@@ -197,12 +216,7 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
   const fermaESalva = (fine = false) => {
     // il punto si legge subito: dopo, uscendo dal player, il video non c'è più
     const p = posizione()
-    const chiudi = sorgente
-      ? getSessionApi(api)
-          .reportPlaybackStopped({ playbackStopInfo: { ItemId: voce.id, MediaSourceId: sorgente.media.Id, PlaySessionId: sorgente.playSessionId, PositionTicks: Math.round(p * TICK) } })
-          .catch(() => {})
-      : Promise.resolve()
-    chiudi.finally(() => salva(fine, p))
+    ;(sorgente ? chiudiSessione(sorgente, p) : Promise.resolve()).finally(() => salva(fine, p))
   }
   const esci = () => {
     fermaESalva()
@@ -234,14 +248,26 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
     else v.play().catch(() => {})
     setInPausa(p)
   }
-  const salta = (sec: number) => {
-    const v = video.current
-    if (!v) return
-    v.currentTime = Math.max(0, Math.min((durata || v.duration) - 1, v.currentTime + sec))
-  }
   const vaiA = (sec: number) => {
     const v = video.current
     if (v) v.currentTime = Math.max(0, sec)
+  }
+  // ← → sulla barra: il punto (e l'anteprima) si sposta subito, il video ci salta quando ci si ferma
+  const [meta, setMeta] = useState<number | null>(null)
+  const metaRef = useRef<number | null>(null)
+  const attesaSalto = useRef(0)
+  useEffect(() => () => clearTimeout(attesaSalto.current), [])
+  const cerca = (sec: number) => {
+    const fine = (durata || video.current?.duration || 0) - 1
+    const n = Math.max(0, Math.min(fine, (metaRef.current ?? posizione()) + sec))
+    metaRef.current = n
+    setMeta(n)
+    clearTimeout(attesaSalto.current)
+    attesaSalto.current = window.setTimeout(() => {
+      vaiA(n)
+      metaRef.current = null
+      setMeta(null)
+    }, 700)
   }
 
   // SC-15: negli ultimi 40 s di un episodio compare il prossimo, con 10 s di conto alla rovescia
@@ -302,11 +328,16 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
       if (tasto === 'indietro' || (tasto === 'giu' && ultima)) return chiudi(), true
       return false
     }
-    // a menu chiuso: OK pausa, ← → saltano di 10 s (30 tenendo premuto), gli altri tasti mostrano il menu
+    // a menu chiuso: OK pausa, ← → saltano di 10 s (30 tenendo premuto) e portano sulla barra,
+    // gli altri tasti mostrano il menu
     if (eraNascosto) {
-      if (tasto === 'ok') pausa(!inPausa)
-      if (tasto === 'sinistra' || tasto === 'destra') salta((tasto === 'destra' ? 1 : -1) * (e.repeat ? 30 : 10))
       if (tasto === 'indietro') return esci(), true
+      if (tasto === 'sinistra' || tasto === 'destra') {
+        cerca((tasto === 'destra' ? 1 : -1) * (e.repeat ? 30 : 10))
+        setTimeout(() => mettiId('pl-barra'))
+        return true
+      }
+      if (tasto === 'ok') pausa(!inPausa)
       setTimeout(() => mettiId('pl-pausa'))
       return true
     }
@@ -316,20 +347,20 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
       return false
     }
     if (tasto === 'indietro') return esci(), true
-    const f = corrente()?.dataset.f
-    if (f === 'pl-barra' && (tasto === 'sinistra' || tasto === 'destra')) {
-      salta((tasto === 'destra' ? 1 : -1) * durata * (e.repeat ? 0.04 : 0.02))
+    // i tasti stanno sopra la barra: ↑ ↓ passano dagli uni all'altra, ← → sulla barra spostano il punto
+    if (corrente()?.dataset.f === 'pl-barra') {
+      if (tasto === 'sinistra' || tasto === 'destra') cerca((tasto === 'destra' ? 1 : -1) * durata * (e.repeat ? 0.04 : 0.02))
+      if (tasto === 'ok') pausa(!inPausa)
+      if (tasto === 'su') mettiId('pl-pausa')
+      // ↓ dalla barra chiude il menu
+      if (tasto === 'giu') {
+        clearTimeout(timer.current)
+        setComandi(false)
+      }
       return true
     }
-    // dalla barra si torna ai tasti con ↓ o OK (← → lì spostano il punto)
-    if (f === 'pl-barra' && (tasto === 'giu' || tasto === 'ok')) return mettiId('pl-pausa'), true
     if (tasto === 'su') return apriFila(), true
-    // ↓ dai tasti chiude il menu
-    if (tasto === 'giu') {
-      clearTimeout(timer.current)
-      setComandi(false)
-      return true
-    }
+    if (tasto === 'giu') return mettiId('pl-barra'), true
     return false
   })
 
@@ -363,6 +394,8 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pannello])
 
+  /** il punto a schermo: mentre si cerca con ← →, quello scelto */
+  const mostrato = meta ?? pos
   const punti = [0, ...capitoli.map((c) => c.da).filter((s) => s > 0 && s < durata), durata]
   const titoloSopra = trailer ? `Trailer · ${voce.trailer!.titolo}` : ep ? t?.SeriesName : t?.Name
   const sottotitolo = ep && t ? `${sigla(t)} · ${t.Name}` : null
@@ -406,7 +439,7 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
           </div>
 
           {fila && (
-            <div data-g="capitoli" data-xscroll="96" style={{ position: 'absolute', left: 0, right: 0, bottom: 212, display: 'flex', gap: 'var(--rail-gap)', padding: '24px 96px', overflow: 'hidden' }}>
+            <div data-g="capitoli" data-xscroll="96" style={{ position: 'absolute', left: 0, right: 0, bottom: 260, display: 'flex', gap: 'var(--rail-gap)', padding: '24px 96px', overflow: 'hidden' }}>
               {capitoli.map((c, k) => (
                 <Card
                   key={c.i}
@@ -425,7 +458,7 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
           )}
 
           {pannello && (
-            <div style={{ position: 'absolute', left: 96, right: 96, bottom: 228, display: 'flex', flexDirection: 'column', gap: 24 }}>
+            <div style={{ position: 'absolute', left: 96, right: 96, bottom: 268, display: 'flex', flexDirection: 'column', gap: 24 }}>
               {(pannello === 'sottotitoli' ? [{ id: 'sottotitoli', nome: 'Sottotitoli', scelte: sceltaSottotitoli }] : gruppi).map((g) => (
                 <div key={g.id} style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
                   <div className="t-meta c-2" style={{ width: 160, flex: 'none' }}>
@@ -450,24 +483,23 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
               ))}
             </div>
           )}
-          <div style={{ position: 'absolute', left: 96, right: 96, bottom: 96, display: 'flex', alignItems: 'center', gap: 48 }}>
-            <div style={{ flex: 1, position: 'relative' }}>
-              <button data-f="pl-barra" className="anello" aria-label="Posizione" style={{ width: '100%', height: 24, borderRadius: 8, display: 'flex', alignItems: 'center', gap: 4 }}>
-                {punti.slice(0, -1).map((da, i) => {
-                  const a = punti[i + 1]
-                  return <Avanzamento key={i} valore={(pos - da) / Math.max(1, a - da)} stile={{ flex: a - da, background: 'var(--track)' }} />
-                })}
-              </button>
-              <div className="t-meta" style={{ position: 'absolute', left: 0, right: 0, top: 'calc(100% + 12px)', display: 'flex', justifyContent: 'space-between', color: 'var(--text-on-image)' }}>
-                <span>{tempo(pos)}</span>
-                <span>−{tempo(durata - pos)}</span>
-              </div>
-            </div>
-            <div data-g="pl-tasti" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-              <Pulsante fid="pl-pausa" tipo="icona" chiaro classe="tasto-player--grande" icona={inPausa ? 'play' : 'pausa'} etichetta={inPausa ? 'Riproduci' : 'Pausa'} onOk={() => pausa(!inPausa)} />
-              {prossimo.dati && <Pulsante fid="pl-prossimo" tipo="icona" classe="tasto-player--piccolo" icona="prossimo" etichetta="Episodio successivo" onOk={vaiAlProssimo} />}
-              {!trailer && <Pulsante fid="pl-sottotitoli" tipo="icona" classe="tasto-player--piccolo" icona="sottotitoli" etichetta="Sottotitoli" onOk={() => apri('sottotitoli')} />}
-              {!trailer && <Pulsante fid="pl-impostazioni" tipo="icona" classe="tasto-player--piccolo" icona="impostazioni" etichetta="Impostazioni" onOk={() => apri('impostazioni')} />}
+          <div data-g="pl-tasti" style={{ position: 'absolute', left: 96, bottom: 152, display: 'flex', alignItems: 'center', gap: 16 }}>
+            <Pulsante fid="pl-pausa" tipo="icona" chiaro classe="tasto-player--grande" icona={inPausa ? 'play' : 'pausa'} etichetta={inPausa ? 'Riproduci' : 'Pausa'} onOk={() => pausa(!inPausa)} />
+            {prossimo.dati && <Pulsante fid="pl-prossimo" tipo="icona" classe="tasto-player--piccolo" icona="prossimo" etichetta="Episodio successivo" onOk={vaiAlProssimo} />}
+            {!trailer && <Pulsante fid="pl-sottotitoli" tipo="icona" classe="tasto-player--piccolo" icona="sottotitoli" etichetta="Sottotitoli" onOk={() => apri('sottotitoli')} />}
+            {!trailer && <Pulsante fid="pl-impostazioni" tipo="icona" classe="tasto-player--piccolo" icona="impostazioni" etichetta="Impostazioni" onOk={() => apri('impostazioni')} />}
+          </div>
+          <div style={{ position: 'absolute', left: 96, right: 96, bottom: 96 }}>
+            {meta !== null && t && <Anteprima t={t} sec={meta} durata={durata} />}
+            <button data-f="pl-barra" className="anello" aria-label="Posizione" style={{ width: '100%', height: 24, borderRadius: 8, display: 'flex', alignItems: 'center', gap: 4 }}>
+              {punti.slice(0, -1).map((da, i) => {
+                const a = punti[i + 1]
+                return <Avanzamento key={i} valore={(mostrato - da) / Math.max(1, a - da)} stile={{ flex: a - da, background: 'var(--track)' }} />
+              })}
+            </button>
+            <div className="t-meta" style={{ position: 'absolute', left: 0, right: 0, top: 'calc(100% + 12px)', display: 'flex', justifyContent: 'space-between', color: 'var(--text-on-image)' }}>
+              <span>{tempo(mostrato)}</span>
+              <span>−{tempo(durata - mostrato)}</span>
             </div>
           </div>
         </div>
@@ -491,6 +523,43 @@ function PlayerJellyfin({ voce }: { voce: Extract<Voce, { s: 'player' }> }) {
           />
         </Finestra>
       )}
+    </div>
+  )
+}
+
+/** Il riquadro sopra la barra mentre si cerca: il fotogramma di quel punto (le immagini «trickplay»
+ *  di Jellyfin, se il server le ha preparate) e il tempo. */
+function Anteprima({ t, sec, durata }: { t: BaseItemDto; sec: number; durata: number }) {
+  const LARGA = 320
+  const [mediaId, misure] = Object.entries(t.Trickplay ?? {})[0] ?? []
+  // la misura più vicina al riquadro
+  const info = Object.values(misure ?? {}).sort((a, b) => Math.abs((a.Width ?? 0) - LARGA) - Math.abs((b.Width ?? 0) - LARGA))[0]
+  let quadro = null
+  if (info?.Width && info.Height && info.TileWidth && info.TileHeight && info.Interval) {
+    // le immagini sono tessere: ogni file ne ha TileWidth × TileHeight, una ogni Interval ms
+    const i = Math.min(Math.floor((sec * 1000) / info.Interval), (info.ThumbnailCount ?? 1) - 1)
+    const perFile = info.TileWidth * info.TileHeight
+    const k = i % perFile
+    const alta = (info.Height * LARGA) / info.Width
+    quadro = (
+      <div
+        style={{
+          width: LARGA,
+          height: alta,
+          borderRadius: 'var(--r-card)',
+          backgroundColor: 'var(--surface-art)',
+          backgroundImage: `url(${BASE}/Videos/${t.Id}/Trickplay/${info.Width}/${Math.floor(i / perFile)}.jpg?mediaSourceId=${mediaId})`,
+          backgroundSize: `${info.TileWidth * LARGA}px auto`,
+          backgroundPosition: `-${(k % info.TileWidth) * LARGA}px -${Math.floor(k / info.TileWidth) * alta}px`,
+        }}
+      />
+    )
+  }
+  const x = durata ? (sec / durata) * 100 : 0
+  return (
+    <div style={{ position: 'absolute', bottom: 'calc(100% + 16px)', left: `clamp(${LARGA / 2}px, ${x}%, calc(100% - ${LARGA / 2}px))`, transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, pointerEvents: 'none' }}>
+      {quadro}
+      <div className="t-meta" style={{ color: 'var(--text-on-image)' }}>{tempo(sec)}</div>
     </div>
   )
 }

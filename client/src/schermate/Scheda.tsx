@@ -5,7 +5,7 @@ import { getShowApi } from '@jellyfin/sdk/lib/utils/api/show-api'
 import { getUserDataApi } from '@jellyfin/sdk/lib/utils/api/user-data-api'
 import { getItemLookupApi } from '@jellyfin/sdk/lib/utils/api/item-lookup-api'
 import type { BaseItemDto, RemoteSearchResult } from '@jellyfin/sdk/lib/generated-client/models'
-import { Campo, Card, Finestra, PersonaCast, Pulsante, Riga, Scelta, Sfondo, Tendina, VoceElenco } from '../componenti'
+import { Campo, Card, Finestra, GruppoPulsanti, PersonaCast, Pulsante, Riga, Sfondo, Tendina, VoceElenco } from '../componenti'
 import { durata } from '../dati'
 import { api, dimentica, fotoPersona, minuti, orizzontale, secondi, sfondo, useCarica } from '../jf'
 import { mettiId } from '../fuoco'
@@ -289,10 +289,11 @@ function Episodi({ serie: t, avvia }: { serie: BaseItemDto; avvia: ReturnType<ty
   if (!st.length) return null
   return (
     <>
-      <section data-y="inizio" style={{ display: 'flex', gap: 16, padding: '0 96px', flexWrap: 'wrap' }} data-g="stagioni">
-        {st.map((s) => (
-          <Scelta key={s.Id} fid={'st-' + s.Id} testo={s.Name ?? `Stagione ${s.IndexNumber}`} selezionata={s.Id === stagioneId} pref={s.Id === stagioneId} onFuoco={() => setScelta(s.Id!)} onOk={() => setScelta(s.Id!)} />
-        ))}
+      <section data-y="inizio" style={{ padding: '0 96px' }} data-g="stagioni">
+        <GruppoPulsanti
+          strato="stagioni"
+          voci={st.map((s) => ({ fid: 'st-' + s.Id, testo: s.Name ?? `Stagione ${s.IndexNumber}`, selezionata: s.Id === stagioneId, onFuoco: () => setScelta(s.Id!), onOk: () => setScelta(s.Id!) }))}
+        />
       </section>
       <Riga g={'episodi-' + stagioneId} y="inizio" stile={{ marginTop: -24 }}>
         {!episodi.dati && Array.from({ length: attesi }, (_, i) => <CardInCaricamento key={i} />)}
